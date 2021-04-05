@@ -12,8 +12,8 @@
       "title": "Day 1: Basic math review",
       "description": "Algebra review, unit conversions, interpreting graphs, univariate and multivariate functions, exponentials and logarithms",
       "author": [],
-      "contents": "\n\nContents\nDay 1 Slides\n\nDay 1 Slides\n\n\nxaringanExtra::embed_xaringan(\n  url = \"https://allisonhorst.github.io/EDS_212_essential-math/docs/slides/EDS_212_day-1-slides.html\",\n  ratio = \"16:9\"\n)\n\n\n\n\nfitvids('.shareagain', {players: 'iframe'});\n\n\n\n\n",
-      "last_modified": "2021-04-05T15:50:06-07:00"
+      "contents": "\n\nContents\nDay 1 Slides\n\nDay 1 Slides\n\n\nxaringanExtra::embed_xaringan(\n  url = \"https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-1-slides.html\",\n  ratio = \"16:9\"\n)\n\n\n\n\nfitvids('.shareagain', {players: 'iframe'});\n\n\n\n\n",
+      "last_modified": "2021-04-05T15:53:22-07:00"
     },
     {
       "path": "day_2.html",
