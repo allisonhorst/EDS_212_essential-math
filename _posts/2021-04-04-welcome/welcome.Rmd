@@ -1,0 +1,22 @@
+---
+title: "Adding blog posts"
+description: |
+  Add blog posts with distill::create_post()
+author:
+  - name: Allison Horst
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+The easiest way to add a blog post to your site is to run `distill::create_post(title = "Blog title")` in the Console (replacing the blog title with the one you want to use - this is used to create the slug for the post). An .Rmd is created and opened for that post. **Note:** You'll need to knit the blog .Rmd manually (unlike most other docs in your website, which will automatically be rendered when you Build the site). 
+
+If you want to create blog post drafts, add `draft: true` to the YAML of the .Rmd for that post. 
+
+You can also get rid of the blog. Delete the `_posts` direction in the root, delete the `posts` folder in `docs`, and remove the blog information from the `_site.yml` to disappear it (or, if you want to keep the blog set-up but not have it appear, just remove the blog page from `_site.yml`). 
+

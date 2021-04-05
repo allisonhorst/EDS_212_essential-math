@@ -1,0 +1,32 @@
+name: "meds-distill-template"
+title: "EDS 123"
+description: |
+  MEDS Courses distill template
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "Weekly materials"
+      menu:
+        - text: "Week 1"
+          href: week_1.html
+        - text: "Week 2"
+          href: week_2.html
+        - text: "Week 3"
+          href: week_3.html
+    - text: "Resources"
+      href: resources.html
+    - text: "Blog"
+      href: blog.html
+    - icon: fab fa-github
+      href: https://github.com/allisonhorst/meds-distill-template
+output:
+  distill::distill_article:
+    toc: true
+    toc_float: true
+theme: theme.css
+
+# To remove table of contents on each page, set toc: and toc_float: lines to FALSE
+
+# To add or remove pages, create .Rmd (in root), add information (in the navbar), then build.

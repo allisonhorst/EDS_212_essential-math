@@ -1,0 +1,81 @@
+---
+title: "EDS 123: An optional course template"
+description: "A minimal website skeleton and theme for MEDS course with distill (by RStudio)"
+site: distill::distill_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(kableExtra)
+# Learn more about creating websites with Distill at:
+# https://rstudio.github.io/distill/website.html
+
+# Learn more about publishing to GitHub Pages at:
+# https://rstudio.github.io/distill/publish_website.html#github-pages
+
+```
+
+## Course description
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+## Teaching team
+
+**Instructor:** Mike Wazowski (wazowski\@monstersinc.org)
+
+-   **Office:** Closet 100
+-   **Office hours:** Friday 9pm - 11pm
+
+**Teaching assistant:** Boo (boo\@monstersinc.org)
+
+-   **Office:** Boo's Room
+-   **Office hours:** Saturday 7am - 8am
+
+## Important links
+
+-   Link to full course syllabus
+
+-   Link to Code of Conduct
+
+## Weekly course schedule
+
+-   **Lectures:** MW 8am - 9:15am (Warehouse Room 1)
+-   **Labs:** Th 10am - 12pm (Warehouse Room 2)
+
+## Learning objectives
+
+Condimentum id venenatis a condimentum. Ultricies mi quis hendrerit dolor magna eget est. Turpis egestas maecenas pharetra convallis. Sem nulla pharetra diam sit amet. Diam volutpat commodo sed egestas egestas fringilla. Mauris in aliquam sem fringilla ut morbi tincidunt augue interdum. Ornare massa eget egestas purus viverra accumsan in.
+
+-   Vulputate eu scelerisque felis imperdiet proin.
+-   Euismod nisi porta lorem mollis aliquam.
+-   Urna molestie at elementum eu facilisis sed odio morbi quis.
+-   Convallis a cras semper auctor neque. Semper quis lectus nulla at volutpat diam ut venenatis tellus.
+
+## Tentative topics
+
+| Week | Lecture topics | Lab topics |
+|------|----------------|------------|
+| 1    | Topics         | Topics     |
+| 2    | Topics         | Topics     |
+| 3    | Topics         | Topics     |
+| 4    | Topics         | Topics     |
+| 5    | Topics         | Topics     |
+
+## Course requirements
+
+### Computing
+
+-   Minimum device requirements
+
+-   Software requirements
+
+-   Account requirements
+
+### Textbook
+
+-   Required textbook / information
+
+### Other requirements
+
+-   Anything else

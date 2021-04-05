@@ -1,0 +1,48 @@
+{
+  "articles": [
+    {
+      "path": "blog.html",
+      "title": "Blog",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-04-05T10:00:35-07:00"
+    },
+    {
+      "path": "index.html",
+      "title": "EDS 123: An optional course template",
+      "description": "A minimal website skeleton and theme for MEDS course with distill (by RStudio)",
+      "author": [],
+      "contents": "\n\nContents\nCourse description\nTeaching team\nImportant links\nWeekly course schedule\nLearning objectives\nTentative topics\nCourse requirements\nComputing\nTextbook\nOther requirements\n\n\nCourse description\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nTeaching team\nInstructor: Mike Wazowski (wazowski@monstersinc.org)\nOffice: Closet 100\nOffice hours: Friday 9pm - 11pm\nTeaching assistant: Boo (boo@monstersinc.org)\nOffice: Boo’s Room\nOffice hours: Saturday 7am - 8am\nImportant links\nLink to full course syllabus\nLink to Code of Conduct\nWeekly course schedule\nLectures: MW 8am - 9:15am (Warehouse Room 1)\nLabs: Th 10am - 12pm (Warehouse Room 2)\nLearning objectives\nCondimentum id venenatis a condimentum. Ultricies mi quis hendrerit dolor magna eget est. Turpis egestas maecenas pharetra convallis. Sem nulla pharetra diam sit amet. Diam volutpat commodo sed egestas egestas fringilla. Mauris in aliquam sem fringilla ut morbi tincidunt augue interdum. Ornare massa eget egestas purus viverra accumsan in.\nVulputate eu scelerisque felis imperdiet proin.\nEuismod nisi porta lorem mollis aliquam.\nUrna molestie at elementum eu facilisis sed odio morbi quis.\nConvallis a cras semper auctor neque. Semper quis lectus nulla at volutpat diam ut venenatis tellus.\nTentative topics\nWeek\nLecture topics\nLab topics\n1\nTopics\nTopics\n2\nTopics\nTopics\n3\nTopics\nTopics\n4\nTopics\nTopics\n5\nTopics\nTopics\nCourse requirements\nComputing\nMinimum device requirements\nSoftware requirements\nAccount requirements\nTextbook\nRequired textbook / information\nOther requirements\nAnything else\n\n\n\n",
+      "last_modified": "2021-04-05T10:00:38-07:00"
+    },
+    {
+      "path": "resources.html",
+      "title": "Course resources",
+      "author": [],
+      "contents": "\n\nContents\nGetting started with distill\nAdditional resources\n\nGetting started with distill\nRStudio’s distill website\nInspiration and examples from the distillery\nAdditional resources\nResource\nResource\n\n\n\n",
+      "last_modified": "2021-04-05T10:00:39-07:00"
+    },
+    {
+      "path": "week_1.html",
+      "title": "Week 1",
+      "author": [],
+      "contents": "\nSome Week 1 materials here…\n\n\n\n",
+      "last_modified": "2021-04-05T10:00:39-07:00"
+    },
+    {
+      "path": "week_2.html",
+      "title": "Week 2",
+      "author": [],
+      "contents": "\nWeek 2 materials…\n\n\n\n",
+      "last_modified": "2021-04-05T10:00:40-07:00"
+    },
+    {
+      "path": "week_3.html",
+      "title": "Week 3",
+      "author": [],
+      "contents": "\nWeek 3 materials…\n\n\n\n",
+      "last_modified": "2021-04-05T10:00:40-07:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}

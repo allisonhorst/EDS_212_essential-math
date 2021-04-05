@@ -1,0 +1,17 @@
+---
+title: "Course resources"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Getting started with `distill`
+
+-   RStudio's [`distill` website](https://rstudio.github.io/distill/)
+-   Inspiration and examples from the [distillery](https://distillery.rbind.io/showcase.html)
+
+### Additional resources
+
+-   Resource
+-   Resource
