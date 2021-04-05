@@ -1,6 +1,6 @@
 ---
-title: "EDS 123: An optional course template"
-description: "A minimal website skeleton and theme for MEDS course with distill (by RStudio)"
+title: "EDS 212: Essential Math in Environmental Data Science"
+description: "Course materials for EDS 212"
 site: distill::distill_website
 ---
 
@@ -16,66 +16,59 @@ library(kableExtra)
 
 ```
 
-## Course description
+## Instructor
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-## Teaching team
-
-**Instructor:** Mike Wazowski (wazowski\@monstersinc.org)
-
--   **Office:** Closet 100
--   **Office hours:** Friday 9pm - 11pm
-
-**Teaching assistant:** Boo (boo\@monstersinc.org)
-
--   **Office:** Boo's Room
--   **Office hours:** Saturday 7am - 8am
+Allison Horst (ahorst\@ucsb.edu)
 
 ## Important links
 
--   Link to full course syllabus
+-   [Course syllabus](https://docs.google.com/document/d/1Kcc9BhZuKeAGxQeW0ls7KY0oUtt-TBwEgOibl4_ShtY/edit?usp=sharing)
+-   EDS Course Workbook
+-   Code of Conduct
 
--   Link to Code of Conduct
+## Course description
 
-## Weekly course schedule
+Quantitative skills and understanding are critical when working with, understanding, analyzing and gleaning insights from environmental data. In the intensive EDS 212 course, students will refresh fundamental skills in basic math (algebra, uni- and multivariate functions, units and unit conversions), derivative and integral calculus, differential equations, linear algebra, and reading, writing and evaluating logical operations.
 
--   **Lectures:** MW 8am - 9:15am (Warehouse Room 1)
--   **Labs:** Th 10am - 12pm (Warehouse Room 2)
+## Predictable daily schedule
+
+**Course dates:** Monday (2021-08-02) - Friday (2021-08-06)
+
+EDS 212 is an intensive 1-week long 2-unit course. Students should plan to attend all scheduled sessions. All course requirements will be completed between 8am and 5pm PST (M - F), i.e. you are not expected to do additional work for EDS 212 outside of those hours, unless you are working with the Teaching Assistant in student hours.
+
+Tentative daily schedule (subject to change):
+
+|                   |                                                            |
+|-------------------|------------------------------------------------------------|
+| **Time (PST)**    | **Activity**                                               |
+| 8:00am - 9:00am   | *Lecture 1 (60 min)*                                       |
+| 9:00am - 9:15am   | *Break 1 (15 min)*                                         |
+| 9:15am - 10:15am  | *Interactive Session 1 (60 min)*                           |
+| 10:15am - 11:00am | *Flex time (45 min)*                                       |
+| 11:00am - 12:15pm | *Break 2 (75 min)*                                         |
+| 12:15pm - 1:15pm  | *Lecture 2 (60 min)*                                       |
+| 1:15pm - 2:15pm   | *Interactive Session 2 (60 min)*                           |
+| 2:15pm - 3:15pm   | *Flex time (60 min)*                                       |
+| 3:15pm - 5:00pm   | *Interactive Session 3: Group & challenge tasks (105 min)* |
 
 ## Learning objectives
 
-Condimentum id venenatis a condimentum. Ultricies mi quis hendrerit dolor magna eget est. Turpis egestas maecenas pharetra convallis. Sem nulla pharetra diam sit amet. Diam volutpat commodo sed egestas egestas fringilla. Mauris in aliquam sem fringilla ut morbi tincidunt augue interdum. Ornare massa eget egestas purus viverra accumsan in.
+The goal of EDS 212 (Essential Math in Environmental Data Science) is to prepare incoming MEDS students with quantitative methods, skills, notation and language commonly used in environmental data science and required for their data science courses and projects in the program. By the end of the course, students should be able to: 
 
--   Vulputate eu scelerisque felis imperdiet proin.
--   Euismod nisi porta lorem mollis aliquam.
--   Urna molestie at elementum eu facilisis sed odio morbi quis.
--   Convallis a cras semper auctor neque. Semper quis lectus nulla at volutpat diam ut venenatis tellus.
+-   **Perform the following by hand and in R:** convert units, basic algebra and working with logs and exponentials; write, interpret and evaluate univariate and multivariate functions; basic derivatives and integrals with univariate and multivariate functions; solve simple differential equations; basic operations with scalars, vectors and matrices; writing and evaluating logicals
 
-## Tentative topics
+-   **Explain and share examples** for how all topics in EDS 212 are useful and used in applied environmental data science
 
-| Week | Lecture topics | Lab topics |
-|------|----------------|------------|
-| 1    | Topics         | Topics     |
-| 2    | Topics         | Topics     |
-| 3    | Topics         | Topics     |
-| 4    | Topics         | Topics     |
-| 5    | Topics         | Topics     |
+-   **Interpret** examples of applied math & models from environmental science case studies 
+
+-   **Work with peers** to solve group tasks, then **communicate** the process of problem solving to the rest of the class
 
 ## Course requirements
 
 ### Computing
 
--   Minimum device requirements
+-   Minimum MEDS device requirements (bring to all sessions)
 
--   Software requirements
+-   R version 4.0.2 (or higher)
 
--   Account requirements
-
-### Textbook
-
--   Required textbook / information
-
-### Other requirements
-
--   Anything else
+-   RStudio version 1.4.1103 (or higher)

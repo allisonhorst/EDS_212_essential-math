@@ -85,29 +85,29 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>EDS 123: EDS 123: An optional course template</title>
+  <title>EDS 123: EDS 212: Essential Math in Environmental Data Science</title>
 
-  <meta property="description" itemprop="description" content="A minimal website skeleton and theme for MEDS course with distill (by RStudio)"/>
+  <meta property="description" itemprop="description" content="Course materials for EDS 212"/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="EDS 123: EDS 123: An optional course template"/>
+  <meta property="og:title" content="EDS 123: EDS 212: Essential Math in Environmental Data Science"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="A minimal website skeleton and theme for MEDS course with distill (by RStudio)"/>
+  <meta property="og:description" content="Course materials for EDS 212"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="EDS 123"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="EDS 123: EDS 123: An optional course template"/>
-  <meta property="twitter:description" content="A minimal website skeleton and theme for MEDS course with distill (by RStudio)"/>
+  <meta property="twitter:title" content="EDS 123: EDS 212: Essential Math in Environmental Data Science"/>
+  <meta property="twitter:description" content="Course materials for EDS 212"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["EDS 123: An optional course template"]},{"type":"character","attributes":{},"value":["A minimal website skeleton and theme for MEDS course with distill (by RStudio)"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["EDS 212: Essential Math in Environmental Data Science"]},{"type":"character","attributes":{},"value":["Course materials for EDS 212"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2218,16 +2218,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     font-style: bold;
   }
 
-  a, .nav-dropdown .nav-dropbtn {
+  /*a, .nav-dropdown .nav-dropbtn {
     font-weight: 500;
-  }
+  }*/
 
   /* Set colors for headers */
   d-article h1, d-article h2, d-article h3, d-article h4, d-article h5, d-article h6 {
       color: rgba(4, 124, 145, 0.8);
   }
 
-  /* Formatting tables (can update here or individually) */
+  /* Formatting tables (can update here or individually)
   table, td, tr, th {
     border-collapse: collapse;
     font-family: Nunito Sans;
@@ -2237,10 +2237,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   code {
     font-family: Roboto Mono;
-  }
+  }*/
 
   .distill-site-header a, .distill-site-header .title {
-      display: inline-block;
       text-align: left;
       padding: 14px 14px 14px 14px;
   }
@@ -2254,7 +2253,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
 
   /* Update toc list font */
-  .d-contents nav ul li {
+  .d-contents nav li {
       font-size: 20px;
   }</style>
   <style type="text/css">
@@ -2432,7 +2431,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"EDS 123: An optional course template","description":"A minimal website skeleton and theme for MEDS course with distill (by RStudio)","authors":[]}
+{"title":"EDS 212: Essential Math in Environmental Data Science","description":"Course materials for EDS 212","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2447,18 +2446,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <a href="index.html">Home</a>
 <div class="nav-dropdown">
 <button class="nav-dropbtn">
-Weekly materials
+Daily materials
  
 <span class="down-arrow">&#x25BE;</span>
 </button>
 <div class="nav-dropdown-content">
-<a href="week_1.html">Week 1</a>
-<a href="week_2.html">Week 2</a>
-<a href="week_3.html">Week 3</a>
+<a href="day_1.html">Day 1: Algebra &amp; basics review</a>
+<a href="day_2.html">Day 2: Derivatives</a>
+<a href="day_3.html">Day 3: Integrals</a>
+<a href="day_4.html">Day 4: Differential equations</a>
+<a href="day_5.html">Day 5: Linear &amp; Boolean algebra</a>
 </div>
 </div>
-<a href="resources.html">Resources</a>
-<a href="blog.html">Blog</a>
+<a href="resources.html">Additional resources</a>
 <a href="https://github.com/allisonhorst/meds-distill-template">
 <i class="fab fa-github" aria-hidden="true"></i>
 </a>
@@ -2471,10 +2471,10 @@ Weekly materials
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>EDS 123: An optional course template</h1>
+<h1>EDS 212: Essential Math in Environmental Data Science</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p>A minimal website skeleton and theme for MEDS course with distill (by RStudio)</p>
+<p>Course materials for EDS 212</p>
 </div>
 
 
@@ -2483,103 +2483,90 @@ Weekly materials
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#course-description">Course description</a></li>
-<li><a href="#teaching-team">Teaching team</a></li>
+<li><a href="#instructor">Instructor</a></li>
 <li><a href="#important-links">Important links</a></li>
-<li><a href="#weekly-course-schedule">Weekly course schedule</a></li>
+<li><a href="#course-description">Course description</a></li>
+<li><a href="#predictable-daily-schedule">Predictable daily schedule</a></li>
 <li><a href="#learning-objectives">Learning objectives</a></li>
-<li><a href="#tentative-topics">Tentative topics</a></li>
 <li><a href="#course-requirements">Course requirements</a>
 <ul>
 <li><a href="#computing">Computing</a></li>
-<li><a href="#textbook">Textbook</a></li>
-<li><a href="#other-requirements">Other requirements</a></li>
 </ul></li>
 </ul>
 </nav>
 </div>
-<h2 id="course-description">Course description</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<h2 id="teaching-team">Teaching team</h2>
-<p><strong>Instructor:</strong> Mike Wazowski (wazowski@monstersinc.org)</p>
-<ul>
-<li><strong>Office:</strong> Closet 100</li>
-<li><strong>Office hours:</strong> Friday 9pm - 11pm</li>
-</ul>
-<p><strong>Teaching assistant:</strong> Boo (boo@monstersinc.org)</p>
-<ul>
-<li><strong>Office:</strong> Boo’s Room</li>
-<li><strong>Office hours:</strong> Saturday 7am - 8am</li>
-</ul>
+<h2 id="instructor">Instructor</h2>
+<p>Allison Horst (ahorst@ucsb.edu)</p>
 <h2 id="important-links">Important links</h2>
 <ul>
-<li><p>Link to full course syllabus</p></li>
-<li><p>Link to Code of Conduct</p></li>
+<li><a href="https://docs.google.com/document/d/1Kcc9BhZuKeAGxQeW0ls7KY0oUtt-TBwEgOibl4_ShtY/edit?usp=sharing">Course syllabus</a></li>
+<li>EDS Course Workbook</li>
+<li>Code of Conduct</li>
 </ul>
-<h2 id="weekly-course-schedule">Weekly course schedule</h2>
-<ul>
-<li><strong>Lectures:</strong> MW 8am - 9:15am (Warehouse Room 1)</li>
-<li><strong>Labs:</strong> Th 10am - 12pm (Warehouse Room 2)</li>
-</ul>
-<h2 id="learning-objectives">Learning objectives</h2>
-<p>Condimentum id venenatis a condimentum. Ultricies mi quis hendrerit dolor magna eget est. Turpis egestas maecenas pharetra convallis. Sem nulla pharetra diam sit amet. Diam volutpat commodo sed egestas egestas fringilla. Mauris in aliquam sem fringilla ut morbi tincidunt augue interdum. Ornare massa eget egestas purus viverra accumsan in.</p>
-<ul>
-<li>Vulputate eu scelerisque felis imperdiet proin.</li>
-<li>Euismod nisi porta lorem mollis aliquam.</li>
-<li>Urna molestie at elementum eu facilisis sed odio morbi quis.</li>
-<li>Convallis a cras semper auctor neque. Semper quis lectus nulla at volutpat diam ut venenatis tellus.</li>
-</ul>
-<h2 id="tentative-topics">Tentative topics</h2>
+<h2 id="course-description">Course description</h2>
+<p>Quantitative skills and understanding are critical when working with, understanding, analyzing and gleaning insights from environmental data. In the intensive EDS 212 course, students will refresh fundamental skills in basic math (algebra, uni- and multivariate functions, units and unit conversions), derivative and integral calculus, differential equations, linear algebra, and reading, writing and evaluating logical operations.</p>
+<h2 id="predictable-daily-schedule">Predictable daily schedule</h2>
+<p><strong>Course dates:</strong> Monday (2021-08-02) - Friday (2021-08-06)</p>
+<p>EDS 212 is an intensive 1-week long 2-unit course. Students should plan to attend all scheduled sessions. All course requirements will be completed between 8am and 5pm PST (M - F), i.e. you are not expected to do additional work for EDS 212 outside of those hours, unless you are working with the Teaching Assistant in student hours.</p>
+<p>Tentative daily schedule (subject to change):</p>
 <table>
-<thead>
-<tr class="header">
-<th>Week</th>
-<th>Lecture topics</th>
-<th>Lab topics</th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
-<td>1</td>
-<td>Topics</td>
-<td>Topics</td>
+<td><strong>Time (PST)</strong></td>
+<td><strong>Activity</strong></td>
 </tr>
 <tr class="even">
-<td>2</td>
-<td>Topics</td>
-<td>Topics</td>
+<td>8:00am - 9:00am</td>
+<td><em>Lecture 1 (60 min)</em></td>
 </tr>
 <tr class="odd">
-<td>3</td>
-<td>Topics</td>
-<td>Topics</td>
+<td>9:00am - 9:15am</td>
+<td><em>Break 1 (15 min)</em></td>
 </tr>
 <tr class="even">
-<td>4</td>
-<td>Topics</td>
-<td>Topics</td>
+<td>9:15am - 10:15am</td>
+<td><em>Interactive Session 1 (60 min)</em></td>
 </tr>
 <tr class="odd">
-<td>5</td>
-<td>Topics</td>
-<td>Topics</td>
+<td>10:15am - 11:00am</td>
+<td><em>Flex time (45 min)</em></td>
+</tr>
+<tr class="even">
+<td>11:00am - 12:15pm</td>
+<td><em>Break 2 (75 min)</em></td>
+</tr>
+<tr class="odd">
+<td>12:15pm - 1:15pm</td>
+<td><em>Lecture 2 (60 min)</em></td>
+</tr>
+<tr class="even">
+<td>1:15pm - 2:15pm</td>
+<td><em>Interactive Session 2 (60 min)</em></td>
+</tr>
+<tr class="odd">
+<td>2:15pm - 3:15pm</td>
+<td><em>Flex time (60 min)</em></td>
+</tr>
+<tr class="even">
+<td>3:15pm - 5:00pm</td>
+<td><em>Interactive Session 3: Group &amp; challenge tasks (105 min)</em></td>
 </tr>
 </tbody>
 </table>
+<h2 id="learning-objectives">Learning objectives</h2>
+<p>The goal of EDS 212 (Essential Math in Environmental Data Science) is to prepare incoming MEDS students with quantitative methods, skills, notation and language commonly used in environmental data science and required for their data science courses and projects in the program. By the end of the course, students should be able to: </p>
+<ul>
+<li><p><strong>Perform the following by hand and in R:</strong> convert units, basic algebra and working with logs and exponentials; write, interpret and evaluate univariate and multivariate functions; basic derivatives and integrals with univariate and multivariate functions; solve simple differential equations; basic operations with scalars, vectors and matrices; writing and evaluating logicals</p></li>
+<li><p><strong>Explain and share examples</strong> for how all topics in EDS 212 are useful and used in applied environmental data science</p></li>
+<li><p><strong>Interpret</strong> examples of applied math &amp; models from environmental science case studies </p></li>
+<li><p><strong>Work with peers</strong> to solve group tasks, then <strong>communicate</strong> the process of problem solving to the rest of the class</p></li>
+</ul>
 <h2 id="course-requirements">Course requirements</h2>
 <h3 id="computing">Computing</h3>
 <ul>
-<li><p>Minimum device requirements</p></li>
-<li><p>Software requirements</p></li>
-<li><p>Account requirements</p></li>
-</ul>
-<h3 id="textbook">Textbook</h3>
-<ul>
-<li>Required textbook / information</li>
-</ul>
-<h3 id="other-requirements">Other requirements</h3>
-<ul>
-<li>Anything else</li>
+<li><p>Minimum MEDS device requirements (bring to all sessions)</p></li>
+<li><p>R version 4.0.2 (or higher)</p></li>
+<li><p>RStudio version 1.4.1103 (or higher)</p></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->

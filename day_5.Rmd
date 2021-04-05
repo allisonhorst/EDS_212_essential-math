@@ -1,0 +1,11 @@
+---
+title: "Day 5: Linear and boolean algebra"
+description: |
+  Review of linear algebra basics, introduction to boolean algebra, and thinking like a computer
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Day 5 materials

@@ -1,0 +1,11 @@
+---
+title: "Day 4: Differential equations"
+description: |
+  Interpreting, writing, solving (basic) and using differential equations in EDS. 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Day 4 materials

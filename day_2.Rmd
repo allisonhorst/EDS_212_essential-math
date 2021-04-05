@@ -1,0 +1,11 @@
+---
+title: "Day 2: Derivatives"
+description: |
+  Definition of the derivative, basic rules, applications, interpretation, examples in EDS
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Day 2 materials...

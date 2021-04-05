@@ -1,0 +1,11 @@
+---
+title: "Day 1: Basic math review"
+description: |
+  Algebra review, unit conversions, interpreting graphs, univariate and multivariate functions, exponentials and logarithms
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+

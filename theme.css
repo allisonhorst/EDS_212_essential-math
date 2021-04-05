@@ -104,16 +104,16 @@ a.title {
   font-style: bold;
 }
 
-a, .nav-dropdown .nav-dropbtn {
+/*a, .nav-dropdown .nav-dropbtn {
   font-weight: 500;
-}
+}*/
 
 /* Set colors for headers */
 d-article h1, d-article h2, d-article h3, d-article h4, d-article h5, d-article h6 {
     color: rgba(4, 124, 145, 0.8);
 }
 
-/* Formatting tables (can update here or individually) */
+/* Formatting tables (can update here or individually)
 table, td, tr, th {
   border-collapse: collapse;
   font-family: Nunito Sans;
@@ -123,10 +123,9 @@ table, td, tr, th {
 
 code {
   font-family: Roboto Mono;
-}
+}*/
 
 .distill-site-header a, .distill-site-header .title {
-    display: inline-block;
     text-align: left;
     padding: 14px 14px 14px 14px;
 }
@@ -140,6 +139,6 @@ d-title h1 {
 }
 
 /* Update toc list font */
-.d-contents nav ul li {
+.d-contents nav li {
     font-size: 20px;
 }

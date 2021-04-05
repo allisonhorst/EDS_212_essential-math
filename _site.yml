@@ -7,18 +7,20 @@ navbar:
   right:
     - text: "Home"
       href: index.html
-    - text: "Weekly materials"
+    - text: "Daily materials"
       menu:
-        - text: "Week 1"
-          href: week_1.html
-        - text: "Week 2"
-          href: week_2.html
-        - text: "Week 3"
-          href: week_3.html
-    - text: "Resources"
+        - text: "Day 1: Algebra & basics review"
+          href: day_1.html
+        - text: "Day 2: Derivatives"
+          href: day_2.html
+        - text: "Day 3: Integrals"
+          href: day_3.html
+        - text: "Day 4: Differential equations"
+          href: day_4.html
+        - text: "Day 5: Linear & Boolean algebra"
+          href: day_5.html
+    - text: "Additional resources"
       href: resources.html
-    - text: "Blog"
-      href: blog.html
     - icon: fab fa-github
       href: https://github.com/allisonhorst/meds-distill-template
 output:

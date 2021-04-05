@@ -1,0 +1,11 @@
+---
+title: "Day 3: Integration"
+description: |
+  Integration, meaning, basic rules, applications, examples in EDS
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
