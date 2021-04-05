@@ -1,7 +1,7 @@
 name: "meds-distill-template"
-title: "EDS 123"
+title: "EDS 212"
 description: |
-  MEDS Courses distill template
+  Essential Math in Environmental Data Science
 output_dir: "docs"
 navbar:
   right:
