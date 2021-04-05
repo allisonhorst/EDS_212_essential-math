@@ -22,7 +22,7 @@ navbar:
     - text: "Additional resources"
       href: resources.html
     - icon: fab fa-github
-      href: https://github.com/allisonhorst/meds-distill-template
+      href: https://github.com/allisonhorst/EDS_212_essential-math
 output:
   distill::distill_article:
     toc: true
