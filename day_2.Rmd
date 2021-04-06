@@ -13,6 +13,7 @@ Day 2 slides
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
   url = "https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-2-slides.html",
-  ratio = "16:9"
+  ratio = "16:9",
+  border = "1px solid #047C91"
 )
 ```
