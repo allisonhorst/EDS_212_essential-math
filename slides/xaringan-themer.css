@@ -71,11 +71,18 @@ body {
   font-weight: 300;
   color: var(--text-color);
 }
-h1, h2, h3 {
+h1, h2 {
   font-family: var(--header-font-family), var(--header-font-family-fallback);
-  font-weight: 600;
+  font-weight: 450;
   color: var(--header-color);
 }
+
+h3 {
+  font-family: var(--header-font-family), var(--header-font-family-fallback);
+  font-weight: 450;
+  color: #047C91;
+}
+
 .remark-slide-content {
   background-color: var(--background-color);
   font-size: 26px;
@@ -124,7 +131,7 @@ a, a > code {
 .inverse {
   background-color: var(--inverse-background-color);
   color: var(--inverse-text-color);
-  
+
 }
 .inverse h1, .inverse h2, .inverse h3 {
   color: var(--inverse-header-color);

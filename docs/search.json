@@ -5,7 +5,7 @@
       "title": "Blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-04-05T20:48:24-07:00"
+      "last_modified": "2021-04-06T09:53:33-07:00"
     },
     {
       "path": "day_1.html",
@@ -13,7 +13,7 @@
       "description": "Algebra review, unit conversions, interpreting graphs, univariate and multivariate functions, exponentials and logarithms",
       "author": [],
       "contents": "\n\nContents\nDay 1 Slides\n\nDay 1 Slides\n\n\n\nfitvids('.shareagain', {players: 'iframe'});\n\n\n\n\n",
-      "last_modified": "2021-04-05T20:48:25-07:00"
+      "last_modified": "2021-04-06T09:53:35-07:00"
     },
     {
       "path": "day_2.html",
@@ -21,31 +21,31 @@
       "description": "Definition of the derivative, basic rules, applications, interpretation, examples in EDS",
       "author": [],
       "contents": "\nDay 2 slides\n\n\n\nfitvids('.shareagain', {players: 'iframe'});\n\n\n\n\n",
-      "last_modified": "2021-04-05T20:48:26-07:00"
+      "last_modified": "2021-04-06T09:53:35-07:00"
     },
     {
       "path": "day_3.html",
       "title": "Day 3: Integration",
       "description": "Integration, meaning, basic rules, applications, examples in EDS",
       "author": [],
-      "contents": "\n\n\n\n",
-      "last_modified": "2021-04-05T20:48:26-07:00"
+      "contents": "\nDay 3 slides\n\n\n\nfitvids('.shareagain', {players: 'iframe'});\n\n\n\n\n",
+      "last_modified": "2021-04-06T09:53:36-07:00"
     },
     {
       "path": "day_4.html",
       "title": "Day 4: Differential equations",
       "description": "Interpreting, writing, solving (basic) and using differential equations in EDS. ",
       "author": [],
-      "contents": "\nDay 4 materials\n\n\n\n",
-      "last_modified": "2021-04-05T20:48:27-07:00"
+      "contents": "\nDay 4 slides\n\n\n\nfitvids('.shareagain', {players: 'iframe'});\n\n\n\n\n",
+      "last_modified": "2021-04-06T09:53:36-07:00"
     },
     {
       "path": "day_5.html",
       "title": "Day 5: Linear and boolean algebra",
       "description": "Review of linear algebra basics, introduction to boolean algebra, and thinking like a computer",
       "author": [],
-      "contents": "\nDay 5 materials\n\n\n\n",
-      "last_modified": "2021-04-05T20:48:27-07:00"
+      "contents": "\nDay 5 slides\n\n\n\nfitvids('.shareagain', {players: 'iframe'});\n\n\n\n\n",
+      "last_modified": "2021-04-06T09:53:37-07:00"
     },
     {
       "path": "index.html",
@@ -53,14 +53,14 @@
       "description": "Course materials for EDS 212",
       "author": [],
       "contents": "\n\nContents\nInstructor\nImportant links\nCourse description\nPredictable daily schedule\nLearning objectives\nCourse requirements\nComputing\n\n\nInstructor\nAllison Horst (ahorst@ucsb.edu)\nImportant links\nCourse syllabus\nEDS Course Workbook\nCode of Conduct\nCourse description\nQuantitative skills and understanding are critical when working with, understanding, analyzing and gleaning insights from environmental data. In the intensive EDS 212 course, students will refresh fundamental skills in basic math (algebra, uni- and multivariate functions, units and unit conversions), derivative and integral calculus, differential equations, linear algebra, and reading, writing and evaluating logical operations.\nPredictable daily schedule\nCourse dates: Monday (2021-08-02) - Friday (2021-08-06)\nEDS 212 is an intensive 1-week long 2-unit course. Students should plan to attend all scheduled sessions. All course requirements will be completed between 8am and 5pm PST (M - F), i.e. you are not expected to do additional work for EDS 212 outside of those hours, unless you are working with the Teaching Assistant in student hours.\nTentative daily schedule (subject to change):\nTime (PST)\nActivity\n8:00am - 9:00am\nLecture 1 (60 min)\n9:00am - 9:15am\nBreak 1 (15 min)\n9:15am - 10:15am\nInteractive Session 1 (60 min)\n10:15am - 11:00am\nFlex time (45 min)\n11:00am - 12:15pm\nBreak 2 (75 min)\n12:15pm - 1:15pm\nLecture 2 (60 min)\n1:15pm - 2:15pm\nInteractive Session 2 (60 min)\n2:15pm - 3:15pm\nFlex time (60 min)\n3:15pm - 5:00pm\nInteractive Session 3: Group & challenge tasks (105 min)\nLearning objectives\nThe goal of EDS 212 (Essential Math in Environmental Data Science) is to prepare incoming MEDS students with quantitative methods, skills, notation and language commonly used in environmental data science and required for their data science courses and projects in the program. By the end of the course, students should be able to: \nPerform the following by hand and in R: convert units, basic algebra and working with logs and exponentials; write, interpret and evaluate univariate and multivariate functions; basic derivatives and integrals with univariate and multivariate functions; solve simple differential equations; basic operations with scalars, vectors and matrices; writing and evaluating logicals\nExplain and share examples for how all topics in EDS 212 are useful and used in applied environmental data science\nInterpret examples of applied math & models from environmental science case studies \nWork with peers to solve group tasks, then communicate the process of problem solving to the rest of the class\nCourse requirements\nComputing\nMinimum MEDS device requirements (bring to all sessions)\nR version 4.0.2 (or higher)\nRStudio version 1.4.1103 (or higher)\n\n\n\n",
-      "last_modified": "2021-04-05T20:48:29-07:00"
+      "last_modified": "2021-04-06T09:53:38-07:00"
     },
     {
       "path": "resources.html",
       "title": "Additional EDS 212 resources",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-04-05T20:48:29-07:00"
+      "last_modified": "2021-04-06T09:53:39-07:00"
     }
   ],
   "collections": ["posts/posts.json"]

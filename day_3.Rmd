@@ -8,4 +8,12 @@ description: |
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+Day 3 slides
 
+```{r, echo = FALSE}
+xaringanExtra::embed_xaringan(
+  url = "https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-3-slides.html",
+  ratio = "16:9",
+  border = "1px solid gray"
+)
+```

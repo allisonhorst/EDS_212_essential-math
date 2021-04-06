@@ -12,22 +12,6 @@ output:
     css: xaringan-themer.css
 ---
 
-```{r xaringan-themer, include=FALSE, warning=FALSE}
-library(xaringanthemer)
-style_mono_accent(
-  base_color = "#003660",
-  header_font_google = google_font("Sanchez"),
-  text_font_google   = google_font("Nunito Sans", "300", "300i"),
-  code_font_google   = google_font("Roboto Mono"),
-  base_font_size = "18px",
-  text_font_size = "26px",
-  table_border_color = "#ffffff",
-  table_row_border_color = "#ffffff",
-  table_row_even_background_color = "ffffff",
-  text_slide_number_font_size = "0.7em",
-)
-```
-
 ## Welcome to EDS 212 - Essential Math in Environmental Data Science
 
 - **Teacher:** Allison Horst (ahorst@ucsb.edu)
@@ -63,11 +47,11 @@ style_mono_accent(
 
 ## Topics overview
 
-### Day 1: Course introduction & math basics refresher
-### Day 2: Derivatives
-### Day 3: Integrals
-### Day 4: Differential equations
-### Day 5: Linear and Boolean algebra
+- **Day 1:** Course introduction & math basics refresher
+- **Day 2:** Derivatives
+- **Day 3:** Integrals
+- **Day 4:** Differential equations
+- **Day 5:** Linear and Boolean algebra
 
 ---
 
@@ -81,20 +65,26 @@ class: center, middle
 
 ## A quantitative brain warm-up
 
-### Diverse work & academic histories
+### MEDS students have diverse work & academic histories
+
+What was a focus of your education or work for some may not have been included in someone else's curriculum or training. This course re/introduces math concepts and tools that: 
 
 - Focus on applications to environmental data science
-- Specifically relevant for MEDS projects, coursework
-- Start building computational skills & get used to some tools
+- Are specifically relevant for MEDS projects, coursework
+- Provide an entryway into building computational skills
 
-### Even short gaps = stale brains
+--
 
-- Refresh quantitative thinking skills
-- Refresh math essentials like units, unit conversions, gut checks, orders of magnitude, notation, language, and more
+### Short gaps in math use = quickly stale brains
+
+- Refresh quantitative thinking skills generally
+- Refresh essentials like units, conversions, notation, language, & more
 
 ---
 
-## Essential math in environmental data science
+## Math in environmental data science
+
+
 
 
 
