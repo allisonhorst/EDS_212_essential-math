@@ -14,6 +14,6 @@ Day 5 slides
 xaringanExtra::embed_xaringan(
   url = "https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-5-slides.html",
   ratio = "16:9",
-  border = "1px solid gray"
+  border = "1px solid gainsboro"
 )
 ```
