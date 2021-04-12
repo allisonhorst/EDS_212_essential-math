@@ -1,18 +1,28 @@
 ---
-title: "Day 3: Integration"
+title: "Day 3: Differential equations, intro to linear algebra"
 description: |
-  Integration, meaning, basic rules, applications, examples in EDS
+  Differential equations, using them, integration concepts & basics
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Day 3 slides
+Day 3 Part 1:
 
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
-  url = "https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-3-slides.html",
+  url = "https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-3-part-1-slides.html",
+  ratio = "16:9",
+  border = "1px solid gainsboro"
+)
+```
+
+Day 3 Part 2:
+
+```{r, echo = FALSE}
+xaringanExtra::embed_xaringan(
+  url = "https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-3-part-2-slides.html",
   ratio = "16:9",
   border = "1px solid gainsboro"
 )

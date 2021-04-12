@@ -8,12 +8,22 @@ description: |
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Day 1 Slides
+## Day 1 Part 1
 
 
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
-  url = "https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-1-slides.html",
+  url = "https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-1-part-1-slides.html",
+  ratio = "16:9",
+  border = "1px solid gainsboro"
+)
+```
+
+## Day 2 Part 2
+
+```{r, echo = FALSE}
+xaringanExtra::embed_xaringan(
+  url = "https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-1-part-2-slides.html",
   ratio = "16:9",
   border = "1px solid gainsboro"
 )

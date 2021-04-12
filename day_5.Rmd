@@ -1,5 +1,5 @@
 ---
-title: "Day 5: Linear and boolean algebra"
+title: "Day 5: Basic probability theory and Boolean algebra"
 description: |
   Review of linear algebra basics, introduction to boolean algebra, and thinking like a computer
 ---
@@ -8,11 +8,21 @@ description: |
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Day 5 slides
+Day 5 Part 1:
 
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
-  url = "https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-5-slides.html",
+  url = "https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-5-part-1-slides.html",
+  ratio = "16:9",
+  border = "1px solid gainsboro"
+)
+```
+
+Day 5 Part 2:
+
+```{r, echo = FALSE}
+xaringanExtra::embed_xaringan(
+  url = "https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-5-part-2-slides.html",
   ratio = "16:9",
   border = "1px solid gainsboro"
 )

@@ -1,5 +1,5 @@
 ---
-title: "Day 4: Differential equations"
+title: "Day 4: Linear algebra and summary statistics"
 description: |
   Interpreting, writing, solving (basic) and using differential equations in EDS. 
 ---
@@ -8,11 +8,21 @@ description: |
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Day 4 slides
+Day 4 Part 1:
 
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
-  url = "https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-4-slides.html",
+  url = "https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-4-part-1-slides.html",
+  ratio = "16:9",
+  border = "1px solid gainsboro"
+)
+```
+
+Day 4 Part 2:
+
+```{r, echo = FALSE}
+xaringanExtra::embed_xaringan(
+  url = "https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-4-part-2-slides.html",
   ratio = "16:9",
   border = "1px solid gainsboro"
 )

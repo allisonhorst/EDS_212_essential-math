@@ -1,0 +1,22 @@
+---
+title: "EDS 212"
+subtitle: "Day 4 - Essential summary statistics"  
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+## Part 1: Linear algebra continued
+
+---
+
+## Applications of linear algebra in environmental data science
+
+--- 
+

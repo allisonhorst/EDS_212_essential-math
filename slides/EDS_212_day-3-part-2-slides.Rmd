@@ -1,0 +1,25 @@
+---
+title: "EDS 212"
+subtitle: "Day 3 Part 2 - Linear algebra basics"  
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+## Linear algebra introduction
+
+---
+
+## Data science vocabulary for the day
+
+- Reproducibility
+
+
+
+

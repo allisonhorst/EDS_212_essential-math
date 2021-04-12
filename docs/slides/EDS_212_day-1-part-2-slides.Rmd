@@ -1,0 +1,158 @@
+---
+title: "EDS 212 - Essential Math in Environmental Data Science"
+subtitle: "Day 1 Part 2: Exponents, logs, graphs, slopes"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+    css: xaringan-themer.css
+---
+
+---
+
+class: center, middle
+
+# Natural exponential, logarithms, graphs, slope
+
+---
+
+## The Natural Exponential
+
+In previous examples, we evaluated exponentials with different bases that were variables (e.g. $x^5$) and rational numbers (e.g. $2^4$). 
+
+Here, we'll learn about the *natural exponential*, $e$, which appears frequently in environmental science and modeling.
+
+### First: $e$ is a number, not a variable: 2.71828182845904523536...
+
+It is an irrational number, yes - meaning it can't be expressed by a simple ratio of integers - but a number nonetheless. With infinite decimal places.
+
+It is always the same value.
+
+---
+
+## Where does $e$ come from?
+
+
+- The value is from continuous compounding over infinite intervals: $e=\lim_{n\to\infty}(1+\frac{1}{n})^n$
+
+- The **e** is from Leonard **Euler**, Swiss mathematician who proved the value was irrational
+
+## Why is it so common?
+
+- Exponential trends are everywhere
+
+- Turns out it's very useful in calculus (keep this in mind...) 
+
+---
+
+## Exponential growth & decay graphs
+
+---
+
+## Logarithms
+
+Logarithms ask a question: $\log_a(b)$ asks "to what power do I have to raise $a$ to get a value of $b$?
+
+For example: 
+
+- $\log_2(8)$ asks "to what power do I have to raise 2, to get a value of 8?"
+
+- $\log_3(100)$ asks "to what power do I have to raise 3, to get a value of 100?"
+
+- $\log_x(x^{5.9})$ asks "to what power do I have to raise $x$ to get a value of $x^{5.9}$?"
+
+- $\log_{banana}(banana^{1382.95})$ asks "to what power do I have to raise $banana$ to get a value of $banana^{1382.95}$?"
+
+---
+
+## Some log rules
+
+- $\log_x(AB)=\log_x(A)+\log_x(B)$
+
+- $\log_x(\frac{A}{B}) = \log_x(A)-\log_x(B)$
+
+- $\log_x(A^B)=B\log_x(A)$
+
+- $x^{\log_x(A)}=A$
+
+- $\log_x(1)=0$
+
+- $\log_x(x)= 1$
+
+---
+
+## The *natural log* = "log base $e$" = $\log_e()$ = $ln()$
+
+So based on what we learned in the previous slide, what is:
+
+- $\log_e(e^{10.4})$ = ?
+
+- $\log_e(e^{2x+8.3})$ = ?
+
+- $\log_e(e^{ax+2b^2-4.095})$ = ?
+
+---
+
+## Critical thinking questions
+
+  1. Can the value within a $ln()$ expression ever be 0, or negative? Why?
+  
+  2. Can the solution to a natural log expression ever be negative? How?
+
+---
+
+## Working with $ln()$ and $e$ in equations
+
+We can think of these as inverses of each other:
+
+- $e^{\ln(x)} = x$
+
+- $\ln(e^x)=x$
+
+--
+
+...and use that as a tool for escaping variables from exponents & logs (remembering we can do whatever we want to an equation, as long as we do **the same exact thing to both sides**):
+
+- Find $x$ given $\ln(x) = 5$
+
+  Exponentiate both sides: $e^{\ln(x)} = e^5$ ; simplify LHS to get: $x = e^5$
+
+- Find $y$ given $e^{3y}=95$
+
+  Take natural log of both sides: $\ln(e^{3y})=ln(95)$ ; simplifies to: $3y = \ln(95)$, so $y = \frac{\ln(95)}{3}$
+
+---
+
+## An example of an exponential growth model? 
+
+---
+
+## Graphs: visualizing & thinking about data
+
+---
+
+## Slope (average)
+
+---
+
+## Turns out a lot of things in environmental science are described by *rates*
+
+---
+
+## Data science vocabulary for the day
+
+- Toolchain
+
+- Back & front end
+
+- Edge case
+
+- Bork
+
+
+
+

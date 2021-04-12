@@ -1,0 +1,43 @@
+---
+title: "EDS 212"
+subtitle: "Day 3 Part 1: Differential equations - reading, understanding, solving numerically in R"  
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+class: center, middle
+# Day 3: Differential equations
+
+---
+
+## Introduction to differential equations
+
+---
+
+## Reading and interpreting differential equations
+
+---
+
+## Other examples in Ecology / Environmental science
+
+---
+
+## Integration to solve ODEs
+
+---
+
+## Solving differential equations in R
+
+### Numerical solutions versus analytical solutions
+
+---
+
+
+
