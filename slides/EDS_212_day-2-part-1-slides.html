@@ -3,7 +3,7 @@
   <head>
     <title>EDS 212</title>
     <meta charset="utf-8" />
-    <script src="libs/header-attrs-2.7/header-attrs.js"></script>
+    <script src="libs/header-attrs/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -93,13 +93,14 @@ So we have some basic derivative shortcut rules to speed it up a bit:
 
 - **Sum and difference rule:** `\(\frac{d}{dx}(f(x)\pm g(x))=\frac{d}{dx} f(x)\pm \frac{d}{dx}g(x)\)`
 
-&lt;/br&gt;
-
-...Yeah there are more (quotient, product, chain, etc.) - but we're not doing them.
+Yeah there are more - we're not doing them.
 
 ---
 
-![](slide_images/derivative_9.jpg)
+**ALL** of those rules come from the definition of the derivative.
+
+&lt;img src="slide_images/derivative_9.jpg" width="70%" /&gt;
+
 ---
 class: center, middle
 
@@ -184,11 +185,13 @@ eval(dt_dy)
 ```
 
 ```
-##  [1] -1.293869e+00 -3.313644e-01 -4.534665e-02 -1.437122e-03  0.000000e+00
-##  [6]  1.442882e-03  4.682121e-02  3.691558e-01  1.671357e+00  5.718750e+00
-## [11]  1.673130e+01  4.460117e+01  1.119970e+02  2.692568e+02  6.240000e+02
-## [16]  1.397065e+03  3.023241e+03  6.324914e+03  1.279990e+04  2.508216e+04
-## [21]  4.765645e+04  8.793682e+04  1.578538e+05  2.761395e+05  4.715520e+05
+##  [1] -1.293869e+00 -3.313644e-01 -4.534665e-02 -1.437122e-03
+##  [5]  0.000000e+00  1.442882e-03  4.682121e-02  3.691558e-01
+##  [9]  1.671357e+00  5.718750e+00  1.673130e+01  4.460117e+01
+## [13]  1.119970e+02  2.692568e+02  6.240000e+02  1.397065e+03
+## [17]  3.023241e+03  6.324914e+03  1.279990e+04  2.508216e+04
+## [21]  4.765645e+04  8.793682e+04  1.578538e+05  2.761395e+05
+## [25]  4.715520e+05
 ```
 
 ---
@@ -219,7 +222,7 @@ eval(dt_dy)
 
 - **code snippet:** (noun)
 
-- **reprex:** (noun)
+- **reprex:** (noun) *A self-contained **repr**oducible **ex**ample (usually a minimum viable code example) useful in troubleshooting, asking for help, or providing examples to help others*
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

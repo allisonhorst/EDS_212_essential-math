@@ -89,13 +89,16 @@ So we have some basic derivative shortcut rules to speed it up a bit:
 
 - **Sum and difference rule:** $\frac{d}{dx}(f(x)\pm g(x))=\frac{d}{dx} f(x)\pm \frac{d}{dx}g(x)$
 
-</br>
-
-...Yeah there are more (quotient, product, chain, etc.) - but we're not doing them.
+Yeah there are more - we're not doing them.
 
 ---
 
-![](slide_images/derivative_9.jpg)
+**ALL** of those rules come from the definition of the derivative.
+
+```{r, echo = FALSE, out.width = "70%"}
+knitr::include_graphics("slide_images/derivative_9.jpg")
+```
+
 ---
 class: center, middle
 
@@ -200,4 +203,4 @@ eval(dt_dy)
 
 - **code snippet:** (noun)
 
-- **reprex:** (noun)
+- **reprex:** (noun) *A self-contained **repr**oducible **ex**ample (usually a minimum viable code example) useful in troubleshooting, asking for help, or providing examples to help others*

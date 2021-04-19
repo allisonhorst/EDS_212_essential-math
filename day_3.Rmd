@@ -8,7 +8,7 @@ description: |
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Day 3 Part 1:
+### Day 3 Part 1:
 
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
@@ -18,7 +18,11 @@ xaringanExtra::embed_xaringan(
 )
 ```
 
-Day 3 Part 2:
+### Day 3 Part 2: Basic linear algebra for data science
+
+**Additional recommended reading:**
+
+- [A gentle introduction to linear algebra](https://machinelearningmastery.com/gentle-introduction-linear-algebra/) by Jason Brownlee
 
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
@@ -27,3 +31,5 @@ xaringanExtra::embed_xaringan(
   border = "1px solid gainsboro"
 )
 ```
+
+

@@ -9,18 +9,16 @@ navbar:
       href: index.html
     - text: "Daily materials"
       menu:
-        - text: "Day 1: Algebra & basics review"
+        - text: "Day 1"
           href: day_1.html
-        - text: "Day 2: Derivatives"
+        - text: "Day 2"
           href: day_2.html
-        - text: "Day 3: Integrals"
+        - text: "Day 3"
           href: day_3.html
-        - text: "Day 4: Differential equations"
+        - text: "Day 4"
           href: day_4.html
-        - text: "Day 5: Linear & Boolean algebra"
+        - text: "Day 5"
           href: day_5.html
-    - text: "Additional resources"
-      href: resources.html
     - icon: fab fa-github
       href: https://github.com/allisonhorst/EDS_212_essential-math
 output:

@@ -14,6 +14,49 @@ output:
 
 ## Linear algebra introduction
 
+Linear algebra "branch of mathematics concerning linear equations" (Wikipedia), sometimes also described as the math of vectors & matrices. 
+
+It is a fundamental part of data science (and how computers understand & process data), and useful for describing environmental processes.
+
+---
+
+## The building blocks of linear algebra
+
+- scalar:
+
+- vector:
+
+- matrix: 
+
+---
+
+## Applications of linear algebra in data science
+
+- Array programming / vectorized code
+- Machine learning
+- For loops
+
+---
+
+## Applications of linear algebra in environmental sciences
+
+- Dimensional reduction
+- Population matrix models
+- 
+
+---
+
+## Basic math with scalars & vectors
+
+- Vector addition & subtraction
+- Scalar multiplication
+- Basic matrix algebra
+---
+
+## Expressing processes in vectors and matrices
+
+See: matrix population models
+
 ---
 
 ## Data science vocabulary for the day

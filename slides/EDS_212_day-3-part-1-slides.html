@@ -3,7 +3,7 @@
   <head>
     <title>EDS 212</title>
     <meta charset="utf-8" />
-    <script src="EDS_212_day-3-part-1-slides_files/header-attrs-2.7/header-attrs.js"></script>
+    <script src="EDS_212_day-3-part-1-slides_files/header-attrs/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -17,11 +17,50 @@ class: center, middle, inverse, title-slide
 
 
 class: center, middle
-# Day 3: Differential equations
+# EDS 212 Day 3
+
+## Part 1: Differential equations
 
 ---
 
 ## Introduction to differential equations
+
+A **differential equation** is an equation containing a differential expression
+
+For example: 
+
+`$$\frac{df}{dt}=3.2-f(t)$$`
+is a differential equation because it contains both a the function `\(f(t)\)` and it's derivative, `\(\frac{df}{dt}\)`.
+
+---
+
+## Differential equations: terms
+
+- **Ordinary differential equation (ODE):** Does not contain partial derivatives
+
+`$$\frac{df}{dt}=3.2-f(t)$$`
+
+- **Partial differential equations (PDE):** Does contain partial derivatives
+
+`$$\frac{\partial B}{\partial t}= \alpha B+0.31$$`
+---
+
+## Order of an ODE
+- **Order:** The order of a differential equation is the highest order for any differential expression in the equation 
+
+`$$\frac{df}{dt}=3.2-f(t)$$` is a **first order ODE** 
+
+---
+
+## Practice: Use the terms from the previous slide to describe the following different equations
+
+1. `\(\frac{\partial^2f }{\partial x^2}=1.4\times10^{-3}f(x)+5.2\)`
+
+2. `\(2.9t^2 - \alpha B=\frac{dB}{dt}\)`
+
+---
+
+## Differential equations in EDS
 
 ---
 
@@ -29,17 +68,21 @@ class: center, middle
 
 ---
 
-## Other examples in Ecology / Environmental science
+## More examples in environmental data science
 
 ---
 
-## Integration to solve ODEs
+## Integration - introduction
 
 ---
 
 ## Solving differential equations in R
 
 ### Numerical solutions versus analytical solutions
+
+---
+
+## An example in practice
 
 ---
 
@@ -170,3 +213,4 @@ slideshow._releaseMath(document);
 </script>
   </body>
 </html>
+ml>

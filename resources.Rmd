@@ -1,7 +1,0 @@
----
-title: "Additional EDS 212 resources"
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```

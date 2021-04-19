@@ -3,7 +3,7 @@
   <head>
     <title>EDS 212 - Essential Math in Environmental Data Science</title>
     <meta charset="utf-8" />
-    <script src="libs/header-attrs-2.7/header-attrs.js"></script>
+    <script src="libs/header-attrs/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -11,18 +11,10 @@
 class: center, middle, inverse, title-slide
 
 # EDS 212 - Essential Math in Environmental Data Science
-## Day 1 Part 2: Exponents, logs, graphs, slopes
+## Day 1 Part 2: Exponential functions, logarithms, graphs, average slope
 
 ---
 
-
----
-
-class: center, middle
-
-# Natural exponential, logarithms, graphs, slope
-
----
 
 ## The Natural Exponential
 
@@ -47,13 +39,44 @@ It is always the same value.
 
 ## Why is it so common?
 
-- Exponential trends are everywhere
+- One reason: Exponential trends show up a LOT in environmental science (the proportional change is the same over each time span)
 
-- Turns out it's very useful in calculus (keep this in mind...) 
+- Math reason: Turns out it's a very useful value for calculus
 
 ---
 
-## Exponential growth &amp; decay graphs
+class: center, middle
+
+&lt;img src="slide_images/fisheries_aquaculture.jpg" width="85%" /&gt;
+
+---
+
+class: center, middle
+
+Gause, G. F. 1934. The Struggle for Existence. Baltimore: Williams and Wilkins.
+
+&lt;img src="slide_images/paramecium.jpg" width="60%" /&gt;
+
+
+---
+
+## Logistic growth
+
+`$$N_t=\frac{K}{1+[\frac{K-N_0}{N_0}]e^{-rt}}$$`
+
+Where `\(N_t\)` is the population size at time `\(t\)`, `\(K\)` is the carrying capacity, `\(N_0\)` is the initial population size, and `\(r\)` is a growth rate.
+
+### We should always think about *why an equations has the shape it has* - both conceptually and mathematically. 
+
+---
+
+`$$N_t=\frac{K}{1+[\frac{K-N_0}{N_0}]e^{-rt}}$$`
+
+1. Why might we expect logistic growth for many populations? 
+
+2. What variables *besides* time would influence the actual population?
+
+3. Why, mathematically, does the logistic growth expression take the shape it does? What happens as the population becomes very close to the carrying capacity?
 
 ---
 
@@ -131,15 +154,63 @@ We can think of these as inverses of each other:
 
 ---
 
-## An example of an exponential growth model? 
+## Graphs: visualizing &amp; thinking about data
+
+Graphs are a way for us to more easily process trends or patterns that may be more challenging to understand in a table or list. 
+
+When you look at graphs, the first things you should ask: 
+
+- What variables are plotted (e.g. x- &amp; y-axis, including units)?
+- What values are plotted (e.g. raw values, transformed, means, etc.)?
+- What are the overall takeaways and am I understanding them responsibly?
 
 ---
 
-## Graphs: visualizing &amp; thinking about data
+## Practice saying these things OUT LOUD as if presenting the graph to an audienc
+
+"This figure shows the [change/pattern/relationship] between [x-variable], shown on the x-axis in units of [units] and [y-variable], shown on the y-axis in units of [units]. Overall [overall statement of pattern / trend / findings]." 
+
+Possibly with additional context as useful for the audience to put those findings into perspective (e.g. "this reduction represents an 82% decline in rainbowfish stocks along the Narnia Coast since 1991").
+
+---
+
+Graph interpretation example (Mono Lake)
+
+---
+
+Graph interpretation example (something else...)
 
 ---
 
 ## Slope (average)
+
+Sometimes, it can be useful to find the *average rate of change* of a function. Between any two points on a function `\((x_1,y_1)\)` and `\((x_2,y_2)\)` the slope is found by:
+
+`$$m=\frac{\Delta y}{\Delta x}=\frac{y_2-y_1}{x_2-x_1}$$`
+---
+
+## Get into the practice of saying the meaning out loud
+
+- As if you're explaining it to someone unfamiliar with the data
+- Including units
+- Without overstating certainty 
+
+For example, "Between 1972 and 2020 the price of hobbit homes increased by an average of $2,450 per year" **differs from** "Between 1972 and 2020 the price of hobbit homes increased by $2,450 per year." 
+
+
+---
+
+## Let's try it
+
+
+
+---
+
+## The *average* slope of a continuous function rarely tells the whole story
+
+Can I find the **average** change in catch from 1984 - 2010? 
+
+Mathematically, **yes**. Conceptually, **WHY**.
 
 ---
 
