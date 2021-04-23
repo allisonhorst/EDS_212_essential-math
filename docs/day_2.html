@@ -2125,9 +2125,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   /* Optional: embed custom fonts here with `@import`          */
   /* This must remain at the top of this file.                 */
 
-  /* Font options: Sanchez (headers / serif), Nunito Sans (body / sans-serif) */
+  /* Header font */
   @import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
 
+  /* Body font */
   @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400&display=swap');
 
   /* Code font (Roboto Mono) */
@@ -2185,7 +2186,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --text-color:       rgba(255, 255, 255, 0.8);
     --text-size:        18px;
     --hover-color:      white;
-    --bkgd-color:       #003660;
+    --bkgd-color:       #047C91;
   }
 
   .distill-site-footer {
@@ -2201,15 +2202,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article h2 {
       grid-column: text;
       font-size: 32px;
-      font-weight: 200;
+      font-weight: 300;
       line-height: 1.1em;
       margin: 0 0 0.5rem;
+      padding-top: 20px;
   }
 
   d-article h3 {
       grid-column: text;
       font-size: 24px;
-      font-weight: 400;
+      font-weight: 300;
       line-height: 1.1em;
       margin: 0 0 0.5rem;
   }
@@ -2218,16 +2220,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     font-style: bold;
   }
 
-  /*a, .nav-dropdown .nav-dropbtn {
+  a, .nav-dropdown .nav-dropbtn {
     font-weight: 500;
-  }*/
+  }
 
   /* Set colors for headers */
   d-article h1, d-article h2, d-article h3, d-article h4, d-article h5, d-article h6 {
       color: rgba(4, 124, 145, 0.8);
   }
 
-  /* Formatting tables (can update here or individually)
+  /* Formatting tables (can update here or individually) */
   table, td, tr, th {
     border-collapse: collapse;
     font-family: Nunito Sans;
@@ -2235,9 +2237,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     vertical-align: top;
   }
 
+  d-article table th, d-article table td {
+      font-size: 15px;
+      padding: 2px 8px;
+      border: 1px solid gainsboro;
+  }
+
+  /* Code style formatting of text */
   code {
     font-family: Roboto Mono;
-  }*/
+  }
 
   .distill-site-header a, .distill-site-header .title {
       text-align: left;
@@ -2253,11 +2262,32 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
 
   /* Update toc list font */
-  .d-contents nav li {
+  .d-contents nav ul li {
       font-size: 20px;
   }
 
+  /* Update overall layout (body width) */
+  @media(min-width: 1180px) {
+      .base-grid,
+      distill-header,
+      d-title,
+      d-abstract,
+      d-article,
+      d-appendix,
+      distill-appendix,
+      d-byline,
+      d-footnote-list,
+      d-citation-list,
+      distill-footer {
+        grid-template-columns: [screen-start] 0.5fr [page-start kicker-start] 30px [middle-start] 50px [text-start kicker-end] 90px 90px 90px 90px 90px 90px 90px 90px [text-end gutter-start] 30px [middle-end] 50px [page-end gutter-end] 0.5fr [screen-end];
+        grid-column-gap: 20px;
+      }
 
+  /* Change navbar dropdown menu bg color */
+  .nav-dropdown-content a:hover {
+      background-color: #003660;
+      color: black;
+  }
   </style>
   <style type="text/css">
   /* base style */
