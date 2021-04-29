@@ -1,0 +1,193 @@
+---
+title: "Glossary"
+---
+
+A glossary of math & data science terms and abbreviations we use in EDS 212 (living list), in relatable language.
+
+### A
+
+- algebra:
+
+- algorithm: 
+
+- array:
+
+- argument:
+
+- assignment operator: 
+
+### B
+
+- back end:
+
+- binary: 
+
+- Boolean algebra/operator: 
+
+- bork: 
+
+- blameless post-mortem: 
+
+- bug: 
+
+### C
+
+- code: 
+
+- concatenate:
+
+- confidence interval:
+
+- console:
+
+- command line:
+
+- character:
+
+### D
+
+- dashboard:
+
+- dev:
+
+- derivative: 
+
+- differential equation: 
+
+- dimensional analysis: 
+
+- distribution: 
+
+### E
+
+- edge case:
+
+- environment: 
+
+- exponent:
+
+- exponential: 
+
+### F
+
+- front end: 
+
+- full stack: 
+
+- function: 
+
+### G
+
+### H
+
+- hack: 
+
+- heuristic: 
+
+### I
+
+- IDE:
+
+- integral:
+
+- index:
+
+### J
+
+### K
+
+### L
+
+- linear algebra:
+
+- logarithm:
+
+- logical:
+
+### M
+
+- markdown: 
+
+- matrix:
+
+- munging:
+
+### N
+
+- natural exponential: 
+
+- numeric solution:
+
+### O
+
+- ordinary differential equation (ODE)
+
+- order of operations
+
+### P
+
+- partial differential equation (PDE)
+
+- PEMDAS
+
+- probability:
+
+- probability density function: 
+
+- programming: 
+
+- Python: 
+
+- p-value: 
+
+### Q
+
+- query: 
+
+### R
+
+- R: 
+
+- R Markdown: 
+
+- RStudio: 
+
+### S
+
+- scalar:
+
+- snake case: 
+
+- standard deviation:
+
+- software:
+
+### T
+
+- transform:
+
+### U
+
+### V
+
+- vector: 
+
+- variable: 
+
+### W
+
+- workflow:
+
+- wrangling: 
+
+### X
+
+- xaringan: 
+
+### Y
+
+### Z
+
+- zero-index: 
+
+

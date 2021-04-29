@@ -1,0 +1,72 @@
+---
+title: "Summary statistics"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(palmerpenguins)
+library(tidyverse)
+library(skimr)
+```
+
+In addition to exploratory data visualization, we often want to find basic summary statistics. Below are several tools & functions we use in EDS 212 to find them. 
+
+### `skimr::skim()`
+
+The `skimr::skim()` function returns "a broad overview of a data frame. It handles data of all types, dispatching a different set of summary functions based on the types of columns in the data frame."
+
+```{r}
+skimr::skim(penguins)
+```
+
+It also works on grouped data: 
+
+```{r}
+penguins %>% 
+  dplyr::group_by(species) %>% 
+  skimr::skim()
+```
+
+### `summary()`
+
+As an alternative to `skimr::skim()`, the base `summary()` function provides basic information about variables. The type of summary information returned depends on the variable class for each column. 
+
+```{r}
+summary(penguins)
+```
+
+### `dplyr::group_by() %>% dplyr::summarize()`
+
+The `group_by() %>% summarize()` combo is a powerful one to find summary statistics or outputs within groups, based on functions you specify. 
+
+For example, first let's find the mean and standard deviation of flipper length, grouped by penguin species (`na.rm = TRUE` omits missing values): 
+
+```{r}
+penguins %>% 
+  group_by(species) %>% 
+  summarize(mean_flipper_length = mean(flipper_length_mm, na.rm = TRUE),
+            sd_flipper_length = sd(flipper_length_mm, na.rm = TRUE))
+```
+We can also group by more than one variable. For example, let's find the median bill length and sample size using `n()`, grouped by penguin species and year: 
+
+```{r}
+penguins %>% 
+  group_by(species, year) %>% 
+  summarize(median_bill_length = median(bill_length_mm, na.rm = TRUE),
+            sample_size = n())
+  
+```
+
+**Note:** If you are *only* finding counts of observations, you can use `dplyr::count()`, which bundles `group_by()`, `summarize()` and `n()` into one nice function. A comparison is below, to find the counts of penguins by species and island: 
+
+```{r}
+# Using group_by %>% summarize(n()):
+penguins %>% 
+  group_by(species, island) %>% 
+  summarize(n())
+
+# Using count():
+penguins %>% 
+  count(species, island)
+```
+

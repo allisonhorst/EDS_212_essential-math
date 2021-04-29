@@ -1,0 +1,103 @@
+---
+title: "Basic computation"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Basic computation
+
+Sometimes we use R as a basic calculator. Perform operations using expected symbols: 
+
+- `*`: multiplication
+- `/`: division
+- `+/-`: addition/subtraction
+- `^`: raise to this power
+- `sqrt(x)`: take the square root of $x$
+- `log(x)`: take the natural log of $x$
+- `exp(x)`: natural exponential base (i.e. $e^x$)
+- `<-`: assignment operator (to store outcomes, e.g. `cost <- price*units`)
+
+### Example 1: Calculations with stored objects
+
+The raw price of a wine glass is \$10.00. A winery is buying 350 glasses, which earns them a 15% discount for a bulk order. If there is an 8% sales tax on the discounted price, and a flat shipping rate of \$48.50, what is the total price the winery will pay? 
+
+```{r}
+# Create and store the variable values: 
+
+cost_per_unit <- 10 # Cost per unit in dollars
+units <- 350 # Total number of units ordered
+discount <- 0.15 # 15% discount for buying > 300 units
+tax_rate <-  0.08 # 8% sales tax 
+shipping_cost <- 48.50 # Flat rate for domestic orders
+```
+
+**Critical thinking:** Why in some scenarios is it good practice to store values as objects, instead of type the value directly into an equation? 
+
+OK, now that all of the values are assigned, let's find the discounted bulk price (there are a lot of different ways to calculate this): 
+
+```{r}
+discounted_price <- (1 - discount) * cost_per_unit * units
+```
+
+Then find the total tax on that discounted price:
+
+```{r}
+order_tax <- tax_rate*discounted_price
+```
+
+Now we have everything we need to find the total price!
+
+```{r}
+total_price <- discounted_price + order_tax + shipping_cost
+
+total_price # Returns the total price
+```
+
+### Example 2: Exponents
+
+A model for jaguar shark mass ($M$, kg) of the elusive jaguar shark is given by the following from Team Zissou, where $L$ is the shark length in meters:
+
+$$M=0.4L^{2.6}$$
+
+Using the model, what is the expected mass of jaguar sharks that is 4.8 meters long? (...yeah function examples below to make this more broadly useful & efficient, but here we'll just plug in the value.)
+
+```{r}
+# Store the shark length:
+shark_length <- 4.8
+
+# Calculate the shark mass using the model:
+shark_mass <- 0.4 * (shark_length ^ 2.6)
+
+# Return the expected shark mass
+shark_mass
+```
+
+### Example 3: Evaluate a function 
+
+Given the restricted function: $$P(t, S, \rho) = 0.4t\sqrt{4S+8.1}-e^{0.03t}+\ln{(6.2\rho - 3.9)}$$
+
+What is $P(3.1, 2.5, 6.4)$?
+
+*Note: couldn't you just write a function here, then plug in whatever you want for $t$, $S$, and $\rho$? Yes! You'll be writing a lot of functions in EDS 221 and beyond, but here's an example of this calculation done without a function.*
+
+Let's start by assigning the variable values:
+
+```{r}
+t_val <- 3.1
+s_val <- 2.5
+rho_val <- 6.4
+```
+
+**Question:** Why might I have decided to use these object names, instead of something like $t$ and $s$?
+
+Then write the equation to calculate $P$:
+
+```{r}
+p_val <- 0.4 * t_val * sqrt(4 * s_val + 8.1) - exp(0.3 * t_val) + log(6.2 * rho_val - 3.9)
+
+# Return the calculated value:
+p_val
+```
+**Question:** How is this function restricted? What happens if the $S$ value is updated to -10? If the $\rho$ value is 0.1? What are the possible *domains* for $S$ and $\rho$?

@@ -85,29 +85,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>EDS 212: Day 1: Basic math review</title>
+  <title>EDS 212: Simple functions in R</title>
 
-  <meta property="description" itemprop="description" content="Algebra review, unit conversions, interpreting graphs, univariate and multivariate functions, exponents, the natural exponential, and logarithms"/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="EDS 212: Day 1: Basic math review"/>
+  <meta property="og:title" content="EDS 212: Simple functions in R"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Algebra review, unit conversions, interpreting graphs, univariate and multivariate functions, exponents, the natural exponential, and logarithms"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="EDS 212"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="EDS 212: Day 1: Basic math review"/>
-  <meta property="twitter:description" content="Algebra review, unit conversions, interpreting graphs, univariate and multivariate functions, exponents, the natural exponential, and logarithms"/>
+  <meta property="twitter:title" content="EDS 212: Simple functions in R"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["Day 1: Basic math review"]},{"type":"character","attributes":{},"value":["Algebra review, unit conversions, interpreting graphs, univariate and multivariate functions, exponents, the natural exponential, and logarithms"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Simple functions in R"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2447,7 +2444,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }</style>
   <!--/radix_placeholder_distill-->
   <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
-  <script src="site_libs/fitvids-2.1.1/fitvids.min.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2467,7 +2463,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Day 1: Basic math review","description":"Algebra review, unit conversions, interpreting graphs, univariate and multivariate functions, exponents, the natural exponential, and logarithms","authors":[]}
+{"title":"Simple functions in R","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2524,58 +2520,100 @@ Code examples
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Day 1: Basic math review</h1>
+<h1>Simple functions in R</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Algebra review, unit conversions, interpreting graphs, univariate and multivariate functions, exponents, the natural exponential, and logarithms</p></p>
+
 </div>
 
 
 <div class="d-article">
-<h2 id="day-1-part-1">Day 1 Part 1</h2>
-<h3 id="lecture-topics">Lecture topics</h3>
-<ul>
-<li>Algebra basics refresher</li>
-<li>Units and unit conversions</li>
-<li>Functions: structure, language, evaluation</li>
-<li>Exponents</li>
-</ul>
-<h3 id="computational-skills">Computational skills</h3>
-<ul>
-<li>Meet R, RStudio, and R Markdown</li>
-<li>R as a calculator</li>
-<li>Storing objects</li>
-<li>Our first function</li>
-</ul>
+<p>We’re going to be doing a LOT more with functions (building, testing, documenting, and more) in EDS 221, but we do meet functions in EDS 212, so a few starter examples are included here. More: <a href="https://adv-r.hadley.nz/functions.html">Chapter 6 Functions</a> in Advanced R by Hadley Wickham.</p>
+<p>We build functions help us to automate and repeat a process for more efficient, reproducible computation and programming. The basic syntax for functions in R is:</p>
 <div class="layout-chunk" data-layout="l-body">
-<div class="shareagain" style="min-width:300px;margin:1em auto;">
-<iframe src="https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-1-part-1-slides.html" width="1600" height="900" style="border:1px solid gainsboro;" loading="lazy" allowfullscreen></iframe>
-<script>fitvids('.shareagain', {players: 'iframe'});</script>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>function_name</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>arguments</span><span class='op'>)</span> <span class='op'>{</span>
+
+    <span class='va'>body</span>
+    
+<span class='op'>}</span>
+</code></pre>
 </div>
 </div>
-<h2 id="day-1-part-2">Day 1 Part 2</h2>
-<h3 id="lecture-topics-1">Lecture topics</h3>
-<ul>
-<li>Natural exponential (&amp; exponential functions)</li>
-<li>Logarithms</li>
-<li>Thinking about graphs</li>
-<li>Finding average rate of change (slope)</li>
-</ul>
-<h3 id="computational-skills-1">Computational skills</h3>
-<ul>
-<li>R Projects</li>
-<li>R Markdown customization</li>
-<li>Creating vectors and sequences</li>
-<li>Our first <code>ggplot2</code> graph</li>
-<li>Functions continued</li>
-</ul>
+<p>Where the arguments are the different options you want the user to input, that the function acts on, and the body is where you tell the function what it should <em>do</em> with those arguments.</p>
+<h3 id="example-1-a-function-with-a-single-argument">Example 1: A function with a single argument</h3>
+<p>A model for jaguar shark mass (<span class="math inline">\(M\)</span>, kg) of the elusive jaguar shark is given by the following from Team Zissou, where <span class="math inline">\(L\)</span> is the shark length in meters:</p>
+<p><span class="math display">\[M=0.4L^{2.6}\]</span></p>
+<p>Write a function to calculate the mass of a jaguar shark, given a length input.</p>
 <div class="layout-chunk" data-layout="l-body">
-<div class="shareagain" style="min-width:300px;margin:1em auto;">
-<iframe src="https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-1-part-2-slides.html" width="1600" height="900" style="border:1px solid gainsboro;" loading="lazy" allowfullscreen></iframe>
-<script>fitvids('.shareagain', {players: 'iframe'});</script>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>shark_mass</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>shark_length</span><span class='op'>)</span> <span class='op'>{</span>
+  
+  <span class='fl'>0.4</span> <span class='op'>*</span> <span class='op'>(</span><span class='va'>shark_length</span> <span class='op'>^</span> <span class='fl'>2.6</span><span class='op'>)</span>
+  
+<span class='op'>}</span>
+</code></pre>
 </div>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Then we can use our new function to calculate the shark mass for sharks of whatever length we input for the <code>shark_length</code> argument. For example, let’s use the function to find the expected mass of a 4.1 meter long shark:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>shark_mass</span><span class='op'>(</span>shark_length <span class='op'>=</span> <span class='fl'>4.1</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 15.67827</code></pre>
+</div>
+<h3 id="example-2-a-function-with-multiple-arguments">Example 2: A function with multiple arguments</h3>
+<p>Kinetic energy is calculated by: <span class="math display">\[k_e=\frac{1}{2}mv^2\]</span></p>
+<p>where <span class="math inline">\(k_e\)</span> is in [units], <span class="math inline">\(m\)</span> is mass in [units], and <span class="math inline">\(v\)</span> is velocity in [units].</p>
+<p>Write a function to calculate the kinetic energy of an object in motion if given a mass and velocity in the units above.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>ke</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>mass</span>, <span class='va'>velocity</span><span class='op'>)</span> <span class='op'>{</span>
+  
+  <span class='fl'>0.5</span> <span class='op'>*</span> <span class='va'>mass</span> <span class='op'>*</span> <span class='va'>velocity</span><span class='op'>^</span><span class='fl'>2</span>
+  
+<span class='op'>}</span>
+</code></pre>
+</div>
+</div>
+<p>Using the function, find the kinetic energy of:</p>
+<ol type="a">
+<li>A 4.9 kg object traveling at 9.8 m/s</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>ke</span><span class='op'>(</span>mass <span class='op'>=</span> <span class='fl'>4.9</span>, velocity <span class='op'>=</span> <span class='fl'>9.8</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 235.298</code></pre>
+</div>
+<ol start="2" type="a">
+<li>A 10.2 kg object traveling at 2.1 m/s</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>ke</span><span class='op'>(</span>mass <span class='op'>=</span> <span class='fl'>10.2</span>, velocity <span class='op'>=</span> <span class='fl'>2.1</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 22.491</code></pre>
+</div>
+<ol start="3" type="a">
+<li>Objects that range in size from 0 kg to 30 kg by increments of 5 kg, each traveling at 5 m/s?</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Create a vector of masses: </span>
+<span class='va'>mass_vec</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span>from <span class='op'>=</span> <span class='fl'>0</span>, to <span class='op'>=</span> <span class='fl'>30</span>, by <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span>
+
+<span class='co'># Find their energies: </span>
+<span class='fu'>ke</span><span class='op'>(</span>mass <span class='op'>=</span> <span class='va'>mass_vec</span>, velocity <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1]   0.0  62.5 125.0 187.5 250.0 312.5 375.0</code></pre>
+</div>
+<p><strong>Pro tip:</strong> The shortcut to create a function in R is <code>Command + Option + x</code> on a Mac, or <code>Control + Option + x</code> on a PC.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2583,6 +2621,15 @@ Code examples
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->

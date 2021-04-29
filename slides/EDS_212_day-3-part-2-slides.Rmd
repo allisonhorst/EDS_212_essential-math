@@ -20,11 +20,17 @@ It is a fundamental part of data science (and how computers understand & process
 
 ---
 
+## In environmental data science, most often:
+
+Put your linear equations into a matrix.
+
+---
+
 ## The building blocks of linear algebra
 
-- scalar:
+- scalar: 
 
-- vector:
+- vector: 
 
 - matrix: 
 

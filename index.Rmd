@@ -1,6 +1,6 @@
 ---
 title: "EDS 212: Essential Math in Environmental Data Science"
-description: "Course materials for EDS 212"
+description: "Master's of Environmental Data Science Program, UC Santa Barbara"
 site: distill::distill_website
 ---
 
@@ -8,6 +8,7 @@ site: distill::distill_website
 knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(kableExtra)
+library(here)
 # Learn more about creating websites with Distill at:
 # https://rstudio.github.io/distill/website.html
 
@@ -15,6 +16,20 @@ library(kableExtra)
 # https://rstudio.github.io/distill/publish_website.html#github-pages
 
 ```
+
+```{r, echo = FALSE, out.width = "100%"}
+knitr::include_graphics(here("img","usgs-ynlW4w7OHDs-unsplash.jpg"))
+```
+
+<center>
+
+<p style="color:gray; font-size:15px;">
+
+<i>Irrigated fields in the Sahara Desert, southern Egypt. Photo from <a href="https://unsplash.com/photos/ynlW4w7OHDs">USGS on Unsplash</a>.</i>
+
+</p>
+
+</center>
 
 ## Instructor
 
@@ -24,11 +39,29 @@ Allison Horst (ahorst\@ucsb.edu)
 
 -   [Course syllabus](https://docs.google.com/document/d/1Kcc9BhZuKeAGxQeW0ls7KY0oUtt-TBwEgOibl4_ShtY/edit?usp=sharing)
 -   EDS Course Workbook
--   Code of Conduct
+-   [Code of Conduct](code_of_conduct.html)
 
 ## Course description
 
 Quantitative skills and understanding are critical when working with, understanding, analyzing and gleaning insights from environmental data. In the intensive EDS 212 course, students will refresh fundamental skills in basic math (algebra, uni- and multivariate functions, units and unit conversions), derivative and integral calculus, differential equations, linear algebra, and reading, writing and evaluating logical operations.
+
+## Tentative topics
+
++-----+----------------------------------------------------------------------------+
+| Day | Session : Topic                                                            |
++=====+============================================================================+
+| 1   | A: Basic algebra review, units and unit conversions, exponents, logarithms |
+|     |                                                                            |
+|     | B: Functions (interpreting & evaluating), reading graphs, slope            |
++-----+----------------------------------------------------------------------------+
+| 2   |                                                                            |
++-----+----------------------------------------------------------------------------+
+| 3   |                                                                            |
++-----+----------------------------------------------------------------------------+
+| 4   |                                                                            |
++-----+----------------------------------------------------------------------------+
+| 5   |                                                                            |
++-----+----------------------------------------------------------------------------+
 
 ## Predictable daily schedule
 
@@ -67,8 +100,22 @@ The goal of EDS 212 (Essential Math in Environmental Data Science) is to prepare
 
 ### Computing
 
--   Minimum MEDS device requirements (bring to all sessions)
+-   Minimum [MEDS device requirements](https://ucsb-meds.github.io/computer_reqs.html) (bring to all sessions + charger!)
 
 -   R version 4.0.2 (or higher)
 
 -   RStudio version 1.4.1103 (or higher)
+
+## About this website
+
+This website was created with gratitude using [distill](https://rstudio.github.io/distill/) from [RStudio](https://www.rstudio.com/) by JJ Allaire, Rich Iannone, Alison Presmanes Hill, and Yihui Xie.
+
+This website is one piece of the EDS 212 course materials in addition to lectures, computational activities, discussions, and individual and group tasks, and important materials may exist partially or not at all on this site. While this website is public, it is not meant as a standalone online course.
+
+Other packages used to create this website:
+
+-   `rmarkdown` for...pretty much everything: JJ Allaire and Yihui Xie and Jonathan McPherson and Javier Luraschi and Kevin Ushey and Aron Atkins and Hadley Wickham and Joe Cheng and Winston Chang and Richard Iannone (2021). rmarkdown: Dynamic Documents for R. R package version 2.7. URL <https://rmarkdown.rstudio.com>.
+
+-   `kableExtra` for formatted tables: Hao Zhu (2020). kableExtra: Construct Complex Table with 'kable' and Pipe Syntax. R package version 1.3.1. <https://CRAN.R-project.org/package=kableExtra>
+
+-   Slides were made in R with `xaringan`: Yihui Xie (2021). xaringan: Presentation Ninja. R package version 0.20.2. <https://github.com/yihui/xaringan>

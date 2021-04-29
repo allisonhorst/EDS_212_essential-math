@@ -1,0 +1,64 @@
+---
+title: "Basic data visualization"
+---
+
+Data visualization will become a major part of your data science toolkit throughout the MEDS program. In EDS 212, we use several basic visualizations to start exploring how are data are distributed: 
+
+- Scatterplots (location of observations, usually for two variable values)
+- Histograms (frequency of observations in defined bins)
+- Jitterplots (value of a variable within a category, with random jitter)
+- Boxplots (summary visualization usually showing the median, interquartile range, whiskers extending to last observation within 1.5 steps of the IQR, and outliers beyond that)
+
+The examples below use the `penguins` data from the `palmerpenguins` package.
+
+### Attach packages: 
+
+```{r}
+library(palmerpenguins)
+library(tidyverse)
+```
+
+### Scatterplot:
+
+A scatterplot of bill dimensions, where each point represents the bill dimensions (length and depth) of a single penguin. The species is indicated by point shape. 
+
+```{r}
+ggplot(data = penguins, aes(x = bill_length_mm, bill_depth_mm)) +
+  geom_point(aes(shape = species), size = 2, alpha = 0.6) # alpha updates transparency
+```
+### Histograms
+
+Histograms show how values of a variable are distributed. Typically, histograms show the frequency of observations (on the y-axis) within equally sized bins (on the x-axis). 
+
+Below is code to create histograms of penguin flipper lengths, faceted into different panels by the groups that exist in *species*. Note that histograms only require a single input variable (here, `flipper_length_mm`) - the other variable (frequency) is calculated automatically.
+
+Arguments can be updated to change the bin width or number. The `facet_wrap()` line here splits up the plots by species. 
+
+```{r}
+ggplot(data = penguins, aes(x = flipper_length_mm)) +
+  geom_histogram() +
+  facet_wrap(~species, ncol = 1)
+```
+
+### Jitterplots
+
+A jitterplot of penguin body mass, separated by species: 
+
+```{r}
+ggplot(data = penguins, aes(x = species, y = body_mass_g)) +
+  geom_jitter(width = 0.2) # Default width is too large
+```
+
+### Boxplots
+
+Remember: boxplots show summary values and you should consider using them in combination with another type of plot (e.g. a jitter or density plot). 
+
+```{r}
+ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) +
+  geom_jitter(color = "gray", size = 1, width = 0.1) +
+  geom_boxplot(fill = NA, outlier.color = NA)
+```
+
+**Question:** Why would I set the outlier color for the boxplot to `NA` here?
+
+These examples are for quick exploratory visualization. Throughout MEDS you'll learn *many* other ways to explore data, and how to make engaging, clear and responsible final visualizations. 

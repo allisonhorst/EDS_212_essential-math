@@ -1,0 +1,82 @@
+---
+title: "Simple functions in R"
+---
+
+We're going to be doing a LOT more with functions (building, testing, documenting, and more) in EDS 221, but we do meet functions in EDS 212, so a few starter examples are included here. More: [Chapter 6 Functions](https://adv-r.hadley.nz/functions.html) in Advanced R by Hadley Wickham.  
+
+We build functions help us to automate and repeat a process for more efficient, reproducible computation and programming. The basic syntax for functions in R is:
+
+```{r, eval = FALSE}
+function_name <- function(arguments) {
+
+    body
+    
+}
+```
+
+Where the arguments are the different options you want the user to input, that the function acts on, and the body is where you tell the function what it should *do* with those arguments. 
+
+### Example 1: A function with a single argument
+
+A model for jaguar shark mass ($M$, kg) of the elusive jaguar shark is given by the following from Team Zissou, where $L$ is the shark length in meters:
+
+$$M=0.4L^{2.6}$$
+
+Write a function to calculate the mass of a jaguar shark, given a length input. 
+
+```{r}
+shark_mass <- function(shark_length) {
+  
+  0.4 * (shark_length ^ 2.6)
+  
+}
+
+```
+Then we can use our new function to calculate the shark mass for sharks of whatever length we input for the `shark_length` argument. For example, let's use the function to find the expected mass of a 4.1 meter long shark: 
+
+```{r}
+shark_mass(shark_length = 4.1)
+```
+
+### Example 2: A function with multiple arguments
+
+Kinetic energy is calculated by: $$k_e=\frac{1}{2}mv^2$$
+
+where $k_e$ is in [units], $m$ is mass in [units], and $v$ is velocity in [units]. 
+
+Write a function to calculate the kinetic energy of an object in motion if given a mass and velocity in the units above.
+
+```{r}
+ke <- function(mass, velocity) {
+  
+  0.5 * mass * velocity^2
+  
+}
+```
+
+Using the function, find the kinetic energy of: 
+
+a) A 4.9 kg object traveling at 9.8 m/s
+
+```{r}
+ke(mass = 4.9, velocity = 9.8)
+```
+
+b) A 10.2 kg object traveling at 2.1 m/s
+
+```{r}
+ke(mass = 10.2, velocity = 2.1)
+```
+
+c) Objects that range in size from 0 kg to 30 kg by increments of 5 kg, each traveling at 5 m/s?
+
+```{r}
+# Create a vector of masses: 
+mass_vec <- seq(from = 0, to = 30, by = 5)
+
+# Find their energies: 
+ke(mass = mass_vec, velocity = 5)
+```
+
+**Pro tip:** The shortcut to create a function in R is `Command + Option + x` on a Mac, or `Control + Option + x` on a PC. 
+

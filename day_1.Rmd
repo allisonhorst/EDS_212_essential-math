@@ -10,10 +10,19 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Day 1 Part 1
 
+### Lecture topics
+
 - Algebra basics refresher
 - Units and unit conversions
 - Functions: structure, language, evaluation
 - Exponents
+
+### Computational skills
+
+- Meet R, RStudio, and R Markdown
+- R as a calculator
+- Storing objects
+- Our first function
 
 
 ```{r, echo = FALSE}
@@ -24,12 +33,22 @@ xaringanExtra::embed_xaringan(
 )
 ```
 
-## Day 2 Part 2
+## Day 1 Part 2
+
+### Lecture topics
 
 - Natural exponential (& exponential functions)
 - Logarithms
 - Thinking about graphs
 - Finding average rate of change (slope)
+
+### Computational skills
+
+- R Projects
+- R Markdown customization
+- Creating vectors and sequences
+- Our first `ggplot2` graph
+- Functions continued
 
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
@@ -38,5 +57,7 @@ xaringanExtra::embed_xaringan(
   border = "1px solid gainsboro"
 )
 ```
+
+
 
 

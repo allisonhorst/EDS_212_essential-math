@@ -70,11 +70,15 @@ $$\frac{df}{dt}=3.2-f(t)$$ is a **first order ODE**
 
 ## Solving differential equations in R
 
+---
+
 ### Numerical solutions versus analytical solutions
 
 ---
 
 ## An example in practice
+
+population growth equation
 
 ---
 

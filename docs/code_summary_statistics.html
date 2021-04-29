@@ -85,29 +85,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>EDS 212: Day 1: Basic math review</title>
+  <title>EDS 212: Summary statistics</title>
 
-  <meta property="description" itemprop="description" content="Algebra review, unit conversions, interpreting graphs, univariate and multivariate functions, exponents, the natural exponential, and logarithms"/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="EDS 212: Day 1: Basic math review"/>
+  <meta property="og:title" content="EDS 212: Summary statistics"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Algebra review, unit conversions, interpreting graphs, univariate and multivariate functions, exponents, the natural exponential, and logarithms"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="EDS 212"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="EDS 212: Day 1: Basic math review"/>
-  <meta property="twitter:description" content="Algebra review, unit conversions, interpreting graphs, univariate and multivariate functions, exponents, the natural exponential, and logarithms"/>
+  <meta property="twitter:title" content="EDS 212: Summary statistics"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["Day 1: Basic math review"]},{"type":"character","attributes":{},"value":["Algebra review, unit conversions, interpreting graphs, univariate and multivariate functions, exponents, the natural exponential, and logarithms"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Summary statistics"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2447,7 +2444,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }</style>
   <!--/radix_placeholder_distill-->
   <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
-  <script src="site_libs/fitvids-2.1.1/fitvids.min.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2467,7 +2463,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Day 1: Basic math review","description":"Algebra review, unit conversions, interpreting graphs, univariate and multivariate functions, exponents, the natural exponential, and logarithms","authors":[]}
+{"title":"Summary statistics","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2524,58 +2520,652 @@ Code examples
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Day 1: Basic math review</h1>
+<h1>Summary statistics</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Algebra review, unit conversions, interpreting graphs, univariate and multivariate functions, exponents, the natural exponential, and logarithms</p></p>
+
 </div>
 
 
 <div class="d-article">
-<h2 id="day-1-part-1">Day 1 Part 1</h2>
-<h3 id="lecture-topics">Lecture topics</h3>
-<ul>
-<li>Algebra basics refresher</li>
-<li>Units and unit conversions</li>
-<li>Functions: structure, language, evaluation</li>
-<li>Exponents</li>
-</ul>
-<h3 id="computational-skills">Computational skills</h3>
-<ul>
-<li>Meet R, RStudio, and R Markdown</li>
-<li>R as a calculator</li>
-<li>Storing objects</li>
-<li>Our first function</li>
-</ul>
+<p>In addition to exploratory data visualization, we often want to find basic summary statistics. Below are several tools &amp; functions we use in EDS 212 to find them.</p>
+<h3 id="skimrskim"><code>skimr::skim()</code></h3>
+<p>The <code>skimr::skim()</code> function returns “a broad overview of a data frame. It handles data of all types, dispatching a different set of summary functions based on the types of columns in the data frame.”</p>
 <div class="layout-chunk" data-layout="l-body">
-<div class="shareagain" style="min-width:300px;margin:1em auto;">
-<iframe src="https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-1-part-1-slides.html" width="1600" height="900" style="border:1px solid gainsboro;" loading="lazy" allowfullscreen></iframe>
-<script>fitvids('.shareagain', {players: 'iframe'});</script>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>skimr</span><span class='fu'>::</span><span class='fu'><a href='https://docs.ropensci.org/skimr/reference/skim.html'>skim</a></span><span class='op'>(</span><span class='va'>penguins</span><span class='op'>)</span>
+</code></pre>
 </div>
+<table>
+<caption><span id="tab:unnamed-chunk-1">Table 1: </span>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">penguins</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of rows</td>
+<td style="text-align: left;">344</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number of columns</td>
+<td style="text-align: left;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">_______________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Column type frequency:</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">________________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Group variables</td>
+<td style="text-align: left;">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: factor</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">ordered</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: left;">top_counts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">species</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Ade: 152, Gen: 124, Chi: 68</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">island</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Bis: 168, Dre: 124, Tor: 52</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sex</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0.97</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">mal: 168, fem: 165</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">p0</th>
+<th style="text-align: right;">p25</th>
+<th style="text-align: right;">p50</th>
+<th style="text-align: right;">p75</th>
+<th style="text-align: right;">p100</th>
+<th style="text-align: left;">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">bill_length_mm</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">43.92</td>
+<td style="text-align: right;">5.46</td>
+<td style="text-align: right;">32.1</td>
+<td style="text-align: right;">39.23</td>
+<td style="text-align: right;">44.45</td>
+<td style="text-align: right;">48.5</td>
+<td style="text-align: right;">59.6</td>
+<td style="text-align: left;">▃▇▇▆▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">bill_depth_mm</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">17.15</td>
+<td style="text-align: right;">1.97</td>
+<td style="text-align: right;">13.1</td>
+<td style="text-align: right;">15.60</td>
+<td style="text-align: right;">17.30</td>
+<td style="text-align: right;">18.7</td>
+<td style="text-align: right;">21.5</td>
+<td style="text-align: left;">▅▅▇▇▂</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">flipper_length_mm</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">200.92</td>
+<td style="text-align: right;">14.06</td>
+<td style="text-align: right;">172.0</td>
+<td style="text-align: right;">190.00</td>
+<td style="text-align: right;">197.00</td>
+<td style="text-align: right;">213.0</td>
+<td style="text-align: right;">231.0</td>
+<td style="text-align: left;">▂▇▃▅▂</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">body_mass_g</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">4201.75</td>
+<td style="text-align: right;">801.95</td>
+<td style="text-align: right;">2700.0</td>
+<td style="text-align: right;">3550.00</td>
+<td style="text-align: right;">4050.00</td>
+<td style="text-align: right;">4750.0</td>
+<td style="text-align: right;">6300.0</td>
+<td style="text-align: left;">▃▇▆▃▂</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">year</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2008.03</td>
+<td style="text-align: right;">0.82</td>
+<td style="text-align: right;">2007.0</td>
+<td style="text-align: right;">2007.00</td>
+<td style="text-align: right;">2008.00</td>
+<td style="text-align: right;">2009.0</td>
+<td style="text-align: right;">2009.0</td>
+<td style="text-align: left;">▇▁▇▁▇</td>
+</tr>
+</tbody>
+</table>
 </div>
-<h2 id="day-1-part-2">Day 1 Part 2</h2>
-<h3 id="lecture-topics-1">Lecture topics</h3>
-<ul>
-<li>Natural exponential (&amp; exponential functions)</li>
-<li>Logarithms</li>
-<li>Thinking about graphs</li>
-<li>Finding average rate of change (slope)</li>
-</ul>
-<h3 id="computational-skills-1">Computational skills</h3>
-<ul>
-<li>R Projects</li>
-<li>R Markdown customization</li>
-<li>Creating vectors and sequences</li>
-<li>Our first <code>ggplot2</code> graph</li>
-<li>Functions continued</li>
-</ul>
+<p>It also works on grouped data:</p>
 <div class="layout-chunk" data-layout="l-body">
-<div class="shareagain" style="min-width:300px;margin:1em auto;">
-<iframe src="https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-1-part-2-slides.html" width="1600" height="900" style="border:1px solid gainsboro;" loading="lazy" allowfullscreen></iframe>
-<script>fitvids('.shareagain', {players: 'iframe'});</script>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>penguins</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>species</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>skimr</span><span class='fu'>::</span><span class='fu'><a href='https://docs.ropensci.org/skimr/reference/skim.html'>skim</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
 </div>
+<table>
+<caption><span id="tab:unnamed-chunk-2">Table 2: </span>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">Piped data</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of rows</td>
+<td style="text-align: left;">344</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number of columns</td>
+<td style="text-align: left;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">_______________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Column type frequency:</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">________________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Group variables</td>
+<td style="text-align: left;">species</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: factor</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: left;">species</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">ordered</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: left;">top_counts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">island</td>
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Dre: 56, Tor: 52, Bis: 44</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">island</td>
+<td style="text-align: left;">Chinstrap</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Dre: 68, Bis: 0, Tor: 0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">island</td>
+<td style="text-align: left;">Gentoo</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Bis: 124, Dre: 0, Tor: 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sex</td>
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.96</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">fem: 73, mal: 73</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sex</td>
+<td style="text-align: left;">Chinstrap</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">fem: 34, mal: 34</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sex</td>
+<td style="text-align: left;">Gentoo</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0.96</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">mal: 61, fem: 58</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 12%" />
+<col style="width: 7%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 6%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: left;">species</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">p0</th>
+<th style="text-align: right;">p25</th>
+<th style="text-align: right;">p50</th>
+<th style="text-align: right;">p75</th>
+<th style="text-align: right;">p100</th>
+<th style="text-align: left;">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">bill_length_mm</td>
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">38.79</td>
+<td style="text-align: right;">2.66</td>
+<td style="text-align: right;">32.1</td>
+<td style="text-align: right;">36.75</td>
+<td style="text-align: right;">38.80</td>
+<td style="text-align: right;">40.75</td>
+<td style="text-align: right;">46.0</td>
+<td style="text-align: left;">▁▆▇▆▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">bill_length_mm</td>
+<td style="text-align: left;">Chinstrap</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">48.83</td>
+<td style="text-align: right;">3.34</td>
+<td style="text-align: right;">40.9</td>
+<td style="text-align: right;">46.35</td>
+<td style="text-align: right;">49.55</td>
+<td style="text-align: right;">51.08</td>
+<td style="text-align: right;">58.0</td>
+<td style="text-align: left;">▂▇▇▅▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">bill_length_mm</td>
+<td style="text-align: left;">Gentoo</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">47.50</td>
+<td style="text-align: right;">3.08</td>
+<td style="text-align: right;">40.9</td>
+<td style="text-align: right;">45.30</td>
+<td style="text-align: right;">47.30</td>
+<td style="text-align: right;">49.55</td>
+<td style="text-align: right;">59.6</td>
+<td style="text-align: left;">▃▇▆▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">bill_depth_mm</td>
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">18.35</td>
+<td style="text-align: right;">1.22</td>
+<td style="text-align: right;">15.5</td>
+<td style="text-align: right;">17.50</td>
+<td style="text-align: right;">18.40</td>
+<td style="text-align: right;">19.00</td>
+<td style="text-align: right;">21.5</td>
+<td style="text-align: left;">▂▆▇▃▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">bill_depth_mm</td>
+<td style="text-align: left;">Chinstrap</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">18.42</td>
+<td style="text-align: right;">1.14</td>
+<td style="text-align: right;">16.4</td>
+<td style="text-align: right;">17.50</td>
+<td style="text-align: right;">18.45</td>
+<td style="text-align: right;">19.40</td>
+<td style="text-align: right;">20.8</td>
+<td style="text-align: left;">▅▇▇▆▂</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">bill_depth_mm</td>
+<td style="text-align: left;">Gentoo</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">14.98</td>
+<td style="text-align: right;">0.98</td>
+<td style="text-align: right;">13.1</td>
+<td style="text-align: right;">14.20</td>
+<td style="text-align: right;">15.00</td>
+<td style="text-align: right;">15.70</td>
+<td style="text-align: right;">17.3</td>
+<td style="text-align: left;">▅▇▇▆▂</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">flipper_length_mm</td>
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">189.95</td>
+<td style="text-align: right;">6.54</td>
+<td style="text-align: right;">172.0</td>
+<td style="text-align: right;">186.00</td>
+<td style="text-align: right;">190.00</td>
+<td style="text-align: right;">195.00</td>
+<td style="text-align: right;">210.0</td>
+<td style="text-align: left;">▁▆▇▅▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">flipper_length_mm</td>
+<td style="text-align: left;">Chinstrap</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">195.82</td>
+<td style="text-align: right;">7.13</td>
+<td style="text-align: right;">178.0</td>
+<td style="text-align: right;">191.00</td>
+<td style="text-align: right;">196.00</td>
+<td style="text-align: right;">201.00</td>
+<td style="text-align: right;">212.0</td>
+<td style="text-align: left;">▁▅▇▅▂</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">flipper_length_mm</td>
+<td style="text-align: left;">Gentoo</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">217.19</td>
+<td style="text-align: right;">6.48</td>
+<td style="text-align: right;">203.0</td>
+<td style="text-align: right;">212.00</td>
+<td style="text-align: right;">216.00</td>
+<td style="text-align: right;">221.00</td>
+<td style="text-align: right;">231.0</td>
+<td style="text-align: left;">▂▇▇▆▃</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">body_mass_g</td>
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">3700.66</td>
+<td style="text-align: right;">458.57</td>
+<td style="text-align: right;">2850.0</td>
+<td style="text-align: right;">3350.00</td>
+<td style="text-align: right;">3700.00</td>
+<td style="text-align: right;">4000.00</td>
+<td style="text-align: right;">4775.0</td>
+<td style="text-align: left;">▅▇▇▃▂</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">body_mass_g</td>
+<td style="text-align: left;">Chinstrap</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">3733.09</td>
+<td style="text-align: right;">384.34</td>
+<td style="text-align: right;">2700.0</td>
+<td style="text-align: right;">3487.50</td>
+<td style="text-align: right;">3700.00</td>
+<td style="text-align: right;">3950.00</td>
+<td style="text-align: right;">4800.0</td>
+<td style="text-align: left;">▁▅▇▃▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">body_mass_g</td>
+<td style="text-align: left;">Gentoo</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">5076.02</td>
+<td style="text-align: right;">504.12</td>
+<td style="text-align: right;">3950.0</td>
+<td style="text-align: right;">4700.00</td>
+<td style="text-align: right;">5000.00</td>
+<td style="text-align: right;">5500.00</td>
+<td style="text-align: right;">6300.0</td>
+<td style="text-align: left;">▃▇▇▇▂</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">year</td>
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2008.01</td>
+<td style="text-align: right;">0.82</td>
+<td style="text-align: right;">2007.0</td>
+<td style="text-align: right;">2007.00</td>
+<td style="text-align: right;">2008.00</td>
+<td style="text-align: right;">2009.00</td>
+<td style="text-align: right;">2009.0</td>
+<td style="text-align: left;">▇▁▇▁▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">year</td>
+<td style="text-align: left;">Chinstrap</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2007.97</td>
+<td style="text-align: right;">0.86</td>
+<td style="text-align: right;">2007.0</td>
+<td style="text-align: right;">2007.00</td>
+<td style="text-align: right;">2008.00</td>
+<td style="text-align: right;">2009.00</td>
+<td style="text-align: right;">2009.0</td>
+<td style="text-align: left;">▇▁▆▁▇</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">year</td>
+<td style="text-align: left;">Gentoo</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2008.08</td>
+<td style="text-align: right;">0.79</td>
+<td style="text-align: right;">2007.0</td>
+<td style="text-align: right;">2007.00</td>
+<td style="text-align: right;">2008.00</td>
+<td style="text-align: right;">2009.00</td>
+<td style="text-align: right;">2009.0</td>
+<td style="text-align: left;">▆▁▇▁▇</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h3 id="summary"><code>summary()</code></h3>
+<p>As an alternative to <code>skimr::skim()</code>, the base <code>summary()</code> function provides basic information about variables. The type of summary information returned depends on the variable class for each column.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>penguins</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>      species          island    bill_length_mm  bill_depth_mm  
+ Adelie   :152   Biscoe   :168   Min.   :32.10   Min.   :13.10  
+ Chinstrap: 68   Dream    :124   1st Qu.:39.23   1st Qu.:15.60  
+ Gentoo   :124   Torgersen: 52   Median :44.45   Median :17.30  
+                                 Mean   :43.92   Mean   :17.15  
+                                 3rd Qu.:48.50   3rd Qu.:18.70  
+                                 Max.   :59.60   Max.   :21.50  
+                                 NA&#39;s   :2       NA&#39;s   :2      
+ flipper_length_mm  body_mass_g       sex           year     
+ Min.   :172.0     Min.   :2700   female:165   Min.   :2007  
+ 1st Qu.:190.0     1st Qu.:3550   male  :168   1st Qu.:2007  
+ Median :197.0     Median :4050   NA&#39;s  : 11   Median :2008  
+ Mean   :200.9     Mean   :4202                Mean   :2008  
+ 3rd Qu.:213.0     3rd Qu.:4750                3rd Qu.:2009  
+ Max.   :231.0     Max.   :6300                Max.   :2009  
+ NA&#39;s   :2         NA&#39;s   :2                                 </code></pre>
+</div>
+<h3 id="dplyrgroup_by-dplyrsummarize"><code>dplyr::group_by() %&gt;% dplyr::summarize()</code></h3>
+<p>The <code>group_by() %&gt;% summarize()</code> combo is a powerful one to find summary statistics or outputs within groups, based on functions you specify.</p>
+<p>For example, first let’s find the mean and standard deviation of flipper length, grouped by penguin species (<code>na.rm = TRUE</code> omits missing values):</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>penguins</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>species</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>summarize</span><span class='op'>(</span>mean_flipper_length <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>flipper_length_mm</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+            sd_flipper_length <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='op'>(</span><span class='va'>flipper_length_mm</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 3 x 3
+  species   mean_flipper_length sd_flipper_length
+* &lt;fct&gt;                   &lt;dbl&gt;             &lt;dbl&gt;
+1 Adelie                   190.              6.54
+2 Chinstrap                196.              7.13
+3 Gentoo                   217.              6.48</code></pre>
+</div>
+<p>We can also group by more than one variable. For example, let’s find the median bill length and sample size using <code>n()</code>, grouped by penguin species and year:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>penguins</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>species</span>, <span class='va'>year</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>summarize</span><span class='op'>(</span>median_bill_length <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/median.html'>median</a></span><span class='op'>(</span><span class='va'>bill_length_mm</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+            sample_size <span class='op'>=</span> <span class='fu'>n</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 9 x 4
+# Groups:   species [3]
+  species    year median_bill_length sample_size
+  &lt;fct&gt;     &lt;int&gt;              &lt;dbl&gt;       &lt;int&gt;
+1 Adelie     2007               38.8          50
+2 Adelie     2008               38.6          50
+3 Adelie     2009               38.7          52
+4 Chinstrap  2007               48.8          26
+5 Chinstrap  2008               49.2          18
+6 Chinstrap  2009               50.0          24
+7 Gentoo     2007               46.6          34
+8 Gentoo     2008               46.4          46
+9 Gentoo     2009               48.5          44</code></pre>
+</div>
+<p><strong>Note:</strong> If you are <em>only</em> finding counts of observations, you can use <code>dplyr::count()</code>, which bundles <code>group_by()</code>, <code>summarize()</code> and <code>n()</code> into one nice function. A comparison is below, to find the counts of penguins by species and island:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Using group_by %&gt;% summarize(n()):</span>
+<span class='va'>penguins</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>species</span>, <span class='va'>island</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>summarize</span><span class='op'>(</span><span class='fu'>n</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 5 x 3
+# Groups:   species [3]
+  species   island    `n()`
+  &lt;fct&gt;     &lt;fct&gt;     &lt;int&gt;
+1 Adelie    Biscoe       44
+2 Adelie    Dream        56
+3 Adelie    Torgersen    52
+4 Chinstrap Dream        68
+5 Gentoo    Biscoe      124</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Using count():</span>
+<span class='va'>penguins</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>count</span><span class='op'>(</span><span class='va'>species</span>, <span class='va'>island</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 5 x 3
+  species   island        n
+  &lt;fct&gt;     &lt;fct&gt;     &lt;int&gt;
+1 Adelie    Biscoe       44
+2 Adelie    Dream        56
+3 Adelie    Torgersen    52
+4 Chinstrap Dream        68
+5 Gentoo    Biscoe      124</code></pre>
+</div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
