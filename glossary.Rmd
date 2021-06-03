@@ -86,7 +86,7 @@ A glossary of math & data science terms and abbreviations we use in EDS 212 (liv
 
 ### I
 
-- IDE:
+- integrated development environment (IDE):
 
 - integral:
 
@@ -167,6 +167,8 @@ A glossary of math & data science terms and abbreviations we use in EDS 212 (liv
 - transform:
 
 ### U
+
+- user interface (UI):
 
 ### V
 

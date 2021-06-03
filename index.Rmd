@@ -45,7 +45,7 @@ Allison Horst (ahorst\@ucsb.edu)
 
 Quantitative skills and understanding are critical when working with, understanding, analyzing and gleaning insights from environmental data. In the intensive EDS 212 course, students will refresh fundamental skills in basic math (algebra, uni- and multivariate functions, units and unit conversions), derivative and integral calculus, differential equations, linear algebra, and reading, writing and evaluating logical operations.
 
-## Tentative topics
+## Expected lecture topics
 
 +-----+----------------------------------------------------------------------------+
 | Day | Session : Topic                                                            |
@@ -54,13 +54,21 @@ Quantitative skills and understanding are critical when working with, understand
 |     |                                                                            |
 |     | B: Functions (interpreting & evaluating), reading graphs, slope            |
 +-----+----------------------------------------------------------------------------+
-| 2   |                                                                            |
+| 2   | A: Definition of the derivative                                            |
+|     |                                                                            |
+|     | B: Higher order & partial derivatives                                      |
 +-----+----------------------------------------------------------------------------+
-| 3   |                                                                            |
+| 3   | A: Differential equations, and solving them numerically                    |
+|     |                                                                            |
+|     | B: Introduction to linear algebra basics                                   |
 +-----+----------------------------------------------------------------------------+
-| 4   |                                                                            |
+| 4   | A: Linear algebra continued                                                |
+|     |                                                                            |
+|     | B: Essential summary statistics and describing data                        |
 +-----+----------------------------------------------------------------------------+
-| 5   |                                                                            |
+| 5   | A: Basic probability theory                                                |
+|     |                                                                            |
+|     | B: Boolean algebra and logical operations                                  |
 +-----+----------------------------------------------------------------------------+
 
 ## Predictable daily schedule
