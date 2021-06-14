@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = TRUE)
 - Functions: structure, language, evaluation
 - Exponents
 
-### Computational skills
+### Interactive session
 
 - Meet R, RStudio, and R Markdown
 - R as a calculator
