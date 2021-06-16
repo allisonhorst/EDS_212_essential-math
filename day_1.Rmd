@@ -4,6 +4,8 @@ description: |
   Algebra review, unit conversions, interpreting graphs, univariate and multivariate functions, exponents, the natural exponential, and logarithms
 ---
 
+<!-- Note to self: Run the xaringan_to_pdf.R code to get function, then ran `xaringan_to_pdf("slides/EDS_212_day-1-part-1-slides.html")` to produce the PDF for these slides. -->
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -12,22 +14,26 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### Lecture topics
 
+**[Lecture 1A Slides - PDF](slides/EDS_212_day-1-part-1-slides.pdf)**
+
 - Algebra basics refresher
 - Units and unit conversions
 - Functions: structure, language, evaluation
 - Exponents
 
-### Interactive session
+### Interactive session 
+
+**[Interactive Session 1A handout](comp_session_keys/comp_session_1a.html)**
 
 - Meet R, RStudio, and R Markdown
-- R as a calculator
+- Basic math operations and functions in R
 - Storing objects
 - Our first function
 
 
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
-  url = "https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-1-part-1-slides.html",
+  url = "slides/EDS_212_day-1-part-1-slides.html",
   ratio = "16:9",
   border = "1px solid gainsboro"
 )
@@ -35,14 +41,19 @@ xaringanExtra::embed_xaringan(
 
 ## Day 1 Part 2
 
-### Lecture topics
+### Lecture
+
+**[Lecture 1B Slides - PDF](slides/EDS_212_day-1-part-2-slides.pdf)**
 
 - Natural exponential (& exponential functions)
 - Logarithms
 - Thinking about graphs
 - Finding average rate of change (slope)
 
-### Computational skills
+### Interactive session
+
+**[Interactive Session 1B handout](comp_session_keys/comp_session_1b.html)**
+
 
 - R Projects
 - R Markdown customization
@@ -52,12 +63,8 @@ xaringanExtra::embed_xaringan(
 
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
-  url = "https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-1-part-2-slides.html",
+  url = "slides/EDS_212_day-1-part-2-slides.html",
   ratio = "16:9",
   border = "1px solid gainsboro"
 )
 ```
-
-
-
-

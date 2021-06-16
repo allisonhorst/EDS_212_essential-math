@@ -67,34 +67,6 @@ This course re/introduces math concepts and tools that:
 
 ---
 
-class: center, middle
-
-## Examples: Math in environmental data science
-
----
-
-## Example 1: 
-
----
-
-## Example 2:
-
----
-
-## Example 3:
-
----
-
-## Example 4:
-
----
-
-class: center, middle
-
-## But first, warm-up stretches
-
----
-
 ## Math brain warm up
 
 - Algebra blitz
@@ -349,16 +321,6 @@ $g(a,T,z)=[expression\space containing \space a, T, \space and \space z]$
 
 ---
 
-## Constants versus parameters versus variables
-
----
-
-## Components of a function
-
-
-
----
-
 ## Evaluating functions
 
 For continuous functions, we evaluate them by plugging in variable values. 
@@ -368,8 +330,4 @@ For continuous functions, we evaluate them by plugging in variable values.
 Evaluate $g(x,t)=2.4x+0.5t^2$ at $x = 3$ and $t = 10$
 
 $g(3, 10) = 2.4(3) + 0.5(10^2)= 57.2$ 
-
----
-
-## Considering "invisible units" in functions
 

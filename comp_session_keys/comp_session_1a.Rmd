@@ -13,7 +13,11 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## 1. Meet R 
+```{r, echo = FALSE}
+knitr::include_graphics("comp_session_images/reproducibility_court.png")
+```
+
+## 1. Meet R all on its own
 
 ### ...because you should just do it one time.
 
@@ -43,6 +47,7 @@ Let's take a quick tour of the RStudio IDE, then customize it for fun and functi
 - Working in the Console, each line run every time you press 'Enter'
 - Use expected operators (*, /, +, -, ^) in calculations
 - Other operations use functions, e.g. `sqrt()`, `log()` for the natural log, etc.
+- What is a function? What are the pieces?
 - See the R documentation about a function using `?function_name` in the Console, for example try running `?log`
 - Use `<-` to store an object (see it appear in the Environment tab)
 - Create & store a few variables to values

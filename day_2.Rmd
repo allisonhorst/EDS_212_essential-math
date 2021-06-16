@@ -8,21 +8,51 @@ description: |
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Day 2 Part 1:
+## Day 2 Part 1
+
+### Lecture: 
+
+**[Lecture 2A Slides - PDF](slides/EDS_212_day-2-part-1-slides.pdf)**
+
+- Definition of the derivative
+- Derivatives the long way
+- Basic derivative rules
+
+### Interactive session
+
+- Derivatives by hand 
+- Meet Jupyter Notebooks
+- Derivatives in R and Python
+- Functions in Python
 
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
-  url = "https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-2-part-1-slides.html",
+  url = "slides/EDS_212_day-2-part-1-slides.html",
   ratio = "16:9",
   border = "1px solid gainsboro"
 )
 ```
 
-Day 2 Part 2:
+## Day 2 Part 2
+
+### Lecture:
+
+**[Slides - PDF]()**
+
+- Higher order derivatives
+- Partial derivatives
+- Applications in environmental data science
+
+### Interactive session: 
+
+- Higher order derivatives as art
+- Partial derivatives in R and Python
+- Fun with partials & interpreting them
+
 
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
-  url = "https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-2-part-2-slides.html",
+  url = "slides/EDS_212_day-2-part-2-slides.html",
   ratio = "16:9",
   border = "1px solid gainsboro"
 )
