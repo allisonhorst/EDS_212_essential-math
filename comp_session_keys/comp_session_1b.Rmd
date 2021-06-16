@@ -112,7 +112,7 @@ chipmunk_pop <- pop_logistic(capacity = 2580, init_pop = 230, rate = 0.32, time_
 # Then we can call chipmunk_pop:
 chipmunk_pop
 ```
-## Make a plot! 
+## 5. Make a plot! 
 
 You will learn a *lot* more about data visualization throughout MEDS. But let's make a first little rough one just for fun using the `ggplot2` package, which is part of the `tidyverse` (more on this in EDS 221). 
 
@@ -134,7 +134,7 @@ ggplot(data = chipmunk_df, aes(x = time_vec, y = chipmunk_pop)) +
   geom_point()
 ```
 
-## No precious objects or outputs! 
+## 6. No precious objects or outputs! 
 
 - Save your .Rmd, which lives in your R project. 
 - Close your whole project (File > Close project)
@@ -146,5 +146,5 @@ ggplot(data = chipmunk_df, aes(x = time_vec, y = chipmunk_pop)) +
 - Use Cmd + Option + R to run all code in your .Rmd
 - Check to see that all objects and outputs are automatically reproduced
 
-## End interactive session 1
+## End interactive session 1b
 

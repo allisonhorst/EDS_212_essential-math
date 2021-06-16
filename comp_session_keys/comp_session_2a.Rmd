@@ -1,0 +1,96 @@
+---
+title: 'EDS 212 Computational Session 2A'
+subtitle: 'Derivatives by hand, in R, meet Jupyter Notebooks, a Python function'
+output: 
+  html_document:
+    css: comp_session_theme.css
+    toc: true
+    toc_float: true
+  
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(reticulate)
+```
+
+```{r, echo = FALSE}
+knitr::include_graphics("comp_session_images/workflows_shred.png")
+```
+
+- Derivatives by hand
+- Derivatives in R with `D()`
+- Meet Jupyter Notebooks
+- A Python function
+
+## Derivatives by hand
+
+- 2 derivatives the long way (then you'll never have to do this again)...and tell me what you're doing
+- 3 derivatives with rules 
+- Find instantaneous slopes from the derivative
+
+## Derivatives in R with `deriv()` and `D()`
+
+- Create a new R project
+- To the project, add an R *script* (discuss how a script differs from R Markdown)
+- Add a header (comment out lines with `#` in a script)
+- Follow along to find the derivative of several functions using `deriv()` and `D()`
+
+Example: 
+
+```{r}
+# Create an expression (right hand side of the equation...):
+ex_1 <- expression(5 * x ^ 2)
+
+# Find the derivative with deriv():
+my_derivative <- deriv(ex_1, "x")
+
+# Check it out:
+my_derivative
+
+# Evaluate it at x = 2.8
+x <- 2.8
+
+# Use it! (first returned is function value, second returned is slope)
+eval(my_derivative)
+
+```
+
+Alternatively: 
+```{r}
+# Create an expression:
+ex_2 <- expression(3.1 * x ^ 4 - 28 * x)
+
+# Find the derivative with respect to x:
+D(ex_2, "x")
+```
+
+## Meet Jupyter Notebooks
+
+- Open the Anaconda Navigator
+- Find Jupyter Notebook, click 'Launch'
+- Navigate to your current R Project folder
+- Click New > Python 3 
+- Play around with adding formatted text, code chunks with basic operations, etc. 
+- Run code chunks with Shift + Enter
+
+## Hello Python
+
+We're going to be diving into R and Python a *lot* more in EDS 221 - but let's say "Hello" for now by writing a little Python function. 
+
+In Python, the pieces of a function are the same as those in R - we just put them together a bit differently. 
+
+The general structure of a Python function is: 
+
+```{python}
+def my_function(a, b):
+  calc = a + b
+  print(calc)
+  
+my_function(a = 5, b = 2)
+```
+
+What are the similarities between the Python function structure, and a function in R? What would this function look like in R? 
+
+## End

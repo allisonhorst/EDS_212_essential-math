@@ -110,5 +110,5 @@ That means that **your scripted code is what is precious** - and we want to buil
 
 Which brings us to a critical lesson: Create things like you expect your computer to explode at any minute. Your computer is NOT a safe place. Where is? Someone away from your local computer...somewhere cloudlike and wonderful. Somewhere like GitHub (coming up soon!). 
 
-## End interactive session 1
+## End interactive session 1a
 

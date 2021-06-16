@@ -21,8 +21,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ### Interactive session
 
 - Derivatives by hand 
+- Derivatives in R with `D()`
 - Meet Jupyter Notebooks
-- Derivatives in R and Python
 - Functions in Python
 
 ```{r, echo = FALSE}
