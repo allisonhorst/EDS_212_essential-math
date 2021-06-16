@@ -1,0 +1,333 @@
+---
+title: "EDS 212 - Essential Math in Environmental Data Science"
+subtitle: "Day 1 Part 1: Course intro, algebra refresher"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+    css: xaringan-themer.css
+---
+
+## Welcome to EDS 212 - Essential Math in Environmental Data Science
+
+- **Teacher:** Allison Horst (ahorst@ucsb.edu)
+- **Course assistant:** 
+- **Course hours:** 8am - 5pm PST, Monday - Friday
+- **Location:** NCEAS MEDS Classroom
+
+Let's take a look at the [course syllabus](https://docs.google.com/document/d/1Kcc9BhZuKeAGxQeW0ls7KY0oUtt-TBwEgOibl4_ShtY/edit?usp=sharing) together. 
+
+---
+
+## Course description
+
+- **Units:** 2
+- **Grading:** Pass/No Pass 
+- **Description:** Quantitative skills and understanding are critical when working with, understanding, analyzing and gleaning insights from environmental data. In the intensive EDS 212 course, students will refresh fundamental skills in math (algebra, uni- and multivariate functions, units and unit conversions), summary statistics and basic probability theory, derivative and differential equations, linear algebra, and reading, writing and evaluating logical operations.
+
+---
+
+![](slide_images/eds221_daily_schedule.png)
+
+---
+
+## Topics overview
+
+- **Day 1:** Course introduction & math basics refresher
+- **Day 2:** Derivatives
+- **Day 3:** Differential equations, intro to linear algebra
+- **Day 4:** Linear algebra, summary statistics
+- **Day 5:** Basic probability theory, Boolean algebra
+
+---
+
+class: center, middle
+
+## Why am I taking a math class? 
+
+(or, *Why do I have to know math when a computer will do it for me?*)
+
+---
+
+## A quantitative brain warm-up
+
+### MEDS students have diverse work & academic histories
+
+This course re/introduces math concepts and tools that: 
+
+- Focus on applications to environmental data science
+- Are specifically relevant for MEDS projects, coursework
+- Provide an entryway into building computational skills
+- Refresh quantitative thinking skills generally
+- Refresh essentials like units, conversions, notation, language
+
+---
+
+## Math brain warm up
+
+- Algebra blitz
+- Common units and unit conversions
+- Exponentials and logarithms
+- Functions
+- Understanding graphs
+- Interpreting equations
+
+---
+
+## Algebra blitz
+
+### You can get far with a few rules
+
+- Order of operations
+- Equations are already solved (but sometimes we need them in a different format)
+- Do whatever you want but do the same thing to both sides
+
+---
+
+## Order of operations (P-E-MD-AS)
+
+**P** - Parentheses
+
+**E** - Exponents
+
+**M/D** - Multipication / division
+
+**A/S** - Addition / subtraction
+
+
+---
+
+## Order of operations practice problems
+
+Simplify the following: $(12 - 2)/5 + 5(3+2)/6$
+
+<br/>
+
+Simplify the following: $\frac{4-6}{2}(3+1)-\frac{1+2*4}{3}$
+
+<br/>
+
+Simplify the following: $3x+4(8x-6x) -(2y-5)+\frac{2x(1-3)}{2}$
+
+---
+
+## Notation matters
+
+Simplify the following: $6 \div 3(4+2)$
+
+--
+
+What would be a harder-to-misinterpret way to write this?
+
+--
+
+### Important takeaway: Being readable & hard to incorrectly interpret is often as important as being technically "correct"
+
+When designing things, it's important to consider the different ways that users might misuse or misunderstand it - then build in safeguards to help them use it correctly. Clear communication and user-centered design is critical in environmental data science. 
+
+---
+
+## Equations are solved
+
+</br>
+
+$$2x-5y+3.9=8x^2-100.7x$$
+</br>
+
+Provides solutions for the questions:
+
+1. "What is the value of $2x-5y+3.9$?" and 
+2. "What is the value of $8x^2-100.7x$?"
+---
+
+## It is often helpful to reorganize things
+
+In the equation on the previous slide (shown below), we might want to solve for *y*:
+
+$$2x-5y+3.9=8x^2-100.7x$$
+<br/>
+### The one rule to rule them all: 
+
+You can do whatever you want to an equation, as long as you do **the exact same thing to both sides.** That includes ensuring that you are applying something entirely to each side. 
+
+---
+
+## We're really just doing the same thing to both sides until we're happy with the format
+
+### Example: 
+
+Apply the same operation to each side of the following equation step-by-step to isolate $x$ on one side. **Write out all steps.**
+
+$$4x+8=5-2x$$
+
+---
+
+### Example: 
+
+Apply the same operation to each side of the following equation step-by-step to isolate $a$ on one side. **Write out all steps.**
+
+$$\frac{2(a+1)}{3a}+4=6$$
+---
+
+## Exponents & how to do math with them
+
+$$x^n=x\times x\times\ x \times x...(n\space times)$$
+### Exponent warm-ups
+Evaluate the following to find a value for $y$:
+
+1. $y = 12-2^4$
+
+2. $2y + 30=y+3^3$
+
+---
+
+## Exponent rules
+
+--
+
+- $x^ax^b=x^{a+b}$ ; **Example:** $y^5y^3=x^{5+3}=x^8$
+
+--
+
+- $\frac{x^a}{x^b}=x^{a-b}$ ; **Example:** $\frac{z^5}{z^3}=z^{5-3}=z^2$
+
+--
+
+- $\frac{1}{x^a}=x^{-a}$ ; **Example:** $b^{-4x}=\frac{1}{b^{4x}}$
+
+--
+
+- $(x^a)^b=x^{ab}$ ; **Example:** $(2^3)^2=2^{3*2}=2^6=64$
+
+--
+
+- $(\frac{x}{y})^a=\frac{x^a}{y^a}$ ; **Example:** $(\frac{y}{2^2})^2=\frac{y^2}{(2^2)^2}=\frac{y^2}{2^4}=\frac{y^2}{16}$
+
+--
+
+- $(xy)^a=x^ay^a$ ; **Example:** $(3x)^2=3^2x^2$
+
+---
+
+## Exponent practice
+
+Simplify the following expressions using the rules of exponents:
+
+1. $3x^5x^8x^{-11}$
+
+2. $\frac{-8x^6}{2x^4}+7x^2$
+
+3. $\frac{3x}{x^5}-3.8x^4\frac{x^3}{x^6}+8.1x-11.2$
+
+---
+
+## Multiplying expressions (FOIL)
+
+**F**irst, **O**utside, **I**nside, **L**ast
+
+**Example:**
+
+$$(2x+5)(x-3)$$
+$$=2x^2-3*2x+5*x-5*3$$
+$$=2x^2-x-15$$
+---
+
+# UNITS. UNITS. UNITS.
+
+Think about these statements, which all contain the same *value* of 4:
+
+- There are four in the refrigerator.
+
+- There are four **burritos** in the refrigerator.
+
+- There are four **roaches** in the refrigerator.
+
+- There are four **million dollars** in the refrigerator.
+
+---
+
+class: center, middle
+
+### Units are critical in environmental data science. We cannot responsibly work with data without knowing the units of **each variable we're working with**.
+
+### That means we need to always **familiarize ourselves with metadata**, carefully **check units and any unit conversions**, and understand **how units combine to into the units of a dependent variable**.
+
+---
+
+## Dimensional analysis for unit conversions
+
+In dimensional analysis, we multiply initial units by a sequence of conversion factors to arrive at the final desired units. 
+
+For example, to convert $100 \frac{g}{cm^3}$ into units of $\frac{kg}{in^3}$, given that 1 cm^3^ = 0.061 in^3^.
+
+$$100\frac{g}{cm^3}*\frac{1kg}{1000g}*\frac{1cm^3}{0.061in^3}=1.639\frac{kg}{in^3}$$
+---
+
+## Unit conversion practice
+
+Practice dimensional analysis to perform the following conversions:
+
+1. Convert $8.1\frac{km}{s}$ to miles per hour, given that 1 km = 0.621 miles.
+
+2. Convert a mass flux of $3.2\frac{g}{min\cdot m^2}$ to $\frac{mg}{s\cdot cm^2}$.
+
+---
+
+## Functions
+
+Functions are mathematical expressions that tell us how input values are related to output values. 
+
+For example, $y = 3x-5$ is a function that tells us the **value of y** at **any value of x**. In this scenario, we would probably say **y is a function of x**. 
+
+Could you also rewrite it and say **x is a function of y**? Here, with no knowledge of what's an input and what's an output, sure - but usually in environmental data science we specify the input variable(s), and the output variable(s) carefully. What follows is the expression in the format of: "**[output variable(s)] is/are a function of [input variable(s)]**". 
+
+---
+
+## Thinking about inputs and outputs
+
+For the following combinations of related variables, which do you expect would be the **input** and the **output** in a function describing how they are related? Say your answer in a sentence, e.g. "Evapotranspiration is a function of air temperature."
+
+1. fuel (biomass) / slope / wildfire severity / windspeed / air temperature
+
+2. wind speed / power generated by wind turbine
+
+3. soil C:N ratio / bacterial biomass / soil water content / leaf litter decomposition rate
+
+---
+
+```{r, echo = FALSE, out.width = "60%", fig.align = "center"}
+
+knitr::include_graphics("slide_images/betz_limit.png")
+
+```
+
+<p style="font-size: 20px">Schaffarczyk A.P. (2020) Types of Wind Turbines. In: Introduction to Wind Turbine Aerodynamics. Green Energy & Technology. Springer, Cham. https://doi-org.proxy.library.ucsb.edu:9443/10.1007/978-3-030-41028-5_2</p>
+
+---
+
+## Function notation
+
+### Single variable (univariate) function: 
+
+$f(x) = [expression\space containing \space x]$
+
+### Multivariate function:
+
+$g(a,T,z)=[expression\space containing \space a, T, \space and \space z]$
+
+---
+
+## Evaluating functions
+
+For continuous functions, we evaluate them by plugging in variable values. 
+
+### Example:
+
+Evaluate $g(x,t)=2.4x+0.5t^2$ at $x = 3$ and $t = 10$
+
+$g(3, 10) = 2.4(3) + 0.5(10^2)= 57.2$ 
+

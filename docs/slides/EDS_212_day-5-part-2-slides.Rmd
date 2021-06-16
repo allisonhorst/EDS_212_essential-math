@@ -1,0 +1,15 @@
+---
+title: "EDS 212"
+subtitle: "Day 5 - Boolean algebra"  
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+## Boolean algebra
