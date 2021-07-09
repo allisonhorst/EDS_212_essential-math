@@ -1,6 +1,6 @@
 ---
-title: "EDS 212"
-subtitle: "Day 4 - Linear algebra continued"  
+title: "EDS 212 - Essential Math in Environmental Data Science"
+subtitle: "Day 4 Part 1 - Linear algebra continued"  
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
@@ -16,7 +16,7 @@ output:
 
 ---
 
-## Applications of linear algebra in environmental data science
+---
 
---- 
+---
 

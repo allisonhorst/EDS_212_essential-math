@@ -1,28 +1,95 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>EDS 212</title>
+    <title>EDS 212 - Essential Math in Environmental Data Science</title>
     <meta charset="utf-8" />
-    <script src="EDS_212_day-4-part-2-slides_files/header-attrs-2.7/header-attrs.js"></script>
+    <script src="EDS_212_day-4-part-2-slides_files/header-attrs-2.8/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# EDS 212
-## Day 4 - Essential summary statistics
+# EDS 212 - Essential Math in Environmental Data Science
+## Day 4 Part 2: Essential summary statistics and exploration
 
 ---
 
 
-## Part 1: Linear algebra continued
+
+
+
+## Part 2: Essential summary statistics and data exploration
 
 ---
 
-## Applications of linear algebra in environmental data science
+## Data distributions
 
 --- 
+
+#### Histogram: a graph of the frequency of observations within a series of bins (usually of equal size) for a variable
+
+Example: distribution of penguin flipper lengths for chinstrap penguins
+
+
+```r
+penguins %&gt;% 
+  filter(species == "Chinstrap") %&gt;% 
+  ggplot(aes(x = flipper_length_mm)) +
+  geom_histogram(bins = 18)
+```
+
+![](EDS_212_day-4-part-2-slides_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
+
+---
+
+### How can we describe the data distribution more summarily?
+
+Our starting points: 
+
+- Shape / patterns / clusters (data vizualization)
+- Central tendency (mean / median)
+- Spread &amp; uncertainty (standard deviation / standard error / confidence interval)
+
+---
+
+### Useful data visualizations
+
+- Histograms
+- Boxplots
+- Scatterplots 
+
+---
+
+### Boxplot
+
+#### Most often: 
+
+- Box extends to 1st and 3rd quartile observation values
+- Line at the median value
+- Whiskers extend to last observation within 1 step (1 step = 1.5*interquartile range)
+- Anything beyond whiskers indicated with a dot at the observation value
+
+---
+
+Example: 
+
+
+```r
+teddy_miles &lt;- c(1.0, 1.2, 1.8, 2.1, 2.4, 2.9, 3.4, 4.7, 5.1, 5.6, 7.8, 10.4, 15.4)
+teddy_miles
+```
+
+```
+##  [1]  1.0  1.2  1.8  2.1  2.4  2.9  3.4  4.7  5.1  5.6  7.8 10.4 15.4
+```
+
+```r
+boxplot(teddy_miles, horizontal = TRUE)
+```
+
+![](EDS_212_day-4-part-2-slides_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
+
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

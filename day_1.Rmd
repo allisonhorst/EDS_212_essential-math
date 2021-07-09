@@ -10,16 +10,24 @@ description: |
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Day 1 Part 1
+## Day 1 Part 1 
 
-### Lecture topics
+### Lecture
 
-**[Lecture 1A Slides - PDF](slides/EDS_212_day-1-part-1-slides.pdf)**
+**[Lecture 1.1 Slides - PDF](slides/EDS_212_day-1-part-1-slides.pdf)**
 
 - Algebra basics refresher
 - Units and unit conversions
 - Functions: structure, language, evaluation
 - Exponents
+
+```{r, echo = FALSE}
+xaringanExtra::embed_xaringan(
+  url = "slides/EDS_212_day-1-part-1-slides.html",
+  ratio = "16:9",
+  border = "1px solid gainsboro"
+)
+```
 
 ### Interactive session 
 
@@ -30,36 +38,20 @@ knitr::opts_chunk$set(echo = TRUE)
 - Storing objects
 - Our first function
 
+### Flex Session: 
 
-```{r, echo = FALSE}
-xaringanExtra::embed_xaringan(
-  url = "slides/EDS_212_day-1-part-1-slides.html",
-  ratio = "16:9",
-  border = "1px solid gainsboro"
-)
-```
+- Meet git + GitHub
 
 ## Day 1 Part 2
 
 ### Lecture
 
-**[Lecture 1B Slides - PDF](slides/EDS_212_day-1-part-2-slides.pdf)**
+**[Lecture 1.2 Slides - PDF](slides/EDS_212_day-1-part-2-slides.pdf)**
 
 - Natural exponential (& exponential functions)
 - Logarithms
 - Thinking about graphs
 - Finding average rate of change (slope)
-
-### Interactive session
-
-**[Interactive Session 1B handout](comp_session_keys/comp_session_1b.html)**
-
-
-- R Projects
-- R Markdown customization
-- Creating vectors and sequences
-- Our first `ggplot2` graph
-- Functions continued
 
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
@@ -68,3 +60,32 @@ xaringanExtra::embed_xaringan(
   border = "1px solid gainsboro"
 )
 ```
+
+### Interactive session
+
+**[Interactive Session 1B handout](comp_session_keys/comp_session_1b.html)**
+
+- R Projects
+- R Markdown customization
+- Creating vectors and sequences
+- Our first `ggplot2` graph
+- Functions continued
+
+### Flex Session: 
+
+- Interactive activity: expanding the Venn diagram of skills for data science
+
+## Day 1 Tasks and Activities
+
+### Refresher tasks
+
+### Challenge problems
+
+### Creative thinking problems
+
+## Efficiency tips (inspired by Dr. Julia Lowndes)
+
+- `Cmd + tab` (Mac) or `Ctrl + tab` (PC) to toggle through open applications
+- `Ctrl + tab` (both) to toggle through tabs in browser (or open tabs in RStudio!)
+- 
+

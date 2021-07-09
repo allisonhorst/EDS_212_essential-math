@@ -1,6 +1,6 @@
 ---
 title: "EDS 212"
-subtitle: "Day 3 Part 2 - Linear algebra basics"  
+subtitle: "Day 3 Part 2 - Linear algebra fundamentals"  
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
@@ -18,6 +18,8 @@ Linear algebra "branch of mathematics concerning linear equations" (Wikipedia), 
 
 It is a fundamental part of data science (and how computers understand & process data), and useful for describing environmental processes.
 
+As [Dr. Jason Brownlee](https://machinelearningmastery.com/gentle-introduction-linear-algebra/) writes, "Linear algebra is the mathematics of data."
+
 ---
 
 ## In environmental data science, most often:
@@ -28,11 +30,11 @@ Put your linear equations into a matrix.
 
 ## The building blocks of linear algebra
 
-- scalar: 
+- **scalar:** a value without direction, representing magnitude
 
-- vector: 
+- **vector:** a list of values, representing magnitude *and* direction or a point in multivariate space
 
-- matrix: 
+- **matrix:** a table of values
 
 ---
 
@@ -48,7 +50,7 @@ Put your linear equations into a matrix.
 
 - Dimensional reduction
 - Population matrix models
-- 
+- Optimization
 
 ---
 
@@ -59,16 +61,9 @@ Put your linear equations into a matrix.
 - Basic matrix algebra
 ---
 
-## Expressing processes in vectors and matrices
+## Vector addition & subtraction
 
-See: matrix population models
+
 
 ---
-
-## Data science vocabulary for the day
-
-- Reproducibility
-
-
-
 

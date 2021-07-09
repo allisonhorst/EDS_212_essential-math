@@ -35,6 +35,16 @@ knitr::include_graphics(here("img","usgs-ynlW4w7OHDs-unsplash.jpg"))
 
 Allison Horst (ahorst\@ucsb.edu)
 
+<!-- Allison reminders:
+
+- Check for food allergies
+- Anonymous survey for disability needs / information
+- Daily check-ins? 
+- Self evaluation & review
+- Working with Casey on course materials
+
+-->
+
 ## Important links
 
 -   [Course syllabus](https://docs.google.com/document/d/1Kcc9BhZuKeAGxQeW0ls7KY0oUtt-TBwEgOibl4_ShtY/edit?usp=sharing)
@@ -91,6 +101,8 @@ Tentative daily schedule (subject to change):
 | 1:15pm - 2:15pm   | *Interactive Session 2 (60 min)*                           |
 | 2:15pm - 3:15pm   | *Flex time (60 min)*                                       |
 | 3:15pm - 5:00pm   | *Interactive Session 3: Group & challenge tasks (105 min)* |
+
+**Note:** For EDS 212 and 221, Wednesdays will start at 10:00am (instead of 8:00am). 
 
 ## Learning objectives
 

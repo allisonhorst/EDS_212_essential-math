@@ -18,7 +18,15 @@ xaringanExtra::embed_xaringan(
 )
 ```
 
-Day 4 Part 2:
+#### Flex session
+
+- Fancy notebooks: R Markdown tips & tricks
+
+## Day 4 Part 2: Summary statistics and data exploration
+
+- Central tendency
+- Spread & distributions
+- Exploratory visualizations
 
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
@@ -27,3 +35,19 @@ xaringanExtra::embed_xaringan(
   border = "1px solid gainsboro"
 )
 ```
+
+#### Flex session
+
+- Watch party: JD Long's 2019 [RStudio::conf talk *Empathy in action*](https://www.youtube.com/watch?v=CjNOSrfQiAY)
+
+
+## Day 4 Tasks and Activities
+
+### Refresher problems
+
+### Challenge problems
+
+### Creative thinking problems
+
+## Efficiency tips (inspired by Dr. Julia Lowndes)
+

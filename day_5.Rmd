@@ -18,6 +18,10 @@ xaringanExtra::embed_xaringan(
 )
 ```
 
+#### Flex session
+
+- Start creating your personal website in `distill`
+
 Day 5 Part 2:
 
 ```{r, echo = FALSE}
@@ -27,3 +31,19 @@ xaringanExtra::embed_xaringan(
   border = "1px solid gainsboro"
 )
 ```
+
+#### Flex session
+
+- Personal website continued
+
+## Day 5 Tasks and Activities
+
+### Refresher problems
+
+### Challenge problems
+
+### Creative thinking problems
+
+## Efficiency tips (inspired by Dr. Julia Lowndes)
+
+

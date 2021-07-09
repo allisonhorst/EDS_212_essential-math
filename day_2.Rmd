@@ -12,18 +12,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### Lecture: 
 
-**[Lecture 2A Slides - PDF](slides/EDS_212_day-2-part-1-slides.pdf)**
+**[Lecture 2.1 Slides - PDF](slides/EDS_212_day-2-part-1-slides.pdf)**
 
 - Definition of the derivative
 - Derivatives the long way
 - Basic derivative rules
-
-### Interactive session
-
-- Derivatives by hand 
-- Derivatives in R with `D()`
-- Meet Jupyter Notebooks
-- Functions in Python
 
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
@@ -33,22 +26,26 @@ xaringanExtra::embed_xaringan(
 )
 ```
 
+### Interactive session
+
+- Derivatives by hand 
+- Derivatives in R with `D()`
+- Meet Jupyter Notebooks
+- Hello Python
+
+### Flex Session: 
+
+- Communicating data: presenting graphs
+
 ## Day 2 Part 2
 
 ### Lecture:
 
-**[Slides - PDF]()**
+**[Lecture 2.2 Slides - PDF]()**
 
 - Higher order derivatives
 - Partial derivatives
 - Applications in environmental data science
-
-### Interactive session: 
-
-- Higher order derivatives as art
-- Partial derivatives in R and Python
-- Fun with partials & interpreting them
-
 
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
@@ -57,3 +54,28 @@ xaringanExtra::embed_xaringan(
   border = "1px solid gainsboro"
 )
 ```
+
+### Interactive session: 
+
+- Higher order derivatives as art
+- Partial derivatives in R and Python
+- Fun with partials & interpreting them
+
+### Flex Session: 
+
+- Allison coffee & "Ask me anything"
+
+## Day 2 Tasks and Activities
+
+### Refresher tasks
+
+### Challenge problems
+
+### Creative thinking problems
+
+## Efficiency tips (inspired by Dr. Julia Lowndes)
+
+- Open Spotlight search: `Cmd + spacebar` (Mac) or `Ctrl + spacebar` (PC)
+- `Cmd + A` (Mac) or `Ctrl + A`: Select all in current document
+- `Cmd + Z` (Mac) or `Ctrl + Z`: Undo last
+ 

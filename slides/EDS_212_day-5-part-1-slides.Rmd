@@ -1,6 +1,6 @@
 ---
-title: "EDS 212"
-subtitle: "Day 5 - Basic probability theory"  
+title: "EDS 212 - Essential Math in Environmental Data Science"
+subtitle: "Day 5 Part 1 - Basic probability theory"  
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
@@ -12,8 +12,63 @@ output:
       countIncrementalSlides: true
 ---
 
-## Part 1: Basic probability theory 
+## Basic probability theory 
 
 ---
 
-## Part 2: Boolean algebra
+## Why?
+
+- Hypothesis testing
+- Bayesian statistics
+
+---
+
+## Intuition check (what type of penguin do you think this is?)
+
+---
+
+Population, sample, statistic, parameter
+
+---
+
+- We make assumptions about population distributions from samples
+- From the assumed distribution we can calculate probabilities
+- That can help us to investigate trends and differences in our data (EDS 222)
+
+--- 
+
+But first: basic probability theory! 
+
+Intro - The Monte Hall Problem
+
+---
+
+Event, probability, law of large numbers
+
+---
+
+Union, intersection
+
+---
+
+For discrete variables
+
+---
+
+For continuous variables
+
+---
+
+Probability of an exact value for a continuous variable
+
+---
+
+Conditional probability
+
+--- 
+
+One Bayes example
+
+---
+
+
