@@ -1,0 +1,143 @@
+---
+title: 'EDS 212 Computational Session 3A'
+subtitle: 'Differential equations and solving them numerically in R: Lotke-Volterra'
+output: 
+  html_document:
+    css: comp_session_theme.css
+    toc: true
+    toc_float: true
+  
+---
+
+In this session, we'll see how to use the `deSolve::ode()` function to numerically estimate the solution to the Lotke-Volterra equations for predator-prey populations.
+
+First, we'll learn a bit more about how numerical methods for approximating solutions to differential equations work. 
+
+**Credit:** This lesson is closely based on the article (Numerically solving differential equations with R)[https://rstudio-pubs-static.s3.amazonaws.com/32888_197d1a1896534397b67fb04e0d4899ae.html]
+
+```{r}
+library(tidyverse)
+library(deSolve)
+library(kableExtra)
+```
+
+## Numerical approximation by hand
+
+We'll just do this once to reinforce how numerical integration generally works. Given the differential equation:
+
+$$\frac{dP}{dt}=0.4P(0.5 - P)$$
+
+and the initial condition $P(0)=0.2$, approximate the solution $P(t)$ at t = 1, 2, 3, 4, 5. 
+
+First, what is $t$, $P$, and $\frac{dP}{dt}$ at $t = 0$? Here we have the initial condition, and can calculate the slope: 
+
+```{r}
+t_0 <- data.frame(t = 0, P = 0.2, 'dfdx' = 0.024)
+
+kable(t_0) %>% 
+  kable_styling(full_width = FALSE)
+```
+
+Now, we approximate the value of $P(t)$ and $\frac{dP}{dt}$ at the next step ($t = 1$) *as if the slope is continuing at 0.024*. Which means the approximate value of $P(1) = 0.2 + 0.024*(1) = 0.44$. At that value of $P$, the slope is approximated by $\frac{dP}{dt}=0.4*0.44(0.5 - 0.44) = 0.01056$.
+
+So now, our table is expand to: 
+
+```{r}
+t_1 <- data.frame(t = c(0,1), P = c(0.2, 0.44), 'dfdx' = c(0.024, 0.01056))
+
+kable(t_1) %>% 
+  kable_styling(full_width = FALSE)
+```
+
+Then we continue. What do we approximate is the value of P(t) at t = 2? Using the new slope of 0.01056, the approximate value of $P(2) = 0.44 + 0.01056*1 = 0.45056$. Using that value, we approximate the slope at $t=2$ by $\frac{dP}{dt}=0.4*0.45056(0.5 - 0.45056) = 0.0089$. 
+
+Our table is then updated to: 
+
+```{r}
+t_2 <- data.frame(t = c(0,1,2), P = c(0.2, 0.44, 0.45056), 'dfdx' = c(0.024, 0.01056, 0.0089))
+
+kable(t_2) %>% 
+  kable_styling(full_width = FALSE)
+```
+And we could continue doing that for many incremental values of $t$ to get an approximate solution for what the function $P(t)$ looks like. But that would be *very* tedious. Up next - computer help! 
+
+### Summary: numerical approximation
+There are *many* different approaches to numerical approximation of solutions for differential equations. This example is meant to give you an idea of how the iterative approximation works generally.
+
+Now, let's see how much more quickly we can do this with some computer power! 
+
+## Numerical approximation using `deSolve::ode()`
+
+### The Lotke-Volterra equations
+
+As described in the lecture, the Lotke-Volterra models have been used to describe predator-prey populations. 
+
+#### Prey equation: 
+
+$$\frac{dx}{dt}=\alpha x-\beta xy$$
+
+From Wikipedia: "The prey are assumed to have an unlimited food supply and to reproduce exponentially, unless subject to predation; this exponential growth is represented in the equation above by the term $\alpha x$. The rate of predation upon the prey is assumed to be proportional to the rate at which the predators and the prey meet, this is represented above by $\beta xy$. If either x or y is zero, then there can be no predation."
+
+#### Predator equation: 
+
+$$\frac{dy}{dt}=\delta xy - \gamma y$$
+
+From Wikipedia: "In this equation, $\delta xy$ represents the growth of the predator population. (Note the similarity to the predation rate; however, a different constant is used, as the rate at which the predator population grows is not necessarily equal to the rate at which it consumes the prey). The term $\gamma y$ represents the loss rate of the predators due to either natural death or emigration, it leads to an exponential decay in the absence of prey. 
+
+Where: 
+
+- $x$ is prey population (e.g. rabbits)
+- $y$ is predator population (e.g. wolves)
+- $\alpha, \beta, \gamma, \delta$ are positive parameters
+
+To find an approximate solution in R, we will need four things: 
+- Parameter values
+- A sequence of times over which we'll approximate predator & prey populations
+- An initial condition (initial populations of predator & prey at t = 0)
+- The differential equations that need to be solved
+
+Solving the Lotke-Volterra equation: 
+
+```{r}
+# Create a sequence of times (days): 
+time <- seq(0, 25, by = 0.05)
+
+# Set some parameter values (these can change - keep it in mind):
+parameters <- c(alpha = .75, beta = 0.8, delta = 0.5, gamma = 1)
+
+# Set the initial condition (prey and predator populations at t = 0).
+# Recall: x = prey, y = predator
+init_cond <- c(x = 5, y = 2)
+
+# Prepare the series of differential equations as a function: 
+lk_equations <- function(time, init_cond, parameters) {
+  with(as.list(c(init_cond, parameters)), {
+    dxdt = alpha * x - beta * x * y
+    dydt = delta * x * y - gamma * y
+    return(list(c(dxdt, dydt)))
+  })
+}
+
+# Find the approximate the solution using `deSolve::ode()`:
+approx_lk <- ode(y = init_cond, times = time, func = lk_equations, parms = parameters)
+
+# Check the class: 
+class(approx_lk)
+
+# We really want this to be a data frame, and we want both prey (x) and predator (y) to be in the same column -- we'll learn why in EDS 221 (tidy data)
+approx_lk_df <- data.frame(approx_lk) %>% 
+  pivot_longer(cols = c(x,y), names_to = "species", values_to = "population")
+
+# Plot it! 
+ggplot(data = approx_lk_df, aes(x = time, y = population)) +
+  geom_line(aes(color = species))
+```
+
+## Updating parameter values
+
+What happens as you change the different parameters (and re-run the entire code chunk)? How does that align with what you see in the graph? Some things to keep in mind: 
+
+- $\alpha$ is a growth rate for prey
+- $\gamma$ is a mortality rate for predator
+
+## End
