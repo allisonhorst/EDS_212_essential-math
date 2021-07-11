@@ -32,6 +32,12 @@ As [Dr. Jason Brownlee](https://machinelearningmastery.com/gentle-introduction-l
 
 ---
 
+## Applications of linear algebra in environmental sciences
+
+- Dimensional reduction
+- Population matrix models
+- Optimization
+
 ## Applications of linear algebra in data science
 
 - Array programming / vectorized code
@@ -40,23 +46,9 @@ As [Dr. Jason Brownlee](https://machinelearningmastery.com/gentle-introduction-l
 
 ---
 
-## Applications of linear algebra in environmental sciences
+## Let's start with vectors
 
-- Dimensional reduction
-- Population matrix models
-- Optimization
-
----
-
-## Basic math with scalars & vectors
-
-- Vector addition & subtraction
-- Scalar multiplication
-- Basic matrix algebra
-
----
-
-## Where are vectors in EDS?
+### Where are vectors in EDS?
 
 Everywhere. 
 
@@ -162,30 +154,4 @@ Is as valid as describing a "point" in multivariate space as a vector with two "
 Optional: watch 3Brown1Blue's great 10 min recording on [Vectors (Ch 1 Essense of Linear Algebra)](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=1).
 
 ### Vector addition & scalar multiplication are the basis of most linear algebra! 
-
----
-
-## Matrices
-
-A matrix is a table of values (multiple vectors in combination). A vector, therefore, can be thought of as a matrix with a single column. 
-
-- Dimensions: the size of the matrix, in rows x columns (*m* x *n*)
-- Elements: values in a matrix, often denoted symbolically with a subscript where the first number is the *row* and the second number is the *column* (e.g. $a_{34}$ indicates the element in row 3, column 4)
-
----
-
-## Matrix algebra
-
-### Addition & subtraction
-
-Add or subtract the corresponding elements (by matrix position) to create a new matrix of the same dimensions
-
----
-
-## Matrix multiplication
-
----
-
-## Transform
-
 

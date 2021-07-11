@@ -20,34 +20,28 @@ output:
 
 - Hypothesis testing
 - Bayesian statistics
+- Decision making
 
 ---
 
-## Intuition check (what type of penguin do you think this is?)
+class: center, middle
+
+## The Monty Hall Problem
+![](slide_images/monty_hall.jpg)
 
 ---
 
-Population, sample, statistic, parameter
+Terms: Event, event space, probability, law of large numbers
 
 ---
 
-- We make assumptions about population distributions from samples
-- From the assumed distribution we can calculate probabilities
-- That can help us to investigate trends and differences in our data (EDS 222)
+## Basic probability theory and notation
 
---- 
+- Union
 
-But first: basic probability theory! 
+- Intersection
 
-Intro - The Monte Hall Problem
-
----
-
-Event, probability, law of large numbers
-
----
-
-Union, intersection
+- Complement
 
 ---
 
@@ -70,5 +64,54 @@ Conditional probability
 A Bayes example
 
 ---
+
+## Intuition check 
+
+The following are jitterplots (overlaying violin plots) of flipper length for Adélie, chinstrap and gentoo penguins recorded by Dr. Kristen Gorman at islands in Palmer Archipelago, Antarctica. 
+
+We'll consider: given some mystery penguins with different flipper lengths, how might the length inform which species we think it is? 
+
+---
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) +
+  geom_violin(fill = "gray90", color = NA) +
+  geom_jitter(size = 0.2, width = 0.05) +
+  theme_minimal() +
+  coord_flip()
+```
+
+---
+
+## Terms
+
+**Population:** The entire collection of things in a category you are trying to understand. **You define the population.** For example: Santa Barbara registered voters, Ponderosa pines in Inyo National Forest, purple urchins in Channel Islands Marine Sanctuary. 
+
+**Sample:** A subset of the population, goal is to be *representative* of the population
+
+**Parameter:** A characteristic of the population
+
+**Statistic:** A characteristic of the sample
+
+---
+
+## Inference
+
+Usually, we don't have the resources (time, money, humanpower, etc.) to collect observations for an entire population. As a proxy, we try to collect a representative sample. 
+
+Then, we attempt to draw conclusions about the **populations** from which our samples were collected.
+
+---
+
+## Probability density function
+
+---
+
+## One example: 2-sample t-test
+
+**Note:** You will cover this in depth in EDS 222. We'll just build some intuition here for what basic hypothesis tests do, and how probability is involved. 
 
 

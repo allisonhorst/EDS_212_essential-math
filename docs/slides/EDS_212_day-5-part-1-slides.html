@@ -1,26 +1,115 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>EDS 212</title>
+    <title>EDS 212 - Essential Math in Environmental Data Science</title>
     <meta charset="utf-8" />
-    <script src="EDS_212_day-5-part-1-slides_files/header-attrs-2.7/header-attrs.js"></script>
+    <script src="EDS_212_day-5-part-1-slides_files/header-attrs-2.8/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# EDS 212
-## Day 5 - Basic probability theory
+# EDS 212 - Essential Math in Environmental Data Science
+## Day 5 Part 1 - Basic probability theory
 
 ---
 
 
-## Part 1: Basic probability theory 
+## Basic probability theory 
 
 ---
 
-## Part 2: Boolean algebra
+## Why?
+
+- Hypothesis testing
+- Bayesian statistics
+- Decision making
+
+---
+
+class: center, middle
+
+## The Monty Hall Problem
+![](slide_images/monty_hall.jpg)
+
+---
+
+Terms: Event, event space, probability, law of large numbers
+
+---
+
+## Basic probability theory and notation
+
+- Union
+
+- Intersection
+
+- Complement
+
+---
+
+For discrete variables
+
+---
+
+For continuous variables
+
+---
+
+Probability of an exact value for a continuous variable
+
+---
+
+Conditional probability
+
+--- 
+
+A Bayes example
+
+---
+
+## Intuition check 
+
+The following are jitterplots (overlaying violin plots) of flipper length for Adélie, chinstrap and gentoo penguins recorded by Dr. Kristen Gorman at islands in Palmer Archipelago, Antarctica. 
+
+We'll consider: given some mystery penguins with different flipper lengths, how might the length inform which species we think it is? 
+
+---
+
+![](EDS_212_day-5-part-1-slides_files/figure-html/unnamed-chunk-1-1.png)&lt;!-- --&gt;
+
+---
+
+## Terms
+
+**Population:** The entire collection of things in a category you are trying to understand. **You define the population.** For example: Santa Barbara registered voters, Ponderosa pines in Inyo National Forest, purple urchins in Channel Islands Marine Sanctuary. 
+
+**Sample:** A subset of the population, goal is to be *representative* of the population
+
+**Parameter:** A characteristic of the population
+
+**Statistic:** A characteristic of the sample
+
+---
+
+## Inference
+
+Usually, we don't have the resources (time, money, humanpower, etc.) to collect observations for an entire population. As a proxy, we try to collect a representative sample. 
+
+Then, we attempt to draw conclusions about the **populations** from which our samples were collected.
+
+---
+
+## Probability density function
+
+---
+
+## One example: 2-sample t-test
+
+**Note:** You will cover this in depth in EDS 222. We'll just build some intuition here for what basic hypothesis tests do, and how probability is involved. 
+
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
