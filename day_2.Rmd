@@ -28,6 +28,8 @@ xaringanExtra::embed_xaringan(
 
 ### Interactive session
 
+**[Interactive Session 2A handout](comp_session_keys/comp_session_2a.html)**
+
 - Derivatives by hand 
 - Derivatives in R with `D()`
 - Meet Jupyter Notebooks

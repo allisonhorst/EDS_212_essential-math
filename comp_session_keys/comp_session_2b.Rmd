@@ -1,0 +1,188 @@
+---
+title: 'EDS 212 Computational Session 2B'
+subtitle: 'Higher order derivatives, partial derivatives, plotting functions in ggplot'
+output: 
+  html_document:
+    css: comp_session_theme.css
+    toc: true
+    toc_float: true
+  
+---
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(palmerpenguins)
+```
+
+```{r, echo = FALSE}
+knitr::include_graphics("comp_session_images/ds_friends.jpg")
+```
+
+## Derivatives by hand
+
+1. Find all partial derivatives of the following: 
+
+$f(a, z, t)=3at^2-4t+5.1az-z^3$
+
+2. Algal biomass ($B$, grams) in a system is modeled by the following, where $h$ is time (hours) and $T$ is temperature (Celsius). 
+
+$$B(h, T)=0.6Th+2.1h^2$$
+- For water at 28 degrees, find an expression for how biomass is changing with respect to time ($\frac{\partial B}{\partial h} $). 
+
+3. Find the 3^rd^ derivative of the following: 
+
+$$G(t)=2.2 + 3.1t-5.6t^4 + \frac{4.3}{t^3}$$
+
+## Drawing derivatives
+
+Brain creativity break - let's draw some higher order derivatives!
+
+## Plotting a function in `ggplot2`
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+eq = function(x){3*x^2 + 4} # Define function
+
+# Plot it over a specific range using the `stat_function` option: 
+ggplot(data.frame(x = c(1, 100)), aes(x = x)) + 
+  stat_function(fun = eq)
+```
+
+```{r}
+eq_2 = function(x){2.4 - 5*x^3 + 2.1*x^2} # Define function
+
+# Plot it over a specific range using the `stat_function` option: 
+ggplot(data.frame(x = c(-50,50)), aes(x = x)) + 
+  stat_function(fun = eq_2)
+```
+
+## Higher order derivatives in R
+
+Spoiler alert: find the derivative of the derivative...
+
+For example, to find the 2^nd^ derivative of: $$G(t)=2.2 + 3.1t-5.6t^4 + \frac{4.3}{t^3}$$
+
+```{r}
+gt <- expression(2.2 + 3.1 * t - 5.6 * t ^ 4 + 4.3 / (t ^ 3))
+
+# Find the first derivative
+dg_dt <- D(gt, 't')
+dg_dt
+
+# Find the second derivative
+d2g_dt2 <- D(dg_dt, 't')
+d2g_dt2 
+```
+
+## Plotting derivatives
+
+Let's look at a pretty simple function: $C(t)=t^3$
+
+Let's plot the function along with the first derivative: 
+
+```{r}
+# Store the function C(t)
+ct <- function(t) {t ^ 3}
+
+# Plot it:
+ggplot(data.frame(t=c(-5, 5)), aes(x=t)) + 
+  stat_function(fun=ct)
+
+# Find the derivative:
+dc_dt <- D(expression(t^3), 't')
+dc_dt
+
+# Store the derivative as a function:
+dc_dt_fun <- function(t) {3 * t ^2}
+
+# For fun, the second derivative: 
+d2c_dt2 <- function(t) {6 * t}
+
+# Then plot them together! 
+ggplot(data.frame(t = c(-5, 5)), aes(x = t)) + 
+  stat_function(fun = ct, color = "red") +
+  stat_function(fun = dc_dt_fun, color = "blue") +
+  stat_function(fun = d2c_dt2, color = "orange")
+  
+```
+
+## Partial derivatives in R
+
+Specify the variable you want to take the derivative with respect to. 
+
+$$f(x,y,z)=2xy-3x^2z^3$$
+
+Find all partials, $\frac{\partial f}{\partial x}$, $\frac{\partial f}{\partial y}$ and $\frac{\partial f}{\partial z}$
+
+```{r}
+f_xyz <- expression(2*x*y - 3*(x^2)*(z^3))
+
+# Partial with respect to x: 
+df_dx <- D(f_xyz, 'x')
+df_dx
+
+# Partial with respect to y: 
+df_dy <- D(f_xyz, 'y')
+df_dy
+
+# Partial with respect to z: 
+df_dz <- D(f_xyz, 'z')
+df_dz
+```
+
+## Chewing off a bit more...
+
+Given the function: $$P(q)=2cos(3q+0.4)-5.6e^{1.4q}$$ 
+
+Find the instantaneous slope at $q = 0.8$.
+
+```{r}
+# First, create the expression: 
+pq <- expression(2 * cos(3 * q + 0.4) - 5.6 * exp(1.4 * q))
+
+# Find the first derivative with respect to q:
+dp_dq <- D(pq, 'q')
+
+# Return the first derivative:
+dp_dq
+
+# Define value of q
+q <- 0.8
+
+# Evaluate dp_dq at that value: 
+eval(dp_dq)
+```
+
+## A bit more ggplot fun
+
+Let's customize a graph a little bit. Here, we'll use the `penguins` dataset from `palmerpenguins`. 
+
+Some extras we'll learn here are: 
+
+- Adding axis labels, titles & subtitles
+- Switching x & y axis
+- A few new graph types
+- Faceting
+- Updating colors
+
+```{r}
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+         geom_point(aes(color = species)) +
+  scale_color_manual(values = c("purple","cyan3","goldenrod")) +
+  labs(x = "Flipper length (mm)",
+       y = "Body mass (g)",
+       title = "Palmer penguin size measurements",
+       subtitle = "Palmer Archipelago, Antarctica (2007 - 2009)",
+       caption = "Collected by Dr. Kristen Gorman and colleages at Palmer Station LTER") +
+  coord_flip() +
+  facet_wrap(~island) +
+  theme_minimal()
+  
+
+```
+
+## End {-}

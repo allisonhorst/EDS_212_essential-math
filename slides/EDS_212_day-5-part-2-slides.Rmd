@@ -12,19 +12,11 @@ output:
       countIncrementalSlides: true
 ---
 
----
+## A question needing rethinking: Abraham Wald's memo
 
-## Probability continued
-
----
-
-## Damned lies - how probabilities lie
-
-An example of probability used irresponsibly: 
-
----
-
-An example of a question that needed rethinking: 
+.center[
+<img src="slide_images/abraham_wald.png" alt="drawing" width="65%"/>
+]
 
 ---
 
@@ -50,7 +42,7 @@ Secondary Boolean operations
 
 ---
 
-Pseudocoding Boolean algebra
+Pseudocoding Boolean 
 
 ---
 

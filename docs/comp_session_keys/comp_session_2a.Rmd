@@ -16,19 +16,36 @@ library(reticulate)
 ```
 
 ```{r, echo = FALSE}
-knitr::include_graphics("comp_session_images/workflows_shred.png")
+knitr::include_graphics("comp_session_images/ds_friends.jpg")
 ```
-
-- Derivatives by hand
-- Derivatives in R with `D()`
-- Meet Jupyter Notebooks
-- A Python function
 
 ## Derivatives by hand
 
-- 2 derivatives the long way (then you'll never have to do this again)...and tell me what you're doing
-- 3 derivatives with rules 
-- Find instantaneous slopes from the derivative
+### Find the first derivative of the following functions *the long way*
+
+Use the definition of the derivative: 
+
+$$\frac{df}{dx}=\lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}$$
+
+1) $f(x)=3x^2-x+1$
+
+2) $G(t)=4-3t$
+
+### Find the first derivative of the following using rules
+
+3) $f(x) = -3x^5+2x^3-12$
+
+4) $C(z)=4.2z-8.7z^3$
+
+### Find an instantaneous slope
+
+5) A researcher finds that the increase in algal biomass ($B$, in grams) in their aquarium over time ($t$, in hours) follows the function: 
+
+$$B(t) = 0.4 + 0.035t^2$$
+
+- What is the *mass* of algae in tank at 4.5 hours? 
+
+- At what *rate* is biomass increasing in the tank after 10 hours? 
 
 ## Derivatives in R with `deriv()` and `D()`
 
@@ -65,6 +82,70 @@ ex_2 <- expression(3.1 * x ^ 4 - 28 * x)
 # Find the derivative with respect to x:
 D(ex_2, "x")
 ```
+
+## More examples with `D()`
+
+### Example: 
+
+```{r}
+# Create and store your function
+fx <- expression(x^2)
+
+# Find the derivative (with `D()` function):
+df_dx <- D(fx, 'x')
+
+# Return the derivative
+df_dx
+
+# Find the slope at x = 10:
+x <- 10
+eval(df_dx)
+```
+
+### You try! 
+
+Using the `D()` function in R:
+
+1. Find $\frac{dg}{dx}$ given: $g(z) = 2z^3-10.5z^2+4.1$
+
+2. Find $\frac{dT}{dy}$ given: $T(y) = (2y^3+1)^4-8y^3$
+
+### Solutions: 
+
+$g(z) = 2z^3-10.5z^2+4.1$
+
+```{r}
+  gz = expression(2*z^3 - 10.5*z^2 + 4.1)
+  dg_dz = D(gz, 'z')
+  
+  # Return dg_dz
+  dg_dz
+```
+
+$T(y) = (2y^3+1)^4-8y^3$
+
+```{r}
+  ty = expression((2*y^3+1)^4 - 8*y^3)
+  dt_dy = D(ty, 'y')
+  
+  # Return dt_dy
+  dt_dy
+```
+
+### To find the slope of T(y) at a range of y-values:
+
+We found $\frac{dT}{dy}$ above. What if we want to find the slope at a range of values, instead of just one? 
+
+```{r}
+
+# Create a vector of y values from -0.4 to 2.0, by increments of 0.1
+y <- seq(-0.4, 2.0, by = 0.1)
+
+# Evaluate the slope of T(y) at each of those values
+eval(dt_dy)
+```
+
+---
 
 ## Meet Jupyter Notebooks
 

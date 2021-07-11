@@ -12,6 +12,13 @@ output:
       countIncrementalSlides: true
 ---
 
+class: center, middle
+
+## The Monty Hall Problem
+![](slide_images/monty_hall.jpg)
+
+---
+
 ## Basic probability theory 
 
 ---
@@ -21,13 +28,6 @@ output:
 - Hypothesis testing
 - Bayesian statistics
 - Decision making
-
----
-
-class: center, middle
-
-## The Monty Hall Problem
-![](slide_images/monty_hall.jpg)
 
 ---
 
