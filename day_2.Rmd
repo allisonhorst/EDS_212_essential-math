@@ -57,7 +57,7 @@ xaringanExtra::embed_xaringan(
 
 ### Interactive session: 
 
-- Higher order derivatives as art
+- Drawing higher order derivatives
 - Partial derivatives in R and Python
 - Fun with partials & interpreting them
 
@@ -73,9 +73,11 @@ xaringanExtra::embed_xaringan(
 
 ### Creative thinking problems
 
-## Efficiency tips (inspired by Dr. Julia Lowndes)
+## Efficiency tips
+
+*Inspired by Dr. Julia Lowndes' [Openscapes](openscapes.org) program.*
 
 - Open Spotlight search: `Cmd + spacebar` (Mac) or `Ctrl + spacebar` (PC)
 - `Cmd + A` (Mac) or `Ctrl + A`: Select all in current document
-- `Cmd + Z` (Mac) or `Ctrl + Z`: Undo last
+
  

@@ -67,7 +67,7 @@ Conditional probability
 
 --- 
 
-One Bayes example
+A Bayes example
 
 ---
 

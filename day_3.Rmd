@@ -72,5 +72,13 @@ xaringanExtra::embed_xaringan(
 
 ### Creative thinking problems
 
-## Efficiency tips (inspired by Dr. Julia Lowndes)
+## Efficiency tips 
+
+*Inspired by Dr. Julia Lowndes' [Openscapes](openscapes.org) program.*
+
+- `Cmd + C` (Mac) or `Ctrl + C` (PC): Copy
+- `Cmd + X` (Mac) or `Ctrl + X` (PC): Cut
+- `Cmd + V` (Mac) or `Ctrl + V` (PC): Paste
+- `Cmd + Z` (Mac) or `Ctrl + Z`: Undo last
+- `Cmd + Shift + Z` (Mac) or `Ctrl + Shift + Z` (PC): Redo last undo
 

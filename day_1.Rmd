@@ -83,7 +83,9 @@ xaringanExtra::embed_xaringan(
 
 ### Creative thinking problems
 
-## Efficiency tips (inspired by Dr. Julia Lowndes)
+## Efficiency tips
+
+*Inspired by Dr. Julia Lowndes' [Openscapes](openscapes.org) program.*
 
 - `Cmd + tab` (Mac) or `Ctrl + tab` (PC) to toggle through open applications
 - `Ctrl + tab` (both) to toggle through tabs in browser (or open tabs in RStudio!)

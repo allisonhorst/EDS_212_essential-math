@@ -14,9 +14,22 @@ output:
 
 ## Part 1: Linear algebra continued
 
----
+- Linear dependence / independence
+- Spans (systems of linear equations)
+- Using linear algebra in environmental data science
 
 ---
+
+## Vectors as scaled linear combinations of unit vectors
+
+We can write vectors and linear combinations of scaled unit vectors, $\hat{i}$ and $\hat{j}$, which correspond to a vector of length 1 along the x and y axis, respectively. 
+
+So, for example, the vector $\vec{u}=[4,7]$ can also be written as: 
+
+$$\vec{u}=4\hat{i} + 7\hat{j}$$
+---
+
+
 
 ---
 

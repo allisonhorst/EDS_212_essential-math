@@ -1,6 +1,6 @@
 ---
-title: "EDS 212"
-subtitle: "Day 5 - Boolean algebra"  
+title: "EDS 212 - Essential Math in Environmental Data Science"
+subtitle: "Day 5 Part 2 - Probability continued, intuition for hypothesis tests, and Boolean algebra"  
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
@@ -12,4 +12,48 @@ output:
       countIncrementalSlides: true
 ---
 
-## Boolean algebra
+---
+
+## Probability continued
+
+---
+
+## Damned lies - how probabilities lie
+
+An example of probability used irresponsibly: 
+
+---
+
+An example of a question that needed rethinking: 
+
+---
+
+## Hypothesis testing: building intuition
+
+---
+
+## Boolean algebra: a true & false world
+
+Definition
+
+---
+
+In environmental data science
+
+---
+
+Basic Boolean operations
+
+---
+
+Secondary Boolean operations
+
+---
+
+Pseudocoding Boolean algebra
+
+---
+
+
+
+---

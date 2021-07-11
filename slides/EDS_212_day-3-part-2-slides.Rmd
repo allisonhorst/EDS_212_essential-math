@@ -22,17 +22,11 @@ As [Dr. Jason Brownlee](https://machinelearningmastery.com/gentle-introduction-l
 
 ---
 
-## In environmental data science, most often:
-
-Put your linear equations into a matrix.
-
----
-
 ## The building blocks of linear algebra
 
 - **scalar:** a value without direction, representing magnitude
 
-- **vector:** a list of values, representing magnitude *and* direction or a point in multivariate space
+- **vector:** an ordered list of values, representing magnitude *and* direction (physics) or values for an observation or variable (data science)
 
 - **matrix:** a table of values
 
@@ -59,11 +53,139 @@ Put your linear equations into a matrix.
 - Vector addition & subtraction
 - Scalar multiplication
 - Basic matrix algebra
+
+---
+
+## Where are vectors in EDS?
+
+Everywhere. 
+
+Vectors are lists of values used to describe different features or variables of interest. For example, if you are trying to model *fish size* based on length (cm) and mass (g), then for a fish with length 32 cm weighing 281 g, you might describe that by: 
+
+$$\vec{F} = [32, 281]$$
+
+---
+
+From Wickham's *Advanced R* chapter on [Data Structures](http://adv-r.had.co.nz/Data-structures.html): "Under the hood, a data frame is a list of equal-length vectors."
+
+```{r}
+food <- c("banana", "apple", "carrot")
+meal <- c("breakfast", "snack", "lunch")
+food_mass_g <- c(14.8, 19.2, 11.5)
+
+squirrel_meals <- data.frame(food, meal, food_mass_g) 
+squirrel_meals # Returns the data frame
+```
+
+---
+
+## Notation
+
+Vectors are indicated with an arrow over the vector name:
+
+$\vec{A} = [1,5]$
+
+$\vec{AB} = [10.2, 3.1]$
+
 ---
 
 ## Vector addition & subtraction
 
+Just add or subtract the corresponding pieces.
 
+If: $\vec{A} = [2, 6]$ and $\vec{B} = [11, 10]$, then: 
+
+$$\vec{A} - \vec{B} = [2-11, 6-10] = [-9, -4]$$
+
+What does this look like graphically? **Let's draw it!**
 
 ---
+
+## Scalar multipliers
+
+You can multiply any vector by a scalar (constant). This will not change the *direction* of the vector - it will only change the *magnitude* of the vector. 
+
+Example: $\vec{A} = [2,4]$
+
+$$\vec{B} = 3\vec{A} = [3*2, 3*4] = [6, 12]$$
+
+What does this look like graphically? **Let's draw it!**
+
+---
+
+## In R: 
+
+We create vectors in R using the `c()` function (for combine or concatenate), and can perform operations on numeric vectors using basic operators.
+
+```{r}
+# Create vectors A and B: 
+A <- c(1,2)
+B <- c(5,9)
+```
+
+---
+
+## Vector addition and subtraction in R
+
+Just do it! For $\vec{A}=[1,2]$ and $\vec{B}=[5,9]$:
+
+```{r}
+# Addition: 
+A + B
+
+# Subtraction: 
+A - B
+```
+---
+
+## Scalar multiplication in R
+
+Just do it!
+
+For $\vec{A}=[1,2]$, calculate $4\vec{A}$:
+
+```{r}
+4*A
+```
+---
+
+## Vectors of > 3 elements
+
+$\vec{M}=c(2,4,1,8,6)$
+
+Is as valid as describing a "point" in multivariate space as a vector with two "coordinates" -- it's just difficult for us to visualize and conceptualize since our brain only happily deals with 3 dimensions. 
+
+---
+
+## More on vector fundamentals:
+
+Optional: watch 3Brown1Blue's great 10 min recording on [Vectors (Ch 1 Essense of Linear Algebra)](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=1).
+
+### Vector addition & scalar multiplication are the basis of most linear algebra! 
+
+---
+
+## Matrices
+
+A matrix is a table of values (multiple vectors in combination). A vector, therefore, can be thought of as a matrix with a single column. 
+
+- Dimensions: the size of the matrix, in rows x columns (*m* x *n*)
+- Elements: values in a matrix, often denoted symbolically with a subscript where the first number is the *row* and the second number is the *column* (e.g. $a_{34}$ indicates the element in row 3, column 4)
+
+---
+
+## Matrix algebra
+
+### Addition & subtraction
+
+Add or subtract the corresponding elements (by matrix position) to create a new matrix of the same dimensions
+
+---
+
+## Matrix multiplication
+
+---
+
+## Transform
+
 

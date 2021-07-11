@@ -98,18 +98,6 @@ eval(dt_dy)
 
 ---
 
-## Examples in environmental science
-
-### Allee Effect 
-
-
-
----
-
-### Lotka-Volterra equations
-
----
-
 class: center, middle
 
 # Higher order & partial derivatives
@@ -137,9 +125,6 @@ $$G(z)=3z^4-8z^3+2z-19$$
 $$G'(z)=\frac{dG}{dz}=12z^3-24z^2+2$$
 $$G''(z)=\frac{d^2G}{dz^2}=36z^2-48z$$
 $$G'''(z)=\frac{d^3G}{dz^3}=72z-48$$
----
-
-## Higher order derivatives in EDS
 
 ---
 
@@ -166,6 +151,8 @@ $$\frac{\partial B}{\partial \rho}=4x$$
 
 ### OK but what do partials actually mean?
 
+
+
 ---
 
 
@@ -173,9 +160,4 @@ $$\frac{\partial B}{\partial \rho}=4x$$
 
 ---
 
-# Data science vocabulary
-
-- Full stack
-
-- Wrangling / munging
 

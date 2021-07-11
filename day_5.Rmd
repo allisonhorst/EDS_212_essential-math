@@ -44,6 +44,8 @@ xaringanExtra::embed_xaringan(
 
 ### Creative thinking problems
 
-## Efficiency tips (inspired by Dr. Julia Lowndes)
+## Efficiency tips
+
+*Inspired by Dr. Julia Lowndes' [Openscapes](openscapes.org) program.*
 
 

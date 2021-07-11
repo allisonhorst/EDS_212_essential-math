@@ -3,7 +3,7 @@
   <head>
     <title>EDS 212</title>
     <meta charset="utf-8" />
-    <script src="EDS_212_day-3-part-2-slides_files/header-attrs-2.7/header-attrs.js"></script>
+    <script src="EDS_212_day-3-part-2-slides_files/header-attrs-2.8/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -11,20 +11,211 @@
 class: center, middle, inverse, title-slide
 
 # EDS 212
-## Day 3 Part 2 - Linear algebra basics
+## Day 3 Part 2 - Linear algebra fundamentals
 
 ---
 
 
 ## Linear algebra introduction
 
+Linear algebra "branch of mathematics concerning linear equations" (Wikipedia), sometimes also described as the math of vectors &amp; matrices. 
+
+It is a fundamental part of data science (and how computers understand &amp; process data), and useful for describing environmental processes.
+
+As [Dr. Jason Brownlee](https://machinelearningmastery.com/gentle-introduction-linear-algebra/) writes, "Linear algebra is the mathematics of data."
+
 ---
 
-## Data science vocabulary for the day
+## The building blocks of linear algebra
 
-- Reproducibility
+- **scalar:** a value without direction, representing magnitude
+
+- **vector:** an ordered list of values, representing magnitude *and* direction (physics) or values for an observation or variable (data science)
+
+- **matrix:** a table of values
+
+---
+
+## Applications of linear algebra in data science
+
+- Array programming / vectorized code
+- Machine learning
+- For loops
+
+---
+
+## Applications of linear algebra in environmental sciences
+
+- Dimensional reduction
+- Population matrix models
+- Optimization
+
+---
+
+## Basic math with scalars &amp; vectors
+
+- Vector addition &amp; subtraction
+- Scalar multiplication
+- Basic matrix algebra
+
+---
+
+## Where are vectors in EDS?
+
+Everywhere. 
+
+Vectors are lists of values used to describe different features or variables of interest. For example, if you are trying to model *fish size* based on length (cm) and mass (g), then for a fish with length 32 cm weighing 281 g, you might describe that by: 
+
+`$$\vec{F} = [32, 281]$$`
+
+---
+
+From Wickham's *Advanced R* chapter on [Data Structures](http://adv-r.had.co.nz/Data-structures.html): "Under the hood, a data frame is a list of equal-length vectors."
 
 
+```r
+food &lt;- c("banana", "apple", "carrot")
+meal &lt;- c("breakfast", "snack", "lunch")
+food_mass_g &lt;- c(14.8, 19.2, 11.5)
+
+squirrel_meals &lt;- data.frame(food, meal, food_mass_g) 
+squirrel_meals # Returns the data frame
+```
+
+```
+##     food      meal food_mass_g
+## 1 banana breakfast        14.8
+## 2  apple     snack        19.2
+## 3 carrot     lunch        11.5
+```
+
+---
+
+## Notation
+
+Vectors are indicated with an arrow over the vector name:
+
+`\(\vec{A} = [1,5]\)`
+
+`\(\vec{AB} = [10.2, 3.1]\)`
+
+---
+
+## Vector addition &amp; subtraction
+
+Just add or subtract the corresponding pieces.
+
+If: `\(\vec{A} = [2, 6]\)` and `\(\vec{B} = [11, 10]\)`, then: 
+
+`$$\vec{A} - \vec{B} = [2-11, 6-10] = [-9, -4]$$`
+
+What does this look like graphically? **Let's draw it!**
+
+---
+
+## Scalar multipliers
+
+You can multiply any vector by a scalar (constant). This will not change the *direction* of the vector - it will only change the *magnitude* of the vector. 
+
+Example: `\(\vec{A} = [2,4]\)`
+
+`$$\vec{B} = 3\vec{A} = [3*2, 3*4] = [6, 12]$$`
+
+What does this look like graphically? **Let's draw it!**
+
+---
+
+## In R: 
+
+We create vectors in R using the `c()` function (for combine or concatenate), and can perform operations on numeric vectors using basic operators.
+
+
+```r
+# Create vectors A and B: 
+A &lt;- c(1,2)
+B &lt;- c(5,9)
+```
+
+---
+
+## Vector addition and subtraction in R
+
+Just do it! For `\(\vec{A}=[1,2]\)` and `\(\vec{B}=[5,9]\)`:
+
+
+```r
+# Addition: 
+A + B
+```
+
+```
+## [1]  6 11
+```
+
+```r
+# Subtraction: 
+A - B
+```
+
+```
+## [1] -4 -7
+```
+---
+
+## Scalar multiplication in R
+
+Just do it!
+
+For `\(\vec{A}=[1,2]\)`, calculate `\(4\vec{A}\)`:
+
+
+```r
+4*A
+```
+
+```
+## [1] 4 8
+```
+---
+
+## Vectors of &gt; 3 elements
+
+`\(\vec{M}=c(2,4,1,8,6)\)`
+
+Is as valid as describing a "point" in multivariate space as a vector with two "coordinates" -- it's just difficult for us to visualize and conceptualize since our brain only happily deals with 3 dimensions. 
+
+---
+
+## More on vector fundamentals:
+
+Optional: watch 3Brown1Blue's great 10 min recording on [Vectors (Ch 1 Essense of Linear Algebra)](https://www.youtube.com/watch?v=fNk_zzaMoSs&amp;list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&amp;index=1).
+
+### Vector addition &amp; scalar multiplication are the basis of most linear algebra! 
+
+---
+
+## Matrices
+
+A matrix is a table of values (multiple vectors in combination). A vector, therefore, can be thought of as a matrix with a single column. 
+
+- Dimensions
+- Elements
+
+---
+
+## Matrix algebra
+
+### Addition
+
+Add the corresponding elements (by position) to create a new matrix of the same dimensions
+
+---
+
+## Matrix multiplication
+
+---
+
+## Linear transform
 
 
     </textarea>
