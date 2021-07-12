@@ -12,7 +12,7 @@ Day 4 Part 1:
 
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
-  url = "https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-4-part-1-slides.html",
+  url = "slides/EDS_212_day-4-part-1-slides.html",
   ratio = "16:9",
   border = "1px solid gainsboro"
 )
@@ -30,7 +30,7 @@ xaringanExtra::embed_xaringan(
 
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
-  url = "https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-4-part-2-slides.html",
+  url = "slides/EDS_212_day-4-part-2-slides.html",
   ratio = "16:9",
   border = "1px solid gainsboro"
 )

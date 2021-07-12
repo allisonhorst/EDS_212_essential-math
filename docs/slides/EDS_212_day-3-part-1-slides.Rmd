@@ -199,7 +199,7 @@ This means that the approximate solution is found by approximating values of the
 
 ---
 
-## One method: Euler
+## Example: numerical approximation of DE solution
 
 Let's say that we have a differential equation $\frac{dx}{dt}=2x+0.1$, and we don't know how to solve analytically for $x(t)$. Using the initial condition $x(0)=1$, let's numerically estimate the solution.
 

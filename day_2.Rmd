@@ -59,13 +59,16 @@ xaringanExtra::embed_xaringan(
 
 ### Interactive session: 
 
+**[Interactive Session 2B handout](comp_session_keys/comp_session_2b.html)**
+
+
+- Derivatives in R continued
 - Drawing higher order derivatives
-- Partial derivatives in R and Python
-- Fun with partials & interpreting them
+- Partial derivatives in R
 
 ### Flex Session: 
 
-- Allison coffee & "Ask me anything"
+- TBD
 
 ## Day 2 Tasks and Activities
 

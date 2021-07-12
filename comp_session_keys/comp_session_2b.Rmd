@@ -9,14 +9,18 @@ output:
   
 ---
 
-```{r setup, include=TRUE}
-knitr::opts_chunk$set(echo = TRUE)
-library(tidyverse)
-library(palmerpenguins)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
+
 
 ```{r, echo = FALSE}
 knitr::include_graphics("comp_session_images/ds_friends.jpg")
+```
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
 ```
 
 ## Derivatives by hand

@@ -89,5 +89,4 @@ xaringanExtra::embed_xaringan(
 
 - `Cmd + tab` (Mac) or `Ctrl + tab` (PC) to toggle through open applications
 - `Ctrl + tab` (both) to toggle through tabs in browser (or open tabs in RStudio!)
-- 
 

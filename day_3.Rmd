@@ -22,18 +22,18 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
-  url = "https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-3-part-1-slides.html",
+  url = "slides/EDS_212_day-3-part-1-slides.html",
   ratio = "16:9",
   border = "1px solid gainsboro"
 )
 ```
 
-### Interactive session
+### Interactive session (morning)
 
-- 
-- 
--
+**[Interactive Session 3A handout](comp_session_keys/comp_session_3a.html)**
 
+- Numerical solutions to differential equations
+- Approximating solutions to the Lotke-Volterra equations in R
 
 ## Day 3 Part 2: Basic linear algebra for data science
 
@@ -45,7 +45,7 @@ xaringanExtra::embed_xaringan(
 
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
-  url = "https://allisonhorst.github.io/EDS_212_essential-math/slides/EDS_212_day-3-part-2-slides.html",
+  url = "slides/EDS_212_day-3-part-2-slides.html",
   ratio = "16:9",
   border = "1px solid gainsboro"
 )
@@ -55,14 +55,16 @@ xaringanExtra::embed_xaringan(
 
 - [A gentle introduction to linear algebra](https://machinelearningmastery.com/gentle-introduction-linear-algebra/) by Jason Brownlee
 
-### Interactive session
+### Interactive session (afternoon)
+
+**[Interactive Session 3B handout](comp_session_keys/comp_session_3b.html)**
 
 - Scalars, vectors, matrices, oh my!
-- Linear algebra operations in R & Py
-
-### Flex session
-
-- NONE
+- Basic inear algebra operations in R & Py 
+    - Vector & matrix addition and subtraction
+    - Scalar multiplication
+    - Dot products
+    - Matrix multiplication
 
 ## Day 3 Tasks and Activities
 
