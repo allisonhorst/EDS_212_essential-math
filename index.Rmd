@@ -35,6 +35,7 @@ knitr::include_graphics(here("img","usgs-ynlW4w7OHDs-unsplash.jpg"))
 
 Allison Horst (ahorst\@ucsb.edu)
 
+```{=html}
 <!-- Allison reminders:
 
 - Check for food allergies
@@ -44,7 +45,7 @@ Allison Horst (ahorst\@ucsb.edu)
 - Working with Casey on course materials
 
 -->
-
+```
 ## Important links
 
 -   [Course syllabus](https://docs.google.com/document/d/1Kcc9BhZuKeAGxQeW0ls7KY0oUtt-TBwEgOibl4_ShtY/edit?usp=sharing)
@@ -55,31 +56,31 @@ Allison Horst (ahorst\@ucsb.edu)
 
 Quantitative skills and understanding are critical when working with, understanding, analyzing and gleaning insights from environmental data. In the intensive EDS 212 course, students will refresh fundamental skills in basic math (algebra, uni- and multivariate functions, units and unit conversions), derivative and integral calculus, differential equations, linear algebra, and reading, writing and evaluating logical operations.
 
-## Expected lecture topics
+## Expected session information
 
-+-----+----------------------------------------------------------------------------+
-| Day | Session : Topic                                                            |
-+=====+============================================================================+
-| 1   | A: Basic algebra review, units and unit conversions, exponents, logarithms |
-|     |                                                                            |
-|     | B: Functions (interpreting & evaluating), reading graphs, slope            |
-+-----+----------------------------------------------------------------------------+
-| 2   | A: Definition of the derivative                                            |
-|     |                                                                            |
-|     | B: Higher order & partial derivatives                                      |
-+-----+----------------------------------------------------------------------------+
-| 3   | A: Differential equations, and solving them numerically                    |
-|     |                                                                            |
-|     | B: Introduction to linear algebra basics                                   |
-+-----+----------------------------------------------------------------------------+
-| 4   | A: Linear algebra continued                                                |
-|     |                                                                            |
-|     | B: Essential summary statistics and describing data                        |
-+-----+----------------------------------------------------------------------------+
-| 5   | A: Basic probability theory                                                |
-|     |                                                                            |
-|     | B: Boolean algebra and logical operations                                  |
-+-----+----------------------------------------------------------------------------+
++-----+-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+| Day | Lecture topics                                                                      | Interactive session                                                                     | **Flex sessions**                                                                        |
++=====+=====================================================================================+=========================================================================================+==========================================================================================+
+| 1   | -   **AM:** Basic algebra review, units and unit conversions, exponents, logarithms | -   **AM:** Meet our R tools, basic operations, our first R function                    | -   **AM:** Meet git & GitHub                                                            |
+|     |                                                                                     |                                                                                         |                                                                                          |
+|     | -   **PM:** Functions (interpreting & evaluating), reading graphs, slope            | -   **PM:** R projects, storing objects, creating vectors and sequences                 | -   **PM:** Expanding the Venn diagram of skills needed in data science (group activity) |
++-----+-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+| 2   | -   **AM:** Definition of the derivative                                            | -   **AM:** Derivatives by hand and in R, meet Jupyter Notebooks and Python             | -   **AM:** git and GitHub continued                                                     |
+|     |                                                                                     |                                                                                         |                                                                                          |
+|     | -   **PM:** Higher order & partial derivatives                                      | -   **PM:** Partial & higher order derivatives in R                                     | -   **PM:** Toward reproducible workflows with R Markdown, git, and GitHub               |
++-----+-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+| 3   | -   **AM:** Differential equations, and solving them numerically                    | -   **AM:** Interpreting differential equations, solving numerically                    | -   *No flex sessions Wednesday - late start*                                            |
+|     |                                                                                     |                                                                                         |                                                                                          |
+|     | -   **PM:** Introduction to linear algebra basics                                   | -   **PM:** Making & basic algebra with vectors and matrices in R & Python              |                                                                                          |
++-----+-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+| 4   | -   **AM:** Linear algebra continued                                                | -   **AM:** Linear algebra continued, summary statistics in R, basic data visualization | -   **AM:** Fancy your notebooks: R Markdown customization                               |
+|     |                                                                                     |                                                                                         |                                                                                          |
+|     | -   **PM:** Essential summary statistics and describing data                        | -   **PM:** Data exploration and summary statistics continued                           | -   **PM:** Watch party: JD Long's talk on *Empathy in Action*                           |
++-----+-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+| 5   | -   **AM:** Basic probability theory                                                | -   **AM:** Basic probability theory: problems, computation, interpretation             | -   **AM:** Start building your personal website in R                                    |
+|     |                                                                                     |                                                                                         |                                                                                          |
+|     | -   **PM:** Boolean algebra and logical operations                                  | -   **PM:** Boolean algebra problems and code                                           | -   **PM:** Website building continued                                                   |
++-----+-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
 
 ## Predictable daily schedule
 
@@ -102,7 +103,7 @@ Tentative daily schedule (subject to change):
 | 2:15pm - 3:15pm   | *Flex time (60 min)*                                       |
 | 3:15pm - 5:00pm   | *Interactive Session 3: Group & challenge tasks (105 min)* |
 
-**Note:** For EDS 212 and 221, Wednesdays will start at 10:00am (instead of 8:00am). 
+**Note:** For EDS 212 and 221, Wednesdays will start at 10:00am (instead of 8:00am).
 
 ## Learning objectives
 

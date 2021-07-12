@@ -8,7 +8,14 @@ description: |
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Day 5 Part 1:
+## Day 5 Part 1:
+
+### Morning lecture
+
+- Basic probability theory
+- Finding probabilities from theoretical distributions
+- Hypothesis tests - building intuition (& skepticism)
+
 
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
@@ -18,11 +25,22 @@ xaringanExtra::embed_xaringan(
 )
 ```
 
-#### Flex session
+### Morning interactive session
+
+- Basic probability theory - problems 
+- Probabilities from the normal distribution
+
+### Morning flex session
 
 - Start creating your personal website in `distill`
 
-Day 5 Part 2:
+## Day 5 Part 2:
+
+### Afternoon lecture
+
+- Boolean algebra
+- Notation & language
+- Asking (`is.*`) versus telling (`as.*`) in code
 
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
@@ -32,20 +50,23 @@ xaringanExtra::embed_xaringan(
 )
 ```
 
-#### Flex session
+### Afternoon interactive session
 
-- Personal website continued
+- Logic problems
+- Common Boolean operators in R & Python
+
+### Afternoon flex session
+
+- Developing your personal `distill` website - continued
 
 ## Day 5 Tasks and Activities
 
-### Refresher problems
-
-### Challenge problems
-
-### Creative thinking problems
+[Day 5 Tasks - Handout]()
 
 ## Efficiency tips
 
 *Inspired by Dr. Julia Lowndes' [Openscapes](openscapes.org) program.*
 
+- `Cmd + O`: Open Finder window
+- `Cmd + Spacebar`: Open Spotlight Search
 

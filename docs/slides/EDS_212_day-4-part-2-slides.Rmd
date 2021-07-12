@@ -17,31 +17,48 @@ library(tidyverse)
 library(palmerpenguins)
 ```
 
+## Data types
 
-## Part 2: Essential summary statistics and data exploration
+- **Quantitative:** numeric information 
+
+- **Qualitative:** descriptions (usually words)
+
+### A bit deeper: 
+
+  - **Continuous:** measured values, can take an of infinite possible values for a variable
+  - **Discrete:** can only have certain values (e.g. counts)
+  - **Ordinal:** order matters, but the difference between values isn't known or equal (e.g. Likert Scale)
+  - **Binary:** only two possible outcomes (yes/no, true/false, 1/0)
+
+---
+
+## Nominal, ordinal, binary data:
+
+.center[
+<img src="slide_images/data_types.jpeg" alt="drawing" width="80%"/>
+]
+
+---
+
+## Quantitative data: continuous & discrete
+
+.center[
+<img src="slide_images/quantitative_data.jpeg" alt="drawing" width="65%"/>
+]
 
 ---
 
 ## Data distributions
 
---- 
-
-#### Histogram: a graph of the frequency of observations within a series of bins (usually of equal size) for a variable
-
-Example: distribution of penguin flipper lengths for chinstrap penguins
-
-```{r}
-penguins %>% 
-  filter(species == "Chinstrap") %>% 
-  ggplot(aes(x = flipper_length_mm)) +
-  geom_histogram(bins = 18)
-```
+.center[
+<img src="slide_images/party_histograms.jpeg" alt="drawing" width="90%"/>
+]
 
 ---
 
-### How can we describe the data distribution more summarily?
+## How can we describe how data are distributed?
 
-Our starting points: 
+#### Our starting points: 
 
 - Shape / patterns / clusters (data vizualization)
 - Central tendency (mean / median)
@@ -49,11 +66,31 @@ Our starting points:
 
 ---
 
-### Useful data visualizations
+## Useful data visualizations
 
 - Histograms
 - Boxplots
 - Scatterplots 
+
+...then get even more involved: 
+
+- Beeswarm
+- Marginal plots
+- Raincloud plots
+- Pairs plots
+
+---
+
+## Histogram: a graph of the frequency of observations within a series of bins (usually of equal size) for a variable
+
+Example: distribution of penguin flipper lengths for chinstrap penguins
+
+```{r, echo = FALSE, fig.height = 25, fig.width = 100}
+penguins %>% 
+  filter(species == "Chinstrap") %>% 
+  ggplot(aes(x = flipper_length_mm)) +
+  geom_histogram(bins = 18)
+```
 
 ---
 
@@ -68,18 +105,12 @@ Our starting points:
 
 ---
 
-Example: 
+## Boxplot example: 
 
 ```{r}
 teddy_miles <- c(1.0, 1.2, 1.8, 2.1, 2.4, 2.9, 3.4, 4.7, 5.1, 5.6, 7.8, 10.4, 15.4)
-teddy_miles
-
 boxplot(teddy_miles, horizontal = TRUE)
 ```
-
----
-
-Boxplot example in EDS:
 
 ---
 
@@ -150,7 +181,7 @@ Beware summary statistics alone...
 ### Communicating data summaries
 
 - The "Bar bar plots" philosophy: show as much as you can for the audience you're presenting to
-- Summary statistics can be useful, but are a small part of the data's whole story
+- Summary statistics are often useful, but are a small part of the data's whole story
 - Strongest when accompanied by data visualization
 
 ---

@@ -10,9 +10,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Day 2 Part 1
 
-### Lecture: 
+### Morning lecture: 
 
-**[Lecture 2.1 Slides - PDF](slides/EDS_212_day-2-part-1-slides.pdf)**
+**[Lecture 2A Slides - PDF](slides/EDS_212_day-2-part-1-slides.pdf)**
 
 - Definition of the derivative
 - Derivatives the long way
@@ -26,7 +26,7 @@ xaringanExtra::embed_xaringan(
 )
 ```
 
-### Interactive session
+### Morning interactive session
 
 **[Interactive Session 2A handout](comp_session_keys/comp_session_2a.html)**
 
@@ -35,15 +35,15 @@ xaringanExtra::embed_xaringan(
 - Meet Jupyter Notebooks
 - Hello Python
 
-### Flex Session: 
+### Morning flex session: 
 
-- Communicating data: presenting graphs
+- git & GitHub continued
 
 ## Day 2 Part 2
 
-### Lecture:
+### Afternoon lecture:
 
-**[Lecture 2.2 Slides - PDF]()**
+**[Lecture 2B Slides - PDF]()**
 
 - Higher order derivatives
 - Partial derivatives
@@ -57,32 +57,28 @@ xaringanExtra::embed_xaringan(
 )
 ```
 
-### Interactive session: 
+### Afternoon interactive session: 
 
 **[Interactive Session 2B handout](comp_session_keys/comp_session_2b.html)**
-
 
 - Derivatives in R continued
 - Drawing higher order derivatives
 - Partial derivatives in R
 
-### Flex Session: 
+### Afternoon flex session: 
 
-- TBD
+- Project oriented workflow
+- Reproducible pieces sans code
 
 ## Day 2 Tasks and Activities
 
-### Refresher tasks
-
-### Challenge problems
-
-### Creative thinking problems
+[Day 2 Tasks - Handout]()
 
 ## Efficiency tips
 
 *Inspired by Dr. Julia Lowndes' [Openscapes](openscapes.org) program.*
 
-- Open Spotlight search: `Cmd + spacebar` (Mac) or `Ctrl + spacebar` (PC)
 - `Cmd + A` (Mac) or `Ctrl + A`: Select all in current document
+- `Cmd + comma` (Mac): Open preferences for current app
 
  

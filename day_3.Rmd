@@ -8,13 +8,13 @@ description: |
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# NOTE: Wednesday 10:00am late start
+**NOTE: Wednesday 10:00am late start!**
 
 ## Day 3 Part 1:
 
-### Lecture: 
+### Morning lecture: 
 
-**[Lecture 3.1 Slides - PDF]()**
+**[Lecture 3A Slides - PDF]()**
 
 - Intro to differential equations 
 - Differential equations in environmental data science
@@ -28,7 +28,7 @@ xaringanExtra::embed_xaringan(
 )
 ```
 
-### Interactive session (morning)
+### Morning interactive session
 
 **[Interactive Session 3A handout](comp_session_keys/comp_session_3a.html)**
 
@@ -37,7 +37,7 @@ xaringanExtra::embed_xaringan(
 
 ## Day 3 Part 2: Basic linear algebra for data science
 
-**[Lecture 3.2 Slides - PDF]()**
+**[Lecture 3B Slides - PDF]()**
 
 - Language & shapes in linear algebra
 - Basic operations
@@ -51,11 +51,7 @@ xaringanExtra::embed_xaringan(
 )
 ```
 
-**Additional recommended reading:**
-
-- [A gentle introduction to linear algebra](https://machinelearningmastery.com/gentle-introduction-linear-algebra/) by Jason Brownlee
-
-### Interactive session (afternoon)
+### Afternoon interactive session
 
 **[Interactive Session 3B handout](comp_session_keys/comp_session_3b.html)**
 
@@ -68,11 +64,7 @@ xaringanExtra::embed_xaringan(
 
 ## Day 3 Tasks and Activities
 
-### Refresher problems
-
-### Challenge problems
-
-### Creative thinking problems
+[Day 3 Tasks - Handout]()
 
 ## Efficiency tips 
 

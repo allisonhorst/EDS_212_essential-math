@@ -12,9 +12,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Day 1 Part 1 
 
-### Lecture
+### Morning lecture
 
-**[Lecture 1.1 Slides - PDF](slides/EDS_212_day-1-part-1-slides.pdf)**
+**[Lecture 1A Slides - PDF](slides/EDS_212_day-1-part-1-slides.pdf)**
 
 - Algebra basics refresher
 - Units and unit conversions
@@ -29,7 +29,7 @@ xaringanExtra::embed_xaringan(
 )
 ```
 
-### Interactive session 
+### Morning interactive session 
 
 **[Interactive Session 1A handout](comp_session_keys/comp_session_1a.html)**
 
@@ -38,15 +38,15 @@ xaringanExtra::embed_xaringan(
 - Storing objects
 - Our first function
 
-### Flex Session: 
+### Morning flex Session: 
 
 - Meet git + GitHub
 
 ## Day 1 Part 2
 
-### Lecture
+### Afternoon lecture
 
-**[Lecture 1.2 Slides - PDF](slides/EDS_212_day-1-part-2-slides.pdf)**
+**[Lecture 1B Slides - PDF](slides/EDS_212_day-1-part-2-slides.pdf)**
 
 - Natural exponential (& exponential functions)
 - Logarithms
@@ -61,27 +61,22 @@ xaringanExtra::embed_xaringan(
 )
 ```
 
-### Interactive session
+### Afternoon interactive session
 
 **[Interactive Session 1B handout](comp_session_keys/comp_session_1b.html)**
 
 - R Projects
-- R Markdown customization
 - Creating vectors and sequences
 - Our first `ggplot2` graph
 - Functions continued
 
-### Flex Session: 
+### Afternoon flex session: 
 
-- Interactive activity: expanding the Venn diagram of skills for data science
+- Interactive activity & discussion: expanding the Venn diagram of skills for data science
 
-## Day 1 Tasks and Activities
+## Day 1 tasks and activities
 
-### Refresher tasks
-
-### Challenge problems
-
-### Creative thinking problems
+[Day 1 Tasks - Handout]()
 
 ## Efficiency tips
 

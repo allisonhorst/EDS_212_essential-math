@@ -18,34 +18,48 @@ class: center, middle, inverse, title-slide
 
 
 
+## Data types
 
-## Part 2: Essential summary statistics and data exploration
+- **Quantitative:** numeric information 
+
+- **Qualitative:** descriptions (usually words)
+
+### A bit deeper: 
+
+  - **Continuous:** measured values, can take an of infinite possible values for a variable
+  - **Discrete:** can only have certain values (e.g. counts)
+  - **Ordinal:** order matters, but the difference between values isn't known or equal (e.g. Likert Scale)
+  - **Binary:** only two possible outcomes (yes/no, true/false, 1/0)
+
+---
+
+## Nominal, ordinal, binary data:
+
+.center[
+&lt;img src="slide_images/data_types.jpeg" alt="drawing" width="80%"/&gt;
+]
+
+---
+
+## Quantitative data: continuous &amp; discrete
+
+.center[
+&lt;img src="slide_images/quantitative_data.jpeg" alt="drawing" width="65%"/&gt;
+]
 
 ---
 
 ## Data distributions
 
---- 
-
-#### Histogram: a graph of the frequency of observations within a series of bins (usually of equal size) for a variable
-
-Example: distribution of penguin flipper lengths for chinstrap penguins
-
-
-```r
-penguins %&gt;% 
-  filter(species == "Chinstrap") %&gt;% 
-  ggplot(aes(x = flipper_length_mm)) +
-  geom_histogram(bins = 18)
-```
-
-![](EDS_212_day-4-part-2-slides_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
+.center[
+&lt;img src="slide_images/party_histograms.jpeg" alt="drawing" width="90%"/&gt;
+]
 
 ---
 
-### How can we describe the data distribution more summarily?
+## How can we describe how data are distributed?
 
-Our starting points: 
+#### Our starting points: 
 
 - Shape / patterns / clusters (data vizualization)
 - Central tendency (mean / median)
@@ -53,11 +67,26 @@ Our starting points:
 
 ---
 
-### Useful data visualizations
+## Useful data visualizations
 
 - Histograms
 - Boxplots
 - Scatterplots 
+
+...then get even more involved: 
+
+- Beeswarm
+- Marginal plots
+- Raincloud plots
+- Pairs plots
+
+---
+
+## Histogram: a graph of the frequency of observations within a series of bins (usually of equal size) for a variable
+
+Example: distribution of penguin flipper lengths for chinstrap penguins
+
+![](EDS_212_day-4-part-2-slides_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
 
 ---
 
@@ -72,23 +101,90 @@ Our starting points:
 
 ---
 
-Example: 
+## Boxplot example: 
 
 
 ```r
 teddy_miles &lt;- c(1.0, 1.2, 1.8, 2.1, 2.4, 2.9, 3.4, 4.7, 5.1, 5.6, 7.8, 10.4, 15.4)
-teddy_miles
-```
-
-```
-##  [1]  1.0  1.2  1.8  2.1  2.4  2.9  3.4  4.7  5.1  5.6  7.8 10.4 15.4
-```
-
-```r
 boxplot(teddy_miles, horizontal = TRUE)
 ```
 
 ![](EDS_212_day-4-part-2-slides_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
+
+---
+
+### Scatterplots
+
+---
+
+Always, always, always look at your data. It is the only way to make a responsible decision about an appropriate type of analysis. 
+
+---
+
+### Summarizing data numerically
+
+- Central tendency
+- Variance and standard deviation
+- Standard error
+- Confidence interval
+
+---
+
+### Mean
+
+Average value of sample observations, calculated by summing all observation values and dividing by the number of observations
+
+- Pros: 
+    - Average value is often useful metric
+    - Commonly reported
+    
+- Cons:
+    - Susceptible to outliers and skew
+    - Subject to misinterpretation as "most likely value"
+    
+---
+
+### Median
+
+Middle value when all observations are arranged in order - for n = even, the average of the middle two values.
+
+- Pros: 
+    - Less susceptible to skew and outliers
+    - Better as sample size increases
+    
+- Cons: 
+    - Doesn't take into account all values
+
+---
+
+### Variance and standard deviation
+
+---
+
+Beware summary statistics alone...
+
+## Meet the dreaded DINO DOZEN
+
+---
+
+### Confidence interval
+
+**Confidence interval:** a range of values (based on a sample) that, if we were to take multiple samples from the population and calculate the confidence interval from each, would contain the true population parameter X percent of the time. 
+
+---
+
+### Confidence interval example
+
+---
+
+### Communicating data summaries
+
+- The "Bar bar plots" philosophy: show as much as you can for the audience you're presenting to
+- Summary statistics are often useful, but are a small part of the data's whole story
+- Strongest when accompanied by data visualization
+
+---
+
 
 
     </textarea>

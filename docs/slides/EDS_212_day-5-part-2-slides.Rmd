@@ -12,7 +12,7 @@ output:
       countIncrementalSlides: true
 ---
 
-## A question needing rethinking: Abraham Wald's memo
+## Think hard about your question: Abraham Wald's memo
 
 .center[
 <img src="slide_images/abraham_wald.png" alt="drawing" width="65%"/>

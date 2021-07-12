@@ -8,7 +8,16 @@ description: |
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Day 4 Part 1:
+## Day 4 Part 1:
+
+### Morning lecture: 
+
+**[Lecture 4A Slides - PDF]()**
+
+- Linear algebra continued
+- Matrix algebra
+- Diagonals and transformation
+- Linear algebra for systems of equations
 
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
@@ -18,15 +27,28 @@ xaringanExtra::embed_xaringan(
 )
 ```
 
-#### Flex session
+### Morning interactive session
 
-- Fancy notebooks: R Markdown tips & tricks
+**[Interactive Session 4A handout]()**
 
-## Day 4 Part 2: Summary statistics and data exploration
+- Basic linear algebra continued
+- Summary statistics in R and Python
+- Basic visual data exploration in `ggplot2`
 
+### Morning flex session
+
+- Fancy your notebooks: R Markdown tips & tricks
+
+## Day 4 Part 2:
+
+### Afternoon lecture: 
+
+**[Lecture 4B Slides - PDF]()**
+
+- Summary statistics and data exploration
 - Central tendency
 - Spread & distributions
-- Exploratory visualizations
+- Exploratory data visualization
 
 ```{r, echo = FALSE}
 xaringanExtra::embed_xaringan(
@@ -36,20 +58,25 @@ xaringanExtra::embed_xaringan(
 )
 ```
 
-#### Flex session
+### Afternoon interactive session
+
+**[Interactive Session 4B handout]()**
+
+- Summary statistics continued
+- Data exploration continued
+
+### Afternoon flex session
 
 - Watch party: JD Long's 2019 [RStudio::conf talk *Empathy in action*](https://www.youtube.com/watch?v=CjNOSrfQiAY)
 
-
 ## Day 4 Tasks and Activities
 
-### Refresher problems
-
-### Challenge problems
-
-### Creative thinking problems
+[Day 4 Tasks - Handout]()
 
 ## Efficiency tips
 
 *Inspired by Dr. Julia Lowndes' [Openscapes](openscapes.org) program.*
+
+- `Cmd + F`: Open 'Find and replace' in current doc
+- `Cmd + Shift + F`: Search in entire R project
 
