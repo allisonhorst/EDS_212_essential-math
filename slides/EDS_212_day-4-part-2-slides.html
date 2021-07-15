@@ -106,18 +106,36 @@ Example: distribution of penguin flipper lengths for chinstrap penguins
 
 ```r
 teddy_miles &lt;- c(1.0, 1.2, 1.8, 2.1, 2.4, 2.9, 3.4, 4.7, 5.1, 5.6, 7.8, 10.4, 15.4)
-boxplot(teddy_miles, horizontal = TRUE)
+teddy_miles &lt;- data.frame(teddy_miles)
 ```
 
-![](EDS_212_day-4-part-2-slides_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
+
+```r
+ggplot(data = teddy_miles, aes(x = teddy_miles)) +
+  geom_boxplot()
+```
+
+&lt;img src="EDS_212_day-4-part-2-slides_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" /&gt;
+
+
+
 
 ---
 
 ### Scatterplots
 
----
-
 Always, always, always look at your data. It is the only way to make a responsible decision about an appropriate type of analysis. 
+
+.center[
+
+```r
+ggplot(data = penguins, aes(x = bill_depth_mm, y = bill_length_mm)) +
+  geom_point(aes(color = species))
+```
+
+![](EDS_212_day-4-part-2-slides_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
+]
+
 
 ---
 
@@ -157,13 +175,56 @@ Middle value when all observations are arranged in order - for n = even, the ave
 
 ---
 
-### Variance and standard deviation
+.center[
+&lt;img src="slide_images/central_tendency.jpg" alt="drawing" width="60%"/&gt;
+]
+
+Image: Sirkin, R. M. (2006). Measuring central tendency. In Statistics for the social sciences (pp. 83-126). SAGE Publications, Inc., https://www.doi.org/10.4135/9781412985987
+
+---
+class: center, middle
+
+## The best way to describe the distribution of the data is to present the data itself. 
 
 ---
 
-Beware summary statistics alone...
+## Variance and standard deviation
 
-## Meet the dreaded DINO DOZEN
+Measures of **data spread**. 
+
+- **Variance:** Mean squared distance of observations from the mean
+
+.center[
+&lt;img src="slide_images/variance_equation.png" alt="drawing" width="30%"/&gt;
+]
+
+Where `\(s^2\)` is the sample variance, `\(x_i\)` is a sample observation value, `\(\bar x\)` is the sample mean, and `\(n\)` is the number of observations. 
+
+---
+
+## Standard deviation
+
+Also a measure of data spread, calculated by taking the square root of the variance.
+
+.center[
+&lt;img src="slide_images/standard_deviation.png" alt="drawing" width="30%"/&gt;
+]
+
+---
+
+Beware summary statistics alone...meet the DINO DOZEN
+
+.center[
+&lt;img src="slide_images/dino_dozen.png" alt="drawing" width="70%"/&gt;
+]
+
+---
+
+.center[
+&lt;img src="slide_images/gorilla.png" alt="drawing" width="50%"/&gt;
+]
+
+From: Yanai, I., Lercher, M. A hypothesis is a liability. Genome Biol 21, 231 (2020). https://doi.org/10.1186/s13059-020-02133-w
 
 ---
 
@@ -171,21 +232,27 @@ Beware summary statistics alone...
 
 **Confidence interval:** a range of values (based on a sample) that, if we were to take multiple samples from the population and calculate the confidence interval from each, would contain the true population parameter X percent of the time. 
 
+**What it's NOT:** "There is a 95% chance that the true population parameter is between values X and Y." 
+
 ---
 
 ### Confidence interval example
+
+Mean shark length is 8.42 `\(\pm\)` 3.55 ft (mean `\(\pm\)` standard deviation), with a 95% confidence interval of [6.45, 10.39 ft] (n = 15). 
+
+What this **DOES NOT** mean: There is a 95% chance that the true population mean length is between 6.45 and 10.39 feet. 
+
+What this **DOES** mean: 95% of calculated confidence intervals for samples drawn from this population will contain the true population parameter. This CI could be one of the 95%. It could also be one of the 5% that does *not* contain the true population parameter!
+
 
 ---
 
 ### Communicating data summaries
 
 - The "Bar bar plots" philosophy: show as much as you can for the audience you're presenting to
-- Summary statistics are often useful, but are a small part of the data's whole story
-- Strongest when accompanied by data visualization
-
----
-
-
+- Summary statistics are often useful, but are a small part of the whole data story
+- Uncertainty is important! How can we responsibly communicate it?
+- All summaries are strongest when accompanied by additional data communication
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

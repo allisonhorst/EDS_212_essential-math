@@ -60,39 +60,57 @@ Let's sketch what it might look like...
 
 ---
 
-## Drawing event spaces
+## Basic probability theory, notation, and diagrams
+
+- **Intersection:** Probability that outcomes co-occur. In other words, these are **AND** probability statements.
+
+- **Union:** Probability that *at least one* outcome in the event space happens (could be just one, or all). In other words, these are **OR** probability statements. 
+
+- **Complement:**  Probability that an outcome or set of outcomes *does not* occur
 
 ---
 
-## Basic probability theory and notation
+# Intersection
 
-- Union
+**Notation:** `\(P\{A\cap B\}\)`
 
-- Intersection
+**In words:** The probability of A *and* B happening (where A and B are independent events)
 
-- Complement
-
----
-
-For discrete variables
+**Calculation:** `\(P\{A\cap B\} = P\{A\}*P\{A\}\)`
 
 ---
 
-For continuous variables
+## Union
+
+**Notation:** `\(P\{A\cup B\}\)`
+
+**In words:** The probability of A *or* B happening (i.e., at least A or B happens, or both).
+
+**Calculation:** `\(P\{A\cup B\}=P\{A\}+P\{B\}-P\{A\cap B\}\)`
 
 ---
 
-Probability of an exact value for a continuous variable
+## Complement
+
+**Notation:** `\(P\{A'\}\)`
+
+**In words:** The probability of `\(A\)` **NOT** happening
+
+**Calculation:** `\(P\{A'\}=1-P\{A\}\)`
 
 ---
 
-Conditional probability
+## Conditional probability
 
---- 
+If events are not independent, one event having occurred can *change* the probability of another event occurring. For events `\(A\)` and `\(B\)`, the probability of `\(B\)` given that `\(A\)` is know to occur is: 
 
-A Bayes example
+`\(P\{B|A\}=\frac{P\{A \cap\ B\}}{P\{A\}}\)`
+
+A common question: Why doesn't this just simplify to `\(P\{B\}\)` if the intersection is `\(P\{A\}*P\{A\}\)`?
+
 
 ---
+
 
 ## Intuition check 
 
@@ -128,11 +146,22 @@ Then, we attempt to draw conclusions about the **populations** from which our sa
 
 ## Probability density function
 
+On Day 4, we visualized data distributions from histograms. If we use histograms to estimate continuous functions that describe all possible outcomes, we have created a probability density function.
+
+The area under any probability density function = 1, indicating that 100% of all possible outcomes are represented by the function. 
+
+Drawing fun! 
+
 ---
 
-## One example: 2-sample t-test
+## This gives us a basis for hypothesis testing (EDS 222)
 
-**Note:** You will cover this in depth in EDS 222. We'll just build some intuition here for what basic hypothesis tests do, and how probability is involved. 
+If a null hypothesis is true, what is the probability that your data outcome (e.g. mean, value, etc.) would have occurred by random chance? 
+
+Is that *so* unlikely (is the probability low enough), that you think you have sufficient evidence to reject the null hypothesis? Or not? 
+
+Let's brainstorm some examples (and to be continued...)
+
 
 
     </textarea>

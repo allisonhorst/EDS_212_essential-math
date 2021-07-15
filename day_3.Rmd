@@ -66,6 +66,8 @@ xaringanExtra::embed_xaringan(
 
 [Day 3 Tasks - Handout]()
 
+See also: https://nwfsc-timeseries.github.io/atsa-labs/sec-basicmat-create.html
+
 ## Efficiency tips 
 
 *Inspired by Dr. Julia Lowndes' [Openscapes](openscapes.org) program.*

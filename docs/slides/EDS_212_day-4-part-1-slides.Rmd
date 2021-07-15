@@ -52,6 +52,16 @@ For example:
 
 ---
 
+## Recall: dot product
+
+The dot product of two vectors is the sum of their elements multiplied:
+
+For $\vec a =[1,5]$ and $\vec b = [2,-3]$:
+
+$$\vec a \cdot \vec b=(1)(2)+(5)(-3)=-13$$
+
+---
+
 ## Matrix multiplication
 
 We find the *dot product* of row $\cdot$ column vectors:
@@ -80,7 +90,21 @@ What do you think the output matrix would contain if you were multiplying the fo
 
 ## Diagonal matrix
 
+A **diagonal matrix** is (almost always) a square matrix ($m$ = $n$) where only elements on the diagonal are non-zero values. 
 
+.center[
+<img src="slide_images/diagonal_matrix.png" alt="drawing" width="40%"/>
+]
+
+---
+
+## What happens when we multiply a matrix by a diagonal matrix? 
+
+A diagonal matrix is also called a *scaling matrix* because it scales rows proportionally, but not by the same value:
+
+.center[
+<img src="slide_images/diagonal_matrix_scaling.png" alt="drawing" width="60%"/>
+]
 
 ---
 
@@ -110,11 +134,76 @@ The matrix form of this system of equations looks as follows:
 
 ---
 
-## Examples: matrices and linear algebra in environmental science
+## Example: matrices and linear algebra in environmental science
+
+### Leslie Matrix: Population ecology
+
+A matrix model that accounts for survival / fecundity rates at different life stages for a species. 
+
+--- 
+
+### Overview: 
+
+- Define life stages
+
+- Estimate probability of survival / reproduction at different life stages to create a matrix over time
+
+- Combine into a matrix that allows calculation at the next time step
+
+.center[
+<img src="slide_images/leslie_matrix.jpg" alt="drawing" width="60%"/>
+]
 
 ---
 
+## Writing estimates as equations:  
+
+- For our species, each adult female will lay ~600 eggs during each cycle (let's say that's a year). Which means that the eggs at time $t+1$ can be estimated by the number of adult females * 600:
+
+$$E_{t+1}=600 * F_t$$
+
 ---
+
+$$E_{t+1}=600 * F_t$$
+
+We also estimate that 20% of eggs survive to reach larval stage:
+
+$$L_{t+1} = 0.2*E_t$$
+
+---
+
+$$E_{t+1}=600 * F_t$$
+$$L_{t+1} = 0.2*E_t$$
+
+We also estimate that 8% of those that reach larval stage will survive to become reproducing female adults:
+
+$$F_{t+1}=0.08*L_t$$
+
+---
+
+$$E_{t+1}=600 * F_t$$
+
+$$L_{t+1} = 0.2*E_t$$
+
+$$F_{t+1}=0.08*L_t$$
+
+How can we write this in matrix form?
+
+.center[
+<img src="slide_images/leslie_matrix_blank.png" alt="drawing" width="40%"/>
+]
+
+---
+
+.center[
+<img src="slide_images/leslie_matrix_values.png" alt="drawing" width="70%"/>
+]
+
+---
+
+See also: Bison model 
+
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjy2ZDKuOPxAhUJ6J4KHb39CPcQFnoECCUQAA&url=http%3A%2F%2Fwww.math.utk.edu%2F~heather%2Flecture17.pdf&usg=AOvVaw00r4mdhuKtpWff0QO12YaF
 
 ---
 
