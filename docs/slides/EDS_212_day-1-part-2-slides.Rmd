@@ -144,6 +144,10 @@ We can think of these as inverses of each other:
 
 ...and use that as a tool for escaping variables from exponents & logs (remembering we can do whatever we want to an equation, as long as we do **the same exact thing to both sides**):
 
+---
+
+## Examples: 
+
 - Find $x$ given $\ln(x) = 5$
 
   Exponentiate both sides: $e^{\ln(x)} = e^5$ ; simplify LHS to get: $x = e^5$
@@ -206,17 +210,3 @@ For example, "Between 1972 and 2020 the price of hobbit homes increased by an av
 knitr::include_graphics("slide_images/cod_graph.jpg")
 
 ```
-
----
-
-## Day 1 data science vocabulary
-
-- **GUI**: Stands for *graphical user interface*. An interface for communicating with your computer that uses buttons & icons (point & click options) instead of or in addition to text/command based instructions to do stuff. 
-
-- **Edge case:** an issue or scenario that occurs in rare/unexpected circumstances (opposite of a general case).
-
-- **Bork:** mess up, break something, really do a number on your code. Often used in a self-deprecating statement, like "Don't mind me over here, just borking my git branch to smithereens."
-
-
-
-

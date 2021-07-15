@@ -19,26 +19,6 @@ navbar:
           href: day_4.html
         - text: "Day 5"
           href: day_5.html
-    - text: "Code examples"
-      menu:
-        - text: "Basic computation"
-          href: code_basic_comp.html
-        - text: "Simple functions"
-          href: code_simple_functions.html
-        - text: "Find a derivative"
-          href: code_derivative.html
-        - text: "Solve simple ODEs"
-          href: code_solve_ode.html
-        - text: "Basic data visualization"
-          href: code_viz_distributions.html
-        - text: "Summary statistics"
-          href: code_summary_statistics.html
-        - text: "Find probabilities"
-          href: code_probability.html
-        - text: "Boolean operations"
-          href: code_boolean_operations.html
-    - text: "Glossary"
-      href: glossary.html
     - icon: fab fa-github
       href: https://github.com/allisonhorst/EDS_212_essential-math
 output:
