@@ -144,6 +144,15 @@ The pieces:
 
 ---
 
+## Or, in pictures: 
+
+From Christopher Rackauckas, [*Scientific machine learning: interpretable neural networks that accurately extrapolate from small data.*](https://www.stochasticlifestyle.com/how-to-train-interpretable-neural-networks-that-accurately-extrapolate-from-small-data/) from the Stochastic Lifestyle blog. 
+
+.center[
+![](slide_images/predator-prey-image.png)
+
+---
+
 ## Finding $x(t)$ and $y(t)$?
 
 Integration to find approximate solutions. *Image: [Modelica by Example](https://mbe.modelica.university/behavior/equations/population/)*
@@ -153,11 +162,7 @@ Integration to find approximate solutions. *Image: [Modelica by Example](https:/
 ]
 ---
 
-A great summary of Lotka-Volterra interpretation: https://mbe.modelica.university/behavior/equations/population/
-
----
-
-## Some differential equations can be solved analytically
+## Some differential equations can be solved analytically:
 
 $$\frac{dy}{dx}=y$$
 

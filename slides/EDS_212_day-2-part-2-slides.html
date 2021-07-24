@@ -3,7 +3,7 @@
   <head>
     <title>EDS 212</title>
     <meta charset="utf-8" />
-    <script src="libs/header-attrs-2.8/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.9/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -37,7 +37,27 @@ class: center, middle, inverse, title-slide
 
 - Increasing &amp; decreasing functions (bounded by critical points)
 
-- Describing rates of change is common in environmental science
+- Describing rates of change is common in environmental science (rate of pollutant concentration change, rate of population growth, rate of energy consumption)
+
+---
+
+## Practice interpretation / math think
+
+
+Imagine you have a bowl of soup and you want to describe how quickly it cools off. 
+
+- What do you think is the *main driver* of cooling? 
+
+- What if you have a hot plate? 
+
+- What does this look like in an equation? 
+
+---
+
+## Newton's Law of Cooling
+
+`$$\frac{dT}{dt}=-k(T-T_a)+T_{in}$$`
+What do you think is wrapped up in `\(k\)`?
 
 ---
 
@@ -95,14 +115,60 @@ Find all partials of:
 ### OK but what do partials actually mean?
 
 
+The slope with respect to one variable if other variables are held constant. Let's think about a roller coaster. 
+
+How can we describe our orientation? Let us count the ways...
+
+[Commence drawing &amp; handwaving extravaganza!]
+
 
 ---
 
+## Let's try one
 
-## Examples of higher order &amp; partial derivatives in environmental data science
+The temperature (in Celsius) across a surface (where x and y are in meters) is described by: 
+
+`$$T(x,y)=x^2y-2x+y-1$$`
+At what "rate" is temperature changing (with respect to distance):
+
+- In the `\(x\)` direction, at the point (1,3) on the surface?
+- In the `\(y\)` direction, at the point (0,2) on the surface?
 
 ---
 
+## Another super real example
+
+A dragon's breath temperature ($T$, in degrees Celsius) is modeled as a function of its wingspan ($W$, in meters) and length ($L$, also in meters): 
+
+`$$T(W,L)=0.41WL+2.6W^2$$`
+- At what rate is breath temperature changing with respect to length for a dragon that is 4.1m long, with a wingspan of 4.5m?
+
+- At what rate is breath temperature changing with respect to wingspan, for the same dragon?
+
+---
+
+## Example: higher order &amp; partial derivatives in environmental data science
+
+The **Advection-Dispersion-Reaction Equation** for solute transport models the change in a solute concentration `\(C\)` over time `\(t\)`, where groundwater is flowing in direction `\(x\)`:
+
+`$$\frac{\partial C}{\partial t}=D_x \frac{\partial^2C}{\partial x^2} + D_y\frac{\partial^2C}{\partial y^2}+D_z\frac{\partial^2C}{\partial z^2}-v\frac{\partial C}{\partial x}-\lambda RC$$`
+
+---
+
+.center[
+![](slide_images/suspicious-ostrich.jpeg)
+]
+
+---
+
+## Let's break it down. 
+
+`$$\frac{\partial C}{\partial t}=D_x \frac{\partial^2C}{\partial x^2} + D_y\frac{\partial^2C}{\partial y^2}+D_z\frac{\partial^2C}{\partial z^2}-v\frac{\partial C}{\partial x}-\lambda RC$$`
+
+- Left-hand-side: Rate of concentration change (over time)
+- Right-hand-side first 3 terms: Concentration change due to dispersion in `\(x\)`, `\(y\)`, and `\(z\)` directions
+- Right-hand-side fourth term: Concentration change due to groundwater transport (in groundwater flow direction, x)
+- Right-hand-side final term: Reaction term (e.g. biodegradation / abiotic degradation)
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

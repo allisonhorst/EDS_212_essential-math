@@ -68,9 +68,64 @@ Now, let's see how much more quickly we can do this with some computer power!
 
 ## Numerical approximation using `deSolve::ode()`
 
+### A basic starter
+
+Let's say we have a system modeled by: 
+
+$$\frac{dC}{dt}=\lambda C^2-3.1\delta$$
+and we don't know how to solve this analytically. Let's use `deSolve` in R to help us find a solution numerically, given an initial condition at $C(0)=4.8$ and for parameter values $\lambda = 0.4$ and $\delta=0.06$. 
+
+Here's what a numeric solution looks like with `deSolve`: 
+
+First, we'll make a time sequence that we want to estimate numerical solutions over: 
+```{r}
+# Create a time sequence:
+time_seq <- seq(from = 0, to = 0.2, by = 0.001)
+```
+
+Then, we'll store the parameter(s) and initial conditions:
+```{r}
+# Set some parameter values (these can change - keep it in mind):
+parameter_example <- c(lambda = 0.4, delta = 0.06)
+
+# Set the initial condition (prey and predator populations at t = 0).
+# Recall: x = prey, y = predator
+init_cond_example <- c(C = 4.8)
+```
+
+
+Store the differential equation as a function: 
+```{r}
+# Prepare the series of differential equations as a function: 
+df_equation_example <- function(time_seq, init_cond_example, parameter_example) {
+  with(as.list(c(init_cond_example, parameter_example)), {
+    dcdt = lambda * C ^ 2 - 3.1 * delta
+    return(list(c(dcdt)))
+  })
+}
+```
+
+
+Use `deSolve::ode()` to approximate the solution numerically: 
+```{r}
+# Find the approximate the solution using `deSolve::ode()`:
+approx_df_example <- ode(y = init_cond_example, times = time_seq, func = df_equation_example, parms = parameter_example)
+
+# Check the class: 
+class(approx_df_example)
+
+# We really want this to be a data frame:
+approx_df_example <- data.frame(approx_df_example)
+
+# Plot it! 
+ggplot(data = approx_df_example, aes(x = time, y = C)) +
+  geom_point(size = 0.1)
+```
+
+
 ### The Lotke-Volterra equations
 
-As described in the lecture, the Lotke-Volterra models have been used to describe predator-prey populations. 
+Now let's try it for something a bit more interesting! As described in the lecture, the Lotke-Volterra models have been used to describe predator-prey populations. 
 
 #### Prey equation: 
 

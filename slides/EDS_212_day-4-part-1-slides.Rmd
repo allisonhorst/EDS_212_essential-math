@@ -201,7 +201,7 @@ How can we write this in matrix form?
 
 ---
 
-See also: Bison model 
+See also: Bison model and predicting populations
 
 https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjy2ZDKuOPxAhUJ6J4KHb39CPcQFnoECCUQAA&url=http%3A%2F%2Fwww.math.utk.edu%2F~heather%2Flecture17.pdf&usg=AOvVaw00r4mdhuKtpWff0QO12YaF
 

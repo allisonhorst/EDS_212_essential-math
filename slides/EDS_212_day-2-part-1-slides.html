@@ -3,7 +3,7 @@
   <head>
     <title>EDS 212</title>
     <meta charset="utf-8" />
-    <script src="libs/header-attrs-2.8/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.9/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -67,14 +67,32 @@ class: center, middle
 
 Evaluate the slope between two generic points on any function (separated by `\(\Delta x\)`) as `\(\Delta x\)` becomes infinitely small. 
 
+&lt;img src="slide_images/mispronounced_equations.png" width="35%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
 ### Let's try one.
 
 Find an expression that tells us the slope of the function `\(f(x)=x^2-18.2\)` at any value of `\(x\)`. 
 
 `$$\frac{df}{dx}=\lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}$$`
 
-`$$=\lim_{\Delta x\to 0}\frac{((x+\Delta x)^2-18.2)-(x^2-18.2)}{\Delta x}=\frac{x^2+2x\Delta x+(\Delta x)^2-18.2-x^2+18.2}{\Delta x}$$`
+`$$=\lim_{\Delta x\to 0}\frac{((x+\Delta x)^2-18.2)-(x^2-18.2)}{\Delta x}$$`
+`$$=\frac{x^2+2x\Delta x+(\Delta x)^2-18.2-x^2+18.2}{\Delta x}$$`
+---
+
+Which gets us to...
+
 `$$= \lim_{\Delta x\to 0} \frac{2x\Delta x+(\Delta x)^2}{\Delta x} = \lim_{\Delta x\to 0} {2x+\Delta x} = 2x$$`
+---
+
+## Your turn:
+
+Find the derivative of the following using the definition of the derivative:
+
+`$$f(x)=4-x+3x^2$$`
+
 ---
 
 ### It's cool to do that a few times, **but it gets really tedious really fast.**
