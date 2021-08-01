@@ -1,0 +1,124 @@
+---
+title: 'Day 1: Tasks & group activities'
+subtitle: 'Problems, gut checks, R Projects, and a function'
+output: 
+  html_document:
+    css: activities_theme.css
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Section 1. Back-of-the-envelope (small groups)
+
+For this group task section, you'll work in groups of 4 - 5 to do back-of-the-envelope calculations. You'll work together to make an estimate for the value.
+
+You'll spend \~15 minutes with your group discussing, clarifying your assumptions, doing your back-of-the envelope calculations, and coming up with an estimate. Then, a spokesperson for your group will report back on your thought process, assumptions & conclusion.
+
+**The only rule: you can't use the internet.**
+
+**You are absolutely allowed to poll your peers (even from other groups).**
+
+#### Credit: all examples here are from, carefully considered in, [what-if.xkcd.com](what-if.xkcd.com)
+
+-   **Group A:** When electrofishing, usually 100 $\mu W$ per cm^3^ (of fish volume) is sufficient to temporarily stop a fish heart. How much energy would you need to electro"fish" for a blue whale?
+-   **Group B:** What is the fastest you could visit all 50 states by car?
+-   **Group C:** If a T-rex were released in New York City, how many humans/day would it need to consume to get its needed calorie intake?
+-   **Group D:** If you dropped a 13 pound bowling ball off the side of a boat over the Marianas Trench, how long would it take to reach the bottom?
+-   **Group E:** If the world was scaled to the size of a basketball, what would the height of Mt. Everest be?
+-   **Group F:** If there was zip line from the moon to the earth, assuming no issues with rotation, atmosphere, etc., how long would it take to zip line between them?
+
+## Section 2. Practice problems
+
+### Warm up:
+
+1.  Simplify the following: $2-\frac{3*6-12}{3}*2-4^2(3^2-7)$
+
+2.  Simplify the following: $3x(4x^2-2)-\frac{6x(2x+1)}{3x}$
+
+### Evaluate the following:
+
+3.  Evaluate $f(x,y)=x^2-1+3xy$ at $x=1$ and $y = 0$
+
+4.  Given $G(t,z)=3.1(t-4.2)^2 + 0.06z$, find the value of $G(1, 2.5)$
+
+5.  Evaluate $T(a)=3a^2-4$ at $a = x + \Delta x$
+
+### Unit conversions and consistency:
+
+6.  Newton's universal law of gravitation describes the gravitational force between any two objects of mass $m_1$ and $m_2$ (in kilograms) separated by a distance *r* (in meters), given the gravitational constant $G$.
+
+$$F=G\frac{m_1 m_2}{r^2}$$
+
+If the units of force ($F$) are in Newtons ($\frac{kg \cdot m}{s^2}$), what are the units of the gravitational constant?
+
+7.  Population growth of bark beetles within a Jeffrey Pine stand is given by the following, where $P(t)$ is beetle population (individuals) as a function of time (in months, where month 0 is the study start date).
+
+$$P(t)=567+4.1e^{0.11t}$$ a) What are the units of 567? b) What are the units of 0.11? c) What is the estimated population at t = 24 months?
+
+8.  You are combining information from multiple sources to estimate the total annual oil spilled in a watershed, reported by different companies. The following are reported for the year:
+
+-   Company A: 14.6 barrels spilled (with 9.3 barrels recovered)
+-   Company B: 692 liters spilled (94% recovered)
+-   Company C: 18.1 gallons spilled (0% recovered)
+
+What is the total *unrecovered* amount of oil spilled into the watershed that year, in barrels?
+
+### Exponents
+
+Simplify the following:
+
+10. $\frac{4x^2(x^3)+(x^4)^2}{2x^2-5x^2}$
+
+## Section 3: R Projects and functions
+
+-   Create a new R Project (named `eds-212-day-1`)
+
+-   Create a new R Markdown file
+
+-   Press 'Knit' (save this in your R Proj as `fish-length-weight.Rmd`)
+
+-   Delete everything below the first code chunk
+
+-   Attach the `tidyverse` package in the setup chunk
+
+-   Play around with markdown. Try adding text with at least the following:
+
+    -   Headers of varying size
+    -   Italics
+    -   Bold
+    -   Superscripts / subscripts
+    -   Bulletpoints
+    -   An image (google how!)
+
+-   Add a new code chunk
+
+-   Within the code chunk, write a function to estimate fish standard weight, given parameters $a$, $b$, and fish length $L$ as inputs. "Standard weight" is how much we expect a fish to weigh, give the species and fish length, and the nonlinear relationship is given by:
+
+$$W=aL^b$$ 
+
+where L is total fish length (centimeters), W is the expected fish weight (grams), and a and b are species-dependent parameter values.
+
+-   Test out your function to find the mass (g) for a 60 cm fish of the following species (parameter estimates from Peyton et al. (2016)): 
+
+    - Milkfish: a = 0.0905, b = 2.52
+    - Giant trevally: a = 0.0353, b = 3.05
+    - Great barracuda: a = 0.0181, b = 3.27
+
+
+Peyton, K. A., T. S. Sakihara, L. K. Nishiura, T. T. Shindo, T. E. Shimoda, S. Hau, A. Akiona, and K. Lorance. 2016. “Length–Weight Relationships for Common Juvenile Fishes and Prey Species in Hawaiian Estuaries.” Journal of Applied Ichthyology 32 (3): 499–502. https://doi.org/10.1111/jai.12957. 
+
+- Make and store (as `fish_length`) sequence of size ranges from 0 to 200 cm, by increments of 1 cm
+
+- Estimate the weight for giant barracudas along that entire range (given the parameters above). Store the output as `barracuda_weight`
+
+- Bind the lengths and estimated barracuda lengths into a single data frame
+
+- Create a ggplot graph of length versus weight for giant barracuda
+
+- Update the graph axis labels and title
+
+## END Activity Session 1

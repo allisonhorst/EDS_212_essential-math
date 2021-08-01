@@ -16,7 +16,7 @@ output:
 
 - **Teacher:** Allison Horst (ahorst@ucsb.edu)
 - **Course assistant:** 
-- **Course hours:** 8am - 5pm PST, Monday - Friday
+- **Course hours:** 8am - 5pm PST, M-T-Th-F, 10am start Wednesdays
 - **Location:** NCEAS MEDS Classroom
 
 Let's take a look at the [course syllabus](https://docs.google.com/document/d/1Kcc9BhZuKeAGxQeW0ls7KY0oUtt-TBwEgOibl4_ShtY/edit?usp=sharing) together. 
@@ -32,6 +32,13 @@ Let's take a look at the [course syllabus](https://docs.google.com/document/d/1K
 ---
 
 ![](slide_images/eds221_daily_schedule.png)
+---
+
+class: center, middle
+
+### Wednesdays: 10am late start
+
+Wednesdays we'll start 2 hours later. There will not be flex sessions on Wednesdays for EDS 212 or 221.
 
 ---
 

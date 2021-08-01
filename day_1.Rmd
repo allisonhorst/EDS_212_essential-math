@@ -6,7 +6,7 @@ description: |
 
 <!-- Note to self: Run the xaringan_to_pdf.R code to get function, then ran `xaringan_to_pdf("slides/EDS_212_day-1-part-1-slides.html")` to produce the PDF for these slides. -->
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE} 
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -72,11 +72,11 @@ xaringanExtra::embed_xaringan(
 
 ### Afternoon flex session: 
 
-- Interactive activity & discussion: expanding the Venn diagram of skills for data science
+- Open (troubleshooting help & catch up)
 
 ## Day 1 tasks and activities
 
-[Day 1 Tasks - Handout]()
+[Day 1 Tasks - Handout](activities/day_1_activities.html)
 
 ## Efficiency tips
 
