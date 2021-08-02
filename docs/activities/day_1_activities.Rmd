@@ -123,7 +123,7 @@ Peyton, K. A., T. S. Sakihara, L. K. Nishiura, T. T. Shindo, T. E. Shimoda, S. H
 
 - Estimate the weight for giant barracudas along that entire range (given the parameters above). Store the output as `barracuda_weight`
 
-- Bind the lengths and estimated barracuda lengths into a single data frame
+- Bind the lengths and estimated barracuda weights into a single data frame using `data.frame()`
 
 - Create a ggplot graph of length versus weight for giant barracuda
 
