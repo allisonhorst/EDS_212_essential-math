@@ -13,12 +13,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
 
-
-```{r, echo = FALSE}
-knitr::include_graphics("comp_session_images/ds_friends.jpg")
-```
-
-```{r}
+```{r, echo = TRUE}
 library(tidyverse)
 library(palmerpenguins)
 ```
@@ -27,12 +22,12 @@ library(palmerpenguins)
 
 1. Find all partial derivatives of the following: 
 
-$f(a, z, t)=3at^2-4t+5.1az-z^3$
+$$f(a, z, t)=3at^2-4t+5.1az-z^3$$
 
 2. Algal biomass ($B$, grams) in a system is modeled by the following, where $h$ is time (hours) and $T$ is temperature (Celsius). 
 
 $$B(h, T)=0.6Th+2.1h^2$$
-- For water at 28 degrees, find an expression for how biomass is changing with respect to time ($\frac{\partial B}{\partial h} $). 
+For water at 28 degrees, find an expression for how biomass is changing with respect to time ($\frac{\partial B}{\partial h}$). 
 
 3. Find the 3^rd^ derivative of the following: 
 

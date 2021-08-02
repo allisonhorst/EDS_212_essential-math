@@ -35,17 +35,17 @@ You'll spend \~15 minutes with your group discussing, clarifying your assumption
 
 ### Warm up:
 
-1.  Simplify the following: $2-\frac{3*6-12}{3}*2-4^2(3^2-7)$
+1.  By hand: Simplify the following: $2-\frac{3*6-12}{3}*2-4^2(3^2-7)$
 
-2.  Simplify the following: $3x(4x^2-2)-\frac{6x(2x+1)}{3x}$
+2.  By hand: Simplify the following: $3x(4x^2-2)-\frac{6x(2x+1)}{3x}$
 
 ### Evaluate the following:
 
-3.  Evaluate $f(x,y)=x^2-1+3xy$ at $x=1$ and $y = 0$
+3.  By hand: Evaluate $f(x,y)=x^2-1+3xy$ at $x=1$ and $y = 0$
 
-4.  Given $G(t,z)=3.1(t-4.2)^2 + 0.06z$, find the value of $G(1, 2.5)$
+4.  In the R Console: given $G(t,z)=3.1(t-4.2)^2 + 0.06z$, find the value of $G(1, 2.5)$
 
-5.  Evaluate $T(a)=3a^2-4$ at $a = x + \Delta x$
+5.  In the R Console: find the amount of money in your account at year 4, $P(4)$, given $P(t)=P_0e^{rt}$ and $P_0=2500$, $r = 0.046$. 
 
 ### Unit conversions and consistency:
 
@@ -53,11 +53,11 @@ You'll spend \~15 minutes with your group discussing, clarifying your assumption
 
 $$F=G\frac{m_1 m_2}{r^2}$$
 
-If the units of force ($F$) are in Newtons ($\frac{kg \cdot m}{s^2}$), what are the units of the gravitational constant?
+By hand: If the units of force ($F$) are in Newtons ($\frac{kg \cdot m}{s^2}$), what are the units of the gravitational constant?
 
 7.  Population growth of bark beetles within a Jeffrey Pine stand is given by the following, where $P(t)$ is beetle population (individuals) as a function of time (in months, where month 0 is the study start date).
 
-$$P(t)=567+4.1e^{0.11t}$$ a) What are the units of 567? b) What are the units of 0.11? c) What is the estimated population at t = 24 months?
+$$P(t)=567+4.1e^{0.11t}$$ a) What are the units of 567? b) What are the units of 0.11? c) In the R Console: What is the estimated population at t = 24 months?
 
 8.  You are combining information from multiple sources to estimate the total annual oil spilled in a watershed, reported by different companies. The following are reported for the year:
 
@@ -65,13 +65,21 @@ $$P(t)=567+4.1e^{0.11t}$$ a) What are the units of 567? b) What are the units of
 -   Company B: 692 liters spilled (94% recovered)
 -   Company C: 18.1 gallons spilled (0% recovered)
 
-What is the total *unrecovered* amount of oil spilled into the watershed that year, in barrels?
+What is the total *unrecovered* amount of oil spilled into the watershed that year, in barrels. Use R & Google here for calculations. 
 
 ### Exponents
 
 Simplify the following:
 
 10. $\frac{4x^2(x^3)+(x^4)^2}{2x^2-5x^2}$
+
+### Average slope
+
+11. By hand: Find the average slope between $(2,-1)$ and $(10,3)$
+
+12. By hand: Find the average slope between $(2x+a, 6)$ and $(x-3a, 2b)$
+
+13. By hand: If an urchin population in a study plot in 1990 is 432, and in 2004 is 801, what is the average rate of population increase? Find the slope, then write a statement about the average increase (including units).
 
 ## Section 3: R Projects and functions
 

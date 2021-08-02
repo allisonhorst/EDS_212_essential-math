@@ -1,0 +1,53 @@
+---
+title: 'Day 2: Tasks & group activities'
+subtitle: 'Derivatives - by hand & in R'
+output: 
+  html_document:
+    css: activities_theme.css
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Section 1: Derivatives by hand
+
+### First order univariate:
+
+1. By hand using the definition of the derivative (i.e., "the long way"), find $\frac{dT}{dq}$ for $T(q)=2-3q^2$
+
+2. By hand and using derivative rules: Find $\frac{df}{dx}$ for $f(x)=0.5x^4+2x-3$
+
+3. By hand and using derivative rules: What is the slope (in the z-direction) for $G(z)=0.8-0.5z^2$ at $z = 4.7$?
+
+### Higher order univariate: 
+
+### Partial derivatives: 
+
+## Section 2: Derivatives in R
+
+- Create a new R Project (named `eds-212-day-2`)
+- Create a new R Markdown document
+- Knit (save as `derivatives-in-R.Rmd`)
+- Use `usethis::use_git()` and `usethis::use_github()` to make your project a version-controlled repo, with an upstream GitHub repo
+
+### First order univariate derivatives:
+
+- In your R Markdown document, find the derivative expression and slope at the indicated value for each the following functions in R (each in a separate code chunk). Use the `deriv()` function (see `?deriv`) for examples.
+
+  A) $f(x)=x^2$ at $x = 3$
+  B) $P(a)=2(3a+2)^4-5$ at $a = 1.2$
+  C) $g(t)=\frac{-4t}{(t^2+1)^3}$ at $t = 0$
+
+
+- Knit, stage, commit, pull, then push your changes. 
+
+### Higher order univariate derivatives: 
+
+- Back in RStudio, add a code chunk in your Rmd in which you find the second derivative with respect to $z$ for $G(z)=4.6-1.9z^3$ (use the `D()` function here, and check your solution by hand).
+
+## Section 3: Transfering to Python
+
+It's critical to expect you can take what you've learned about derivatives (and how to find them in R) into other languages. We want to be versatile data scientists who **expect that we can figure out how to do the same thing across different languages.**
