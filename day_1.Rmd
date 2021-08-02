@@ -72,7 +72,7 @@ xaringanExtra::embed_xaringan(
 
 ### Afternoon flex session: 
 
-- Open (troubleshooting help & catch up)
+- Git & GitHub continued
 
 ## Day 1 tasks and activities
 
