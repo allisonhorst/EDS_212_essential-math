@@ -129,4 +129,21 @@ Peyton, K. A., T. S. Sakihara, L. K. Nishiura, T. T. Shindo, T. E. Shimoda, S. H
 
 - Update the graph axis labels and title
 
+- Knit
+
+### Make this a version-controlled repo
+
+- While still in your project, run:
+
+  - `use_git()` (choose yes to both when prompted)
+  - `use_github()`
+  
+- Did you get sent to a GitHub repo? Cool. 
+
+- Back in RStudio, add some new text somewhere in your document (doesn't matter what). Knit.
+
+- Stage, commit, pull, then push changes back to GitHub. 
+
+- Back in your GitHub account, look for your update (recent commit) - do you see it? Great! You're successfully using git for version control! 
+
 ## END Activity Session 1
