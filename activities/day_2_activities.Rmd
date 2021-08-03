@@ -10,44 +10,84 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
 ```
 
-## Section 1: Derivatives by hand
+## Section 1: (Small groups) Derive the definition of the derivative
+
+- Put all notes away
+- With a partner, based on what you've learned, derive the definition of the derivative from scratch
+- At every step, describe *what* you are doing
+- Picture drawing is encouraged
+- Once you have the definition of the derivative, say out loud (each person) what we're doing mathematically every time we find the derivative
+
+## Section 2: Derivatives by hand
 
 ### First order univariate:
 
 1. By hand using the definition of the derivative (i.e., "the long way"), find $\frac{dT}{dq}$ for $T(q)=2-3q^2$
 
-2. By hand and using derivative rules: Find $\frac{df}{dx}$ for $f(x)=0.5x^4+2x-3$
+2. By hand and using derivative rules: What is the slope (in the z-direction) for $G(z)=0.8-0.5z^2$ at $z = 4.7$?
 
-3. By hand and using derivative rules: What is the slope (in the z-direction) for $G(z)=0.8-0.5z^2$ at $z = 4.7$?
+3. By hand and using derivative rules: Find $\frac{dx}{dt}$ for $x(t)=\frac{1}{x^3}+2.4e^{3x}$
+
 
 ### Higher order univariate: 
 
+4. By hand and using derivative rules: Find $\frac{d^3f}{dx^3}$ for $f(x)=4x^5-2x$
+
 ### Partial derivatives: 
 
-## Section 2: Derivatives in R
+5. By hand, find all partials of the function: $B(T,p,k)=2T^3-3.5pk^2$
+
+6. For the function above, what is the slope in the $p$ direction at $T = 1.9, k = 2.4$?
+
+## Section 3: Derivatives in R
 
 - Create a new R Project (named `eds-212-day-2`)
-- Create a new R Markdown document
-- Knit (save as `derivatives-in-R.Rmd`)
+- Create a new R Markdown document in the project
+- Attach the `tidyverse` and `palmerpenguins` packages in the setup chunk with `library(package_name)`
+- Knit (save your .Rmd as `derivatives-in-R.Rmd`)
 - Use `usethis::use_git()` and `usethis::use_github()` to make your project a version-controlled repo, with an upstream GitHub repo
 
 ### First order univariate derivatives:
 
-- In your R Markdown document, find the derivative expression and slope at the indicated value for each the following functions in R (each in a separate code chunk). Use the `deriv()` function (see `?deriv`) for examples.
+- In your R Markdown document, find the derivative expression and slope at the indicated value for each the following functions in R (each in a separate code chunk).
 
   A) $f(x)=x^2$ at $x = 3$
   B) $P(a)=2(3a+2)^4-5$ at $a = 1.2$
   C) $g(t)=\frac{-4t}{(t^2+1)^3}$ at $t = 0$
 
-
-- Knit, stage, commit, pull, then push your changes. 
+- Knit, stage, commit, pull, then push your changes to your repo on GitHub. 
 
 ### Higher order univariate derivatives: 
 
-- Back in RStudio, add a code chunk in your Rmd in which you find the second derivative with respect to $z$ for $G(z)=4.6-1.9z^3$ (use the `D()` function here, and check your solution by hand).
+- Back in RStudio, add a code chunk in your Rmd in which you find the second derivative with respect to $z$ for $G(z)=4.6-1.9z^3$. Check your solution by hand.
 
-## Section 3: Transfering to Python
+- Stage, commit, pull, then push all changes to your GitHub repo
 
-It's critical to expect you can take what you've learned about derivatives (and how to find them in R) into other languages. We want to be versatile data scientists who **expect that we can figure out how to do the same thing across different languages.**
+### Partial derivatives:
+
+- In your Rmd, find all partials of the following function: 
+
+$$f(x,y,z)=2x^2y-3x+1+4z^4x$$
+
+## Section 4: Make some plots
+
+- In a new code chunk, create a plot of the function $f(x) = 2.4e^{-0.05x}sin(x)$ for x values from -0.5 to +0.5
+
+```{r, include = FALSE}
+
+my_function <- function(x) {
+  2.4 * exp(-0.05 * x) * sin(x)
+}
+
+ggplot(data = data.frame(x = c(0, 50)), aes(x = x)) +
+  stat_function(fun = my_function)
+```
+
+- In a new code chunk, create a `ggplot` graph of penguin bill length versus bill depth (using the `penguins` dataset in the `palmerpenguins` package), with point color dependent on species. You should attach the `tidyverse` and `palmerpenguins` package in your .Rmd setup chunk. Update labels and add a title.
+
+- In a new code chunk, make a jitterplot of flipper length by species (species on the x-axis, flipper length on the y-axis). Update axis labels and add a title. 
+
+
