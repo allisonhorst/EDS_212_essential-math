@@ -249,14 +249,34 @@ div.tocify {
 <p>In this lesson, we’ll learn about making &amp; working with scalars, vectors and matrices in R and Python. We’ll be working in both an R Markdown and Jupyter Notebook.</p>
 <div id="set-up" class="section level2">
 <h2>Set up</h2>
+<p>A new workflow! GitHub repo FIRST, then R project.</p>
 <ul>
-<li>Follow along to FORK then CLONE <a href>this github repo</a>.</li>
+<li>Go to github.com (you should already be logged in)</li>
+<li>Click the green ‘New’ or plus sign to create a new repo</li>
+<li>Name it eds212-comp-3b</li>
+<li>Create it <strong>with a ReadMe</strong></li>
+<li>Click on the green ‘Code’ button and copy https URL</li>
+<li>Go back to RStudio</li>
+<li>Click on New Project &gt; <strong>Version Control</strong> &gt; git &gt; create project (in your EDS 212 folder you’ve created for Day 3). Create the project.</li>
+<li>Tada! Now you have a project set up to go with version control &amp; already connected to a GitHub repo</li>
+</ul>
+<p>In your new project:</p>
+<ul>
+<li>Create a new R Markdown document</li>
+<li>Save as <code>r-vectors.Rmd</code></li>
+</ul>
+<p>Open Anaconda Navigator:</p>
+<ul>
+<li>Navigate to your project folder</li>
+<li>Create a new Jupyter Notebook</li>
+<li>Save as <code>py-vectors.ipynb</code></li>
 </ul>
 </div>
 <div id="vectors" class="section level2">
 <h2>Vectors</h2>
 <div id="vectors-in-r" class="section level3">
 <h3>Vectors in R</h3>
+<p>(IN YOUR R MARKDOWN)</p>
 <p>Create vectors in R using <code>c()</code>. Note that all elements in a vector must be a single class - if numbers and strings are combined, the whole thing will be of class character.</p>
 <p>For example:</p>
 <pre class="r"><code># Create and store the vector:
@@ -313,6 +333,7 @@ ringtail %*% fox</code></pre>
 </div>
 <div id="vectors-in-python-basics" class="section level3">
 <h3>Vectors in Python (basics)</h3>
+<p>(IN JUPYTER NOTEBOOK)</p>
 <p>Using numpy (imported as np)</p>
 <pre class="python"><code>import numpy as np</code></pre>
 <p>To make a vector, create a <em>list</em> (more on this in EDS 221) then convert to an array (with a single column = vector):</p>
@@ -354,6 +375,7 @@ vec_1 + vec_2
 <h2>Matrices</h2>
 <div id="matrices-in-r" class="section level3">
 <h3>Matrices in R</h3>
+<p>(IN YOUR RMD)</p>
 <p>A matrix contains data of a single class (usually numbers). Which means that we can think of the contents of a matrix as a single sequence of values, that are constrained (wrapped) to the specified dimensions of the matrix.</p>
 <p>For example, let’s say we have 10 values:</p>
 <pre class="r"><code># Make a sequence of values from 1 - 10
@@ -436,6 +458,7 @@ cats %*% dogs</code></pre>
 </div>
 <div id="matrices-in-python" class="section level3">
 <h3>Matrices in Python</h3>
+<p>(IN YOUR JUPYTER NOTEBOOK)</p>
 <p>Create a matrix in Python using the <code>np.matrix()</code> function (NumPy). Basically, by creating lists within a list…</p>
 <pre class="python"><code># Make one 2 x 2 matrix: 
 matrix_1 = np.matrix([[1, 9], 

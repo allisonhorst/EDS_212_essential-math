@@ -6,7 +6,6 @@ output:
     css: comp_session_theme.css
     toc: true
     toc_float: true
-  
 ---
 
 In this lesson, we'll learn about making & working with scalars, vectors and matrices in R and Python. We'll be working in both an R Markdown and Jupyter Notebook. 
@@ -18,15 +17,33 @@ library(reticulate)
 
 ## Set up
 
-- Create a new repository on GitHub, with a ReadMe
-- Clone and create a new version-controlled R Project
-- Add a new R Markdown document
-- Open Anaconda Navigator & Create a new Jupyter Notebook
-- When you save your Jupyter NB, make sure it's saving *in your R project*
+A new workflow! GitHub repo FIRST, then R project. 
+
+- Go to github.com (you should already be logged in)
+- Click the green 'New' or plus sign to create a new repo
+- Name it eds212-comp-3b
+- Create it **with a ReadMe**
+- Click on the green 'Code' button and copy https URL
+- Go back to RStudio
+- Click on New Project > **Version Control** > git > create project (in your EDS 212 folder you've created for Day 3). Create the project. 
+- Tada! Now you have a project set up to go with version control & already connected to a GitHub repo 
+
+In your new project: 
+
+- Create a new R Markdown document
+- Save as `r-vectors.Rmd`
+
+Open Anaconda Navigator: 
+
+- Navigate to your project folder
+- Create a new Jupyter Notebook
+- Save as `py-vectors.ipynb`
 
 ## Vectors
 
 ### Vectors in R
+
+(IN YOUR R MARKDOWN)
 
 Create vectors in R using `c()`. Note that all elements in a vector must be a single class - if numbers and strings are combined, the whole thing will be of class character. 
 
@@ -92,7 +109,10 @@ fox - ringtail
 ringtail %*% fox
 
 ```
+
 ### Vectors in Python (basics)
+
+(IN JUPYTER NOTEBOOK)
 
 Using numpy (imported as np)
 
@@ -148,6 +168,8 @@ np.dot(vec_1, vec_2)
 ## Matrices
 
 ### Matrices in R
+
+(IN YOUR RMD)
 
 A matrix contains data of a single class (usually numbers). Which means that we can think of the contents of a matrix as a single sequence of values, that are constrained (wrapped) to the specified dimensions of the matrix.
 
@@ -233,6 +255,8 @@ cats %*% dogs
 Confirm that this is correct by doing the matrix multiplication by hand.
 
 ### Matrices in Python
+
+(IN YOUR JUPYTER NOTEBOOK)
 
 Create a matrix in Python using the `np.matrix()` function (NumPy). Basically, by creating lists within a list...
 

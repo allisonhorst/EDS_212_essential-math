@@ -1,0 +1,52 @@
+---
+title: "Day 3 Tasks & Activities"
+author: "Allison Horst"
+date: "8/3/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Part 1: By hand linear algebra fundamentals 
+
+### Vector math
+
+For the vectors $\vec a = (1,6)$ and $\vec b = (2, 4)$: 
+
+- Find and sketch $\vec a + \vec b$
+- Find and sketch $\vec b - \vec a$
+- Find and sketch $4 \vec a$
+- Find $\vec a \cdot \vec b$
+
+### Matrix math
+
+- Given the matrix:
+
+
+## Part 2: Fork & clone a repo, use the code
+
+- Fork and clone this repo, which contains an R Markdown document with code to numerically solve the SIR equations, to create a version-controlled R Project
+
+- Once you've created your R Project, open the `sir-ode.Rmd` file. 
+
+- Run all code in the .Rmd (Cmd + Option + R, or go up to the run button and choose the last option "Run All")
+
+- Explore the code and output graph. What is the code doing? What is the graph telling us? 
+
+- Make small changes to the parameter values to see how the SIR models change. Are the changes expected? 
+
+- After trying out a few changes, save and knit your new output graph.
+
+- Stage, commit, pull, then push to your repo.
+
+- Check for your changes on GitHub. Are they there? Cool, done with Part 2.
+
+## Part 3: Coding practice
+
+- Create a new version-controlled R Project using the "GitHub repo *first*" workflow (hint: make a new repo on GitHub named `eds212-day3-part3` with a ReadMe, then clone to link to an R Project...)
+
+- Create a new .Rmd within your project
+
+- 
