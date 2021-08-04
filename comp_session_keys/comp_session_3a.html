@@ -251,32 +251,15 @@ div.tocify {
 <p>In this session, we’ll see how to use the <code>deSolve::ode()</code> function to numerically estimate the solution to the Lotke-Volterra equations for predator-prey populations.</p>
 <p>First, we’ll learn a bit more about how numerical methods for approximating solutions to differential equations work.</p>
 <p><strong>Credit:</strong> This lesson is closely based on the article (Numerically solving differential equations with R)[<a href="https://rstudio-pubs-static.s3.amazonaws.com/32888_197d1a1896534397b67fb04e0d4899ae.html" class="uri">https://rstudio-pubs-static.s3.amazonaws.com/32888_197d1a1896534397b67fb04e0d4899ae.html</a>]</p>
-<pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
-<pre><code>## ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
-## ✓ tibble  3.1.2     ✓ dplyr   1.0.7
-## ✓ tidyr   1.1.3     ✓ stringr 1.4.0
-## ✓ readr   2.0.0     ✓ forcats 0.5.1</code></pre>
-<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()</code></pre>
-<pre class="r"><code>library(deSolve)
+<pre class="r"><code>library(tidyverse)
+library(deSolve)
 library(kableExtra)</code></pre>
-<pre><code>## 
-## Attaching package: &#39;kableExtra&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
-## 
-##     group_rows</code></pre>
 <div id="numerical-approximation-by-hand" class="section level2">
 <h2>Numerical approximation by hand</h2>
 <p>We’ll just do this once to reinforce how numerical integration generally works. Given the differential equation:</p>
 <p><span class="math display">\[\frac{dP}{dt}=0.4P(0.5 - P)\]</span></p>
 <p>and the initial condition <span class="math inline">\(P(0)=0.2\)</span>, approximate the solution <span class="math inline">\(P(t)\)</span> at t = 1, 2, 3, 4, 5.</p>
 <p>First, what is <span class="math inline">\(t\)</span>, <span class="math inline">\(P\)</span>, and <span class="math inline">\(\frac{dP}{dt}\)</span> at <span class="math inline">\(t = 0\)</span>? Here we have the initial condition, and can calculate the slope:</p>
-<pre class="r"><code>t_0 &lt;- data.frame(t = 0, P = 0.2, &#39;dfdx&#39; = 0.024)
-
-kable(t_0) %&gt;% 
-  kable_styling(full_width = FALSE)</code></pre>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -307,10 +290,6 @@ dfdx
 </table>
 <p>Now, we approximate the value of <span class="math inline">\(P(t)\)</span> and <span class="math inline">\(\frac{dP}{dt}\)</span> at the next step (<span class="math inline">\(t = 1\)</span>) <em>as if the slope is continuing at 0.024</em>. Which means the approximate value of <span class="math inline">\(P(1) = 0.2 + 0.024*(1) = 0.44\)</span>. At that value of <span class="math inline">\(P\)</span>, the slope is approximated by <span class="math inline">\(\frac{dP}{dt}=0.4*0.44(0.5 - 0.44) = 0.01056\)</span>.</p>
 <p>So now, our table is expand to:</p>
-<pre class="r"><code>t_1 &lt;- data.frame(t = c(0,1), P = c(0.2, 0.44), &#39;dfdx&#39; = c(0.024, 0.01056))
-
-kable(t_1) %&gt;% 
-  kable_styling(full_width = FALSE)</code></pre>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -352,10 +331,6 @@ dfdx
 </table>
 <p>Then we continue. What do we approximate is the value of P(t) at t = 2? Using the new slope of 0.01056, the approximate value of <span class="math inline">\(P(2) = 0.44 + 0.01056*1 = 0.45056\)</span>. Using that value, we approximate the slope at <span class="math inline">\(t=2\)</span> by <span class="math inline">\(\frac{dP}{dt}=0.4*0.45056(0.5 - 0.45056) = 0.0089\)</span>.</p>
 <p>Our table is then updated to:</p>
-<pre class="r"><code>t_2 &lt;- data.frame(t = c(0,1,2), P = c(0.2, 0.44, 0.45056), &#39;dfdx&#39; = c(0.024, 0.01056, 0.0089))
-
-kable(t_2) %&gt;% 
-  kable_styling(full_width = FALSE)</code></pre>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -415,6 +390,7 @@ dfdx
 </div>
 <div id="numerical-approximation-using-desolveode" class="section level2">
 <h2>Numerical approximation using <code>deSolve::ode()</code></h2>
+<p><strong>Allison update (2021-08-03)</strong>: For time, students will FORK my repo (<a href="https://github.com/allisonhorst/eds212-comp-3a" class="uri">https://github.com/allisonhorst/eds212-comp-3a</a>), then we’ll talk through the code. Lotke-Volterra example shown below is the same that students will run from that repo.</p>
 <div id="a-basic-starter" class="section level3">
 <h3>A basic starter</h3>
 <p>Let’s say we have a system modeled by:</p>

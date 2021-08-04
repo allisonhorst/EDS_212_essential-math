@@ -39,6 +39,9 @@ Brain creativity break - let's draw some higher order derivatives!
 
 ## Plotting a function in `ggplot2`
 
+<!-- Allison NOTE: see [`geom_function`](https://ggplot2.tidyverse.org/reference/geom_function.html) for next year! -->
+
+
 ```{r}
 library(tidyverse)
 ```
@@ -49,6 +52,8 @@ eq = function(x){3*x^2 + 4} # Define function
 # Plot it over a specific range using the `stat_function` option: 
 ggplot(data.frame(x = c(1, 100)), aes(x = x)) + 
   stat_function(fun = eq)
+
+## See: geom_function() (https://ggplot2.tidyverse.org/reference/geom_function.html)
 ```
 
 ```{r}

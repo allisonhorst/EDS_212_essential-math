@@ -250,11 +250,7 @@ div.tocify {
 <div id="set-up" class="section level2">
 <h2>Set up</h2>
 <ul>
-<li>Create a new repository on GitHub, with a ReadMe</li>
-<li>Clone and create a new version-controlled R Project</li>
-<li>Add a new R Markdown document</li>
-<li>Open Anaconda Navigator &amp; Create a new Jupyter Notebook</li>
-<li>When you save your Jupyter NB, make sure it’s saving <em>in your R project</em></li>
+<li>Follow along to FORK then CLONE <a href>this github repo</a>.</li>
 </ul>
 </div>
 <div id="vectors" class="section level2">
@@ -521,6 +517,9 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')

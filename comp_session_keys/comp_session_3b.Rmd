@@ -18,11 +18,7 @@ library(reticulate)
 
 ## Set up
 
-- Create a new repository on GitHub, with a ReadMe
-- Clone and create a new version-controlled R Project
-- Add a new R Markdown document
-- Open Anaconda Navigator & Create a new Jupyter Notebook
-- When you save your Jupyter NB, make sure it's saving *in your R project*
+- Follow along to FORK then CLONE [this github repo]().
 
 ## Vectors
 
