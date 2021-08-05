@@ -1,0 +1,109 @@
+---
+title: "Day 4 Tasks & Activities"
+subtitle: 'Matrices and matrix algebra, exploring and summarizing data'
+output: 
+  html_document:
+    css: activities_theme.css
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(skimr)
+library(GGally)
+```
+
+## 1. A Leslie matrix example (small groups)
+
+A population of fish we're interested in has four life stages: eggs (E), fry (F), juvenile (J), breeding adult (A). You are given the following:
+
+- Each breeding adult will produce, on average, 600 eggs
+- 25% of eggs will survive to become fry
+- 10% of fry will survive to become juveniles
+- 40% of juveniles will survive to become adults
+- Adult survival rate year to year is 80%
+
+1. With your group, draw the Leslie matrix model for this population structure.
+
+2. With your group, given an initial population (Year 0) that has 0 eggs, 40,000 fry, 600 juveniles, and 450 adults, **by hand** project the population structure (i.e. the count in each life stage) in Year 1.
+
+## 2. Fork & clone a repo to check your Leslie matrix, and make projections
+
+- Fork and clone [this repo](https://github.com/allisonhorst/eds212-leslie-matrix), which contains the Leslie matrix for the example above. 
+
+- Explore the code and outputs. Does the Year 1 population projection align with what you calculated? 
+
+- Add code to the .Rmd to expand the projections to years 4, 5, and 6 (it current projects through year 3)
+
+- Save, commit, pull, then push your changes.
+
+```{r, include = FALSE}
+# Make the Leslie Matrix:
+fish_leslie <- matrix(c(0, 0, 0, 600, 0.25, 0, 0, 0, 0, 0.10, 0, 0, 0, 0, 0.4, 0.8), nrow = 4, ncol = 4, byrow = TRUE)
+
+# Check it out:
+fish_leslie
+
+# Initial population: 
+fish_year0 <- c(0, 40000, 600, 450)
+
+# Population structure in year 1:
+fish_year1 <- fish_leslie %*% fish_year0
+fish_year1
+
+# Population structure in year 2: 
+fish_year2 <- fish_leslie %*% fish_year1
+fish_year2
+
+# Population structure in year 3: 
+fish_year3 <- fish_leslie %*% fish_year2
+fish_year3
+```
+
+
+## 3. Make a repo, do some stuff
+
+- Create a new repo on GitHub named `eds212-day4-activities`
+- Clone to create a version-controlled R Project
+
+### A. Do some data exploration & summarizing in R
+
+- Create a new R Markdown document in your project, save as `r-exploring``
+- Attach the `tidyverse`, `skimr`, and `GGally` packages in the setup code chunk
+- Run `View(diamonds)` in the Console to look at the built-in `diamonds` dataset in R
+- Explore the dataset using the functions `names()`, `dim()`, `summary()`, `head()`, `tail()`, and `skimr::skim()`
+- Create a pairs plot using `ggpairs()`
+- Create a basic `ggplot` scatterplot of diamond price (`price`) as a function of size (`carat`)
+- Create a histogram showing the distribution of values in the `carat` column (recall: a histogram only requires a single variable, e.g. `aes(x = carat)`)
+- Save, stage, commit, pull, then push your changes back to your repo
+
+### B. Now do that in Python
+
+- Open Anaconda Navigator and launch Jupyter Notebooks
+- Navigate to your project folder (`eds212-day4-activities`)
+- Create a new Jupyter notebook (Python3), rename `py-exploring`
+- In your notebook, in a new code chunk attach the seaborn and pandas packages:
+    - `import seaborn as sns`
+    - `import pandas as pd`
+- Import the diamonds dataset in seaborn, storing as diamonds:
+    - `diamonds = sns.load_dataset('diamonds')`
+- Explore the dataset using the following (replacing 'df_name' with the name of your data frame):
+    - `df_name.columns`
+    - `df_name.head()`
+    - `df_name.tail()`
+    - `df_name.describe()`
+    - `df_name.size`
+    - `sns.pairplot(df_name)`
+- Create a pairplot using `sns.pairplot(df_name)`
+- Create a histogram of all values in the `carat` column using `sns.histplot(data=df_name, x="variable_name")`
+- Save your .ipynb
+- Back in RStudio, you should see your saved .ipynb (check the time modified)
+- Stage, commit, pull, then push all changes to your GitHub repo
+- Check to see that your changes were stored remotely
+
+## End
+
+
+

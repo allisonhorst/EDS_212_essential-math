@@ -1,0 +1,97 @@
+---
+title: 'EDS 212 Computational Session 4B'
+subtitle: 'Exploring data in R and Python'
+output: 
+  html_document:
+    css: comp_session_theme.css
+    toc: true
+    toc_float: true
+  
+---
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+library(reticulate)
+library(GGally)
+library(skimr)
+library(palmerpenguins)
+```
+
+
+## Set up
+
+- Create a new repository on GitHub called `eds212-comp-4b`, with a ReadMe
+- Clone and create a new version-controlled R Project
+- Add a new R Markdown document, save as `r-exploring`
+- Open Anaconda Navigator, launch Jupyter Notebook, navigate to the Project folder you just created, & make a new Jupyter Notebook there w/Python3 (when you save your Jupyter NB, make sure it's saving *in your R project*)
+- Rename your Jupyter Notebook `py-exploring`
+- Check your files pane in RStudio to ensure that your .ipynb is saved in the right place
+
+## Exploring data in R:
+
+In your RMarkdown document, attach the following packages in the setup chunk (you'll need to install the first two):
+
+- `GGally`
+- `skimr`
+- `palmerpenguins`
+
+Rapid-fire low-level exploration of data:
+```{r}
+# Always look at it
+# View(penguins)
+
+# Check the column names
+names(penguins) # See df.columns in pandas
+
+# Check the dimensions 
+dim(penguins) # See df.shape in pandas
+
+# Get a summary
+summary(penguins) # See df.describe() in pandas
+
+# Print the first 6 lines
+head(penguins) # See df.head() in pandas
+
+# Print the last 6 lines 
+tail(penguins) # See df.tail() in pandas
+
+# Make a pairplot
+GGally::ggpairs(penguins)
+
+# Make a histogram of penguin flipper lengths
+ggplot(data = penguins, aes(x = flipper_length_mm)) +
+  geom_histogram()
+```
+
+## Let's try the same stuff, but in Python! 
+
+```{python}
+# Import Python packages
+import seaborn as sns
+import pandas as pd
+```
+
+```{python}
+# Load the penguins dataset from the seaborn package
+penguins = sns.load_dataset('penguins')
+```
+
+```{python}
+penguins.columns # See names(penguins) in R
+ 
+penguins.shape # See dim(penguins) in R
+
+penguins.head() # See head(penguins) in R
+
+penguins.tail() # See tail(penguins) in R
+
+penguins.describe() # See summary(penguins) in R
+
+# Make a pairs plot with seaborn pairplot
+sns.pairplot(penguins) # See GGally::ggpairs() in R
+
+# Make a histogram of flipper lengths with sns.histplot:
+sns.histplot(data=penguins, x="flipper_length_mm") # See geom_histogram() in R
+```
+
