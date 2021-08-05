@@ -6,7 +6,6 @@ output:
     css: comp_session_theme.css
     toc: true
     toc_float: true
-  
 ---
 
 
