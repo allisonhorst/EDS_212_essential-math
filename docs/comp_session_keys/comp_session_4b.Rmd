@@ -70,6 +70,7 @@ ggplot(data = penguins, aes(x = flipper_length_mm)) +
 # Import Python packages
 import seaborn as sns
 import pandas as pd
+import numpy as np
 ```
 
 ```{python}
@@ -93,5 +94,17 @@ sns.pairplot(penguins) # See GGally::ggpairs() in R
 
 # Make a histogram of flipper lengths with sns.histplot:
 sns.histplot(data=penguins, x="flipper_length_mm") # See geom_histogram() in R
+```
+
+One more thing: vectors in Python 
+
+```{python}
+vec_a = np.array([1,2,3])
+vec_b = np.array([10,11,12])
+
+vec_a + vec_b
+vec_b - vec_a
+vec_a * vec_b
+6 * vec_a
 ```
 
