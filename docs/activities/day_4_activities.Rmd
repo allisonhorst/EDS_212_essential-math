@@ -94,7 +94,7 @@ fish_year3
     - `df_name.head()`
     - `df_name.tail()`
     - `df_name.describe()`
-    - `df_name.size`
+    - `df_name.shape`
     - `sns.pairplot(df_name)`
 - Create a pairplot using `sns.pairplot(df_name)`
 - Create a histogram of all values in the `carat` column using `sns.histplot(data=df_name, x="variable_name")`
