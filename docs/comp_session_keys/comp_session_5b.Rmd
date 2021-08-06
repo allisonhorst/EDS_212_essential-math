@@ -1,0 +1,187 @@
+---
+title: 'EDS 212 Computational Session 5B'
+subtitle: 'Logical and comparison operators in R'
+output: 
+  html_document:
+    css: comp_session_theme.css
+    toc: true
+    toc_float: true
+---
+
+## Setup
+
+- Close, then reopen your project from the earlier session
+- Pull to get any changes since you last worked on it
+- Create a new R SCRIPT 
+- Save your script as `intro-logicals.R`
+
+## Comparison operators
+
+Comparison (or relational) operators compare values and return `TRUE` or `FALSE` depending on what you're comparing. 
+
+### Less than or greater than
+
+```{r}
+2 < 4
+```
+
+```{r}
+5 < 2
+```
+
+```{r}
+"A" < "D"
+```
+
+```{r}
+"Z" < "Q"
+```
+
+```{r}
+"cat" < "dog"
+```
+
+```{r}
+"yeti" < "armadillo"
+```
+
+So we can see that values can be considered numerically or alphabetically. 
+
+This is also true for vectors - each element in a vector will be compared to the corresponding value in the other vector (i.e., the first element in `a` gets compared to the first element in `b`). Let's make a couple vectors and try it out: 
+
+```{r}
+dogs <- c(1, 10, 4, 5, 18)
+cats <- c(0, 12, 10, 5, 2)
+
+dogs < cats
+```
+
+Same for vectors of strings: 
+```{r}
+dog_names <- c("Teddy", "Khora", "Banjo", "Waffle")
+cat_names <- c("Henrietta", "Panda", "Merlin", "Runt")
+
+cat_names < dog_names
+```
+
+
+### Less than / greater than **or equal to**
+
+```{r}
+2 <= 5
+```
+
+```{r}
+10 >= 10
+```
+
+Test alphabetically: 
+
+```{r}
+"yeti" <= "yeah"
+```
+
+Let's try it with vectors: 
+
+```{r}
+burritos <- c(-4, 10, 1, 0.6, 9)
+tacos <- c(5, 3, 8, -5, 6)
+
+tacos <= burritos
+```
+
+### Exact matches with `==`
+
+Use `==` to ask "do these things match?" 
+
+```{r}
+5 == 5
+```
+
+```{r}
+5 == 4
+```
+
+```{r}
+"cat" == "dog"
+```
+
+```{r}
+beach <- c(0, 2, 1, 10, 13)
+mesa <- c(1, 2, 3, 10, 13)
+
+beach == mesa
+```
+
+Let's try something interesting: 
+```{r}
+5 == TRUE
+
+5 == FALSE
+
+1 == TRUE
+
+0 == TRUE
+
+0 == FALSE
+```
+
+0 recognized as 'FALSE' and 1 recognized as 'TRUE'. 
+
+### Does NOT match with `!=`
+
+Use `!=` to ask: does this NOT match that?
+
+```{r}
+5 != 6
+```
+
+```{r}
+"cat" != "dog"
+```
+
+## Logical operators
+
+- `&`: logical "AND"
+- `|`: logical "OR"
+- `!`: logical "NOT"
+
+### Logical "AND"
+
+```{r}
+5 < 10 & "cat" < "dog"
+```
+
+```{r}
+9 > 4 & 2 < 3
+```
+
+An example with vectors: 
+
+```{r}
+bananas <- c(10, 21, 12, 15, 22)
+apples <- c(9, 18, 16, 20, 30)
+
+apples < bananas & bananas > 20
+```
+
+
+### Logical "OR"
+
+```{r}
+4 < 10 | 100 < 2
+```
+
+```{r}
+5 > 6 | "dog" < "cat" | 10 < 50
+```
+
+### Logical "NOT"
+
+```{r}
+!"dog" == "cat"
+
+!6 == 5
+
+```
+
