@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>EDS 212: Basic data visualization</title>
@@ -452,7 +453,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1859,7 +1860,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2441,7 +2445,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.12.1/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2508,14 +2512,21 @@ Daily materials
 
 
 <div class="d-article">
-<p>Data visualization will become a major part of your data science toolkit throughout the MEDS program. In EDS 212, we use several basic visualizations to start exploring how are data are distributed:</p>
+<p>Data visualization will become a major part of your data science
+toolkit throughout the MEDS program. In EDS 212, we use several basic
+visualizations to start exploring how are data are distributed:</p>
 <ul>
-<li>Scatterplots (location of observations, usually for two variable values)</li>
+<li>Scatterplots (location of observations, usually for two variable
+values)</li>
 <li>Histograms (frequency of observations in defined bins)</li>
-<li>Jitterplots (value of a variable within a category, with random jitter)</li>
-<li>Boxplots (summary visualization usually showing the median, interquartile range, whiskers extending to last observation within 1.5 steps of the IQR, and outliers beyond that)</li>
+<li>Jitterplots (value of a variable within a category, with random
+jitter)</li>
+<li>Boxplots (summary visualization usually showing the median,
+interquartile range, whiskers extending to last observation within 1.5
+steps of the IQR, and outliers beyond that)</li>
 </ul>
-<p>The examples below use the <code>penguins</code> data from the <code>palmerpenguins</code> package.</p>
+<p>The examples below use the <code>penguins</code> data from the
+<code>palmerpenguins</code> package.</p>
 <h3 id="attach-packages">Attach packages:</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2525,24 +2536,33 @@ Daily materials
 </div>
 </div>
 <h3 id="scatterplot">Scatterplot:</h3>
-<p>A scatterplot of bill dimensions, where each point represents the bill dimensions (length and depth) of a single penguin. The species is indicated by point shape.</p>
+<p>A scatterplot of bill dimensions, where each point represents the
+bill dimensions (length and depth) of a single penguin. The species is
+indicated by point shape.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>ggplot</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>penguins</span>, <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>bill_length_mm</span>, <span class='va'>bill_depth_mm</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>geom_point</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>shape <span class='op'>=</span> <span class='va'>species</span><span class='op'>)</span>, size <span class='op'>=</span> <span class='fl'>2</span>, alpha <span class='op'>=</span> <span class='fl'>0.6</span><span class='op'>)</span> <span class='co'># alpha updates transparency</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>penguins</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>bill_length_mm</span>, <span class='va'>bill_depth_mm</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>shape <span class='op'>=</span> <span class='va'>species</span><span class='op'>)</span>, size <span class='op'>=</span> <span class='fl'>2</span>, alpha <span class='op'>=</span> <span class='fl'>0.6</span><span class='op'>)</span> <span class='co'># alpha updates transparency</span>
 </code></pre>
 </div>
 <p><img src="code_viz_distributions_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
 </div>
 <h3 id="histograms">Histograms</h3>
-<p>Histograms show how values of a variable are distributed. Typically, histograms show the frequency of observations (on the y-axis) within equally sized bins (on the x-axis).</p>
-<p>Below is code to create histograms of penguin flipper lengths, faceted into different panels by the groups that exist in <em>species</em>. Note that histograms only require a single input variable (here, <code>flipper_length_mm</code>) - the other variable (frequency) is calculated automatically.</p>
-<p>Arguments can be updated to change the bin width or number. The <code>facet_wrap()</code> line here splits up the plots by species.</p>
+<p>Histograms show how values of a variable are distributed. Typically,
+histograms show the frequency of observations (on the y-axis) within
+equally sized bins (on the x-axis).</p>
+<p>Below is code to create histograms of penguin flipper lengths,
+faceted into different panels by the groups that exist in
+<em>species</em>. Note that histograms only require a single input
+variable (here, <code>flipper_length_mm</code>) - the other variable
+(frequency) is calculated automatically.</p>
+<p>Arguments can be updated to change the bin width or number. The
+<code>facet_wrap()</code> line here splits up the plots by species.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>ggplot</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>penguins</span>, <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>flipper_length_mm</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>geom_histogram</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>facet_wrap</span><span class='op'>(</span><span class='op'>~</span><span class='va'>species</span>, ncol <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>penguins</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>flipper_length_mm</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_histogram.html'>geom_histogram</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/facet_wrap.html'>facet_wrap</a></span><span class='op'>(</span><span class='op'>~</span><span class='va'>species</span>, ncol <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
 </code></pre>
 </div>
 <p><img src="code_viz_distributions_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
@@ -2551,26 +2571,32 @@ Daily materials
 <p>A jitterplot of penguin body mass, separated by species:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>ggplot</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>penguins</span>, <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>species</span>, y <span class='op'>=</span> <span class='va'>body_mass_g</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>geom_jitter</span><span class='op'>(</span>width <span class='op'>=</span> <span class='fl'>0.2</span><span class='op'>)</span> <span class='co'># Default width is too large</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>penguins</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>species</span>, y <span class='op'>=</span> <span class='va'>body_mass_g</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_jitter.html'>geom_jitter</a></span><span class='op'>(</span>width <span class='op'>=</span> <span class='fl'>0.2</span><span class='op'>)</span> <span class='co'># Default width is too large</span>
 </code></pre>
 </div>
 <p><img src="code_viz_distributions_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
 </div>
 <h3 id="boxplots">Boxplots</h3>
-<p>Remember: boxplots show summary values and you should consider using them in combination with another type of plot (e.g. a jitter or density plot).</p>
+<p>Remember: boxplots show summary values and you should consider using
+them in combination with another type of plot (e.g. a jitter or density
+plot).</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>ggplot</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>penguins</span>, <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>species</span>, y <span class='op'>=</span> <span class='va'>flipper_length_mm</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>geom_jitter</span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"gray"</span>, size <span class='op'>=</span> <span class='fl'>1</span>, width <span class='op'>=</span> <span class='fl'>0.1</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>geom_boxplot</span><span class='op'>(</span>fill <span class='op'>=</span> <span class='cn'>NA</span>, outlier.color <span class='op'>=</span> <span class='cn'>NA</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>penguins</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>species</span>, y <span class='op'>=</span> <span class='va'>flipper_length_mm</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_jitter.html'>geom_jitter</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"gray"</span>, size <span class='op'>=</span> <span class='fl'>1</span>, width <span class='op'>=</span> <span class='fl'>0.1</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_boxplot.html'>geom_boxplot</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='cn'>NA</span>, outlier.color <span class='op'>=</span> <span class='cn'>NA</span><span class='op'>)</span>
 </code></pre>
 </div>
 <p><img src="code_viz_distributions_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
 </div>
-<p><strong>Question:</strong> Why would I set the outlier color for the boxplot to <code>NA</code> here?</p>
-<p>These examples are for quick exploratory visualization. Throughout MEDS you’ll learn <em>many</em> other ways to explore data, and how to make engaging, clear and responsible final visualizations.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p><strong>Question:</strong> Why would I set the outlier color for the
+boxplot to <code>NA</code> here?</p>
+<p>These examples are for quick exploratory visualization. Throughout
+MEDS you’ll learn <em>many</em> other ways to explore data, and how to
+make engaging, clear and responsible final visualizations.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

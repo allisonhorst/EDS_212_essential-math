@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>EDS 212: Day 1: Basic math review</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2444,7 +2448,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.12.1/header-attrs.js"></script>
   <script src="site_libs/fitvids-2.1.1/fitvids.min.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2507,7 +2511,9 @@ Daily materials
 <h1>Day 1: Basic math review</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Algebra review, unit conversions, interpreting graphs, univariate and multivariate functions, exponents, the natural exponential, and logarithms</p></p>
+<p><p>Algebra review, unit conversions, interpreting graphs, univariate
+and multivariate functions, exponents, the natural exponential, and
+logarithms</p></p>
 </div>
 
 
@@ -2515,7 +2521,8 @@ Daily materials
 <!-- Note to self: Run the xaringan_to_pdf.R code to get function, then ran `xaringan_to_pdf("slides/EDS_212_day-1-part-1-slides.html")` to produce the PDF for these slides. -->
 <h2 id="day-1-part-1">Day 1 Part 1</h2>
 <h3 id="morning-lecture">Morning lecture</h3>
-<p><strong><a href="slides/EDS_212_day-1-part-1-slides.pdf">Lecture 1A Slides - PDF</a></strong></p>
+<p><strong><a href="slides/EDS_212_day-1-part-1-slides.pdf">Lecture 1A
+Slides - PDF</a></strong></p>
 <ul>
 <li>Algebra basics refresher</li>
 <li>Units and unit conversions</li>
@@ -2529,7 +2536,8 @@ Daily materials
 </div>
 </div>
 <h3 id="morning-interactive-session">Morning interactive session</h3>
-<p><strong><a href="comp_session_keys/comp_session_1a.html">Interactive Session 1A handout</a></strong></p>
+<p><strong><a href="comp_session_keys/comp_session_1a.html">Interactive
+Session 1A handout</a></strong></p>
 <ul>
 <li>Meet R, RStudio, and R Markdown</li>
 <li>Basic math operations and functions in R</li>
@@ -2542,7 +2550,8 @@ Daily materials
 </ul>
 <h2 id="day-1-part-2">Day 1 Part 2</h2>
 <h3 id="afternoon-lecture">Afternoon lecture</h3>
-<p><strong><a href="slides/EDS_212_day-1-part-2-slides.pdf">Lecture 1B Slides - PDF</a></strong></p>
+<p><strong><a href="slides/EDS_212_day-1-part-2-slides.pdf">Lecture 1B
+Slides - PDF</a></strong></p>
 <ul>
 <li>Natural exponential (&amp; exponential functions)</li>
 <li>Logarithms</li>
@@ -2555,8 +2564,10 @@ Daily materials
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
 </div>
-<h3 id="afternoon-interactive-session">Afternoon interactive session</h3>
-<p><strong><a href="comp_session_keys/comp_session_1b.html">Interactive Session 1B handout</a></strong></p>
+<h3 id="afternoon-interactive-session">Afternoon interactive
+session</h3>
+<p><strong><a href="comp_session_keys/comp_session_1b.html">Interactive
+Session 1B handout</a></strong></p>
 <ul>
 <li>R Projects</li>
 <li>Creating vectors and sequences</li>
@@ -2568,14 +2579,19 @@ Daily materials
 <li>Git &amp; GitHub continued</li>
 </ul>
 <h2 id="day-1-tasks-and-activities">Day 1 tasks and activities</h2>
-<p><a href="activities/day_1_activities.html">Day 1 Tasks - Handout</a></p>
+<p><a href="activities/day_1_activities.html">Day 1 Tasks -
+Handout</a></p>
 <h2 id="efficiency-tips">Efficiency tips</h2>
-<p><em>Inspired by Dr. Julia Lowndes’ <a href="openscapes.org">Openscapes</a> program.</em></p>
+<p><em>Inspired by Dr. Julia Lowndes’ <a
+href="openscapes.org">Openscapes</a> program.</em></p>
 <ul>
-<li><code>Cmd + tab</code> (Mac) or <code>Ctrl + tab</code> (PC) to toggle through open applications</li>
-<li><code>Ctrl + tab</code> (both) to toggle through tabs in browser (or open tabs in RStudio!)</li>
+<li><code>Cmd + tab</code> (Mac) or <code>Ctrl + tab</code> (PC) to
+toggle through open applications</li>
+<li><code>Ctrl + tab</code> (both) to toggle through tabs in browser (or
+open tabs in RStudio!)</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

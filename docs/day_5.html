@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>EDS 212: Day 5: Basic probability theory and Boolean algebra</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2444,7 +2448,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.12.1/header-attrs.js"></script>
   <script src="site_libs/fitvids-2.1.1/fitvids.min.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2507,7 +2511,8 @@ Daily materials
 <h1>Day 5: Basic probability theory and Boolean algebra</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Review of linear algebra basics, introduction to boolean algebra, and thinking like a computer</p></p>
+<p><p>Review of linear algebra basics, introduction to boolean algebra,
+and thinking like a computer</p></p>
 </div>
 
 
@@ -2539,7 +2544,8 @@ Daily materials
 <ul>
 <li>Boolean algebra</li>
 <li>Notation &amp; language</li>
-<li>Asking (<code>is.*</code>) versus telling (<code>as.*</code>) in code</li>
+<li>Asking (<code>is.*</code>) versus telling (<code>as.*</code>) in
+code</li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
 <div class="shareagain" style="min-width:300px;margin:1em auto;">
@@ -2547,24 +2553,28 @@ Daily materials
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
 </div>
-<h3 id="afternoon-interactive-session">Afternoon interactive session</h3>
+<h3 id="afternoon-interactive-session">Afternoon interactive
+session</h3>
 <ul>
 <li>Logic problems</li>
 <li>Common Boolean operators in R &amp; Python</li>
 </ul>
 <h3 id="afternoon-flex-session">Afternoon flex session</h3>
 <ul>
-<li>Developing your personal <code>distill</code> website - continued</li>
+<li>Developing your personal <code>distill</code> website -
+continued</li>
 </ul>
 <h2 id="day-5-tasks-and-activities">Day 5 Tasks and Activities</h2>
 <p><a href="">Day 5 Tasks - Handout</a></p>
 <h2 id="efficiency-tips">Efficiency tips</h2>
-<p><em>Inspired by Dr. Julia Lowndes’ <a href="openscapes.org">Openscapes</a> program.</em></p>
+<p><em>Inspired by Dr. Julia Lowndes’ <a
+href="openscapes.org">Openscapes</a> program.</em></p>
 <ul>
 <li><code>Cmd + O</code>: Open Finder window</li>
 <li><code>Cmd + Spacebar</code>: Open Spotlight Search</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>EDS 212: Simple functions in R</title>
@@ -452,7 +453,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1859,7 +1860,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2441,7 +2445,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.12.1/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2508,8 +2512,14 @@ Daily materials
 
 
 <div class="d-article">
-<p>We’re going to be doing a LOT more with functions (building, testing, documenting, and more) in EDS 221, but we do meet functions in EDS 212, so a few starter examples are included here. More: <a href="https://adv-r.hadley.nz/functions.html">Chapter 6 Functions</a> in Advanced R by Hadley Wickham.</p>
-<p>We build functions help us to automate and repeat a process for more efficient, reproducible computation and programming. The basic syntax for functions in R is:</p>
+<p>We’re going to be doing a LOT more with functions (building, testing,
+documenting, and more) in EDS 221, but we do meet functions in EDS 212,
+so a few starter examples are included here. More: <a
+href="https://adv-r.hadley.nz/functions.html">Chapter 6 Functions</a> in
+Advanced R by Hadley Wickham.</p>
+<p>We build functions help us to automate and repeat a process for more
+efficient, reproducible computation and programming. The basic syntax
+for functions in R is:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>function_name</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>arguments</span><span class='op'>)</span> <span class='op'>{</span>
@@ -2520,11 +2530,18 @@ Daily materials
 </code></pre>
 </div>
 </div>
-<p>Where the arguments are the different options you want the user to input, that the function acts on, and the body is where you tell the function what it should <em>do</em> with those arguments.</p>
-<h3 id="example-1-a-function-with-a-single-argument">Example 1: A function with a single argument</h3>
-<p>A model for jaguar shark mass (<span class="math inline">\(M\)</span>, kg) of the elusive jaguar shark is given by the following from Team Zissou, where <span class="math inline">\(L\)</span> is the shark length in meters:</p>
+<p>Where the arguments are the different options you want the user to
+input, that the function acts on, and the body is where you tell the
+function what it should <em>do</em> with those arguments.</p>
+<h3 id="example-1-a-function-with-a-single-argument">Example 1: A
+function with a single argument</h3>
+<p>A model for jaguar shark mass (<span
+class="math inline">\(M\)</span>, kg) of the elusive jaguar shark is
+given by the following from Team Zissou, where <span
+class="math inline">\(L\)</span> is the shark length in meters:</p>
 <p><span class="math display">\[M=0.4L^{2.6}\]</span></p>
-<p>Write a function to calculate the mass of a jaguar shark, given a length input.</p>
+<p>Write a function to calculate the mass of a jaguar shark, given a
+length input.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>shark_mass</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>shark_length</span><span class='op'>)</span> <span class='op'>{</span>
@@ -2535,7 +2552,10 @@ Daily materials
 </code></pre>
 </div>
 </div>
-<p>Then we can use our new function to calculate the shark mass for sharks of whatever length we input for the <code>shark_length</code> argument. For example, let’s use the function to find the expected mass of a 4.1 meter long shark:</p>
+<p>Then we can use our new function to calculate the shark mass for
+sharks of whatever length we input for the <code>shark_length</code>
+argument. For example, let’s use the function to find the expected mass
+of a 4.1 meter long shark:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>shark_mass</span><span class='op'>(</span>shark_length <span class='op'>=</span> <span class='fl'>4.1</span><span class='op'>)</span>
@@ -2543,10 +2563,15 @@ Daily materials
 </div>
 <pre><code>[1] 15.67827</code></pre>
 </div>
-<h3 id="example-2-a-function-with-multiple-arguments">Example 2: A function with multiple arguments</h3>
-<p>Kinetic energy is calculated by: <span class="math display">\[k_e=\frac{1}{2}mv^2\]</span></p>
-<p>where <span class="math inline">\(k_e\)</span> is in [units], <span class="math inline">\(m\)</span> is mass in [units], and <span class="math inline">\(v\)</span> is velocity in [units].</p>
-<p>Write a function to calculate the kinetic energy of an object in motion if given a mass and velocity in the units above.</p>
+<h3 id="example-2-a-function-with-multiple-arguments">Example 2: A
+function with multiple arguments</h3>
+<p>Kinetic energy is calculated by: <span
+class="math display">\[k_e=\frac{1}{2}mv^2\]</span></p>
+<p>where <span class="math inline">\(k_e\)</span> is in [units], <span
+class="math inline">\(m\)</span> is mass in [units], and <span
+class="math inline">\(v\)</span> is velocity in [units].</p>
+<p>Write a function to calculate the kinetic energy of an object in
+motion if given a mass and velocity in the units above.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>ke</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>mass</span>, <span class='va'>velocity</span><span class='op'>)</span> <span class='op'>{</span>
@@ -2579,7 +2604,8 @@ Daily materials
 <pre><code>[1] 22.491</code></pre>
 </div>
 <ol start="3" type="a">
-<li>Objects that range in size from 0 kg to 30 kg by increments of 5 kg, each traveling at 5 m/s?</li>
+<li>Objects that range in size from 0 kg to 30 kg by increments of 5 kg,
+each traveling at 5 m/s?</li>
 </ol>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2592,8 +2618,11 @@ Daily materials
 </div>
 <pre><code>[1]   0.0  62.5 125.0 187.5 250.0 312.5 375.0</code></pre>
 </div>
-<p><strong>Pro tip:</strong> The shortcut to create a function in R is <code>Command + Option + x</code> on a Mac, or <code>Control + Option + x</code> on a PC.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p><strong>Pro tip:</strong> The shortcut to create a function in R is
+<code>Command + Option + x</code> on a Mac, or
+<code>Control + Option + x</code> on a PC.</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
