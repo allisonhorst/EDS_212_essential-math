@@ -61,10 +61,12 @@ library(tidyverse)
 
 - In a new code chunk, make a jitterplot of flipper length by species (species on the x-axis, flipper length on the y-axis). Update axis labels and add a title. 
 
-- Knit your .Rmd to check for reproducibibility
+- Knit your .Rmd to check for reproducibility
 
 - Stage, commit, and push changes to the remote repo. Once you do, go to GitHub and check to see the changes are safely stored & tracked. 
 
-- Go back to your R Markdown document in RStudio. Pull to make sure you have the same versions as in the remote repo. Make a change (anything you want - maybe change your graph colors, sizes, etc.), then stage, commit, & push changes to the remote repo to reinforce the steps. Check that changes are stored on GitHub. 
+- Go back to your R Markdown document in RStudio. Pull to make sure you have the same versions as in the remote repo. Make a change (anything you want - maybe change your graph colors, sizes, etc.), then stage, commit, & push changes to the remote repo to reinforce the steps. Check that changes are stored on GitHub.
+
+- Repeat two more times - make changes to your plot, knit, stage, commit & push. Check that your changes appear on GitHub. 
 
 ## End
