@@ -1,12 +1,11 @@
 ---
 title: 'EDS 212 Computational Session 2A'
-subtitle: 'Derivatives by hand, in R, meet Jupyter Notebooks, a Python function'
+subtitle: 'Derivatives by hand, in R, meet git & GitHub'
 output: 
   html_document:
     css: comp_session_theme.css
     toc: true
     toc_float: true
-  
 ---
 
 ```{r setup, include=FALSE}
@@ -23,38 +22,38 @@ knitr::include_graphics("comp_session_images/ds_friends.jpg")
 
 ### Find the first derivative of the following functions *the long way*
 
-Use the definition of the derivative: 
+Use the definition of the derivative:
 
 $$\frac{df}{dx}=\lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}$$
 
-1) $f(x)=3x^2-x+1$
+1)  $f(x)=3x^2-x+1$
 
-2) $G(t)=4-3t$
+2)  $G(t)=4-3t$
 
 ### Find the first derivative of the following using rules
 
-3) $f(x) = -3x^5+2x^3-12$
+3)  $f(x) = -3x^5+2x^3-12$
 
-4) $C(z)=4.2z-8.7z^3$
+4)  $C(z)=4.2z-8.7z^3$
 
 ### Find an instantaneous slope
 
-5) A researcher finds that the increase in algal biomass ($B$, in grams) in their aquarium over time ($t$, in hours) follows the function: 
+5)  A researcher finds that the increase in algal biomass ($B$, in grams) in their aquarium over time ($t$, in hours) follows the function:
 
 $$B(t) = 0.4 + 0.035t^2$$
 
-- What is the *mass* of algae in tank at 4.5 hours? 
+-   What is the *mass* of algae in tank at 4.5 hours?
 
-- At what *rate* is biomass increasing in the tank after 10 hours? 
+-   At what *rate* is biomass increasing in the tank after 10 hours?
 
 ## Derivatives in R with `deriv()` and `D()`
 
-- Create a new R project
-- To the project, add an R *script* (discuss how a script differs from R Markdown)
-- Add a header (comment out lines with `#` in a script)
-- Follow along to find the derivative of several functions using `deriv()` and `D()`
+-   Create a new R project
+-   To the project, add an R *script* (discuss how a script differs from R Markdown)
+-   Add a header (comment out lines with `#` in a script)
+-   Follow along to find the derivative of several functions using `deriv()` and `D()`
 
-Example: 
+Example:
 
 ```{r}
 # Create an expression (right hand side of the equation...):
@@ -74,7 +73,8 @@ eval(my_derivative)
 
 ```
 
-Alternatively: 
+Alternatively:
+
 ```{r}
 # Create an expression:
 ex_2 <- expression(3.1 * x ^ 4 - 28 * x)
@@ -85,7 +85,7 @@ D(ex_2, "x")
 
 ## More examples with `D()`
 
-### Example: 
+### Example:
 
 ```{r}
 # Create and store your function
@@ -102,15 +102,15 @@ x <- 10
 eval(df_dx)
 ```
 
-### You try! 
+### You try!
 
 Using the `D()` function in R:
 
-1. Find $\frac{dg}{dx}$ given: $g(z) = 2z^3-10.5z^2+4.1$
+1.  Find $\frac{dg}{dx}$ given: $g(z) = 2z^3-10.5z^2+4.1$
 
-2. Find $\frac{dT}{dy}$ given: $T(y) = (2y^3+1)^4-8y^3$
+2.  Find $\frac{dT}{dy}$ given: $T(y) = (2y^3+1)^4-8y^3$
 
-### Solutions: 
+### Solutions:
 
 $g(z) = 2z^3-10.5z^2+4.1$
 
@@ -134,7 +134,7 @@ $T(y) = (2y^3+1)^4-8y^3$
 
 ### To find the slope of T(y) at a range of y-values:
 
-We found $\frac{dT}{dy}$ above. What if we want to find the slope at a range of values, instead of just one? 
+We found $\frac{dT}{dy}$ above. What if we want to find the slope at a range of values, instead of just one?
 
 ```{r}
 
@@ -145,33 +145,40 @@ y <- seq(-0.4, 2.0, by = 0.1)
 eval(dt_dy)
 ```
 
----
+## Hello git & GitHub
 
-## Meet Jupyter Notebooks
+Enter hand waving & storytelling: [Why git & GitHub](https://www.openscapes.org/blog/2022/05/27/github-illustrated-series/) (Horst & Lowndes)
 
-- Open the Anaconda Navigator
-- Find Jupyter Notebook, click 'Launch'
-- Navigate to your current R Project folder
-- Click New > Python 3 
-- Play around with adding formatted text, code chunks with basic operations, etc. 
-- Run code chunks with Shift + Enter
+![Schematic of basic git solo user workflow.](images/git_bunnies_1.jpg)
 
-## Hello Python
+### Getting started - our first shot
 
-We're going to be diving into R and Python a *lot* more in EDS 221 - but let's say "Hello" for now by writing a little Python function. 
+#### 1. Make a new R Project
 
-In Python, the pieces of a function are the same as those in R - we just put them together a bit differently. 
+-   Create a new RProj
 
-The general structure of a Python function is: 
+-   Add a new .Rmd (R Markdown)
 
-```{python}
-def my_function(a, b):
-  calc = a + b
-  print(calc)
-  
-my_function(a = 5, b = 2)
-```
+-   Knit
 
-What are the similarities between the Python function structure, and a function in R? What would this function look like in R? 
+#### 2. Add version control w/ git
+
+-   In the Console, run `usethis::use_git()` (press Enter, then enter the number for YES when prompted)
+
+-   This makes your **local** git repo
+
+#### 3. Connect to remote repo
+
+-   In the Console, run `usethis::use_github()` (press Enter, then enter the number for YES when prompted)
+
+-   This has connected your local git repo to the remote repo, and pushed updates automatically
+
+#### 4. Make, stage, commit & push some changes
+
+-   In your .Rmd, make some changes (whatever you want). Save. Knit (or not...as long as one file changes).
+
+-   Notice that in the git tab in RStudio, the file(s) you updated show up as having been updated.
+
+-   Stage (check box next to files), Commit (add commit message), Pull (for habit), then Push to the remote repo. Go to your remote repo on GitHub. Let's check out some changes!
 
 ## End
