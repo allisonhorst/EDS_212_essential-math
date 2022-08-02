@@ -47,22 +47,13 @@ library(tidyverse)
 - Attach the `tidyverse` and `palmerpenguins` packages in the setup chunk with `library(package_name)` (note: you may need to install `palmerpenguins` - remember `install.packages("packagename")`)
 - Knit (save your .Rmd as `eds212_day2_activities.Rmd`, or follow a naming convention you've decided on)
 - Use `usethis::use_git()` and `usethis::use_github()` to make your project a version-controlled repo, with an upstream GitHub repo
-
-### First order univariate derivatives:
-
 - In your R Markdown document, find the derivative expression and slope at the indicated value for each the following functions in R (each in a separate code chunk).
 
   A) $f(x)=x^2$ at $x = 3$
   B) $P(a)=2(3a+2)^4-5$ at $a = 1.2$
   C) $g(t)=\frac{-4t}{(t^2+1)^3}$ at $t = 0$
 
-- Knit, stage, commit, pull, then push your changes to your repo on GitHub. 
-
-### Higher order univariate derivatives: 
-
-- Back in RStudio, add a code chunk in your Rmd in which you find the second derivative with respect to $z$ for $G(z)=4.6-1.9z^3$. Check your solution by hand. 
-
-- Save (or knit) your .Rmd. Stage, commit, pull, then push all changes to your remote repo. Check that changes are stored on GitHub. 
+- Knit, stage, commit, pull, then push your changes to your repo on GitHub.
 
 ## Section 4: Make a penguin plot
 
