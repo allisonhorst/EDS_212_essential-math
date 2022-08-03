@@ -6,14 +6,43 @@ output:
     css: comp_session_theme.css
     toc: true
     toc_float: true
-  
 ---
+
+## Fork and clone a repo
+
+In this session, you will use existing code in a public repo on GitHub that approximates the solution to the Lotka-Volterra equations.
+
+You will make your own copy of the repo by *forking* it. By making a fork, you create a copy that you can work in separately.
+
+-   Visit: <https://github.com/allisonhorst/lotka-volterra-example>
+-   Press the 'Fork' button to make a copy - note the repo is now copied into your account
+-   So far, you just have a remote copy. We need a local copy of the repo, that we can work in locally. We do that by *cloning* a repo. Press the 'Code' button in YOUR copy of the repo. Copy the URL.
+-   Go back to RStudio. Create a new project WITH version control. Paste the URL where prompted, then choose the destination for your new project. Create the project.
+-   You should see that the materials from the remote repo now exist locally in a version controlled R project. Yay!
+
+## Run existing code
+
+The repo contains a single .Rmd (lotka-volterra.Rmd), with information and code to numerically approximate solutions to the Lotka-Volterra equations and make a graph. \
+\
+Open the .Rmd and knit. We will talk through the code together. A couple of things to note:
+
+-   When you knit, the .html doesn't appear in the git pane. Why?
+
+-   How does the numerical approximation change if you update the initial conditions? The parameter estimates?
+
+-   Try making changes, then stage \> commit \> push back to your remote repo. Make sure the changes appear there.
+
+-   Congratulations! You've adding *forking* and *cloning* to your git toolkit.
+
+------------------------------------------------------------------------
+
+## Below: additional material (not done in class)
 
 In this session, we'll see how to use the `deSolve::ode()` function to numerically estimate the solution to the Lotke-Volterra equations for predator-prey populations.
 
-First, we'll learn a bit more about how numerical methods for approximating solutions to differential equations work. 
+First, we'll learn a bit more about how numerical methods for approximating solutions to differential equations work.
 
-**Credit:** This lesson is closely based on the article (Numerically solving differential equations with R)[https://rstudio-pubs-static.s3.amazonaws.com/32888_197d1a1896534397b67fb04e0d4899ae.html]
+**Credit:** This lesson is closely based on the article (Numerically solving differential equations with R)[<https://rstudio-pubs-static.s3.amazonaws.com/32888_197d1a1896534397b67fb04e0d4899ae.html>]
 
 ```{r, message = FALSE, warning = FALSE}
 library(tidyverse)
@@ -27,9 +56,9 @@ We'll just do this once to reinforce how numerical integration generally works. 
 
 $$\frac{dP}{dt}=0.4P(0.5 - P)$$
 
-and the initial condition $P(0)=0.2$, approximate the solution $P(t)$ at t = 1, 2, 3, 4, 5. 
+and the initial condition $P(0)=0.2$, approximate the solution $P(t)$ at t = 1, 2, 3, 4, 5.
 
-First, what is $t$, $P$, and $\frac{dP}{dt}$ at $t = 0$? Here we have the initial condition, and can calculate the slope: 
+First, what is $t$, $P$, and $\frac{dP}{dt}$ at $t = 0$? Here we have the initial condition, and can calculate the slope:
 
 ```{r, echo = FALSE}
 t_0 <- data.frame(t = 0, P = 0.2, 'dfdx' = 0.024)
@@ -40,7 +69,7 @@ kable(t_0) %>%
 
 Now, we approximate the value of $P(t)$ and $\frac{dP}{dt}$ at the next step ($t = 1$) *as if the slope is continuing at 0.024*. Which means the approximate value of $P(1) = 0.2 + 0.024*(1) = 0.44$. At that value of $P$, the slope is approximated by $\frac{dP}{dt}=0.4*0.44(0.5 - 0.44) = 0.01056$.
 
-So now, our table is expand to: 
+So now, our table is expand to:
 
 ```{r, echo = FALSE}
 t_1 <- data.frame(t = c(0,1), P = c(0.2, 0.44), 'dfdx' = c(0.024, 0.01056))
@@ -49,9 +78,9 @@ kable(t_1) %>%
   kable_styling(full_width = FALSE)
 ```
 
-Then we continue. What do we approximate is the value of P(t) at t = 2? Using the new slope of 0.01056, the approximate value of $P(2) = 0.44 + 0.01056*1 = 0.45056$. Using that value, we approximate the slope at $t=2$ by $\frac{dP}{dt}=0.4*0.45056(0.5 - 0.45056) = 0.0089$. 
+Then we continue. What do we approximate is the value of P(t) at t = 2? Using the new slope of 0.01056, the approximate value of $P(2) = 0.44 + 0.01056*1 = 0.45056$. Using that value, we approximate the slope at $t=2$ by $\frac{dP}{dt}=0.4*0.45056(0.5 - 0.45056) = 0.0089$.
 
-Our table is then updated to: 
+Our table is then updated to:
 
 ```{r, echo = FALSE}
 t_2 <- data.frame(t = c(0,1,2), P = c(0.2, 0.44, 0.45056), 'dfdx' = c(0.024, 0.01056, 0.0089))
@@ -59,33 +88,36 @@ t_2 <- data.frame(t = c(0,1,2), P = c(0.2, 0.44, 0.45056), 'dfdx' = c(0.024, 0.0
 kable(t_2) %>% 
   kable_styling(full_width = FALSE)
 ```
-And we could continue doing that for many incremental values of $t$ to get an approximate solution for what the function $P(t)$ looks like. But that would be *very* tedious. Up next - computer help! 
+
+And we could continue doing that for many incremental values of $t$ to get an approximate solution for what the function $P(t)$ looks like. But that would be *very* tedious. Up next - computer help!
 
 ### Summary: numerical approximation
+
 There are *many* different approaches to numerical approximation of solutions for differential equations. This example is meant to give you an idea of how the iterative approximation works generally.
 
-Now, let's see how much more quickly we can do this with some computer power! 
+Now, let's see how much more quickly we can do this with some computer power!
 
 ## Numerical approximation using `deSolve::ode()`
 
-**Allison update (2021-08-03)**: For time, students will FORK my repo (https://github.com/allisonhorst/eds212-comp-3a), then we'll talk through the code. Lotke-Volterra example shown below is the same that students will run from that repo. 
+**Allison update (2021-08-03)**: For time, students will FORK my repo (<https://github.com/allisonhorst/eds212-comp-3a>), then we'll talk through the code. Lotke-Volterra example shown below is the same that students will run from that repo.
 
 ### A basic starter
 
-Let's say we have a system modeled by: 
+Let's say we have a system modeled by:
 
-$$\frac{dC}{dt}=\lambda C^2-3.1\delta$$
-and we don't know how to solve this analytically. Let's use `deSolve` in R to help us find a solution numerically, given an initial condition at $C(0)=4.8$ and for parameter values $\lambda = 0.4$ and $\delta=0.06$. 
+$$\frac{dC}{dt}=\lambda C^2-3.1\delta$$ and we don't know how to solve this analytically. Let's use `deSolve` in R to help us find a solution numerically, given an initial condition at $C(0)=4.8$ and for parameter values $\lambda = 0.4$ and $\delta=0.06$.
 
-Here's what a numeric solution looks like with `deSolve`: 
+Here's what a numeric solution looks like with `deSolve`:
 
-First, we'll make a time sequence that we want to estimate numerical solutions over: 
+First, we'll make a time sequence that we want to estimate numerical solutions over:
+
 ```{r}
 # Create a time sequence:
 time_seq <- seq(from = 0, to = 0.2, by = 0.001)
 ```
 
 Then, we'll store the parameter(s) and initial conditions:
+
 ```{r}
 # Set some parameter values (these can change - keep it in mind):
 parameter_example <- c(lambda = 0.4, delta = 0.06)
@@ -95,8 +127,8 @@ parameter_example <- c(lambda = 0.4, delta = 0.06)
 init_cond_example <- c(C = 4.8)
 ```
 
+Store the differential equation as a function:
 
-Store the differential equation as a function: 
 ```{r}
 # Prepare the series of differential equations as a function: 
 df_equation_example <- function(time_seq, init_cond_example, parameter_example) {
@@ -107,8 +139,8 @@ df_equation_example <- function(time_seq, init_cond_example, parameter_example) 
 }
 ```
 
+Use `deSolve::ode()` to approximate the solution numerically:
 
-Use `deSolve::ode()` to approximate the solution numerically: 
 ```{r}
 # Find the approximate the solution using `deSolve::ode()`:
 approx_df_example <- ode(y = init_cond_example, times = time_seq, func = df_equation_example, parms = parameter_example)
@@ -124,36 +156,31 @@ ggplot(data = approx_df_example, aes(x = time, y = C)) +
   geom_point(size = 0.1)
 ```
 
-
 ### The Lotke-Volterra equations
 
-Now let's try it for something a bit more interesting! As described in the lecture, the Lotke-Volterra models have been used to describe predator-prey populations. 
+Now let's try it for something a bit more interesting! As described in the lecture, the Lotke-Volterra models have been used to describe predator-prey populations.
 
-#### Prey equation: 
+#### Prey equation:
 
 $$\frac{dx}{dt}=\alpha x-\beta xy$$
 
 From Wikipedia: "The prey are assumed to have an unlimited food supply and to reproduce exponentially, unless subject to predation; this exponential growth is represented in the equation above by the term $\alpha x$. The rate of predation upon the prey is assumed to be proportional to the rate at which the predators and the prey meet, this is represented above by $\beta xy$. If either x or y is zero, then there can be no predation."
 
-#### Predator equation: 
+#### Predator equation:
 
 $$\frac{dy}{dt}=\delta xy - \gamma y$$
 
-From Wikipedia: "In this equation, $\delta xy$ represents the growth of the predator population. (Note the similarity to the predation rate; however, a different constant is used, as the rate at which the predator population grows is not necessarily equal to the rate at which it consumes the prey). The term $\gamma y$ represents the loss rate of the predators due to either natural death or emigration, it leads to an exponential decay in the absence of prey. 
+From Wikipedia: "In this equation, $\delta xy$ represents the growth of the predator population. (Note the similarity to the predation rate; however, a different constant is used, as the rate at which the predator population grows is not necessarily equal to the rate at which it consumes the prey). The term $\gamma y$ represents the loss rate of the predators due to either natural death or emigration, it leads to an exponential decay in the absence of prey.
 
-Where: 
+Where:
 
-- $x$ is prey population (e.g. rabbits)
-- $y$ is predator population (e.g. wolves)
-- $\alpha, \beta, \gamma, \delta$ are positive parameters
+-   $x$ is prey population (e.g. rabbits)
+-   $y$ is predator population (e.g. wolves)
+-   $\alpha, \beta, \gamma, \delta$ are positive parameters
 
-To find an approximate solution in R, we will need four things: 
-- Parameter values
-- A sequence of times over which we'll approximate predator & prey populations
-- An initial condition (initial populations of predator & prey at t = 0)
-- The differential equations that need to be solved
+To find an approximate solution in R, we will need four things: - Parameter values - A sequence of times over which we'll approximate predator & prey populations - An initial condition (initial populations of predator & prey at t = 0) - The differential equations that need to be solved
 
-Solving the Lotke-Volterra equation: 
+Solving the Lotke-Volterra equation:
 
 ```{r}
 # Create a sequence of times (days): 
@@ -192,9 +219,9 @@ ggplot(data = approx_lk_df, aes(x = time, y = population)) +
 
 ## Updating parameter values
 
-What happens as you change the different parameters (and re-run the entire code chunk)? How does that align with what you see in the graph? Some things to keep in mind: 
+What happens as you change the different parameters (and re-run the entire code chunk)? How does that align with what you see in the graph? Some things to keep in mind:
 
-- $\alpha$ is a growth rate for prey
-- $\gamma$ is a mortality rate for predator
+-   $\alpha$ is a growth rate for prey
+-   $\gamma$ is a mortality rate for predator
 
 ## End
