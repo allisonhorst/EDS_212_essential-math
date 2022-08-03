@@ -1,6 +1,6 @@
 ---
 title: "Day 3 Tasks & Activities"
-subtitle: 'Vectors by hand and in R, numerical approximation of ODEs, practicing different git setups'
+subtitle: 'Vectors by hand and in R, git practice'
 output: 
   html_document:
     css: activities_theme.css
@@ -13,6 +13,15 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Part 1: By hand problems
+
+### Derivative reminder
+
+Biomass (grams) in a reactor over time (hours) is described by: 
+
+$$B(t) = 0.4t^2 + 3.6$$
+a) What is the biomass in the reactor after 4 hours?
+
+b) What is the rate at which biomass is changing in the reactor at t = 3.2 hours? 
 
 ### Vector math
 
