@@ -23,13 +23,9 @@ For the vectors $\vec a = (1,6)$ and $\vec b = (2, 4)$:
 3. Find and sketch $4 \vec a$
 4. Find $\vec a \cdot \vec b$
 
-### One numerical approximation by hand
-
-5.  Given: $\frac{dP}{dx}=P-0.5$ and an initial value $P(0)=0.3$, approximate the value of P for x values from 0 to 4 (x increasing by increments of 1). Sketch your approximation (P on the vertical axis, x on the horizontal axis)
-
 ## Part 2: Coding practice
 
-- Create a new version-controlled R Project using the "GitHub repo *first*" workflow (hint: make a new repo on GitHub named `eds212-day3-part3` with a ReadMe, then clone to link to an R Project...)
+- Create a new version-controlled R Project (you may want to name it `eds212_day3_task2` or something similar)
 
 - Create a new .Rmd within your project
 

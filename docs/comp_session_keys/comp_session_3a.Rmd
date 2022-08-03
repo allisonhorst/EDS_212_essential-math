@@ -36,7 +36,7 @@ Open the .Rmd and knit. We will talk through the code together. A couple of thin
 
 ------------------------------------------------------------------------
 
-## Below: additional material (not done in class)
+## Below: additional material ([not]{.underline} done in class)
 
 In this session, we'll see how to use the `deSolve::ode()` function to numerically estimate the solution to the Lotke-Volterra equations for predator-prey populations.
 

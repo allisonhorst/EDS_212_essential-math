@@ -36,7 +36,7 @@ Open the .Rmd and knit. We will talk through the code together. A couple of thin
 
 ------------------------------------------------------------------------
 
-## Below: additional material (not done in class)
+## Below: additional material ([not]{.underline} done in class)
 
 In this session, we'll see how to use the `deSolve::ode()` function to numerically estimate the solution to the Lotke-Volterra equations for predator-prey populations.
 
@@ -67,23 +67,23 @@ kable(t_0) %>%
   kable_styling(full_width = FALSE)
 ```
 
-Now, we approximate the value of $P(t)$ and $\frac{dP}{dt}$ at the next step ($t = 1$) *as if the slope is continuing at 0.024*. Which means the approximate value of $P(1) = 0.2 + 0.024*(1) = 0.44$. At that value of $P$, the slope is approximated by $\frac{dP}{dt}=0.4*0.44(0.5 - 0.44) = 0.01056$.
+Now, we approximate the value of $P(t)$ and $\frac{dP}{dt}$ at the next step ($t = 1$) *as if the slope is continuing at 0.024*. Which means the approximate value of $P(1) = 0.2 + 0.024*(1) = 0.224$. At that value of $P$, the slope is approximated by $\frac{dP}{dt}=0.4*0.224(0.5 - 0.224) = 0.02473$.
 
 So now, our table is expand to:
 
 ```{r, echo = FALSE}
-t_1 <- data.frame(t = c(0,1), P = c(0.2, 0.44), 'dfdx' = c(0.024, 0.01056))
+t_1 <- data.frame(t = c(0,1), P = c(0.2, 0.224), 'dfdx' = c(0.024, 0.02473))
 
 kable(t_1) %>% 
   kable_styling(full_width = FALSE)
 ```
 
-Then we continue. What do we approximate is the value of P(t) at t = 2? Using the new slope of 0.01056, the approximate value of $P(2) = 0.44 + 0.01056*1 = 0.45056$. Using that value, we approximate the slope at $t=2$ by $\frac{dP}{dt}=0.4*0.45056(0.5 - 0.45056) = 0.0089$.
+Then we continue. What do we approximate is the value of P(t) at t = 2? Using the new slope of 0.01056, the approximate value of $P(2) = 0.224 + 0.02473*1 = 0.24873$. Using that value, we approximate the slope at $t=2$ by $\frac{dP}{dt}=0.4*0.24873(0.5 - 0.24873) = 0.024999$.
 
 Our table is then updated to:
 
 ```{r, echo = FALSE}
-t_2 <- data.frame(t = c(0,1,2), P = c(0.2, 0.44, 0.45056), 'dfdx' = c(0.024, 0.01056, 0.0089))
+t_2 <- data.frame(t = c(0,1,2), P = c(0.2, 0.224, 0.24873), 'dfdx' = c(0.024, 0.02473, 0.024999))
 
 kable(t_2) %>% 
   kable_styling(full_width = FALSE)

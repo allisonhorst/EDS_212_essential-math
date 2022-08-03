@@ -8,7 +8,7 @@ output:
     toc_float: true
 ---
 
-In this lesson, we'll learn about making & working with scalars, vectors and matrices in R and Python. We'll be working in both an R Markdown and Jupyter Notebook. 
+In this lesson, we'll learn about making & working with scalars, vectors and matrices in R.
 
 ```{r, include = FALSE}
 library(reticulate)
@@ -32,12 +32,6 @@ In your new project:
 
 - Create a new R Markdown document
 - Save as `r-vectors.Rmd`
-
-Open Anaconda Navigator: 
-
-- Navigate to your project folder
-- Create a new Jupyter Notebook
-- Save as `py-vectors.ipynb`
 
 ## Vectors
 
@@ -110,66 +104,9 @@ ringtail %*% fox
 
 ```
 
-### Vectors in Python (basics)
-
-(IN JUPYTER NOTEBOOK)
-
-Using numpy (imported as np)
-
-```{python}
-import numpy as np
-```
-
-To make a vector, create a *list* (more on this in EDS 221) then convert to an array (with a single column = vector):
-
-```{python}
-# First make it a list of values (we'll learn more about lists in 221)
-list_1 = [1,2,3]
-
-# Make it a vector using np.array:
-vec_1 = np.array(list_1)
-
-# Return vec_1 to check it out
-vec_1
-```
-
-Cool! Let's make another one so we can try some math: 
-
-```{python}
-list_2 = [10, 100, 1000]
-vec_2 = np.array(list_2)
-vec_2
-```
-
-Now we can do some math with our two vectors (`vec_1` and `vec_2`):
-
-```{python}
-# Addition:
-vec_1 + vec_2
-
-# Subtraction: 
-vec_2 - vec_1
-
-# Scalar multiplier: 
-5 * vec_2
-```
-
-**BEWARE:** If you do these operations with the original *lists*, something very different will happen, since the `+` with lists appends the second list elements to the first list. Let's try it just for comparison: 
-
-```{python}
-list_1 + list_2
-```
-
-For the dot product, use `np.dot()`:
-```{python}
-np.dot(vec_1, vec_2)
-```
-
 ## Matrices
 
 ### Matrices in R
-
-(IN YOUR RMD)
 
 A matrix contains data of a single class (usually numbers). Which means that we can think of the contents of a matrix as a single sequence of values, that are constrained (wrapped) to the specified dimensions of the matrix.
 
@@ -253,47 +190,6 @@ cats %*% dogs
 ```
 
 Confirm that this is correct by doing the matrix multiplication by hand.
-
-### Matrices in Python
-
-(IN YOUR JUPYTER NOTEBOOK)
-
-Create a matrix in Python using the `np.matrix()` function (NumPy). Basically, by creating lists within a list...
-
-```{python}
-# Make one 2 x 2 matrix: 
-matrix_1 = np.matrix([[1, 9], 
-               [6, 0]])
-print(matrix_1)
-
-# Make another 2 x 2 matrix: 
-matrix_2 = np.matrix([[0, 2],
-                      [3, 10]])
-                      
-print(matrix_2)
-```
-
-Then we can do basic addition, subtraction, and scalar multiplication just like we did with vectors: 
-
-```{python}
-# Matrix addition example:
-matrix_1 + matrix_2
-
-# Matrix subtraction example:
-matrix_1 - matrix_2
-
-# Scalar multiplication example:
-6 * matrix_1
-```
-
-For matrix multiplication, we use the `matmul()` function from NumPy:
-```{python}
-my_matrix_mul = np.matmul(matrix_1, matrix_2)
-
-print(my_matrix_mul)
-```
-
-Confirm this matrix multiplication is correct - check by hand. 
 
 ## End
 
