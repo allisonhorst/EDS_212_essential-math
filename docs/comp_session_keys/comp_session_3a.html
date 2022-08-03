@@ -1925,10 +1925,10 @@ dfdx
 </tbody>
 </table>
 <p>Now, we approximate the value of <span class="math inline">\(P(t)\)</span> and <span class="math inline">\(\frac{dP}{dt}\)</span> at the next step (<span class="math inline">\(t = 1\)</span>) <em>as if the slope is continuing
-at 0.024</em>. Which means the approximate value of <span class="math inline">\(P(1) = 0.2 + 0.024*(1) = 0.44\)</span>. At that
+at 0.024</em>. Which means the approximate value of <span class="math inline">\(P(1) = 0.2 + 0.024*(1) = 0.224\)</span>. At that
 value of <span class="math inline">\(P\)</span>, the slope is
-approximated by <span class="math inline">\(\frac{dP}{dt}=0.4*0.44(0.5 -
-0.44) = 0.01056\)</span>.</p>
+approximated by <span class="math inline">\(\frac{dP}{dt}=0.4*0.224(0.5
+- 0.224) = 0.02473\)</span>.</p>
 <p>So now, our table is expand to:</p>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -1950,7 +1950,7 @@ dfdx
 0
 </td>
 <td style="text-align:right;">
-0.20
+0.200
 </td>
 <td style="text-align:right;">
 0.02400
@@ -1961,18 +1961,18 @@ dfdx
 1
 </td>
 <td style="text-align:right;">
-0.44
+0.224
 </td>
 <td style="text-align:right;">
-0.01056
+0.02473
 </td>
 </tr>
 </tbody>
 </table>
 <p>Then we continue. What do we approximate is the value of P(t) at t =
-2? Using the new slope of 0.01056, the approximate value of <span class="math inline">\(P(2) = 0.44 + 0.01056*1 = 0.45056\)</span>. Using
-that value, we approximate the slope at <span class="math inline">\(t=2\)</span> by <span class="math inline">\(\frac{dP}{dt}=0.4*0.45056(0.5 - 0.45056) =
-0.0089\)</span>.</p>
+2? Using the new slope of 0.01056, the approximate value of <span class="math inline">\(P(2) = 0.224 + 0.02473*1 = 0.24873\)</span>. Using
+that value, we approximate the slope at <span class="math inline">\(t=2\)</span> by <span class="math inline">\(\frac{dP}{dt}=0.4*0.24873(0.5 - 0.24873) =
+0.024999\)</span>.</p>
 <p>Our table is then updated to:</p>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -1997,7 +1997,7 @@ dfdx
 0.20000
 </td>
 <td style="text-align:right;">
-0.02400
+0.024000
 </td>
 </tr>
 <tr>
@@ -2005,10 +2005,10 @@ dfdx
 1
 </td>
 <td style="text-align:right;">
-0.44000
+0.22400
 </td>
 <td style="text-align:right;">
-0.01056
+0.024730
 </td>
 </tr>
 <tr>
@@ -2016,10 +2016,10 @@ dfdx
 2
 </td>
 <td style="text-align:right;">
-0.45056
+0.24873
 </td>
 <td style="text-align:right;">
-0.00890
+0.024999
 </td>
 </tr>
 </tbody>
