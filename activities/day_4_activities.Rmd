@@ -33,6 +33,14 @@ A population of fish we're interested in has four life stages: eggs (E), fry (F)
 
 - Fork and clone [this repo](https://github.com/allisonhorst/eds212-leslie-matrix), which contains the Leslie matrix for the example above. 
 
+    - Go to the link above. Press Fork in upper right, then Create Fork. 
+    - Once in your fork, press the green 'Code' button
+    - Copy the URL to your clipboard
+    - Back in RStudio, create a new project (with version control)
+    - Where prompted, paste the URL & choose where you'll save your directory 
+    - Create project
+    - Open the .Rmd to explore & run Leslie Matrix code
+
 - Explore the code and outputs. Does the Year 1 population projection align with what you calculated? 
 
 - Add code to the .Rmd to expand the projections to years 4, 5, and 6 (it current projects through year 3)
