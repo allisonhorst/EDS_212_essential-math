@@ -1,6 +1,6 @@
 ---
 title: 'EDS 212 Computational Session 4A'
-subtitle: 'Linear algebra continued: vectors in Python, matrices in R'
+subtitle: 'Linear algebra continued: matrices in R and a Leslie Matrix example'
 output: 
   html_document:
     css: comp_session_theme.css
@@ -9,7 +9,7 @@ output:
   
 ---
 
-In this lesson, we'll learn about making & working with scalars, vectors and matrices in R and Python. We'll be working in both an R Markdown and Jupyter Notebook. 
+In this lesson, we'll learn about making & working with scalars, vectors and matrices in R.
 
 ```{r, include = FALSE}
 library(reticulate)
@@ -246,7 +246,7 @@ insect_leslie
 
 ### Specify an initial condition
 
-Let's say we start with 0 eggs, 0 larvae, and 2000 female adults. Create a vector containing those initial values: 
+Let's say we start with 12000 eggs, 700 larvae, and 500 female adults. Create a vector containing those initial values: 
 
 ```{r}
 # Insect lifestage populations (year 0)
