@@ -37,7 +37,7 @@ A population of fish we're interested in has four life stages: eggs (E), fry (F)
 
 - Add code to the .Rmd to expand the projections to years 4, 5, and 6 (it current projects through year 3)
 
-- Save, commit, pull, then push your changes.
+- Save, stage, commit, then push your changes.
 
 ```{r, include = FALSE}
 # Make the Leslie Matrix:
@@ -77,31 +77,11 @@ fish_year3
 - Create a pairs plot using `ggpairs()`
 - Create a basic `ggplot` scatterplot of diamond price (`price`) as a function of size (`carat`)
 - Create a histogram showing the distribution of values in the `carat` column (recall: a histogram only requires a single variable, e.g. `aes(x = carat)`)
-- Save, stage, commit, pull, then push your changes back to your repo
+- Save, stage, commit, pull, then push your changes back to your repo in RStudio using the GUI interface (buttons)
+- Create a jitterplot (see: `geom_jitter`) of diamond clarity (on the x-axis) and price (y-axis). 
+- Using **git commands in the Terminal**, stage, commit, & push changes
 
-### B. Now do that in Python
 
-- Open Anaconda Navigator and launch Jupyter Notebooks
-- Navigate to your project folder (`eds212-day4-activities`)
-- Create a new Jupyter notebook (Python3), rename `py-exploring`
-- In your notebook, in a new code chunk attach the seaborn and pandas packages:
-    - `import seaborn as sns`
-    - `import pandas as pd`
-- Import the diamonds dataset in seaborn, storing as diamonds:
-    - `diamonds = sns.load_dataset('diamonds')`
-- Explore the dataset using the following (replacing 'df_name' with the name of your data frame):
-    - `df_name.columns`
-    - `df_name.head()`
-    - `df_name.tail()`
-    - `df_name.describe()`
-    - `df_name.shape`
-    - `sns.pairplot(df_name)`
-- Create a pairplot using `sns.pairplot(df_name)`
-- Create a histogram of all values in the `carat` column using `sns.histplot(data=df_name, x="variable_name")`
-- Save your .ipynb
-- Back in RStudio, you should see your saved .ipynb (check the time modified)
-- Stage, commit, pull, then push all changes to your GitHub repo
-- Check to see that your changes were stored remotely
 
 ## End
 
