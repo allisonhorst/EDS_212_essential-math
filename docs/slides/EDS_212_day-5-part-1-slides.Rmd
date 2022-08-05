@@ -102,7 +102,7 @@ If events are not independent, one event having occurred can *change* the probab
 
 $P\{B|A\}=\frac{P\{A \cap\ B\}}{P\{A\}}$
 
-A common question: Why doesn't this just simplify to $P\{B\}$ if the intersection is $P\{A\}*P\{A\}$?
+A common question: Why doesn't this just simplify to $P\{B\}$ if the intersection is $P\{A\}*P\{B\}$?
 
 
 ---
