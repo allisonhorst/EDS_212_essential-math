@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,9 +74,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -454,8 +455,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
 
   <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
   <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
   <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
@@ -784,6 +785,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -1025,10 +1027,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     position: relative;
     margin-bottom: 2.5em;
     margin-top: 1.5em;
-  }
-
-  .figure img {
-    width: 100%;
   }
 
   .figure .caption {
@@ -1860,9 +1858,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -1874,6 +1884,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
 
       // clear polling timer
       clearInterval(tid);
@@ -1973,6 +2008,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -1995,7 +2032,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
 
@@ -2445,7 +2482,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.12.1/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2513,137 +2550,94 @@ Daily materials
 
 <div class="d-article">
 <h2 id="basic-computation">Basic computation</h2>
-<p>Sometimes we use R as a basic calculator. Perform operations using
-expected symbols:</p>
+<p>Sometimes we use R as a basic calculator. Perform operations using expected symbols:</p>
 <ul>
 <li><code>*</code>: multiplication</li>
 <li><code>/</code>: division</li>
 <li><code>+/-</code>: addition/subtraction</li>
 <li><code>^</code>: raise to this power</li>
-<li><code>sqrt(x)</code>: take the square root of <span
-class="math inline">\(x\)</span></li>
-<li><code>log(x)</code>: take the natural log of <span
-class="math inline">\(x\)</span></li>
-<li><code>exp(x)</code>: natural exponential base (i.e. <span
-class="math inline">\(e^x\)</span>)</li>
-<li><code>&lt;-</code>: assignment operator (to store outcomes,
-e.g. <code>cost &lt;- price*units</code>)</li>
+<li><code>sqrt(x)</code>: take the square root of <span class="math inline">\(x\)</span></li>
+<li><code>log(x)</code>: take the natural log of <span class="math inline">\(x\)</span></li>
+<li><code>exp(x)</code>: natural exponential base (i.e. <span class="math inline">\(e^x\)</span>)</li>
+<li><code>&lt;-</code>: assignment operator (to store outcomes, e.g. <code>cost &lt;- price*units</code>)</li>
 </ul>
-<h3 id="example-1-calculations-with-stored-objects">Example 1:
-Calculations with stored objects</h3>
-<p>The raw price of a wine glass is $10.00. A winery is buying 350
-glasses, which earns them a 15% discount for a bulk order. If there is
-an 8% sales tax on the discounted price, and a flat shipping rate of
-$48.50, what is the total price the winery will pay?</p>
+<h3 id="example-1-calculations-with-stored-objects">Example 1: Calculations with stored objects</h3>
+<p>The raw price of a wine glass is $10.00. A winery is buying 350 glasses, which earns them a 15% discount for a bulk order. If there is an 8% sales tax on the discounted price, and a flat shipping rate of $48.50, what is the total price the winery will pay?</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Create and store the variable values: </span>
-
-<span class='va'>cost_per_unit</span> <span class='op'>&lt;-</span> <span class='fl'>10</span> <span class='co'># Cost per unit in dollars</span>
-<span class='va'>units</span> <span class='op'>&lt;-</span> <span class='fl'>350</span> <span class='co'># Total number of units ordered</span>
-<span class='va'>discount</span> <span class='op'>&lt;-</span> <span class='fl'>0.15</span> <span class='co'># 15% discount for buying &gt; 300 units</span>
-<span class='va'>tax_rate</span> <span class='op'>&lt;-</span>  <span class='fl'>0.08</span> <span class='co'># 8% sales tax </span>
-<span class='va'>shipping_cost</span> <span class='op'>&lt;-</span> <span class='fl'>48.50</span> <span class='co'># Flat rate for domestic orders</span>
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># Create and store the variable values: </span></span>
+<span></span>
+<span><span class='va'>cost_per_unit</span> <span class='op'>&lt;-</span> <span class='fl'>10</span> <span class='co'># Cost per unit in dollars</span></span>
+<span><span class='va'>units</span> <span class='op'>&lt;-</span> <span class='fl'>350</span> <span class='co'># Total number of units ordered</span></span>
+<span><span class='va'>discount</span> <span class='op'>&lt;-</span> <span class='fl'>0.15</span> <span class='co'># 15% discount for buying &gt; 300 units</span></span>
+<span><span class='va'>tax_rate</span> <span class='op'>&lt;-</span>  <span class='fl'>0.08</span> <span class='co'># 8% sales tax </span></span>
+<span><span class='va'>shipping_cost</span> <span class='op'>&lt;-</span> <span class='fl'>48.50</span> <span class='co'># Flat rate for domestic orders</span></span></code></pre>
 </div>
 </div>
-<p><strong>Critical thinking:</strong> Why in some scenarios is it good
-practice to store values as objects, instead of type the value directly
-into an equation?</p>
-<p>OK, now that all of the values are assigned, let’s find the
-discounted bulk price (there are a lot of different ways to calculate
-this):</p>
+<p><strong>Critical thinking:</strong> Why in some scenarios is it good practice to store values as objects, instead of type the value directly into an equation?</p>
+<p>OK, now that all of the values are assigned, let’s find the discounted bulk price (there are a lot of different ways to calculate this):</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>discounted_price</span> <span class='op'>&lt;-</span> <span class='op'>(</span><span class='fl'>1</span> <span class='op'>-</span> <span class='va'>discount</span><span class='op'>)</span> <span class='op'>*</span> <span class='va'>cost_per_unit</span> <span class='op'>*</span> <span class='va'>units</span>
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>discounted_price</span> <span class='op'>&lt;-</span> <span class='op'>(</span><span class='fl'>1</span> <span class='op'>-</span> <span class='va'>discount</span><span class='op'>)</span> <span class='op'>*</span> <span class='va'>cost_per_unit</span> <span class='op'>*</span> <span class='va'>units</span></span></code></pre>
 </div>
 </div>
 <p>Then find the total tax on that discounted price:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>order_tax</span> <span class='op'>&lt;-</span> <span class='va'>tax_rate</span><span class='op'>*</span><span class='va'>discounted_price</span>
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>order_tax</span> <span class='op'>&lt;-</span> <span class='va'>tax_rate</span><span class='op'>*</span><span class='va'>discounted_price</span></span></code></pre>
 </div>
 </div>
 <p>Now we have everything we need to find the total price!</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>total_price</span> <span class='op'>&lt;-</span> <span class='va'>discounted_price</span> <span class='op'>+</span> <span class='va'>order_tax</span> <span class='op'>+</span> <span class='va'>shipping_cost</span>
-
-<span class='va'>total_price</span> <span class='co'># Returns the total price</span>
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>total_price</span> <span class='op'>&lt;-</span> <span class='va'>discounted_price</span> <span class='op'>+</span> <span class='va'>order_tax</span> <span class='op'>+</span> <span class='va'>shipping_cost</span></span>
+<span></span>
+<span><span class='va'>total_price</span> <span class='co'># Returns the total price</span></span></code></pre>
 </div>
 <pre><code>[1] 3261.5</code></pre>
 </div>
 <h3 id="example-2-exponents">Example 2: Exponents</h3>
-<p>A model for jaguar shark mass (<span
-class="math inline">\(M\)</span>, kg) of the elusive jaguar shark is
-given by the following from Team Zissou, where <span
-class="math inline">\(L\)</span> is the shark length in meters:</p>
+<p>A model for jaguar shark mass (<span class="math inline">\(M\)</span>, kg) of the elusive jaguar shark is given by the following from Team Zissou, where <span class="math inline">\(L\)</span> is the shark length in meters:</p>
 <p><span class="math display">\[M=0.4L^{2.6}\]</span></p>
-<p>Using the model, what is the expected mass of jaguar sharks that is
-4.8 meters long? (…yeah function examples below to make this more
-broadly useful &amp; efficient, but here we’ll just plug in the
-value.)</p>
+<p>Using the model, what is the expected mass of jaguar sharks that is 4.8 meters long? (…yeah function examples below to make this more broadly useful &amp; efficient, but here we’ll just plug in the value.)</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Store the shark length:</span>
-<span class='va'>shark_length</span> <span class='op'>&lt;-</span> <span class='fl'>4.8</span>
-
-<span class='co'># Calculate the shark mass using the model:</span>
-<span class='va'>shark_mass</span> <span class='op'>&lt;-</span> <span class='fl'>0.4</span> <span class='op'>*</span> <span class='op'>(</span><span class='va'>shark_length</span> <span class='op'>^</span> <span class='fl'>2.6</span><span class='op'>)</span>
-
-<span class='co'># Return the expected shark mass</span>
-<span class='va'>shark_mass</span>
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># Store the shark length:</span></span>
+<span><span class='va'>shark_length</span> <span class='op'>&lt;-</span> <span class='fl'>4.8</span></span>
+<span></span>
+<span><span class='co'># Calculate the shark mass using the model:</span></span>
+<span><span class='va'>shark_mass</span> <span class='op'>&lt;-</span> <span class='fl'>0.4</span> <span class='op'>*</span> <span class='op'>(</span><span class='va'>shark_length</span> <span class='op'>^</span> <span class='fl'>2.6</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='co'># Return the expected shark mass</span></span>
+<span><span class='va'>shark_mass</span></span></code></pre>
 </div>
 <pre><code>[1] 23.6204</code></pre>
 </div>
-<h3 id="example-3-evaluate-a-function">Example 3: Evaluate a
-function</h3>
-<p>Given the restricted function: <span class="math display">\[P(t, S,
-\rho) = 0.4t\sqrt{4S+8.1}-e^{0.03t}+\ln{(6.2\rho - 3.9)}\]</span></p>
+<h3 id="example-3-evaluate-a-function">Example 3: Evaluate a function</h3>
+<p>Given the restricted function: <span class="math display">\[P(t, S, \rho) = 0.4t\sqrt{4S+8.1}-e^{0.03t}+\ln{(6.2\rho - 3.9)}\]</span></p>
 <p>What is <span class="math inline">\(P(3.1, 2.5, 6.4)\)</span>?</p>
-<p><em>Note: couldn’t you just write a function here, then plug in
-whatever you want for <span class="math inline">\(t\)</span>, <span
-class="math inline">\(S\)</span>, and <span
-class="math inline">\(\rho\)</span>? Yes! You’ll be writing a lot of
-functions in EDS 221 and beyond, but here’s an example of this
-calculation done without a function.</em></p>
+<p><em>Note: couldn’t you just write a function here, then plug in whatever you want for <span class="math inline">\(t\)</span>, <span class="math inline">\(S\)</span>, and <span class="math inline">\(\rho\)</span>? Yes! You’ll be writing a lot of functions in EDS 221 and beyond, but here’s an example of this calculation done without a function.</em></p>
 <p>Let’s start by assigning the variable values:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>t_val</span> <span class='op'>&lt;-</span> <span class='fl'>3.1</span>
-<span class='va'>s_val</span> <span class='op'>&lt;-</span> <span class='fl'>2.5</span>
-<span class='va'>rho_val</span> <span class='op'>&lt;-</span> <span class='fl'>6.4</span>
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>t_val</span> <span class='op'>&lt;-</span> <span class='fl'>3.1</span></span>
+<span><span class='va'>s_val</span> <span class='op'>&lt;-</span> <span class='fl'>2.5</span></span>
+<span><span class='va'>rho_val</span> <span class='op'>&lt;-</span> <span class='fl'>6.4</span></span></code></pre>
 </div>
 </div>
-<p><strong>Question:</strong> Why might I have decided to use these
-object names, instead of something like <span
-class="math inline">\(t\)</span> and <span
-class="math inline">\(s\)</span>?</p>
-<p>Then write the equation to calculate <span
-class="math inline">\(P\)</span>:</p>
+<p><strong>Question:</strong> Why might I have decided to use these object names, instead of something like <span class="math inline">\(t\)</span> and <span class="math inline">\(s\)</span>?</p>
+<p>Then write the equation to calculate <span class="math inline">\(P\)</span>:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>p_val</span> <span class='op'>&lt;-</span> <span class='fl'>0.4</span> <span class='op'>*</span> <span class='va'>t_val</span> <span class='op'>*</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span><span class='op'>(</span><span class='fl'>4</span> <span class='op'>*</span> <span class='va'>s_val</span> <span class='op'>+</span> <span class='fl'>8.1</span><span class='op'>)</span> <span class='op'>-</span> <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>exp</a></span><span class='op'>(</span><span class='fl'>0.3</span> <span class='op'>*</span> <span class='va'>t_val</span><span class='op'>)</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='fl'>6.2</span> <span class='op'>*</span> <span class='va'>rho_val</span> <span class='op'>-</span> <span class='fl'>3.9</span><span class='op'>)</span>
-
-<span class='co'># Return the calculated value:</span>
-<span class='va'>p_val</span>
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>p_val</span> <span class='op'>&lt;-</span> <span class='fl'>0.4</span> <span class='op'>*</span> <span class='va'>t_val</span> <span class='op'>*</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span><span class='op'>(</span><span class='fl'>4</span> <span class='op'>*</span> <span class='va'>s_val</span> <span class='op'>+</span> <span class='fl'>8.1</span><span class='op'>)</span> <span class='op'>-</span> <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>exp</a></span><span class='op'>(</span><span class='fl'>0.3</span> <span class='op'>*</span> <span class='va'>t_val</span><span class='op'>)</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='fl'>6.2</span> <span class='op'>*</span> <span class='va'>rho_val</span> <span class='op'>-</span> <span class='fl'>3.9</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='co'># Return the calculated value:</span></span>
+<span><span class='va'>p_val</span></span></code></pre>
 </div>
 <pre><code>[1] 6.318348</code></pre>
 </div>
-<p><strong>Question:</strong> How is this function restricted? What
-happens if the <span class="math inline">\(S\)</span> value is updated
-to -10? If the <span class="math inline">\(\rho\)</span> value is 0.1?
-What are the possible <em>domains</em> for <span
-class="math inline">\(S\)</span> and <span
-class="math inline">\(\rho\)</span>?</p>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p><strong>Question:</strong> How is this function restricted? What happens if the <span class="math inline">\(S\)</span> value is updated to -10? If the <span class="math inline">\(\rho\)</span> value is 0.1? What are the possible <em>domains</em> for <span class="math inline">\(S\)</span> and <span class="math inline">\(\rho\)</span>?</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

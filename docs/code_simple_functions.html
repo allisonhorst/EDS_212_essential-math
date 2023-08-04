@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,9 +74,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -454,8 +455,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
 
   <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
   <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
   <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
@@ -784,6 +785,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -1025,10 +1027,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     position: relative;
     margin-bottom: 2.5em;
     margin-top: 1.5em;
-  }
-
-  .figure img {
-    width: 100%;
   }
 
   .figure .caption {
@@ -1860,9 +1858,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -1874,6 +1884,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
 
       // clear polling timer
       clearInterval(tid);
@@ -1973,6 +2008,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -1995,7 +2032,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
 
@@ -2445,7 +2482,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.12.1/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2512,74 +2549,49 @@ Daily materials
 
 
 <div class="d-article">
-<p>We’re going to be doing a LOT more with functions (building, testing,
-documenting, and more) in EDS 221, but we do meet functions in EDS 212,
-so a few starter examples are included here. More: <a
-href="https://adv-r.hadley.nz/functions.html">Chapter 6 Functions</a> in
-Advanced R by Hadley Wickham.</p>
-<p>We build functions help us to automate and repeat a process for more
-efficient, reproducible computation and programming. The basic syntax
-for functions in R is:</p>
+<p>We’re going to be doing a LOT more with functions (building, testing, documenting, and more) in EDS 221, but we do meet functions in EDS 212, so a few starter examples are included here. More: <a href="https://adv-r.hadley.nz/functions.html">Chapter 6 Functions</a> in Advanced R by Hadley Wickham.</p>
+<p>We build functions help us to automate and repeat a process for more efficient, reproducible computation and programming. The basic syntax for functions in R is:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>function_name</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>arguments</span><span class='op'>)</span> <span class='op'>{</span>
-
-    <span class='va'>body</span>
-    
-<span class='op'>}</span>
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>function_name</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>arguments</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span></span>
+<span>    <span class='va'>body</span></span>
+<span>    </span>
+<span><span class='op'>}</span></span></code></pre>
 </div>
 </div>
-<p>Where the arguments are the different options you want the user to
-input, that the function acts on, and the body is where you tell the
-function what it should <em>do</em> with those arguments.</p>
-<h3 id="example-1-a-function-with-a-single-argument">Example 1: A
-function with a single argument</h3>
-<p>A model for jaguar shark mass (<span
-class="math inline">\(M\)</span>, kg) of the elusive jaguar shark is
-given by the following from Team Zissou, where <span
-class="math inline">\(L\)</span> is the shark length in meters:</p>
+<p>Where the arguments are the different options you want the user to input, that the function acts on, and the body is where you tell the function what it should <em>do</em> with those arguments.</p>
+<h3 id="example-1-a-function-with-a-single-argument">Example 1: A function with a single argument</h3>
+<p>A model for jaguar shark mass (<span class="math inline">\(M\)</span>, kg) of the elusive jaguar shark is given by the following from Team Zissou, where <span class="math inline">\(L\)</span> is the shark length in meters:</p>
 <p><span class="math display">\[M=0.4L^{2.6}\]</span></p>
-<p>Write a function to calculate the mass of a jaguar shark, given a
-length input.</p>
+<p>Write a function to calculate the mass of a jaguar shark, given a length input.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>shark_mass</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>shark_length</span><span class='op'>)</span> <span class='op'>{</span>
-  
-  <span class='fl'>0.4</span> <span class='op'>*</span> <span class='op'>(</span><span class='va'>shark_length</span> <span class='op'>^</span> <span class='fl'>2.6</span><span class='op'>)</span>
-  
-<span class='op'>}</span>
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>shark_mass</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>shark_length</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span>  </span>
+<span>  <span class='fl'>0.4</span> <span class='op'>*</span> <span class='op'>(</span><span class='va'>shark_length</span> <span class='op'>^</span> <span class='fl'>2.6</span><span class='op'>)</span></span>
+<span>  </span>
+<span><span class='op'>}</span></span></code></pre>
 </div>
 </div>
-<p>Then we can use our new function to calculate the shark mass for
-sharks of whatever length we input for the <code>shark_length</code>
-argument. For example, let’s use the function to find the expected mass
-of a 4.1 meter long shark:</p>
+<p>Then we can use our new function to calculate the shark mass for sharks of whatever length we input for the <code>shark_length</code> argument. For example, let’s use the function to find the expected mass of a 4.1 meter long shark:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>shark_mass</span><span class='op'>(</span>shark_length <span class='op'>=</span> <span class='fl'>4.1</span><span class='op'>)</span>
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'>shark_mass</span><span class='op'>(</span>shark_length <span class='op'>=</span> <span class='fl'>4.1</span><span class='op'>)</span></span></code></pre>
 </div>
 <pre><code>[1] 15.67827</code></pre>
 </div>
-<h3 id="example-2-a-function-with-multiple-arguments">Example 2: A
-function with multiple arguments</h3>
-<p>Kinetic energy is calculated by: <span
-class="math display">\[k_e=\frac{1}{2}mv^2\]</span></p>
-<p>where <span class="math inline">\(k_e\)</span> is in [units], <span
-class="math inline">\(m\)</span> is mass in [units], and <span
-class="math inline">\(v\)</span> is velocity in [units].</p>
-<p>Write a function to calculate the kinetic energy of an object in
-motion if given a mass and velocity in the units above.</p>
+<h3 id="example-2-a-function-with-multiple-arguments">Example 2: A function with multiple arguments</h3>
+<p>Kinetic energy is calculated by: <span class="math display">\[k_e=\frac{1}{2}mv^2\]</span></p>
+<p>where <span class="math inline">\(k_e\)</span> is in [units], <span class="math inline">\(m\)</span> is mass in [units], and <span class="math inline">\(v\)</span> is velocity in [units].</p>
+<p>Write a function to calculate the kinetic energy of an object in motion if given a mass and velocity in the units above.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>ke</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>mass</span>, <span class='va'>velocity</span><span class='op'>)</span> <span class='op'>{</span>
-  
-  <span class='fl'>0.5</span> <span class='op'>*</span> <span class='va'>mass</span> <span class='op'>*</span> <span class='va'>velocity</span><span class='op'>^</span><span class='fl'>2</span>
-  
-<span class='op'>}</span>
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>ke</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>mass</span>, <span class='va'>velocity</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span>  </span>
+<span>  <span class='fl'>0.5</span> <span class='op'>*</span> <span class='va'>mass</span> <span class='op'>*</span> <span class='va'>velocity</span><span class='op'>^</span><span class='fl'>2</span></span>
+<span>  </span>
+<span><span class='op'>}</span></span></code></pre>
 </div>
 </div>
 <p>Using the function, find the kinetic energy of:</p>
@@ -2588,8 +2600,7 @@ motion if given a mass and velocity in the units above.</p>
 </ol>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>ke</span><span class='op'>(</span>mass <span class='op'>=</span> <span class='fl'>4.9</span>, velocity <span class='op'>=</span> <span class='fl'>9.8</span><span class='op'>)</span>
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'>ke</span><span class='op'>(</span>mass <span class='op'>=</span> <span class='fl'>4.9</span>, velocity <span class='op'>=</span> <span class='fl'>9.8</span><span class='op'>)</span></span></code></pre>
 </div>
 <pre><code>[1] 235.298</code></pre>
 </div>
@@ -2598,31 +2609,25 @@ motion if given a mass and velocity in the units above.</p>
 </ol>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>ke</span><span class='op'>(</span>mass <span class='op'>=</span> <span class='fl'>10.2</span>, velocity <span class='op'>=</span> <span class='fl'>2.1</span><span class='op'>)</span>
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'>ke</span><span class='op'>(</span>mass <span class='op'>=</span> <span class='fl'>10.2</span>, velocity <span class='op'>=</span> <span class='fl'>2.1</span><span class='op'>)</span></span></code></pre>
 </div>
 <pre><code>[1] 22.491</code></pre>
 </div>
 <ol start="3" type="a">
-<li>Objects that range in size from 0 kg to 30 kg by increments of 5 kg,
-each traveling at 5 m/s?</li>
+<li>Objects that range in size from 0 kg to 30 kg by increments of 5 kg, each traveling at 5 m/s?</li>
 </ol>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Create a vector of masses: </span>
-<span class='va'>mass_vec</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span>from <span class='op'>=</span> <span class='fl'>0</span>, to <span class='op'>=</span> <span class='fl'>30</span>, by <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span>
-
-<span class='co'># Find their energies: </span>
-<span class='fu'>ke</span><span class='op'>(</span>mass <span class='op'>=</span> <span class='va'>mass_vec</span>, velocity <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span>
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># Create a vector of masses: </span></span>
+<span><span class='va'>mass_vec</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span>from <span class='op'>=</span> <span class='fl'>0</span>, to <span class='op'>=</span> <span class='fl'>30</span>, by <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='co'># Find their energies: </span></span>
+<span><span class='fu'>ke</span><span class='op'>(</span>mass <span class='op'>=</span> <span class='va'>mass_vec</span>, velocity <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span></span></code></pre>
 </div>
 <pre><code>[1]   0.0  62.5 125.0 187.5 250.0 312.5 375.0</code></pre>
 </div>
-<p><strong>Pro tip:</strong> The shortcut to create a function in R is
-<code>Command + Option + x</code> on a Mac, or
-<code>Control + Option + x</code> on a PC.</p>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p><strong>Pro tip:</strong> The shortcut to create a function in R is <code>Command + Option + x</code> on a Mac, or <code>Control + Option + x</code> on a PC.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

@@ -35,20 +35,13 @@ knitr::include_graphics(here("img","usgs-ynlW4w7OHDs-unsplash.jpg"))
 
 Allison Horst (ahorst\@ucsb.edu)
 
-```{=html}
-<!-- Allison reminders:
+## TA
 
-- Check for food allergies
-- Anonymous survey for disability needs / information
-- Daily check-ins? 
-- Self evaluation & review
-- Working with Casey on course materials
+Mae Rennick (maerennick\@ucsb.edu)
 
--->
-```
 ## Important links
 
--   [Course syllabus](https://docs.google.com/document/d/1F0JJTEqipjKNn0WMPqABoPIcds7zMJGoz1jinGwUcpU/edit?usp=sharing)
+-   [Course syllabus](https://docs.google.com/document/d/1bBsNWY_fXVPCv50x64Ao4WLEwp5Cll9Vi88PsCRwx40/edit?usp=sharing)
 -   [Code of Conduct](code_of_conduct.html)
 
 ## Course description
@@ -69,40 +62,35 @@ The goal of EDS 212 (Essential Math in Environmental Data Science) is to prepare
 
 ## Predictable daily schedule
 
-**Course dates:** Monday (2021-08-01) - Friday (2021-08-05)
+**Course dates:** Monday (2023-08-07) - Friday (2023-08-11)
 
-EDS 212 is an intensive 1-week long 2-unit course. Students should plan to attend all scheduled sessions. All course requirements will be completed between 9am and 4:30pm PT (M - F), i.e. you are not expected to do additional work for EDS 212 outside of those hours, unless you are working with the Teaching Assistant in student hours.
-
-::: {style="color: teal;"}
-***Note:** For EDS 212 and 221, we will start Wednesdays at 10:00am (instead of 9:00am).*
-:::
+EDS 212 is an intensive 1-week long 2-unit course. Students should plan to attend all scheduled sessions. All course requirements will be completed between 10am and 4:30pm PT (M - F), i.e. you are not expected to do additional work for EDS 212 outside of those hours, unless you are working with the Teaching Assistant in student hours.
 
 Tentative daily schedule (subject to change):
 
 | **Time (PST)**    | **Activity**                     |
 |-------------------|----------------------------------|
-| 9:00am - 10:00am  | *Lecture 1 (60 min)*             |
-| 10:00am - 11:00am | *Interactive Session 1 (60 min)* |
-| 11:00am - 12:00pm | *Flex time (60 min)*             |
-| 12:00pm - 1:00pm  | *Lunch (60 min)*                 |
-| 1:00pm - 2:00pm   | *Lecture 2 (60 min)*             |
-| 2:00pm - 3:00pm   | *Interactive Session 2 (60 min)* |
+| 10:00am - 11:00am | *Lecture 1 (60 min)*             |
+| 11:15am - 12:30pm | *Interactive Session 1 (75 min)* |
+| 12:30pm - 1:30pm  | *Lunch*                          |
+| 1:30pm - 2:15pm   | *Lecture 2 (45 min)*             |
+| 2:15pm - 3:00pm   | *Interactive Session 2 (45min)*  |
 | 3:00pm - 4:30pm   | *Daily tasks*                    |
 
 ## Expected sessions (subject to change)
 
-| Day / session | Lecture topics                                                                                                                                                                                                       | Interactive session                                                                                                              | **Flex sessions**                            | Activities                                                |
-|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------|-----------------------------------------------------------|
-| 1 (morning)   | [Basic algebra review, units and unit conversions, exponents, logarithms](slides/EDS_212_day-1-part-1-slides.html)                                                                                                   | By hand practice problems; [Meet our R tools, basic operations, our first R function](comp_session_keys/comp_session_1a.html)    | Finish installation, meet git & GitHub       |                                                           |
-| 1 (afternoon) | [Functions (interpreting & evaluating), reading graphs, slope](slides/EDS_212_day-1-part-2-slides.html)                                                                                                              | By hand practice problems; [R projects, storing objects, creating vectors and sequences](comp_session_keys/comp_session_1b.html) | *none*                                       | [Day 1 Tasks - Handout](activities/day_1_activities.html) |
-| 2 (morning)   | [Definition of the derivative](slides/EDS_212_day-2-part-1-slides.html)                                                                                                                                              | [Derivatives by hand and in R](comp_session_keys/comp_session_2a.html)                                                           | git and GitHub continued                     |                                                           |
-| 2 (afternoon) | [Higher order & partial derivatives](slides/EDS_212_day-2-part-2-slides.html)                                                                                                                                        | [Partial & higher order derivatives in R](comp_session_keys/comp_session_2b.html)                                                | *none*                                       | [Day 2 Tasks - Handout](activities/day_2_activities.html) |
-| 3 (morning)   | [Differential equations, and solving them numerically](slides/EDS_212_day-3-part-1-slides.html)                                                                                                                      | [Interpreting differential equations, solving numerically](comp_session_keys/comp_session_3a.html)                               | *No flex sessions Wednesday - late start*    |                                                           |
-| 3 (afternoon) | [Introduction to linear algebra basics](slides/EDS_212_day-3-part-2-slides.html)                                                                                                                                     | [Making & basic algebra with vectors and matrices](comp_session_keys/comp_session_3b.html)                                       | *No flex sessions Wednesday - late start*    | [Day 3 Tasks - Handout](activities/day_3_activities.html) |
-| 4 (morning)   | [Linear algebra continued](slides/EDS_212_day-4-part-1-slides.html)                                                                                                                                                  | [Linear algebra continued - vectors, matrices, a Leslie matrix example](comp_session_keys/comp_session_4a.html)                  | Data Science Communities - Panel             |                                                           |
-| 4 (afternoon) | [Essential summary statistics and describing data](slides/EDS_212_day-4-part-2-slides.html)                                                                                                                          | [Data exploration and summary statistics - getting started](comp_session_keys/comp_session_4b.html)                              |                                              | [Day 4 Tasks - Handout](activities/day_4_activities.html) |
-| 5 (morning)   | Summary statistics continued, [basic probability theory](slides/EDS_212_day-5-part-1-slides.html)                                                                                                                    | Basic probability problems, [summary statistics, R Markdown customization](comp_session_keys/comp_session_5a.html)               | Start building your personal website w/ Sam! |                                                           |
-| 5 (afternoon) | [Boolean logic and operators](slides/EDS_212_day-5-part-2-slides.html), hypothesis test primer, [course recap](https://docs.google.com/presentation/d/1Dsbdsf-2DSwcMIMocPeENyArOOIae1r0Ol0rhMwI_Q4/edit?usp=sharing) | Relational & logical operators in R                                                                                              |                                              |                                                           |
+| Day / session | Lecture topics                                                                                                                                                                                                       | Interactive session                                                                                                              | Activities                                                |
+|------------|--------------------------|--------------|------------|
+| 1 (morning)   | [Basic algebra review, units and unit conversions, exponents, logarithms](slides/EDS_212_day-1-part-1-slides.html)                                                                                                   | By hand practice problems; [Meet our R tools, basic operations, our first R function](comp_session_keys/comp_session_1a.html)    |                                                           |
+| 1 (afternoon) | [Functions (interpreting & evaluating), reading graphs, slope](slides/EDS_212_day-1-part-2-slides.html)                                                                                                              | By hand practice problems; [R projects, storing objects, creating vectors and sequences](comp_session_keys/comp_session_1b.html) | [Day 1 Tasks - Handout](activities/day_1_activities.html) |
+| 2 (morning)   | [Definition of the derivative](slides/EDS_212_day-2-part-1-slides.html)                                                                                                                                              | [Derivatives by hand and in R](comp_session_keys/comp_session_2a.html)                                                           |                                                           |
+| 2 (afternoon) | [Higher order & partial derivatives](slides/EDS_212_day-2-part-2-slides.html)                                                                                                                                        | [Partial & higher order derivatives in R](comp_session_keys/comp_session_2b.html)                                                | [Day 2 Tasks - Handout](activities/day_2_activities.html) |
+| 3 (morning)   | [Differential equations, and solving them numerically](slides/EDS_212_day-3-part-1-slides.html)                                                                                                                      | [Interpreting differential equations, solving numerically](comp_session_keys/comp_session_3a.html)                               |                                                           |
+| 3 (afternoon) | [Introduction to linear algebra basics](slides/EDS_212_day-3-part-2-slides.html)                                                                                                                                     | [Making & basic algebra with vectors and matrices](comp_session_keys/comp_session_3b.html)                                       | [Day 3 Tasks - Handout](activities/day_3_activities.html) |
+| 4 (morning)   | [Linear algebra continued](slides/EDS_212_day-4-part-1-slides.html)                                                                                                                                                  | [Linear algebra continued - vectors, matrices, a Leslie matrix example](comp_session_keys/comp_session_4a.html)                  |                                                           |
+| 4 (afternoon) | [Essential summary statistics and describing data](slides/EDS_212_day-4-part-2-slides.html)                                                                                                                          | [Data exploration and summary statistics - getting started](comp_session_keys/comp_session_4b.html)                              | [Day 4 Tasks - Handout](activities/day_4_activities.html) |
+| 5 (morning)   | Summary statistics continued, [basic probability theory](slides/EDS_212_day-5-part-1-slides.html)                                                                                                                    | Basic probability problems, [summary statistics, R Markdown customization](comp_session_keys/comp_session_5a.html)               |                                                           |
+| 5 (afternoon) | [Boolean logic and operators](slides/EDS_212_day-5-part-2-slides.html), hypothesis test primer, [course recap](https://docs.google.com/presentation/d/1Dsbdsf-2DSwcMIMocPeENyArOOIae1r0Ol0rhMwI_Q4/edit?usp=sharing) | Relational & logical operators in R                                                                                              |                                                           |
 
 ## 
 
@@ -112,9 +100,9 @@ Tentative daily schedule (subject to change):
 
 -   Minimum [MEDS device requirements](https://ucsb-meds.github.io/computer_reqs.html) (bring to all sessions + charger!)
 
--   R version 4.0.2 (or higher)
+-   R
 
--   RStudio version 1.4.1103 (or higher)
+-   RStudio
 
 -   Quarto
 
