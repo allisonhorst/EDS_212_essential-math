@@ -34,9 +34,9 @@ For the vectors $\vec a = (1,6)$ and $\vec b = (2, 4)$:
 
 ## Part 2: Coding practice
 
-- Create a new version-controlled R Project (you may want to name it `eds212_day3_task2` or something similar)
+- Create a new version-controlled Quarto project (you may want to name it `eds212_day3_task2` or something similar)
 
-- Create a new .Rmd within your project
+- Create a new .qmd within your project
 
 - Using the `c()` function, create and store two new vectors, called `vec_a` and `vec_b`, where $\vec a = (1,6)$ and $\vec b = (2, 4)$: 
 
@@ -49,9 +49,9 @@ For the vectors $\vec a = (1,6)$ and $\vec b = (2, 4)$:
 
 ## Part 3: Fork & clone a repo, use the code
 
-- Fork and clone [this repo](https://github.com/allisonhorst/eds212-sir-ode), which contains an R Markdown document with code to numerically solve the SIR equations, to create a version-controlled R Project
+- Fork and clone [this repo](https://github.com/allisonhorst/eds212-sir-ode), which contains an R Markdown document with code to numerically solve the SIR equations, to create a version-controlled Quarto project
 
-- Once you've created your R Project, open the `sir-example.Rmd` file. 
+- Once you've created your project, open the `sir-example.Rmd` file. 
 
 - Run all code in the .Rmd (Cmd + Option + R, or go up to the run button and choose the last option "Run All")
 

@@ -33,19 +33,15 @@ You'll spend \~15 minutes with your group discussing, clarifying your assumption
 
 ## Section 2. Practice problems
 
-### Warm up:
-
-1.  By hand: Simplify the following: $2-\frac{3*6-12}{3}*2-4^2(3^2-7)$
-
 ### Evaluate the following:
 
-2.  By hand: Evaluate $f(x,y)=x^2-1+3xy$ at $x=1$ and $y = 0$
+1.  By hand: Evaluate $f(x,y)=x^2-1+3xy$ at $x=1$ and $y = 0$
 
-3.  In the R Console: given $G(t,z)=3.1(t-4.2)^2 + 0.06z$, find the value of $G(1, 2.5)$ (you do NOT need to write a function - just do the calculation in R using R as a calculator)
+2.  In the R Console: given $G(t,z)=3.1(t-4.2)^2 + 0.06z$, find the value of $G(1, 2.5)$ (you do NOT need to write a function - just do the calculation in R using R as a calculator)
 
 ### Units:
 
-4.  You are combining information from multiple sources to estimate the total annual oil spilled in a watershed, reported by different companies. The following are reported for the year:
+3.  You are combining information from multiple sources to estimate the total annual oil spilled in a watershed, reported by different companies. The following are reported for the year:
 
 -   Company A: 14.6 barrels spilled (with 9.3 barrels recovered)
 -   Company B: 692 liters spilled (94% recovered)
@@ -55,23 +51,21 @@ What is the total *unrecovered* amount of oil spilled into the watershed that ye
 
 ### Average slope
 
-5. By hand: Find the average slope between $(2,-1)$ and $(10,3)$
+4. By hand: If an urchin population in a study plot in 1990 is 432, and in 2004 is 801, what is the average rate of population increase? Find the slope, then write a statement about the average increase (including units).
 
-6. By hand: If an urchin population in a study plot in 1990 is 432, and in 2004 is 801, what is the average rate of population increase? Find the slope, then write a statement about the average increase (including units).
+## Section 3: Projects and functions
 
-## Section 3: R Projects and functions
+-   Create a new Quarto project (named `eds-212-day-1`)
 
--   Create a new R Project (named `eds-212-day-1`)
+-   Add a new Quarto document in the project
 
--   Create a new R Markdown file
-
--   Press 'Knit' (save this in your R Proj as `fish-length-weight.Rmd`)
+-   Press 'Render' (save this in your project as `fish-length-weight.qmd`)
 
 -   Delete everything below the first code chunk
 
 -   Attach the `tidyverse` package in the setup chunk
 
--   Play around with markdown. Try adding text with at least the following:
+-   Play around with markdown cells in the Quarto doc. Try adding text with at least the following:
 
     -   Headers of varying size
     -   Italics
@@ -80,9 +74,9 @@ What is the total *unrecovered* amount of oil spilled into the watershed that ye
     -   Bulletpoints
     -   An image (google how!)
 
--   Add a new code chunk
+-   Add a new code chunk (for R code)
 
--   Within the code chunk, write a function to estimate fish standard weight, given parameters $a$, $b$, and fish length $L$ as inputs. "Standard weight" is how much we expect a fish to weigh, give the species and fish length, and the nonlinear relationship is given by:
+-   Within the R code chunk, write a function to estimate fish standard weight, given parameters $a$, $b$, and fish length $L$ as inputs. "Standard weight" is how much we expect a fish to weigh, give the species and fish length, and the nonlinear relationship is given by:
 
 $$W=aL^b$$ 
 
@@ -103,10 +97,10 @@ Peyton, K. A., T. S. Sakihara, L. K. Nishiura, T. T. Shindo, T. E. Shimoda, S. H
 
 - Bind the lengths and estimated barracuda weights into a single data frame using `data.frame()`
 
-- Create a ggplot graph of length versus weight for giant barracuda
+- Create a ggplot graph of predicted length versus weight for giant barracuda
 
 - Update the graph axis labels and title
 
-- Knit
+- Render the .qmd
 
 ## END Activity Session 1

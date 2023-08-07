@@ -1,6 +1,6 @@
 ---
 title: 'EDS 212 Computational Session 1A'
-subtitle: 'Meet R, RStudio, R Markdown, basic math operations, and our first function'
+subtitle: 'Meet R, RStudio, Quarto, basic math operations, and our first function'
 output: 
   html_document:
     css: comp_session_theme.css
@@ -54,11 +54,11 @@ Let's take a quick tour of the RStudio IDE, then customize it for fun and functi
 - Create a function (with shortcut Cmd + Shift + X) and use it a few times
 - Now go to Session > Restart R...are your objects still there? NOPE. 
     
-## 4. Introduction to R Markdown
+## 4. Introduction to Quarto
 
-R Markdown is a document where we can combine markdown (plain text with added formatting), code, and outputs all in one place - which makes it an incredible tool for reproducibility. Let's make one (File > R Markdown), and learn by doing. 
+Quarto is a publishing framework that lets you make all kinds of things (dashboards, websites, notebooks, slides, books, etc.) that combine markdown (plain text with added formatting), code, and outputs in one place - which makes it an incredible tool for reproducibility. Let's make a Quarto document (File > Quarto document) and learn by doing. 
 
-In your new R Markdown document, let's add:
+In your new Quarto document, let's add:
 
 - Some text formatting
   - Headers (with different numbers of pound signs to start the line)
@@ -67,7 +67,7 @@ In your new R Markdown document, let's add:
   - **Bold** (double asterisk) & *italics* (single asterisk)
 - Code chunks (shortcut: Cmd + Option + I)
 - Outputs (run code with Cmd + Enter, or buttons)
-- Knitting: When you *knit* an R Markdown document, all content is first converted to plain markdown, then converted to a file output type you select (the default, and the one we'll use most often is HTML)
+- Knitting: When you *render* an Quarto document, all content is first converted to plain markdown, then converted to a file output type you select (the default, and the one we'll use most often is HTML)
     
 ## 5. Our first function
 

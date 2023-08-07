@@ -15,11 +15,11 @@ output:
 ## Welcome to EDS 212 - Essential Math in Environmental Data Science
 
 - **Teacher:** Allison Horst (ahorst@ucsb.edu)
-- **Course assistant:** Casey O'Hara (cohara@bren.ucsb.edu)
-- **Course hours:** 9am - 5pm PST, M-T-Th-F, 10am start Wednesdays
+- **Course assistant:** Mae Rennick (maerennick@ucsb.edu)
+- **Course hours:** 10am - 4:30pm PST
 - **Location:** NCEAS MEDS Classroom
 
-Let's take a look at the [course syllabus](https://docs.google.com/document/d/1F0JJTEqipjKNn0WMPqABoPIcds7zMJGoz1jinGwUcpU/edit?usp=sharing) together. 
+Let's take a look at the [course syllabus](https://docs.google.com/document/d/1bBsNWY_fXVPCv50x64Ao4WLEwp5Cll9Vi88PsCRwx40/edit?usp=sharing) together. 
 
 ---
 

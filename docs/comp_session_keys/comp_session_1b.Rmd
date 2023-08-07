@@ -1,6 +1,6 @@
 ---
 title: 'EDS 212 Computational Session 1B'
-subtitle: 'R Projects, more markdown, creating data, more functions and a ggplot2 graph'
+subtitle: 'Projects, more markdown, creating data, more functions and a ggplot2 graph'
 output: 
   html_document:
     css: comp_session_theme.css
@@ -18,18 +18,18 @@ library(tidyverse)
 knitr::include_graphics("comp_session_images/workflows_shred.png")
 ```
 
-- R Projects
-- R Markdown customization
+- Projects
+- Quarto customization
 - Creating vectors and sequences
 - Our first `ggplot2` graph
 - Functions continued
 
-## 1. R Projects
+## 1. Projects
 
 ### ...one small step for a programmer, one giant leap for reproducibility
 
 - In R, Session > New (make this a frequent habit)
-- File > New project (or the blue cube)
+- File > New Quarto project
 - For now, New directory (but version control coming up soon...)
 - Give your project a name
 - Pick where to put it (this'll create a folder on your computer)
@@ -37,7 +37,7 @@ knitr::include_graphics("comp_session_images/workflows_shred.png")
 
 Discussion - what does this do? Where does it live on your computer? What does it contain? 
 
-- Make a new R Markdown file in your project, then follow along (adding notes in markdown) with the rest of the session
+- Make a new Quarto doc (File > New File > New Quarto document) in your project, then follow along (adding notes in markdown cells) with the rest of the session
 
 ## 2. Exponents and logs in R 
 
@@ -60,6 +60,7 @@ For example, to create a sequence from 2 to 18 by increments of 0.3, I would use
 ```{r}
 seq(from = 2, to = 18, by = 0.3)
 ```
+
 Note that the above sequence ends at 17.9 (the last complete increment). Another option is to specify the *length* of the output vector instead - like "I want to have 30 values between 2 and 18, evenly spaced." To do that, use the `length = ` argument within the `seq()` function. 
 
 ```{r}
@@ -116,7 +117,7 @@ chipmunk_pop
 
 You will learn a *lot* more about data visualization throughout MEDS. But let's make a first little rough one just for fun using the `ggplot2` package, which is part of the `tidyverse` (more on this in EDS 221). 
 
-Attach the tidyverse in the setup chunk of your R Markdown document using `library(tidyverse)`. Note: you should already have the package installed on your computer - if not, you'll need to do that first. 
+Attach the tidyverse in the setup chunk of your Quarto document using `library(tidyverse)`. Note: you should already have the package installed on your computer - if not, you'll need to do that first. 
 
 Let's first combine our time sequence (`time_vec`) and predicted populations (`chipmunk_pop`) into a single *data frame* - a table of data where different vectors (we'll think of these as *variables* moving forward) are stored in columns. 
 
@@ -136,14 +137,14 @@ ggplot(data = chipmunk_df, aes(x = time_vec, y = chipmunk_pop)) +
 
 ## 6. No precious objects or outputs! 
 
-- Save your .Rmd, which lives in your R project. 
+- Save your .qmd, which lives in your project. 
 - Close your whole project (File > Close project)
 - Restart your R session & check environment 
 - Find wherever your project lives on your computer
 - Open the .Rproj file (NOT the .Rmd on its own - don't orphan your project files)
 - Check for clues you're in your project 
-- In the Files tab of RStudio, click on the .Rmd you saved
-- Use Cmd + Option + R to run all code in your .Rmd
+- In the Files tab of RStudio, click on the .qmd you saved
+- Use Cmd + Option + R to run all code in your .qmd
 - Check to see that all objects and outputs are automatically reproduced
 
 ## End interactive session 1b
