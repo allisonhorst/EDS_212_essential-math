@@ -12,26 +12,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Section 1. Back-of-the-envelope (small groups)
-
-For this group task section, work in small groups of 4 - 5 to do back-of-the-envelope calculations. You'll work together to make an estimate for the value.
-
-You'll spend \~15 minutes with your group discussing, clarifying your assumptions, doing your back-of-the envelope calculations, and coming up with an estimate. Then, a spokesperson for your group will report back on your thought process, assumptions & conclusion.
-
-**The only rule: you can't use the internet.**
-
-**You are absolutely allowed to poll your peers (even from other groups).**
-
-#### Credit: all examples here are from, carefully considered in, [what-if.xkcd.com](what-if.xkcd.com)
-
--   **Group A:** When electrofishing, usually 100 $\mu W$ per cm^3^ (of fish volume) is sufficient to temporarily stop a fish heart. How much energy would you need to electro"fish" for a blue whale?
--   **Group B:** What is the fastest you could visit all 50 states by car?
--   **Group C:** If a T-rex were released in New York City, how many humans/day would it need to consume to get its needed calorie intake?
--   **Group D:** If you dropped a 13 pound bowling ball off the side of a boat over the Marianas Trench, how long would it take to reach the bottom?
--   **Group E:** If the world was scaled to the size of a basketball, what would the height of Mt. Everest be?
--   **Group F:** If there was zip line from the moon to the earth, assuming no issues with rotation, atmosphere, etc., how long would it take to zip line between them?
-
-## Section 2. Practice problems
+## Section 1. Practice problems
 
 ### Evaluate the following:
 
@@ -53,7 +34,7 @@ What is the total *unrecovered* amount of oil spilled into the watershed that ye
 
 4. By hand: If an urchin population in a study plot in 1990 is 432, and in 2004 is 801, what is the average rate of population increase? Find the slope, then write a statement about the average increase (including units).
 
-## Section 3: Projects and functions
+## Section 2: Projects and functions
 
 -   Create a new Quarto project (named `eds-212-day-1`)
 
@@ -63,7 +44,7 @@ What is the total *unrecovered* amount of oil spilled into the watershed that ye
 
 -   Delete everything below the first code chunk
 
--   Attach the `tidyverse` package in the setup chunk
+-   Attach the `tidyverse` package
 
 -   Play around with markdown cells in the Quarto doc. Try adding text with at least the following:
 
@@ -88,7 +69,6 @@ where L is total fish length (centimeters), W is the expected fish weight (grams
     - Giant trevally: a = 0.0353, b = 3.05
     - Great barracuda: a = 0.0181, b = 3.27
 
-
 Peyton, K. A., T. S. Sakihara, L. K. Nishiura, T. T. Shindo, T. E. Shimoda, S. Hau, A. Akiona, and K. Lorance. 2016. “Length–Weight Relationships for Common Juvenile Fishes and Prey Species in Hawaiian Estuaries.” Journal of Applied Ichthyology 32 (3): 499–502. https://doi.org/10.1111/jai.12957. 
 
 - Make and store (as `fish_length`) sequence of size ranges from 0 to 200 cm, by increments of 1 cm
@@ -101,6 +81,8 @@ Peyton, K. A., T. S. Sakihara, L. K. Nishiura, T. T. Shindo, T. E. Shimoda, S. H
 
 - Update the graph axis labels and title
 
-- Render the .qmd
+- Render the .qmd. Make sure everything is saved.
+
+- Close your project. Reopen the project, and ensure that you can re-run the entire Quarto document (reproducibility check). 
 
 ## END Activity Session 1
