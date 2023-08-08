@@ -20,7 +20,7 @@ library(tidyverse)
 - At every step, describe *what* you are doing
 - Once you have the definition of the derivative, say out loud (each person) what we're doing mathematically every time we find the derivative
 
-## Section 2: Derivatives by hand
+## [SKIP] Section 2: Derivatives by hand
 
 1. By hand and using derivative rules: Find $\frac{dx}{dt}$ for $x(t)=\frac{1}{x^3}+2.4e^{3x}$
 
