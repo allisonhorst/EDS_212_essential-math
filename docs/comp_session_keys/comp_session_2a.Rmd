@@ -157,9 +157,9 @@ Enter hand waving & storytelling: [Why git & GitHub](https://www.openscapes.org/
 
 -   Create a new RProj
 
--   Add a new .Rmd (R Markdown)
+-   Add a new Quarto document
 
--   Knit
+-   Render
 
 #### 2. Add version control w/ git
 
@@ -175,10 +175,40 @@ Enter hand waving & storytelling: [Why git & GitHub](https://www.openscapes.org/
 
 #### 4. Make, stage, commit & push some changes
 
--   In your .Rmd, make some changes (whatever you want). Save. Knit (or not...as long as one file changes).
+-   In your .qmd, make some changes (whatever you want). Save. Render (or not...as long as one file changes).
 
 -   Notice that in the git tab in RStudio, the file(s) you updated show up as having been updated.
 
--   Stage (check box next to files), Commit (add commit message), Pull (for habit), then Push to the remote repo. Go to your remote repo on GitHub. Let's check out some changes!
+-   Stage (check box next to files), Commit (add commit message), Pull (for habit to check for remote changes), then Push to the remote repo. Go to your remote repo on GitHub. Let's check out some changes!
+
+## A bit more ggplot fun
+
+Let's customize a graph a little bit. Here, we'll use the `penguins` dataset from `palmerpenguins`. 
+
+Some extras we'll learn here are: 
+
+- Adding axis labels, titles & subtitles
+- Switching x & y axis
+- A few new graph types
+- Faceting
+- Updating colors
+
+```{r}
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+         geom_point(aes(color = species)) +
+  scale_color_manual(values = c("purple","cyan3","goldenrod")) +
+  labs(x = "Flipper length (mm)",
+       y = "Body mass (g)",
+       title = "Palmer penguin size measurements",
+       subtitle = "Palmer Archipelago, Antarctica (2007 - 2009)",
+       caption = "Collected by Dr. Kristen Gorman and colleages at Palmer Station LTER") +
+  coord_flip() +
+  facet_wrap(~island) +
+  theme_minimal()
+  
+
+```
+
+- Stage, commit, pull, push.
 
 ## End

@@ -15,7 +15,6 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 
 ```{r, echo = TRUE}
 library(tidyverse)
-library(palmerpenguins)
 ```
 
 ## Derivatives by hand
@@ -32,16 +31,7 @@ For water at 28 degrees, find an expression for how biomass is changing with res
 3. Find the 3^rd^ derivative of the following: 
 
 $$G(t)=2.2 + 3.1t-5.6t^4 + \frac{4.3}{t^3}$$
-
-## Drawing derivatives
-
-Brain creativity break - let's draw some higher order derivatives!
-
 ## Plotting a function in `ggplot2`
-
-```{r}
-library(tidyverse)
-```
 
 ```{r}
 eq = function(x){3*x^2 + 4} # Define function
@@ -53,7 +43,7 @@ ggplot(data.frame(x = c(1, 100)), aes(x = x)) +
 ```
 
 ```{r}
-eq_2 = function(x){2.4 - 5*x^3 + 2.1*x^2} # Define function
+eq_2 = function(x) {2.4 - 5*x^3 + 2.1*x^2} # Define function
 
 ggplot(data.frame(x = c(-50,50)), aes(x = x)) + 
   geom_function(fun = eq_2)
@@ -131,34 +121,6 @@ q <- 0.8
 
 # Evaluate dp_dq at that value: 
 eval(dp_dq)
-```
-
-## A bit more ggplot fun
-
-Let's customize a graph a little bit. Here, we'll use the `penguins` dataset from `palmerpenguins`. 
-
-Some extras we'll learn here are: 
-
-- Adding axis labels, titles & subtitles
-- Switching x & y axis
-- A few new graph types
-- Faceting
-- Updating colors
-
-```{r}
-ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
-         geom_point(aes(color = species)) +
-  scale_color_manual(values = c("purple","cyan3","goldenrod")) +
-  labs(x = "Flipper length (mm)",
-       y = "Body mass (g)",
-       title = "Palmer penguin size measurements",
-       subtitle = "Palmer Archipelago, Antarctica (2007 - 2009)",
-       caption = "Collected by Dr. Kristen Gorman and colleages at Palmer Station LTER") +
-  coord_flip() +
-  facet_wrap(~island) +
-  theme_minimal()
-  
-
 ```
 
 ## End {-}

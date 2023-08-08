@@ -1,6 +1,6 @@
 ---
 title: 'Day 2: Tasks & group activities'
-subtitle: 'Derivatives - by hand & in R'
+subtitle: 'Derivatives, plots, git'
 output: 
   html_document:
     css: activities_theme.css
@@ -31,7 +31,7 @@ library(tidyverse)
 - Create a new Quarto Project (named `eds-212-day-2`) (or using a naming convention you choose for all EDS 212 projects)
 - Create a new Quarto document in the project
 - Attach the `tidyverse` and `palmerpenguins` packages with `library(package_name)` (note: you may need to install `palmerpenguins` - remember `install.packages("packagename")`)
-- Render (save your .qmd as `eds212_day2_activities.Rmd`, or follow a naming convention you've decided on)
+- Render (save your .qmd as `eds212_day2_activities.qmd`, or follow a naming convention you've decided on)
 - Use `usethis::use_git()` and `usethis::use_github()` to make your project a version-controlled repo, with an upstream GitHub repo
 - In your Quarto document, find the derivative expression and slope at the indicated value for each the following functions in R (each in a separate code chunk).
 
@@ -40,11 +40,11 @@ library(tidyverse)
 
 - Render, then stage, commit, pull, then push your changes to your repo on GitHub. Check your repo (refresh) to make sure the changes show up there.
 
-## Section 4: Make a penguin plot
+## Section 4: Make another penguin plot
 
 - In a new code chunk, create a `ggplot` graph of penguin bill length versus bill depth (using the `penguins` dataset in the `palmerpenguins` package), with point color dependent on species. You should attach the `tidyverse` and `palmerpenguins` package in your .qmd setup chunk if you haven't already. Update labels and add a title.
 
-- In a new code chunk, make a jitter plot of flipper length by species (species on the x-axis, flipper length on the y-axis). Update axis labels and add a title. See: ?geom_jitter 
+- In a new code chunk, make a jitter plot of flipper length by species (species on the x-axis, flipper length on the y-axis). Update axis labels and add a title. See ?geom_jitter 
 
 - Render your .qmd to check for reproducibility
 
