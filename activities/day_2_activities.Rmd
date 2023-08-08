@@ -22,9 +22,7 @@ library(tidyverse)
 
 ## Section 2: Derivatives by hand
 
-1. By hand using the definition of the derivative (i.e., "the long way"), find $\frac{dT}{dq}$ for $T(q)=2-3q^2$
-
-2. By hand and using derivative rules: Find $\frac{dx}{dt}$ for $x(t)=\frac{1}{x^3}+2.4e^{3x}$
+1. By hand and using derivative rules: Find $\frac{dx}{dt}$ for $x(t)=\frac{1}{x^3}+2.4e^{3x}$
 
 ## Section 3: Derivatives in R
 
@@ -52,6 +50,6 @@ library(tidyverse)
 
 - Go back to your Quarto document in RStudio. Pull to make sure you have the same versions as in the remote repo. Make a change (anything you want - maybe change your graph colors, sizes, etc.), then stage, commit, & push changes to the remote repo to reinforce the steps. Check that changes are stored on GitHub.
 
-- Repeat two more times - make changes to your plot, knit, stage, commit & push. Check that your changes appear on GitHub. 
+- Repeat one more time - make a change to your plot, knit, stage, commit & push. Check that your changes appear on GitHub. 
 
 ## End
