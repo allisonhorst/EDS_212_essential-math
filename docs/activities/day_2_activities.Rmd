@@ -18,7 +18,6 @@ library(tidyverse)
 - Put all notes away
 - With a partner, based on what you've learned, derive the definition of the derivative from scratch
 - At every step, describe *what* you are doing
-- Picture drawing is encouraged
 - Once you have the definition of the derivative, say out loud (each person) what we're doing mathematically every time we find the derivative
 
 ## Section 2: Derivatives by hand
@@ -26,8 +25,6 @@ library(tidyverse)
 1. By hand using the definition of the derivative (i.e., "the long way"), find $\frac{dT}{dq}$ for $T(q)=2-3q^2$
 
 2. By hand and using derivative rules: Find $\frac{dx}{dt}$ for $x(t)=\frac{1}{x^3}+2.4e^{3x}$
-
-3. For the function above, what is the slope in the $p$ direction at $T = 1.9, k = 2.4$?
 
 ## Section 3: Derivatives in R
 
@@ -38,16 +35,16 @@ library(tidyverse)
 - Use `usethis::use_git()` and `usethis::use_github()` to make your project a version-controlled repo, with an upstream GitHub repo
 - In your Quarto document, find the derivative expression and slope at the indicated value for each the following functions in R (each in a separate code chunk).
 
-  A) $f(x)=x^2$ at $x = 3$
-  B) $P(a)=2(3a+2)^4-5$ at $a = 1.2$
+  A) Find the slope of $f(x)=x^2$ at $x = 3$
+  B) Find the slope of $P(a)=2(3a+2)^4-5$ at $a = 1.2$
 
 - Render, then stage, commit, pull, then push your changes to your repo on GitHub. Check your repo (refresh) to make sure the changes show up there.
 
 ## Section 4: Make a penguin plot
 
-- In a new code chunk, create a `ggplot` graph of penguin bill length versus bill depth (using the `penguins` dataset in the `palmerpenguins` package), with point color dependent on species. You should attach the `tidyverse` and `palmerpenguins` package in your .qmd setup chunk. Update labels and add a title.
+- In a new code chunk, create a `ggplot` graph of penguin bill length versus bill depth (using the `penguins` dataset in the `palmerpenguins` package), with point color dependent on species. You should attach the `tidyverse` and `palmerpenguins` package in your .qmd setup chunk if you haven't already. Update labels and add a title.
 
-- In a new code chunk, make a jitter plot of flipper length by species (species on the x-axis, flipper length on the y-axis). Update axis labels and add a title. 
+- In a new code chunk, make a jitter plot of flipper length by species (species on the x-axis, flipper length on the y-axis). Update axis labels and add a title. See: ?geom_jitter 
 
 - Render your .qmd to check for reproducibility
 

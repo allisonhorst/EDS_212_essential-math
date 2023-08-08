@@ -1593,7 +1593,6 @@ derivative</h2>
 <li>With a partner, based on what you’ve learned, derive the definition
 of the derivative from scratch</li>
 <li>At every step, describe <em>what</em> you are doing</li>
-<li>Picture drawing is encouraged</li>
 <li>Once you have the definition of the derivative, say out loud (each
 person) what we’re doing mathematically every time we find the
 derivative</li>
@@ -1605,7 +1604,6 @@ derivative</li>
 <li><p>By hand using the definition of the derivative (i.e., “the long
 way”), find <span class="math inline">\(\frac{dT}{dq}\)</span> for <span class="math inline">\(T(q)=2-3q^2\)</span></p></li>
 <li><p>By hand and using derivative rules: Find <span class="math inline">\(\frac{dx}{dt}\)</span> for <span class="math inline">\(x(t)=\frac{1}{x^3}+2.4e^{3x}\)</span></p></li>
-<li><p>For the function above, what is the slope in the <span class="math inline">\(p\)</span> direction at <span class="math inline">\(T = 1.9, k = 2.4\)</span>?</p></li>
 </ol>
 </div>
 <div id="section-3-derivatives-in-r" class="section level2">
@@ -1629,8 +1627,9 @@ version-controlled repo, with an upstream GitHub repo</p></li>
 at the indicated value for each the following functions in R (each in a
 separate code chunk).</p>
 <ol style="list-style-type: upper-alpha">
-<li><span class="math inline">\(f(x)=x^2\)</span> at <span class="math inline">\(x = 3\)</span></li>
-<li><span class="math inline">\(P(a)=2(3a+2)^4-5\)</span> at <span class="math inline">\(a = 1.2\)</span></li>
+<li>Find the slope of <span class="math inline">\(f(x)=x^2\)</span> at
+<span class="math inline">\(x = 3\)</span></li>
+<li>Find the slope of <span class="math inline">\(P(a)=2(3a+2)^4-5\)</span> at <span class="math inline">\(a = 1.2\)</span></li>
 </ol></li>
 <li><p>Render, then stage, commit, pull, then push your changes to your
 repo on GitHub. Check your repo (refresh) to make sure the changes show
@@ -1644,11 +1643,11 @@ up there.</p></li>
 penguin bill length versus bill depth (using the <code>penguins</code>
 dataset in the <code>palmerpenguins</code> package), with point color
 dependent on species. You should attach the <code>tidyverse</code> and
-<code>palmerpenguins</code> package in your .qmd setup chunk. Update
-labels and add a title.</p></li>
+<code>palmerpenguins</code> package in your .qmd setup chunk if you
+haven’t already. Update labels and add a title.</p></li>
 <li><p>In a new code chunk, make a jitter plot of flipper length by
 species (species on the x-axis, flipper length on the y-axis). Update
-axis labels and add a title.</p></li>
+axis labels and add a title. See: ?geom_jitter</p></li>
 <li><p>Render your .qmd to check for reproducibility</p></li>
 <li><p>Stage, commit, and push changes to the remote repo. Once you do,
 go to GitHub and check to see the changes are safely stored &amp;
