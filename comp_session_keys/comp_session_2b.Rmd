@@ -39,9 +39,6 @@ Brain creativity break - let's draw some higher order derivatives!
 
 ## Plotting a function in `ggplot2`
 
-<!-- Allison NOTE: see [`geom_function`](https://ggplot2.tidyverse.org/reference/geom_function.html) for next year! -->
-
-
 ```{r}
 library(tidyverse)
 ```
@@ -49,42 +46,22 @@ library(tidyverse)
 ```{r}
 eq = function(x){3*x^2 + 4} # Define function
 
-# Plot it over a specific range using the `stat_function` option: 
+# Plot it over a specific range using the `geom_function` mark: 
 ggplot(data.frame(x = c(1, 100)), aes(x = x)) + 
-  stat_function(fun = eq)
+  geom_function(fun = eq)
 
-## See: geom_function() (https://ggplot2.tidyverse.org/reference/geom_function.html)
 ```
 
 ```{r}
 eq_2 = function(x){2.4 - 5*x^3 + 2.1*x^2} # Define function
 
-# Plot it over a specific range using the `stat_function` option: 
 ggplot(data.frame(x = c(-50,50)), aes(x = x)) + 
-  stat_function(fun = eq_2)
-```
-
-## Higher order derivatives in R
-
-Spoiler alert: find the derivative of the derivative...
-
-For example, to find the 2^nd^ derivative of: $$G(t)=2.2 + 3.1t-5.6t^4 + \frac{4.3}{t^3}$$
-
-```{r}
-gt <- expression(2.2 + 3.1 * t - 5.6 * t ^ 4 + 4.3 / (t ^ 3))
-
-# Find the first derivative
-dg_dt <- D(gt, 't')
-dg_dt
-
-# Find the second derivative
-d2g_dt2 <- D(dg_dt, 't')
-d2g_dt2 
+  geom_function(fun = eq_2)
 ```
 
 ## Plotting derivatives
 
-Let's look at a pretty simple function: $C(t)=t^3$
+Let's look at the function: $C(t)=t^3$
 
 Let's plot the function along with the first derivative: 
 
@@ -94,7 +71,7 @@ ct <- function(t) {t ^ 3}
 
 # Plot it:
 ggplot(data.frame(t=c(-5, 5)), aes(x=t)) + 
-  stat_function(fun=ct)
+  geom_function(fun=ct)
 
 # Find the derivative:
 dc_dt <- D(expression(t^3), 't')
@@ -103,15 +80,10 @@ dc_dt
 # Store the derivative as a function:
 dc_dt_fun <- function(t) {3 * t ^2}
 
-# For fun, the second derivative: 
-d2c_dt2 <- function(t) {6 * t}
-
 # Then plot them together! 
 ggplot(data.frame(t = c(-5, 5)), aes(x = t)) + 
-  stat_function(fun = ct, color = "red") +
-  stat_function(fun = dc_dt_fun, color = "blue") +
-  stat_function(fun = d2c_dt2, color = "orange")
-  
+  geom_function(fun = ct, color = "red") +
+  geom_function(fun = dc_dt_fun, color = "blue")
 ```
 
 ## Partial derivatives in R
@@ -138,7 +110,7 @@ df_dz <- D(f_xyz, 'z')
 df_dz
 ```
 
-## Chewing off a bit more...
+## One more example:
 
 Given the function: $$P(q)=2cos(3q+0.4)-5.6e^{1.4q}$$ 
 
