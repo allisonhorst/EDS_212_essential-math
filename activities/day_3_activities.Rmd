@@ -34,9 +34,11 @@ For the vectors $\vec a = (1,6)$ and $\vec b = (2, 4)$:
 
 ## Part 2: Coding practice
 
-- Create a new version-controlled Quarto project (you may want to name it `eds212_day3_task2` or something similar)
+- Create a new project (you may want to name it `eds212_day3_task2` or something similar)
 
-- Create a new .qmd within your project
+- Setup your local and remote repo using usethis::use_git() and usethis::use_github()
+
+- In a Quarto doc in your project:
 
 - Using the `c()` function, create and store two new vectors, called `vec_a` and `vec_b`, where $\vec a = (1,6)$ and $\vec b = (2, 4)$: 
 
@@ -46,6 +48,24 @@ For the vectors $\vec a = (1,6)$ and $\vec b = (2, 4)$:
   - $\vec b - \vec a$
   - $4 \vec a$
   - $\vec a \cdot \vec b$
+  
+- Save your quarto doc and Render
+
+- Open the Terminal outside of RStudio
+
+- Navigate to your project directory
+
+- Use git status (or checkout...) to check the status
+
+- Use git add . to stage all changes 
+
+- Use git commit -m "your commit message here" to commit to your local repo
+
+- Use git pull to check for remote changes
+
+- Use git push to push changes to your remote repo
+
+- Go to your remote repo for the project and check to see that the new updates are stored
 
 ## Part 3: Fork & clone a repo, use the code
 
@@ -61,7 +81,7 @@ For the vectors $\vec a = (1,6)$ and $\vec b = (2, 4)$:
 
 - After trying out a few changes, save and knit your new output graph.
 
-- Stage, commit, pull, then push to your repo.
+- Stage, commit, pull, then push to your repo **in the command line**.
 
 - Check for your changes on GitHub. Are they there? Cool, done with Part 2.
 

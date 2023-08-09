@@ -34,6 +34,30 @@ Open the .Rmd and knit. We will talk through the code together. A couple of thin
 
 -   Congratulations! You've adding *forking* and *cloning* to your git toolkit.
 
+## Command line intro + git
+
+Here, we'll learn a few basic commands to talk with your computer through the command line to navigate around and do some git stuff outside of RStudio.
+
+Some basics:
+
+- Open the Terminal (outside of RStudio)
+- Use pwd to see where your Terminal currently sees the working directory
+- Use ls to see the contents of the directory
+- Use cd to change to a different downstream directory
+- Use .. to go back upstream
+
+Now for git: 
+
+- Navigate to your current project directory
+- Use git status to see the current git status
+- Make a change to the .Rmd in your project and save
+- Use git add filename.Rmd to stage it (git add . will stage everything)
+- Use git commit -m "a commit message" to commit to local repo
+- Use git checkout again to check status
+- Use git pull to pull
+- Use git push to push changes
+- Check with git checkout
+
 ------------------------------------------------------------------------
 
 ## Below: additional material ([not]{.underline} done in class)

@@ -30,14 +30,14 @@ A new workflow! GitHub repo FIRST, then R project.
 
 In your new project: 
 
-- Create a new R Markdown document
-- Save as `r-vectors.Rmd`
+- Create a new Quarto document
+- Save as `r-vectors.qmd`
 
 ## Vectors
 
 ### Vectors in R
 
-(IN YOUR R MARKDOWN)
+(IN YOUR QUARTO DOC)
 
 Create vectors in R using `c()`. Note that all elements in a vector must be a single class - if numbers and strings are combined, the whole thing will be of class character. 
 
@@ -65,6 +65,7 @@ pika
 # Check the class:
 class(pika)
 ```
+
 Notice in the vector above, these are class *numeric*. If values should be integers (often the case with count data), you can add an `L` after the value.
 
 ```{r}
