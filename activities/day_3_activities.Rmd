@@ -69,7 +69,7 @@ For the vectors $\vec a = (1,6)$ and $\vec b = (2, 4)$:
 
 ## Part 3: Fork & clone a repo, use the code
 
-- Fork and clone [this repo](https://github.com/allisonhorst/eds212-sir-ode), which contains an R Markdown document with code to numerically solve the SIR equations, to create a version-controlled Quarto project
+- Fork and clone [this repo](https://github.com/allisonhorst/eds212-sir-ode), which contains an R Markdown document with code to numerically solve the SIR equations, to create a version-controlled project
 
 - Once you've created your project, open the `sir-example.Rmd` file. 
 
@@ -83,7 +83,7 @@ For the vectors $\vec a = (1,6)$ and $\vec b = (2, 4)$:
 
 - Stage, commit, pull, then push to your repo **in the command line**.
 
-- Check for your changes on GitHub. Are they there? Cool, done with Part 2.
+- Check for your changes on GitHub. Are they there? Cool, done with Part 3.
 
 
 ## End
