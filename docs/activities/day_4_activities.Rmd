@@ -45,7 +45,7 @@ A population of fish we're interested in has four life stages: eggs (E), fry (F)
 
 - Add code to the .Rmd to expand the projections to years 4, 5, and 6 (it current projects through year 3)
 
-- Save, stage, commit, then push your changes.
+- **Using the command line:** Save, stage, commit, then push your changes.
 
 ```{r, include = FALSE}
 # Make the Leslie Matrix:
@@ -71,24 +71,20 @@ fish_year3
 ```
 
 
-## 3. Make a repo, do some stuff
+## 3. Data exploration & summarizing in R
 
-- Create a new repo on GitHub named `eds212-day4-activities`
-- Clone to create a version-controlled R Project
-
-### A. Do some data exploration & summarizing in R
-
-- Create a new R Markdown document in your project, save as `r-exploring``
+- Create a new Project
+- Add a new Quarto document in your project, save as `r-exploring`
+- Set up your local and remote git repo by running `usethis::use_git()` and then `usethis::use_github()`
 - Attach the `tidyverse`, `skimr`, and `GGally` packages in the setup code chunk
 - Run `View(diamonds)` in the Console to look at the built-in `diamonds` dataset in R
 - Explore the dataset using the functions `names()`, `dim()`, `summary()`, `head()`, `tail()`, and `skimr::skim()`
 - Create a pairs plot using `ggpairs()`
 - Create a basic `ggplot` scatterplot of diamond price (`price`) as a function of size (`carat`)
 - Create a histogram showing the distribution of values in the `carat` column (recall: a histogram only requires a single variable, e.g. `aes(x = carat)`)
-- Save, stage, commit, pull, then push your changes back to your repo in RStudio using the GUI interface (buttons)
-- Create a jitterplot (see: `geom_jitter`) of diamond clarity (on the x-axis) and price (y-axis). 
-- Using **git commands in the Terminal**, stage, commit, & push changes
-
+- Save, stage, commit, pull, then push your changes back to your repo in RStudio **using the GUI interface (buttons)**
+- Create a boxplot (see: `geom_box`) of diamond clarity (on the x-axis) and price (y-axis). 
+- **In the command line**, stage, commit, & push changes
 
 
 ## End
