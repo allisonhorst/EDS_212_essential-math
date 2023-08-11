@@ -161,7 +161,7 @@ Drawing fun!
 
 ## This gives us a basis for hypothesis testing (EDS 222)
 
-If a null hypothesis is true, what is the probability that your data outcome (e.g. mean, value, etc.) would have occurred by random chance? 
+If a null hypothesis is true, what is the probability that your data outcome (e.g. mean, value, etc.) or something more extreme would have occurred by random chance? 
 
 Is that *so* unlikely (is the probability low enough), that you think you have sufficient evidence to reject the null hypothesis? Or not? 
 

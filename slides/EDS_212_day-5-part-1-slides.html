@@ -3,15 +3,19 @@
   <head>
     <title>EDS 212 - Essential Math in Environmental Data Science</title>
     <meta charset="utf-8" />
-    <script src="EDS_212_day-5-part-1-slides_files/header-attrs-2.12.1/header-attrs.js"></script>
+    <script src="EDS_212_day-5-part-1-slides_files/header-attrs-2.21/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
+.title[
 # EDS 212 - Essential Math in Environmental Data Science
+]
+.subtitle[
 ## Day 5 Part 1 - Basic probability theory
+]
 
 ---
 
@@ -156,7 +160,7 @@ Drawing fun!
 
 ## This gives us a basis for hypothesis testing (EDS 222)
 
-If a null hypothesis is true, what is the probability that your data outcome (e.g. mean, value, etc.) would have occurred by random chance? 
+If a null hypothesis is true, what is the probability that your data outcome (e.g. mean, value, etc.) or something more extreme would have occurred by random chance? 
 
 Is that *so* unlikely (is the probability low enough), that you think you have sufficient evidence to reject the null hypothesis? Or not? 
 
@@ -213,6 +217,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable
