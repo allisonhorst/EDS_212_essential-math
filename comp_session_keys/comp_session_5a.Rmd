@@ -1,6 +1,6 @@
 ---
 title: 'EDS 212 Computational Session 5A'
-subtitle: 'More R Markdown customization, summary statistics continued, in-line reporting'
+subtitle: 'More Quarto customization, summary statistics continued, in-line reporting'
 output: 
   html_document:
     css: comp_session_theme.css
@@ -10,34 +10,32 @@ output:
 
 ## Setup
 
-- Create a new repo on GitHub called `eds212-day5-comp` (with a ReadMe)
-- Clone to create a version-controlled R project
-- Add a new R Markdown document
-- Remove everything below the first code chunk
-- In the setup chunk, attach the `tidyverse` package
-- Knit & save as `eds212-day5-comp-5a`
+-   Create a new repo on GitHub called `eds212-day5-comp` (with a ReadMe)
+-   Clone to create a version-controlled R project
+-   Add a new Quarto document
+-   Remove everything below the first code chunk
+-   In the setup chunk, attach the `tidyverse` package
+-   Save & render
 
 ```{r}
 library(tidyverse)
 ```
 
-What does the output look like? A mess. We might not want all of that stuff that R is reporting to show up in my knitted document. Not a problem - we get to define exactly what shows up in our knitted html, either across the entire document or for each specific code chunk. 
+What does the output look like? A mess. We might not want all of that stuff that R is reporting to show up in my rendered document. Not a problem - we get to define exactly what shows up in our knitted html, either across the entire document or for each specific code chunk.
 
-## Customizing what shows up from our code chunks
+## Customizing what shows up in our Quarto doc
 
-Let's try out a few code chunk options (see also: [RMarkdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/chunk-options.html)). 
+We can update Quarto [execution options](https://quarto.org/docs/computations/execution-options.html) to control what shows up (and doesn't) in our rendered document.
 
-For example: 
+For example:
 
-- `echo = FALSE`: do not show my code in the knitted html
-- `warning = FALSE`: do not show warnings in the knitted html
-- `results = 'hide'`: do not show the output (but show the code still)
-- `eval = FALSE`: don't actually evaluate (run) this code when knitting
-- `include = FALSE`: don't show *anything* from this code chunk
+-   `echo: FALSE` will hide source code in the rendered doc
 
-And there are a bunch more. Here, we'll try each of these & check our outputs. We'll do that while also learning how to find summary statistics for different variables in our data, and doing some exploratory visualization. 
+-   `warning: FALSE` will hide warnings / messages
 
-1. Look at the `starwars` dataset (in `dplyr`)
+Setting these execute options in the YAML will make them the default for all code chunks. You can also override the default using the hashpipe `#|` within a code chunk, followed by the execution option (e.g. `#| echo: false` ).
+
+1.  Look at the `starwars` dataset (in `dplyr`)
 
 Use several of the tools we learned yesterday (e.g. `head()`, `tail()`, `summary()`, `dim()`, etc.). Consider this "exploratory" work, that you would not want to show up at all in a final knitted document. Update the code chunk header with an option to not including *anything* from this code chunk (`include = FALSE`).
 
@@ -49,62 +47,61 @@ head(starwars)
 dim(starwars)
 ```
 
-2. Update the setup code chunk options so the warnings and messages are hidden, but the `library(tidyverse)` code *does* still show up in your knitted document. Knit to check. 
+2.  Update the setup code chunk options so the warnings and messages are hidden, but the `library(tidyverse)` code *does* still show up in your knitted document. Knit to check.
 
-3. In a new code chunk, create a `ggplot2` graph of character mass (y-axis) versus height (x-axis). Update so that the *color* of the points changes based on the value of *mass* (this is unnecessary, but just for customization practice). Update axis labels (with units). Remember, use `?starwars` for more information. Check the warnings that show up when you run your code. What are they telling you? Then, update the code chunk option so that *only* the graph appears in your knitted document (no code or warnings / messages). Knit to check. 
+3.  In a new code chunk, create a `ggplot2` graph of character mass (y-axis) versus height (x-axis). Update so that the *color* of the points changes based on the value of *mass* (this is unnecessary, but just for customization practice). Update axis labels (with units). Remember, use `?starwars` for more information. Check the warnings that show up when you run your code. What are they telling you? Then, update the code chunk option so that *only* the graph appears in your knitted document (no code or warnings / messages). Knit to check.
 
-4. In a new code chunk, create a histogram of character heights. Update the fill color to purple, and the line color to red (this will look awful - do it anyway for practice). Update the x- and y-axis labels. Update your code chunk options so that only your **code** and the **output graph** shows up in the knitted document (no messages or warnings). Knit to check. 
+4.  In a new code chunk, create a histogram of character heights. Update the fill color to purple, and the line color to red (this will look awful - do it anyway for practice). Update the x- and y-axis labels. Update your code chunk options so that only your **code** and the **output graph** shows up in the knitted document (no messages or warnings). Knit to check.
 
 ```{r}
 ggplot(data = starwars, aes(x = height)) +
   geom_histogram(color = "red", fill = "purple")
 ```
 
+## Adding a figure caption and alt-text
+
+You can add a figure caption or alt-text to a graphic using `#| fig-cap: "caption text"` and `#| fig-alt: "figure alt text"`
 
 ## Finding summary statistics for individual columns
 
-Here, we'll learn how to find some summary statistics (mean, standard deviation, variance). You can refer to a single column in a data frame using `df$colname`. For example, if we have a data frame `cats` with a column `mass`, then I can refer to the `mass` column in `cats` using `cats$mass`. 
+Here, we'll learn how to find some summary statistics (mean, standard deviation, variance). You can refer to a single column in a data frame using `df$colname`. For example, if we have a data frame `cats` with a column `mass`, then I can refer to the `mass` column in `cats` using `cats$mass`.
 
-Let's take a look. In the Console, try calling a couple columns individually from `starwars` (you don't need to store these). E.g. `starwars$name`, `starwars$birth_year`, etc. 
+Let's take a look. In the Console, try calling a couple columns individually from `starwars` (you don't need to store these). E.g. `starwars$name`, `starwars$birth_year`, etc.
 
-We'll learn a *bunch* of tools that help to automate finding summary statistics across multiple columns (e.g. `dplyr::across()`) or groups within the same column (e.g. `dplyr::group_by() %>% summarize()`), but for now let's say we just want a single mean from a single column. 
+We'll learn a *bunch* of tools that help to automate finding summary statistics across multiple columns (e.g. `dplyr::across()`) or groups within the same column (e.g. `dplyr::group_by() %>% summarize()`), but for now let's say we just want a single mean from a single column.
 
-Use the `mean()` function applied to the column to return the value. 
+Use the `mean()` function applied to the column to return the value.
 
-- In a new code chunk, store the mean of the height column as `sw_height_mean`
+-   In a new code chunk, store the mean of the height column as `sw_height_mean`
 
 ```{r}
 sw_height_mean <- mean(starwars$height)
 ```
 
-- Call the value back to yourself (in the Console). What does it tell you the mean height is? Uh oh...
+-   Call the value back to yourself (in the Console). What does it tell you the mean height is? Uh oh...
 
-- Check out the documentation for `mean()`. What is the behavior (default) for dealing with `NA` (missing) values?
+-   Check out the documentation for `mean()`. What is the behavior (default) for dealing with `NA` (missing) values?
 
-- Update your code so that `NA` values *are* removed, by adding the argument `na.rm = TRUE` within the `mean()` function. Does the value make sense given the histogram you created above? 
+-   Update your code so that `NA` values *are* removed, by adding the argument `na.rm = TRUE` within the `mean()` function. Does the value make sense given the histogram you created above?
 
 ```{r}
 sw_height_mean <- mean(starwars$height, na.rm = TRUE)
 ```
 
-- In your code chunk, add code to find the median (`median()`), variance (`var()`), and standard deviation (`sd()`) for Star Wars character heights. Store them using a consistent naming system as your `sw_height_mean` object above. Check all outputs. 
+-   In your code chunk, add code to find the median (`median()`), variance (`var()`), and standard deviation (`sd()`) for Star Wars character heights. Store them using a consistent naming system as your `sw_height_mean` object above. Check all outputs.
 
 ## In-line reporting from code outputs
 
-Let's say you wanted to report the mean and standard deviation of a variable in text (remember - summary statistics hide things! Always consider accompanying summary statistics with visualizations or tables that show more). 
+Let's say you wanted to report the mean and standard deviation of a variable in text (remember - summary statistics hide things! Always consider accompanying summary statistics with visualizations or tables that show more).
 
-Would you want to manually type the value you found from your code into your R Markdown document? Why or why not? 
+Would you want to manually type the value you found from your code into your Quarto document? Why or why not?
 
-> We want our outputs in text to be as reproducible and automatically updated as anything else in our work, so that if anything changes, we aren't going to be manually (and treacherously) copying and pasting hoping we are updating everything correctly. 
-      
-Reference stored objects in text by adding inline R code with single backticks, a lowercase `r` between them, and then whatever you want to have show up. 
+> We want our outputs in text to be as reproducible and automatically updated as anything else in our work, so that if anything changes, we aren't going to be manually (and treacherously) copying and pasting hoping we are updating everything correctly.
 
-See also: [Yihui Xie's R Markdown book](https://bookdown.org/yihui/rmarkdown/r-code.html)
+Reference stored objects in text by adding inline R code with single backticks, a lowercase `r` between them, and then whatever you want to have show up.
 
-**Warning:** PAY ATTENTION TO SIGNIFICANT FIGURES. Are you presenting your outcomes at a reasonable level of resolution? Do you need to round your output to make it a responsible reflection of the measurements you have? 
+**Warning:** PAY ATTENTION TO SIGNIFICANT FIGURES. Are you presenting your outcomes at a reasonable level of resolution? Do you need to round your output to make it a responsible reflection of the measurements you have?
 
 ## Safely store your work
 
-- Stage, commit, pull, push. Check to make sure your changes exist on GitHub. 
-
-
+-   Stage, commit, pull, push. Check to make sure your changes exist on GitHub.

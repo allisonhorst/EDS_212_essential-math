@@ -1,0 +1,11 @@
+---
+title: "testing-doc"
+format: html
+editor: visual
+---
+
+```{r}
+x <- 5
+```
+
+Testing, the value of x is `r x`
